@@ -4,120 +4,39 @@
       <slide>
         <div class="carousel-item" style="display: block; width: 100%;">
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp1.jpg" alt="Photo de profil">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom Prénom</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[0]'></app-card>
           </div>
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp2.jpg" alt="Photo de profil 2">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[1]'></app-card>
           </div>
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp3.jpg" alt="Photo de profil 3">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[2]'></app-card>
           </div>
         </div>
       </slide>
       <slide>
         <div class="carousel-item" style="display: block; width: 100%;">
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp4.jpg" alt="Photo de profil 4">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[3]'></app-card>
           </div>
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp5.jpg" alt="Photo de profil 5">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[4]'></app-card>
           </div>
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp6.jpg" alt="Photo de profil 6">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[5]'></app-card>
           </div>
         </div>
       </slide>
       <slide>
-        <div class="carousel-item">
+        <div class="carousel-item" style="display: block; width: 100%;">
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp7.jpg" alt="Photo de profil 7">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[6]'></app-card>
           </div>
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp8.jpg" alt="Photo de profil 8">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[7]'></app-card>
           </div>
           <div class="col-md-4">
-            <mat-card class="example-card">
-              <img mat-card-image src="../../../assets/images/Temp9.jpg" alt="Photo de profil 9">
-              <mat-card-content>
-                <div class="card-body">
-                  <h4 class="card-title">Nom et prénom du membre.</h4>
-                  <p>Responsabilités au sein de l'association.
-                  </p>
-                </div>
-              </mat-card-content>
-            </mat-card>
+            <app-card [userCard]='users[8]'></app-card>
           </div>
         </div>
       </slide>
@@ -125,20 +44,11 @@
   </carousel>
 </mat-card>
 
-
 <!--/*for mobile and small  devices */-->
 <mat-card class="mat-parent-small">
   <carousel>
     <slide *ngFor="let user of users">
-      <mat-card class="example-card">
-        <img mat-card-image src={{user.picture}} alt="Photo de profil{{user.id}}">
-        <mat-card-content>
-          <div class="card-body">
-            <h4 class="card-title">{{user.name}}</h4>
-            <p>{{user.details}}/p>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <app-card [userCard]='user'></app-card>
     </slide>
   </carousel>
 </mat-card>

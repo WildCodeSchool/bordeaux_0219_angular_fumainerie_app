@@ -2,39 +2,24 @@
   position: absolute;
   margin-top: 100px;
 }
-.example-card {
-max-width: 100%;
-margin-top: 5%;
-margin-bottom: 5%;
-box-shadow: 0 3px 6px rgba(#ACC0E9,.5);
-}
-
-
-.card{
-display: inline-block;
-background: #FFF;
-width: 100%;
-height: 100%;
-border-radius: 4px;
-position: relative;
-
-}
 .carousel-item{
-height: 500px;
+max-height: 500px;
 width: 100%;
 position: relative;
 background-color:white;
-
 }
 .mat-parent {
 background-color:white;
 margin-top: 6%;
 width: 80%;
 margin-left: 10%;
-/*background-image: url("/assets/img/bg1.jpg");*/
 }
 .mat-parent-small{
 display: none;
+}
+.mat-card-image {
+  width: calc(100% + 32px);
+  margin: 0 -16px 16px -16px;
 }
 /*for ipad and other lage tabs*/
 @media only screen and (max-width: 768px) {
@@ -48,57 +33,21 @@ display: none;
 background-color:white;
 margin-top: 19%;
 width: 96%;
-margin-left: 2%;
 position: relative;
 height: 660px;
 padding-bottom: 10%;
+text-align: center;
 }
-img .mat-card-image{
-max-height: 300px;
-width:auto;
 }
-.carousel-item{
-height: 596px;
-width: 100%;
-position: relative;
-background-color:white;
-
-}
-.example-card {
-max-width: 100%;
-margin-top: 1%;
-margin-bottom: 1%;
-box-shadow: 0 3px 6px rgba(#ACC0E9,.5);
-}}
 /*for mobile devices*/
 @media only screen and (max-width: 500px) {
- .mat-parent-small{
-  display: block;
-}
-.mat-parent{
-  display: none;
-}
 .mat-parent-small {
-background-color:white;
-margin-top: 19%;
-width: 96%;
-margin-left: 2%;
-position: relative;
+width: 80%;
 height: 440px;
-padding-bottom: 10%;
-/*background-image: url("/assets/img/bg1.jpg");*/
 }
 .carousel-item{
 height: 385px;
 width: 100%;
-position: relative;
 background-color:white;
-}
-
-.example-card {
-max-width: 100%;
-margin-top: 1%;
-margin-bottom: 1%;
-box-shadow: 0 3px 6px rgba(#ACC0E9,.5);
 }
 }
