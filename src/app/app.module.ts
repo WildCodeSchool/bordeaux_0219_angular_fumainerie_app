@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './shared/app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './app/components/accueil/contact/contact.component';
-import { AccueilComponent } from './components/accueil/accueil.component';
+import { ContactComponent } from './components/accueil/contact/contact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
-    AccueilComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
