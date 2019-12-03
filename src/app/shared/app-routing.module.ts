@@ -4,8 +4,8 @@ import { UnderConstructionComponent } from '../Pages/under-construction/under-co
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'En Construction' },
-  { path: 'En Construction', component: UnderConstructionComponent },
+  { path: '', pathMatch: 'full', redirectTo: 'enConstruction' },
+  { path: 'enConstruction', component: UnderConstructionComponent },
 ];
 
 @NgModule({

@@ -1,1 +1,35 @@
-<p>under-construction works!</p>
+<div class="container">
+
+<div class="description">
+  <h1>La Fumainerie</h1>
+
+  <p>Notre site internet est actuellement <mark>en cours de réalisation</mark>. <br>
+    Le site final sera accessible en <em>Février 2020</em> mais n'hésitez à revenir de temps en temps.
+  </p>
+
+  <div class="contact">
+    <p>N'hésitez pas a nous retrouvez ici :</p>
+      <div class="icones">
+        <a href="https://fr-fr.facebook.com/pg/lafumaineriebordeaux/posts/?ref=page_internal"><img (click)="displayFacebook()" src="../../../assets/icones/icone facebook (1).png" alt="Icone Facebook"></a>
+        <img (click)="displayMail()"  src="../../../assets/icones/icone mail.png" alt="Icone Mail">
+        <img (click)="displayPhone()"src="../../../assets/icones/icone telephone.png" alt="Icone telephone">
+      </div>
+  </div>
+
+  <div *ngIf="mail">
+      <h3>lafumainerie@zaclys.net</h3>
+      <h3>amelie.colle@sciencespo.fr</h3>
+  </div>
+
+  <div *ngIf="phone">
+    <h3>+33 (0)6 31 19 55 74</h3>
+  </div>
+
+</div>
+
+
+
+<img class="right_page" src="../../../assets/image-en-construction.png" alt="Une image ecologique avec une plante">
+
+
+</div>
