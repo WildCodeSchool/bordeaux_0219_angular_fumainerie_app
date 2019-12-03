@@ -1,1 +1,56 @@
-<p>contact works!</p>
+<div class="forms-container">
+  <div class="form-contact">
+
+    <p>Contactez-nous:</p>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="">
+          <mat-hint>Must be a valid email</mat-hint>
+        </mat-form-field>
+
+        <div formGroupName="address">
+
+          <div class="address-number">
+            <mat-form-field appearance="outline">
+              <mat-label>N°</mat-label>
+              <input formControlName="number" type="text" matInput placeholder="">
+              <mat-hint>Numéro de rue</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="street">
+            <mat-form-field appearance="outline">
+              <mat-label>Rue</mat-label>
+              <input formControlName="street" type="text" matInput placeholder="">
+              <mat-hint>Nom de la rue</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="adress-zip">
+            <mat-form-field appearance="outline">
+              <mat-label>Code postal</mat-label>
+              <input formControlName="zip" type="text" matInput placeholder="">
+              <mat-hint>Code postal de ta ville</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="adress-city">
+            <mat-form-field appearance="outline">
+              <mat-label>Ville</mat-label>
+              <input formControlName="city" type="text" matInput placeholder="">
+              <mat-hint>Nom de la ville</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <button mat-raised-button type="submit" [disabled]=!contactForm.valid>Envoyer</button>
+      </form>
+  </div>
+
+  <div class="form-newsletter">
+
+  </div>
+
+</div>
+<div class="footer"></div>

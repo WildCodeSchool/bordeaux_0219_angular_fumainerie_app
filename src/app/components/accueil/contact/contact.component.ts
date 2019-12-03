@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  contactForm = this.fb.group({
+    mail: [''],
+    address: this.fb.group({
+      number: [''],
+      street: [''],
+      zip: [''],
+      city: ['']
+    })
+  });
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    // appel du service.post
+  }
 }
