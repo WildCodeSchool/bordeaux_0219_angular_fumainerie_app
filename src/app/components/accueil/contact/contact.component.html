@@ -8,24 +8,26 @@
         <mat-label>Email</mat-label>
         <input formControlName="email" matInput placeholder="">
         <div *ngIf="contactForm.get('email').errors && !contactForm.get('email').pristine" class="error">
-          <div [hidden]="!contactForm.get('email').errors.required">Ce champs est requis.</div>
           <div [hidden]="!contactForm.get('email').invalid">L'email n'est pas valide.</div>
         </div>
       </mat-form-field>
 
       <div formGroupName="address">
 
-        <div class="address-number">
+        <div class="street">
           <mat-form-field appearance="outline">
-            <mat-label>N°</mat-label>
-            <input formControlName="number" type="text" matInput placeholder="">
+            <mat-label>N°, Rue</mat-label>
+            <input formControlName="street" type="text" matInput placeholder="">
+            <div *ngIf="contactForm.get('address.street').errors && !contactForm.get('address.street').pristine" class="error">
+                <div [hidden]="!contactForm.get('address.street').errors.required">Ce champs est requis.</div>
+            </div>
           </mat-form-field>
         </div>
 
-        <div class="street">
+        <div class="complement">
           <mat-form-field appearance="outline">
-            <mat-label>Rue</mat-label>
-            <input formControlName="street" type="text" matInput placeholder="">
+            <mat-label>Complément</mat-label>
+            <input formControlName="complement" type="text" matInput placeholder="Etage, résidence, ...">
           </mat-form-field>
         </div>
 
@@ -33,6 +35,9 @@
           <mat-form-field appearance="outline">
             <mat-label>Code postal</mat-label>
             <input formControlName="zip" type="text" matInput placeholder="">
+            <div *ngIf="contactForm.get('address.zip').errors && !contactForm.get('address.zip').pristine" class="error">
+                <div [hidden]="!contactForm.get('address.zip').errors.required">Ce champs est requis.</div>
+            </div>
           </mat-form-field>
         </div>
 
@@ -40,6 +45,9 @@
           <mat-form-field appearance="outline">
             <mat-label>Ville</mat-label>
             <input formControlName="city" type="text" matInput placeholder="">
+            <div *ngIf="contactForm.get('address.city').errors && !contactForm.get('address.city').pristine" class="error">
+                <div [hidden]="!contactForm.get('address.city').errors.required">Ce champs est requis.</div>
+            </div>
           </mat-form-field>
         </div>
       </div>
