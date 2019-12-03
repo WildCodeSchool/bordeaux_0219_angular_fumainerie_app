@@ -19,13 +19,17 @@ export class ContactComponent implements OnInit {
     })
   });
 
+  newsForm = this.fb.group({
+    email: ['', [Validators.required, emailValidator]]
+  });
+
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    // appel du service.post
+    // appel du service.post vers la BSS
     console.log(this.contactForm.value);
   }
 }
