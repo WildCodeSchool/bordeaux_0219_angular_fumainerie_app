@@ -1,5 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
+import { };
+
+
 
 
 @Component({
@@ -10,7 +13,11 @@ import { Component, OnInit } from '@angular/core';
 export class CarouselComponent implements OnInit {
   constructor() { }
 
-  ngOnInit() {
-  }
+  personnalityGallery: Array<string> = [];
 
+  ngOnInit() {
+    for ( let i = 1 ; i < 10; i++ ) {
+      this.personnalityGallery.push(`../../../assets/images/Temp${ i }.jpg`);
+   }
+  }
   }
