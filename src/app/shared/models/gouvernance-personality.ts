@@ -3,4 +3,8 @@ export class GouvernancePersonality {
   public name: string;
   public picture: string;
   public details: string;
+
+  constructor(input?: GouvernancePersonality) {
+    Object.assign(this, input);
+  }
 }
