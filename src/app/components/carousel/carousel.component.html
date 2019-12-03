@@ -124,20 +124,21 @@
     </div>
   </carousel>
 </mat-card>
+
+
 <!--/*for mobile and small  devices */-->
 <mat-card class="mat-parent-small">
   <carousel>
-    <slide *ngFor="let photo of personnalityGallery">
+    <slide *ngFor="let user of users">
       <mat-card class="example-card">
-        <img mat-card-image [src]=photo alt="Photo de profil 1">
+        <img mat-card-image src={{user.picture}} alt="Photo de profil{{user.id}}">
         <mat-card-content>
           <div class="card-body">
-            <h4 class="card-title">Nom et prénom du membre.</h4>
-            <p>Responsabilités au sein de l'association.
-            </p>
+            <h4 class="card-title">{{user.name}}</h4>
+            <p>{{user.details}}/p>
           </div>
         </mat-card-content>
-      </mat-card>&
+      </mat-card>
     </slide>
   </carousel>
 </mat-card>

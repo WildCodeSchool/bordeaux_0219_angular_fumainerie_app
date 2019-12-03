@@ -1,6 +1,6 @@
-
+import { gouvernanceMock } from './../../shared/gouvernance-mock';
 import { Component, OnInit } from '@angular/core';
-import { };
+
 
 
 
@@ -13,11 +13,9 @@ import { };
 export class CarouselComponent implements OnInit {
   constructor() { }
 
-  personnalityGallery: Array<string> = [];
+  users = gouvernanceMock;
 
   ngOnInit() {
-    for ( let i = 1 ; i < 10; i++ ) {
-      this.personnalityGallery.push(`../../../assets/images/Temp${ i }.jpg`);
-   }
+
   }
   }
