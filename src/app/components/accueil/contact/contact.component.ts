@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { emailValidator } from 'src/app/shared/validators/email-validator';
 
 @Component({
   selector: 'app-contact',
@@ -9,12 +10,12 @@ import { FormBuilder } from '@angular/forms';
 export class ContactComponent implements OnInit {
 
   contactForm = this.fb.group({
-    mail: [''],
+    email: ['', [Validators.required, emailValidator]],
     address: this.fb.group({
-      number: [''],
-      street: [''],
-      zip: [''],
-      city: ['']
+      number: ['', Validators.required],
+      street: ['', Validators.required],
+      zip: ['', Validators.required],
+      city: ['', Validators.required]
     })
   });
 
@@ -25,5 +26,6 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     // appel du service.post
+    console.log(this.contactForm.value);
   }
 }
