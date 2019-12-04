@@ -1,0 +1,49 @@
+.forms-container{
+  display: flex;
+  align-items: center;
+
+}
+
+.form-contact{
+  width: 50%;
+
+  p{
+    text-align: center;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mat-form-field{
+    width: 70%;
+  }
+  textarea{
+    resize: none;
+  }
+}
+
+.form-newsletter{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .mat-form-field{
+    width: 60%;
+  }
+  p{
+    text-align: center;;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button{
+      width: 20%;
+      align-self: center;
+    }
+  }
+}

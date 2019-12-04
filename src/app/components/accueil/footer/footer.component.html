@@ -1,0 +1,24 @@
+<div class="footer">
+  <div class="logo-footer">
+    <img src="" alt="Logo">
+  </div>
+  <div class="footer-navbar">
+    <ul>
+      <li><a href="#projet">Le projet</a></li>
+      <li><a href="#gouvernance">La Gouvernance</a></li>
+      <li><a routerLink="/">Les actualités</a></li>
+      <li><a routerLink="/">Ressources Documentation</a></li>
+    </ul>
+  </div>
+  <div class="partners-container">
+    <p>Nos Partenaires</p>
+    <div class="partners">
+      <div *ngFor="let partner of partners">
+        <div class="partner">
+          <a href="{{partner.link}}"><img src="{{partner.img}}" alt="image-partenaire"></a>
+          <!-- <p>{{partner.name}}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
