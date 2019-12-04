@@ -3,7 +3,6 @@
   background-color: rgb(255, 192, 0);
   height: 30%;
   width: 100%;
-  margin-top: 5%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -16,10 +15,32 @@
   }
   .footer-navbar{
     width: 20%;
+    list-style : none;
     // background-color: grey;
+    a{
+      text-decoration: none;
+    }
   }
-  .partners{
+
+  .partners-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     width:60%;
     // background-color: red;
+    .partners{
+      display: flex;
+      text-align: center;
+      justify-content: space-evenly;
+
+      img{
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+      }
+    }
+  }
+  li{
+    list-style: none;
   }
 }

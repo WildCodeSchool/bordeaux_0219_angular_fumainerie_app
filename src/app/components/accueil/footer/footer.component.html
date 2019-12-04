@@ -4,19 +4,21 @@
   </div>
   <div class="footer-navbar">
     <ul>
-      <li><a href="">Le projet</a></li>
-      <li><a href="">La Gouvernance</a></li>
-      <li><a href="">Les actualités</a></li>
-      <li><a href="">Mentions légales</a></li>
+      <li><a href="#">Le projet</a></li>
+      <li><a href="#">La Gouvernance</a></li>
+      <li><a routerLink="/">Les actualités</a></li>
+      <li><a routerLink="/">Ressources Documentation</a></li>
     </ul>
   </div>
-  <div class="partners">
+  <div class="partners-container">
     <p>Nos Partenaires</p>
-    <div *ngFor="let partner of partners" class="partner">
-      <li>
-          {{partner.img}}
-          {{partner.name}}
-      </li>
+    <div class="partners">
+      <div *ngFor="let partner of partners">
+        <div class="partner">
+          <a href="{{partner.link}}"><img src="{{partner.img}}" alt="image-partenaire"></a>
+          <!-- <p>{{partner.name}}</p> -->
+        </div>
+      </div>
     </div>
   </div>
 </div>

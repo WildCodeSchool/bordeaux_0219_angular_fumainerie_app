@@ -1,5 +1,7 @@
 .forms-container{
   display: flex;
+  align-items: center;
+
 }
 
 .form-contact{
@@ -20,22 +22,6 @@
   textarea{
     resize: none;
   }
-  // .address{
-  //   display: flex;
-  //   flex-direction: column;
-  //   width: 100%;
-
-
-  //   .mat-form-field{
-  //     width: 70%;
-  //     padding-left: 15%;
-  //   }
-
-  //   .zip-city{
-  //     display: flex;
-  //     padding-left: 18%;
-  //   }
-  // }
 }
 
 .form-newsletter{
