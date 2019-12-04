@@ -14,6 +14,6 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // get les image et noms des partenaires ( images cliquables pour renvoyer sur la page)
+
   }
 }
