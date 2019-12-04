@@ -1,3 +1,5 @@
+import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
+import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,12 +12,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/accueil/footer/footer.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CardComponent } from './components/carousel/card/card.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    CarouselComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +31,9 @@ import { FooterComponent } from './components/accueil/footer/footer.component';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    AngularMaterialModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

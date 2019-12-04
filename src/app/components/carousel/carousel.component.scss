@@ -1,0 +1,53 @@
+.carousal-main{
+  position: absolute;
+  margin-top: 100px;
+}
+.carousel-item{
+max-height: 500px;
+width: 100%;
+position: relative;
+background-color:white;
+}
+.mat-parent {
+background-color:white;
+margin-top: 6%;
+width: 80%;
+margin-left: 10%;
+}
+.mat-parent-small{
+display: none;
+}
+.mat-card-image {
+  width: calc(100% + 32px);
+  margin: 0 -16px 16px -16px;
+}
+/*for ipad and other lage tabs*/
+@media only screen and (max-width: 768px) {
+.mat-parent-small{
+  display: block;
+}
+.mat-parent{
+  display: none;
+}
+.mat-parent-small {
+background-color:white;
+margin-top: 19%;
+width: 96%;
+position: relative;
+height: 660px;
+padding-bottom: 10%;
+text-align: center;
+}
+}
+/*for mobile devices*/
+@media only screen and (max-width: 500px) {
+.mat-parent-small {
+width: 80%;
+height: 440px;
+}
+.carousel-item{
+height: 385px;
+width: 100%;
+background-color:white;
+}
+}
