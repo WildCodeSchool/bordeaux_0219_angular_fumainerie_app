@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './shared/app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './app/components/accueil/contact/contact.component';
-import { AccueilComponent } from './components/accueil/accueil.component';
+import { UnderConstructionComponent } from './Pages/under-construction/under-construction.component';
+import { ContactComponent } from './components/accueil/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    AccueilComponent
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,
