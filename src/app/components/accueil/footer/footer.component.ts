@@ -1,3 +1,4 @@
+import { Partner } from './../../../shared/models/partner';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  partners: Partner[];
+
   constructor() { }
 
   ngOnInit() {
+    // get les image et noms des partenaires ( images cliquables pour renvoyer sur la page)
   }
 
 }

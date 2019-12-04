@@ -4,4 +4,22 @@
   height: 30%;
   width: 100%;
   margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+
+  .logo-footer{
+    width: 20%;
+    // background-color: blue;
+  }
+  .footer-navbar{
+    width: 20%;
+    // background-color: grey;
+  }
+  .partners{
+    width:60%;
+    // background-color: red;
+  }
 }

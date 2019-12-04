@@ -2,7 +2,6 @@
   <div class="form-contact">
 
     <p>Contactez-nous:</p>
-    <p>* : Champs obligatoires</p>
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
       <mat-form-field appearance="outline">
@@ -12,27 +11,31 @@
           <div [hidden]="!contactForm.get('email').invalid">L'email n'est pas valide.</div>
         </div>
       </mat-form-field>
+      <mat-form-field appearance="outline" class="contact-textarea">
+        <mat-label>Message *</mat-label>
+        <textarea formControlName="message" matInput rows="5" placeholder="Dites-nous tout."></textarea>
+      </mat-form-field>
 
-      <div formGroupName="address" class="address">
+      <!-- <div formGroupName="address" class="address">
 
-          <div class="street">
-            <mat-form-field appearance="outline">
-              <mat-label>N°, Rue *</mat-label>
-              <input formControlName="street" type="text" matInput placeholder="">
-              <div *ngIf="contactForm.get('address.street').errors && !contactForm.get('address.street').pristine" class="error">
-                <div [hidden]="!contactForm.get('address.street').errors.required">Ce champs est requis.</div>
-              </div>
-            </mat-form-field>
-          </div>
+        <div class="street">
+          <mat-form-field appearance="outline">
+            <mat-label>N°, Rue *</mat-label>
+            <input formControlName="street" type="text" matInput placeholder="1 Bis, Ter">
+            <div *ngIf="contactForm.get('address.street').errors && !contactForm.get('address.street').pristine" class="error">
+              <div [hidden]="!contactForm.get('address.street').errors.required">Ce champs est requis.</div>
+            </div>
+          </mat-form-field>
+        </div>
 
-          <div class="complement">
-            <mat-form-field appearance="outline">
-              <mat-label>Complément</mat-label>
-              <input formControlName="complement" type="text" matInput placeholder="Etage, résidence, ...">
-            </mat-form-field>
-          </div>
-
-          <div class="adress-zip">
+        <div class="complement">
+          <mat-form-field appearance="outline">
+            <mat-label>Complément</mat-label>
+            <input formControlName="complement" type="text" matInput placeholder="Etage, résidence, ...">
+          </mat-form-field>
+        </div>
+        <div class="zip-city">
+          <div class="zip">
             <mat-form-field appearance="outline">
               <mat-label>Code postal *</mat-label>
               <input formControlName="zip" type="text" minlength="5" maxlength="5" matInput placeholder="">
@@ -42,7 +45,7 @@
             </mat-form-field>
           </div>
 
-          <div class="adress-city">
+          <div class="city">
             <mat-form-field appearance="outline">
               <mat-label>Ville *</mat-label>
               <input formControlName="city" type="text" matInput placeholder="">
@@ -51,8 +54,8 @@
               </div>
             </mat-form-field>
           </div>
-
-      </div>
+        </div>
+      </div> -->
       <button mat-raised-button type="submit" [disabled]=!contactForm.valid>Envoyer</button>
     </form>
   </div>

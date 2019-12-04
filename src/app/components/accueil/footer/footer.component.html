@@ -1,16 +1,22 @@
 <div class="footer">
-    <div class="footer-navbar">
-      <a href="">Le projet</a>
-      <a href="">La Gouvernance</a>
-      <a href="">Les actualités</a>
-      <a href="">Mentions légales</a>
-    </div>
-
-    <div class="partners">
-      <p>Nos Partenaires</p>
-      <div *ngFor="let partner of partners">
-        {{partner.img}}
-        {{partner.name}}
-      </div>
+  <div class="logo-footer">
+    <img src="" alt="Logo">
+  </div>
+  <div class="footer-navbar">
+    <ul>
+      <li><a href="">Le projet</a></li>
+      <li><a href="">La Gouvernance</a></li>
+      <li><a href="">Les actualités</a></li>
+      <li><a href="">Mentions légales</a></li>
+    </ul>
+  </div>
+  <div class="partners">
+    <p>Nos Partenaires</p>
+    <div *ngFor="let partner of partners" class="partner">
+      <li>
+          {{partner.img}}
+          {{partner.name}}
+      </li>
     </div>
   </div>
+</div>

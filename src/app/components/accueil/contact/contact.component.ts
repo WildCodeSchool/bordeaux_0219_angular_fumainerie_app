@@ -11,24 +11,26 @@ export class ContactComponent implements OnInit {
 
   contactForm = this.fb.group({
     email: ['', [Validators.required, emailValidator]],
-    address: this.fb.group({
-      street: ['', Validators.required],
-      complement: [''],
-      zip: ['', Validators.required],
-      city: ['', Validators.required]
-    })
+    message: ['', Validators.required]
+    // address: this.fb.group({
+    //   street: ['', Validators.required],
+    //   complement: [''],
+    //   zip: ['', Validators.required],
+    //   city: ['', Validators.required]
+    // })
   });
 
-  newsForm = this.fb.group({
+newsForm = this.fb.group({
     email: ['', [Validators.required, emailValidator]]
   });
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
 
-  ngOnInit() {
   }
 
-  onSubmit() {
+ngOnInit() {}
+
+onSubmit() {
     // appel du service.post vers la BSS
     console.log(this.contactForm.value);
   }
