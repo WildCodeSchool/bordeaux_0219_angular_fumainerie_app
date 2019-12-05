@@ -15,6 +15,8 @@ import { FooterComponent } from './components/accueil/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { ActualitesComponent } from './pages/actualites/actualites.component';
+import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
     FooterComponent,
     CarouselComponent,
     CardComponent,
-    HomepageComponent
+    HomepageComponent,
+    ActualitesComponent,
+    RessourcesDocumentsComponent
   ],
   imports: [
     BrowserModule,
