@@ -20,10 +20,23 @@ ul{
   }
 }
 li:hover{
-  background-color: lightgoldenrodyellow;
-  border-left: 1px solid black;
-  box-shadow: 0 0 0.2em 1em lightgoldenrodyellow;
+  background-color: #ffff73;
+  text-decoration: underline;
+  box-shadow: 0 0 0.2em 0.5em #ffff73
 }
 img{
   height: 30vh;
+}
+button{
+  background-color: #8bca58;
+  color: black;
+  font-weight: 600;
+  margin-left: 2vw;
+  border: none;
+  box-shadow: 0 0 0em 0.5em #8bca58;
+}
+button:hover{
+  background-color: #ffff73;
+  box-shadow: 0 0 0em 0.5em #ffff73;
+  color: black;
 }
