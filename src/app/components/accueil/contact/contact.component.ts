@@ -9,14 +9,15 @@ import { emailValidator } from 'src/app/shared/validators/email-validator';
 })
 export class ContactComponent implements OnInit {
 
-  contactForm = this.fb.group({
-    email: ['', [Validators.required, emailValidator]],
-    message: ['', Validators.required]
-  });
+  // contactForm = this.fb.group({
+    //   email: ['', [Validators.required, emailValidator]],
+    //   message: ['', Validators.required]
+    // });
+  statusValidationNewsletterPopUp = false;
 
-newsForm = this.fb.group({
-    email: ['', [Validators.required, emailValidator]]
-  });
+  newsForm = this.fb.group({
+      email: ['', [Validators.required, emailValidator]]
+    });
 
   constructor(private fb: FormBuilder) {
 
@@ -26,6 +27,7 @@ ngOnInit() {}
 
 onSubmit() {
     // appel du service.post vers la BSS
-    console.log(this.contactForm.value);
+    console.log('Abonné !');
+    this.statusValidationNewsletterPopUp = true;
   }
 }
