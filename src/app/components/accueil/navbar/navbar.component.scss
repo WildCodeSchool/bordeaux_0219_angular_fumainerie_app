@@ -1,0 +1,29 @@
+.navvbar{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 1.5em;
+  align-items: flex-end;
+  border-bottom: 1px solid black;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 0px;
+  height: 5vw;
+  align-items: center;
+  margin: 0px;
+  li{
+    list-style-type: none;
+    margin-left: 2vw;
+  }
+}
+li:hover{
+  background-color: lightgoldenrodyellow;
+  border-left: 1px solid black;
+  box-shadow: 0 0 0.2em 1em lightgoldenrodyellow;
+}
+img{
+  height: 30vh;
+}

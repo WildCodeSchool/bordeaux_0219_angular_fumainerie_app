@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/accueil/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
+import { NavbarComponent } from './components/accueil/navbar/navbar.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CardComponent } from './components/carousel/card/card.component';
     ContactComponent,
     FooterComponent,
     CarouselComponent,
-    CardComponent
+    CardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
