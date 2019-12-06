@@ -42,3 +42,28 @@
     list-style: none;
   }
 }
+
+@media (max-width: 400px){
+  .footer{
+    flex-direction: column;
+    height: 70%;
+
+    .logo-footer{
+      display: none;
+    }
+    .footer-navbar{
+      margin: 0;
+      width: 40%;
+      text-align: center;
+    }
+    .partners{
+      flex-wrap: wrap;
+
+      img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
