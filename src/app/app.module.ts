@@ -17,6 +17,12 @@ import { CardComponent } from './components/carousel/card/card.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ActualitesComponent } from './pages/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
+import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
+import { DocumentsComponent } from './components/dashboards/documents/documents.component';
+import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
+import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 
 
 @NgModule({
@@ -28,7 +34,13 @@ import { RessourcesDocumentsComponent } from './pages/ressources-documents/resso
     CardComponent,
     HomepageComponent,
     ActualitesComponent,
-    RessourcesDocumentsComponent
+    RessourcesDocumentsComponent,
+    DashboardComponent,
+    SidebarComponent,
+    VidangesComponent,
+    DocumentsComponent,
+    CommuniactionComponent,
+    EvenementsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,9 @@
+import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
+import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
+import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
+import { DocumentsComponent } from './components/dashboards/documents/documents.component';
+import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { ActualitesComponent } from './pages/actualites/actualites.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -5,12 +11,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', component : HomepageComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component : HomepageComponent},
   {path: 'actualites', component : ActualitesComponent},
-  {path: 'ressources', component : RessourcesDocumentsComponent}
+  {path: 'ressources', component : RessourcesDocumentsComponent},
+  {path: 'dashboard', component : DashboardComponent, children: [
+    {path: 'vidanges', component : VidangesComponent},
+    {path: 'documents', component : DocumentsComponent},
+    {path: 'communication', component : CommuniactionComponent},
+    {path: 'evenements', component : EvenementsComponent}
+  ]},
+  {path: 'sidebar', component : SidebarComponent}
 
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
