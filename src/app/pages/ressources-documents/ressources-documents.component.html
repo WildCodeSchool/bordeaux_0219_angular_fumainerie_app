@@ -1,7 +1,7 @@
 
   <mat-form-field >
-    <mat-icon (click)="search()" matPrefix>search</mat-icon>
     <input type="search" matInput [(ngModel)]="recherche">
+    <mat-icon (click)="search()" matPrefix>search</mat-icon>
   </mat-form-field>
 
 
@@ -9,7 +9,7 @@
 <div>
 
   <ul *ngFor="let oui of dataSearch">
-    <li *ngIf="erreur"></li>
+    <li *ngIf="erreur">{{erreur}}</li>
     <li>{{oui}}</li>
   </ul>
 </div>

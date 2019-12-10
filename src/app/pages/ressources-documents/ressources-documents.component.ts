@@ -17,13 +17,14 @@ export class RessourcesDocumentsComponent implements OnInit {
   ngOnInit() {
   }
   search() {
-    this.recherche = this.recherche.toLocaleLowerCase();
+    // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < this.dataArray.length; i++) {
-      if (this.dataArray[i].toLocaleLowerCase().includes(this.recherche)) {
-       return this.dataSearch.push(this.dataArray[i]);
-      } else {
-        return this.erreur = 'Il n\'y a pas resultat correspondant';
+      if (this.dataArray[i].toLowerCase().includes(this.recherche.toLowerCase())) {
+        this.dataSearch.push(this.dataArray[i]);
+      } else if (this.dataSearch.length < 1) {
+        return this.erreur = 'Il n\'y a pas de resultat correspondant';
       }
     }
+    return this.dataSearch;
   }
 }
