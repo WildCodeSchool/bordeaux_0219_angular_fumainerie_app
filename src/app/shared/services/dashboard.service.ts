@@ -11,7 +11,6 @@ export class DashboardService {
 
 
   getAccountStatus(status: boolean) {
-    // return status = this.http.get(URL_GET_ACCOUNT_STATUS) recupérer le status de l'account
-    return status = false;
+
   }
 }

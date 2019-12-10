@@ -14,7 +14,6 @@ export class DashboardComponent implements OnInit {
 
   StatusAccountIsComplete: boolean;
   ngOnInit() {
-    // this.service.getAccountStatus(this.StatusAccountIsComplete);
     this.StatusAccountIsComplete = false;
   }
 
