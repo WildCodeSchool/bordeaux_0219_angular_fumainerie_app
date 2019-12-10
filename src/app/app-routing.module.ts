@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: 'actualites', component : ActualitesComponent},
   {path: 'ressources', component : RessourcesDocumentsComponent},
   {path: 'dashboard', component : DashboardComponent, children: [
+    {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent},
     {path: 'documents', component : DocumentsComponent},
     {path: 'communication', component : CommuniactionComponent},

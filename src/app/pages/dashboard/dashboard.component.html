@@ -1,5 +1,6 @@
+<div class="container-global">
 <div class="menu-responsiv">
-<app-burger-menu></app-burger-menu>
+  <app-burger-menu></app-burger-menu>
 </div>
 <div class="page-container">
   <div class="sidebar">
@@ -9,8 +10,14 @@
     <div class="navbar">
       <h1>Dashboard</h1>
     </div>
-    <div class="interface-dashboard">
+    <div class="modal-account" *ngIf="StatusAccountIsComplete != true">
+      Votre compte n'est pas à jour !
+    </div>
+    <div class="interface-dashboard" *ngIf="StatusAccountIsComplete != false">
+      <!-- *ngIf="StatusAccountIsComplete != true" [ngClass]="StatusAccountIsComplete ? 'interface-dashboard' : 'hide-interface'" -->
       <router-outlet></router-outlet>
     </div>
+
   </div>
+</div>
 </div>
