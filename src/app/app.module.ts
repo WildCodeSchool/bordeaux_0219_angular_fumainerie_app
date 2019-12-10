@@ -23,6 +23,7 @@ import { VidangesComponent } from './components/dashboards/vidanges/vidanges.com
 import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
+import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { EvenementsComponent } from './components/dashboards/evenements/evenemen
     VidangesComponent,
     DocumentsComponent,
     CommuniactionComponent,
-    EvenementsComponent
+    EvenementsComponent,
+    BurgerMenuComponent
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,37 @@
+.menu-responsiv{
+  display: none;
+}
+.page-container{
+  display: flex;
+  width: 100%;
+  .sidebar{
+    width: 15%;
+    background-color: yellowgreen;
+  }
+}
 .navbar{
-  height: 30vh;
+  height: 20vh;
   text-align: center;
-  padding-top: 5%;
 }
 .dashboard-container{
   display: flex;
-  height: 70vh;
+  flex-direction: column;
+  height: auto;
   width: 100%;
-  .sidebar{
-    height: 100%;
-    width: 20%;
-    background-color: yellowgreen;
 
+  .interface-dashboard{
+    height: 100%;
+    width: 100%;
+    background-color:lightblue;
+  }
 }
-.interface-dashboard{
-  width: 80%;
-  background-color:lightblue;
-}
+@media (max-width: 380px){
+  .menu-responsiv{
+  }
+  .navbar{
+    display: none;
+  }
+  .sidebar{
+    display: none;
+  }
 }
