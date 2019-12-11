@@ -1,0 +1,41 @@
+
+
+<form>
+  <div class="example-container boxForm">
+    <div class="imgContainer">
+      <button mat-flat-button class='switch'>Connexion</button>
+      <button mat-flat-button class='switch'(click)='onSignUp()'>S'inscrire</button>
+   </div>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Identifiant"
+        type="text"
+        name="login"
+        required
+        minlength="2"
+        maxlength="255"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Mot de passe"
+        type="password"
+        name="password"
+
+      >
+
+    </mat-form-field>
+
+    <div class="container">
+        <button mat-flat-button >
+           Annuler
+          </button>
+      <button mat-flat-button >
+        Se connecter
+      </button>
+    </div>
+  </div>
+</form>

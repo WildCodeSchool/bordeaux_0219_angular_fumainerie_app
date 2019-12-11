@@ -1,6 +1,15 @@
+h2{
+  text-align: center;
+}
+.popup{
+  width: 100%;
+  border-radius: 30px;
+
+}
 .forms-container{
   display: flex;
   align-items: center;
+  height: 60%;
 
 }
 
@@ -42,8 +51,28 @@
     align-items: center;
 
     button{
+      background-color: rgb(255, 192, 0);
       width: 20%;
       align-self: center;
     }
   }
+}
+@media (max-width: 400px){
+  .forms-container{
+    flex-direction: column;
+    justify-content: space-evenly;
+
+
+    .form-newsletter{
+
+      .mat-form-field{
+        width: 150%;
+      }
+      button{
+        width: auto;
+      }
+    }
+
+  }
+
 }

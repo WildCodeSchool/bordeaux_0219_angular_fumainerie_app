@@ -2,8 +2,10 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import {  HttpClientModule  } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +16,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/accueil/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
+
 import { NavbarComponent } from './components/accueil/navbar/navbar.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { ActualitesComponent } from './pages/actualites/actualites.component';
+import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
+import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-form.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
+import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
+import { DocumentsComponent } from './components/dashboards/documents/documents.component';
+import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
+import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
+import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
+
 
 
 @NgModule({
@@ -24,7 +42,21 @@ import { NavbarComponent } from './components/accueil/navbar/navbar.component';
     FooterComponent,
     CarouselComponent,
     CardComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomepageComponent,
+    ActualitesComponent,
+    RessourcesDocumentsComponent,
+    SignInFormComponent,
+    SignInComponent,
+    SignUpComponent,
+    SignUpFormComponent,
+    DashboardComponent,
+    SidebarComponent,
+    VidangesComponent,
+    DocumentsComponent,
+    CommuniactionComponent,
+    EvenementsComponent,
+    BurgerMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +67,9 @@ import { NavbarComponent } from './components/accueil/navbar/navbar.component';
     MatButtonModule,
     RouterModule,
     AngularMaterialModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

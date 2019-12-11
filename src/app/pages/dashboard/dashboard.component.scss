@@ -1,0 +1,53 @@
+
+.menu-responsiv{
+  display: none;
+}
+.page-container{
+  display: flex;
+  width: 100%;
+  .sidebar{
+    width: 15%;
+    background-color: #2bb02b;
+    border-right: solid 1px #037503;
+  }
+}
+.navbar{
+  height: 20vh;
+  text-align: center;
+}
+.dashboard-container{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+
+  .interface-dashboard{
+    height: 100%;
+    width: 100%;
+    background-color:#b4e356;
+  }
+  .modal-account{
+    display: flex;
+    font-size: 2.5em;
+    color : white;
+    height: 80vh;
+    width: 100%;
+    background-color :#99cd32;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+
+
+@media (max-width: 380px){
+  .menu-responsiv{
+    display: block;
+  }
+  .navbar{
+    display: none;
+  }
+  .sidebar{
+    display: none;
+  }
+}
