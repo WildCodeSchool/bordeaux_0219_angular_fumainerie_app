@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
@@ -52,6 +53,7 @@ import { FilterPipe } from './shared/filter.pipe';
     AngularMaterialModule,
     CarouselModule.forRoot(),
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

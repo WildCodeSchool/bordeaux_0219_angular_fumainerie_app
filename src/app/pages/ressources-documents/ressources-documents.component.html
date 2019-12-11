@@ -1,17 +1,27 @@
+<div class="container">
+  <div class="recherche">
+    <mat-form-field appearance="outline">
+      <mat-label>Rechercher un document</mat-label>
+      <input type="search" matInput [(ngModel)]="searchWord">
+      <mat-icon (click)="search(searchWord)" matSuffix>search</mat-icon>
+    </mat-form-field>
 
-  <mat-form-field >
-    <input type="search" matInput [(ngModel)]="recherche">
-    <mat-icon (click)="search()" matPrefix>search</mat-icon>
-  </mat-form-field>
+  </div>
 
+    <h2 *ngIf="dataSearch?.length === 0">Il n'y a pas de resultats correspondant</h2>
 
+  <div class="list_documents">
+    <ul *ngFor="let data of dataSearch">
+      <div class="document">
+        <h4>{{data.title}}</h4>
+        <div class="contentDocument">
+          <p>{{data.description}}</p>
+          <a [href]="data.link"><mat-icon>cloud_download</mat-icon></a>
+        </div>
+      </div>
+    </ul>
+  </div>
 
-<div>
-
-  <ul *ngFor="let oui of dataSearch">
-    <li *ngIf="erreur">{{erreur}}</li>
-    <li>{{oui}}</li>
-  </ul>
 </div>
 
 <app-footer></app-footer>
