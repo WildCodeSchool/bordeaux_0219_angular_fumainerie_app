@@ -13,7 +13,7 @@ export class DashboardService {
   static URL_GET_ACCOUNT_STATUS = '';
   user: User;
 
-  getAccountStatus(status: boolean) {
+  getAccountStatus(status: any) {
     //  return this.http.get(DashboardService.URL_GET_ACCOUNT_STATUS + '/' + id);
 
   }
