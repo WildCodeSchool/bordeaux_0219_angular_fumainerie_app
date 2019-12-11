@@ -7,7 +7,8 @@
   width: 100%;
   .sidebar{
     width: 15%;
-    background-color: yellowgreen;
+    background-color: #2bb02b;
+    border-right: solid 1px #037503;
   }
 }
 .navbar{
@@ -23,13 +24,18 @@
   .interface-dashboard{
     height: 100%;
     width: 100%;
-    background-color:lightblue;
+    background-color:#b4e356;
   }
   .modal-account{
+    display: flex;
+    font-size: 2.5em;
     color : white;
     height: 80vh;
     width: 100%;
-    background-color: black;
+    background-color :#99cd32;
+    align-items: center;
+    justify-content: center;
+
   }
 }
 

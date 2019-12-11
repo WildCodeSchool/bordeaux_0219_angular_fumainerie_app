@@ -12,9 +12,12 @@ export class DashboardComponent implements OnInit {
 
 
 
-  StatusAccountIsComplete: boolean;
-  ngOnInit() {
-    this.StatusAccountIsComplete = false;
-  }
+  StatusAccountIsComplete = true;
 
+  ngOnInit() {
+    // this.StatusAccountIsComplete = true;
+  }
+  changeStatus() {
+    this.StatusAccountIsComplete = !this.StatusAccountIsComplete;
+  }
 }

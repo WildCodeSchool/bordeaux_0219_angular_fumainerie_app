@@ -9,9 +9,12 @@
   <div class="dashboard-container">
     <div class="navbar">
       <h1>Dashboard</h1>
+      <button (click)="changeStatus()">Statut du compte</button>
     </div>
     <div class="modal-account" *ngIf="StatusAccountIsComplete != true">
-      Votre compte n'est pas à jour !
+      <div>
+        Votre compte n'est pas à jour !
+      </div>
     </div>
     <div class="interface-dashboard" *ngIf="StatusAccountIsComplete != false">
       <!-- *ngIf="StatusAccountIsComplete != true" [ngClass]="StatusAccountIsComplete ? 'interface-dashboard' : 'hide-interface'" -->
