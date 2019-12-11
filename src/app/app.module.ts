@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,7 +34,6 @@ import { CommuniactionComponent } from './components/dashboards/communiaction/co
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { ProjetComponent } from './components/accueil/projet/projet.component';
-
 
 
 @NgModule({
