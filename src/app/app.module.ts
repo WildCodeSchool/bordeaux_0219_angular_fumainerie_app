@@ -16,6 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/accueil/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
+
+import { NavbarComponent } from './components/accueil/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ActualitesComponent } from './pages/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
@@ -32,6 +34,7 @@ import { EvenementsComponent } from './components/dashboards/evenements/evenemen
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,7 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
     FooterComponent,
     CarouselComponent,
     CardComponent,
+    NavbarComponent,
     HomepageComponent,
     ActualitesComponent,
     RessourcesDocumentsComponent,
