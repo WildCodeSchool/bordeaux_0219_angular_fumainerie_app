@@ -1,13 +1,19 @@
 .footer{
-  background-color: rgb(255, 192, 0);
+  background-color: #c2ee6b;
   height: 30%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-top: 1px solid #83B222;
 
   .logo-footer{
     width: 20%;
+    img{
+      width: 175px;
+      height: 175px;
+      border-radius: 50%;
+    }
     // background-color: blue;
   }
   .footer-navbar{
@@ -15,7 +21,7 @@
     list-style : none;
     margin: -10%;
     // background-color: grey;
-  
+
     a{
       text-decoration: none;
     }

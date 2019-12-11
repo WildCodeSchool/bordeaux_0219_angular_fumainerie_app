@@ -32,6 +32,7 @@ import { DocumentsComponent } from './components/dashboards/documents/documents.
 import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
+import { ProjetComponent } from './components/accueil/projet/projet.component';
 
 
 
@@ -56,7 +57,8 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
     DocumentsComponent,
     CommuniactionComponent,
     EvenementsComponent,
-    BurgerMenuComponent
+    BurgerMenuComponent,
+    ProjetComponent
   ],
   imports: [
     BrowserModule,
