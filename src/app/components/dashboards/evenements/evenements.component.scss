@@ -1,0 +1,29 @@
+body{
+  height: 100%;
+}
+.box-essai{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.essai{
+  color: black;
+  height: auto;
+  width: 40%;
+  background-color: #ffff8a;
+  margin: 15px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+
+  img{
+    height: 80%;
+    width: 80%;
+  }
+}

@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import {  HttpClientModule  } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,13 @@ import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-for
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-form.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
+import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
+import { DocumentsComponent } from './components/dashboards/documents/documents.component';
+import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
+import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
+import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 
 
 @NgModule({
@@ -37,7 +45,14 @@ import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-for
     SignInFormComponent,
     SignInComponent,
     SignUpComponent,
-    SignUpFormComponent
+    SignUpFormComponent,
+    DashboardComponent,
+    SidebarComponent,
+    VidangesComponent,
+    DocumentsComponent,
+    CommuniactionComponent,
+    EvenementsComponent,
+    BurgerMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +65,7 @@ import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-for
     AngularMaterialModule,
     CarouselModule.forRoot(),
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
