@@ -38,7 +38,33 @@
 
   }
 }
+.navvbar{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 1.3em;
+  align-self: flex-end;
+}
 
+ul{
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 0px;
+  height: 5vw;
+  align-items: center;
+  margin: 0px;
+  li{
+    list-style-type: none;
+    margin-left: 2vw;
+  }
+}
+li:hover{
+  background-color: #ffff73;
+  text-shadow: 0 0 0.2em 0.5em #ffff73
+  a{
+    text-decoration: none;
+  }
+}
 
 @media (max-width: 380px){
   .menu-responsiv{
