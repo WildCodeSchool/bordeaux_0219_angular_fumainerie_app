@@ -9,15 +9,15 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DocumentsService {
-static URL = 'http://localhost:3000/documents';
+static URL = 'http://localhost:3000/documents/';
 
   constructor(private http: HttpClient) { }
 
 getDocumentsByWord(word: string): Observable<Document[]> {
-  return this.http.get<Document[]>(DocumentsService.URL + `/recherche/${word}`)
-  .pipe(map( (data: Document[]) => {
-    data = data.map((event) => new Document(event));
-    return data;
-  }));
+  return this.http.get<Document[]>(DocumentsService.URL + `recherche/${word}`);
 }
+getAllDocuments(): Observable<Document[]> {
+  return this.http.get<Document[]>(DocumentsService.URL);
+}
+
 }

@@ -13,7 +13,11 @@ export class RessourcesDocumentsComponent implements OnInit {
   searchWord: string;
   constructor(private serviceDocument: DocumentsService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
+      this.dataSearch = data;
+    });
+  }
 
   search(word: string) {
     this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {

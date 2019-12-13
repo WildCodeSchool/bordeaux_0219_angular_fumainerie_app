@@ -6,8 +6,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import {  HttpClientModule  } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/accueil/contact/contact.component';
@@ -17,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/accueil/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
-
 import { NavbarComponent } from './components/accueil/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ActualitesComponent } from './pages/actualites/actualites.component';
@@ -34,7 +31,8 @@ import { CommuniactionComponent } from './components/dashboards/communiaction/co
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { ProjetComponent } from './components/accueil/projet/projet.component';
-
+import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -58,7 +56,8 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
     CommuniactionComponent,
     EvenementsComponent,
     BurgerMenuComponent,
-    ProjetComponent
+    ProjetComponent,
+    BienvenuComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +70,8 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
     AngularMaterialModule,
     CarouselModule.forRoot(),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
