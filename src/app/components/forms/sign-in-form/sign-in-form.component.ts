@@ -15,7 +15,9 @@ export class SignInFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSignUp() {
-    this.router.navigate['/signIn'];
+
+  goToDashboard() {
+    this.router.navigate(['/dashboard']);
   }
 }
+

@@ -1,25 +1,30 @@
 .body-projet{
-  background-color: #ffe773;
   height: 100%;
   width: 100%;
-  border-bottom: 1px solid #BFA524;
   .projet-container{
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
+    text-align: justify;
+
+    h2{
+      text-align: center;
+    }
     .projet-texte{
       width: 60%;
       height: 100%;
       display: flex;
       flex-direction: column;
-      h2{
-        text-align: center;
-      }
     }
     img{
       height: 90%;
       width: 40%;
+      padding-left: 10px;
+    }
+    .texte{
+
+      padding: 30px;
     }
   }
 }
