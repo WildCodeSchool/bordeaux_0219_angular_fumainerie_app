@@ -1,10 +1,6 @@
 import { gouvernanceMock } from './../../shared/gouvernance-mock';
 import { Component, OnInit } from '@angular/core';
 
-
-
-
-
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',

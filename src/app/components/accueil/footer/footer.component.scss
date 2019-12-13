@@ -1,12 +1,11 @@
 .footer{
-  background-color: #FFFF73;
+  background-color: #fde773;
   height: 30%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-top: 1px solid #DFDF49;
-
+  border-top: 1px solid #fde773;
   .logo-footer{
     width: 20%;
     img{
@@ -14,30 +13,25 @@
       height: 175px;
       border-radius: 50%;
     }
-    // background-color: blue;
   }
   .footer-navbar{
     width: 20%;
     list-style : none;
     margin: -10%;
-    // background-color: grey;
-
     a{
       text-decoration: none;
+      color: black;
     }
   }
-
   .partners-container{
     display: flex;
     flex-direction: column;
     text-align: center;
     width:60%;
-    // background-color: red;
     .partners{
       display: flex;
       text-align: center;
       justify-content: space-evenly;
-
       img{
         width: 75px;
         height: 75px;
@@ -49,7 +43,6 @@
     list-style: none;
   }
 }
-
 @media (max-width: 400px){
   .footer{
     flex-direction: column;

@@ -1,30 +1,21 @@
 .body-projet{
-  height: 100%;
-  width: 100%;
+  background-color: #fde773;
+  height: 95vh;
+  width: 100vw;
+  h2{
+    margin-left: 10vw;
+    padding: 5vh 0;
+  }
   .projet-container{
-    height: 100%;
-    width: 100%;
     display: flex;
     align-items: center;
-    text-align: justify;
-
-    h2{
-      text-align: center;
-    }
-    .projet-texte{
-      width: 60%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+    justify-content: space-around;
+    padding-top: 4vh;
+    p{
+    width: 45vw;
     }
     img{
-      height: 90%;
-      width: 40%;
-      padding-left: 10px;
-    }
-    .texte{
-
-      padding: 30px;
+      width: 40vw;
     }
   }
 }

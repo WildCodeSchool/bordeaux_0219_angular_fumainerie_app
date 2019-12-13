@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
   mat-form-field{
     width: 80vw;
   }
@@ -25,5 +25,10 @@ mat-label{
 }
 .list_documents{
   height: 50vh;
+  background-color: #fde773;
+  padding: 2vh;
   overflow: scroll;
+}
+h2{
+  margin-bottom: 3vh;
 }
