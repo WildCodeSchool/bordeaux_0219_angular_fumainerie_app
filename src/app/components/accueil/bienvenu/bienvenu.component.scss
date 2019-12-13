@@ -18,6 +18,9 @@ height: 45vh;
   margin: 16px;
   padding: 16px;
   border-radius: 8px;
+  .texte{
+    width: 100%;
+  }
 }
 .rightSide{
   background-color: white;
@@ -43,4 +46,7 @@ h1{
   width: 40vw;
   border: 1px dotted white;;
   margin-top: 12%;
+}
+mat-tab-group{
+  overflow: scroll;
 }

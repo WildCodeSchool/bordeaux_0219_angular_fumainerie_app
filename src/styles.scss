@@ -31,3 +31,6 @@ $fumainerie-angular-theme: mat-light-theme($fumainerie-angular-primary, $fumaine
 html, body { height: 100%; }
 
 body { margin: 0; font-family: 'Sarabun', sans-serif; }
+.carousel-control.left,.carousel-control.right {
+  background-image: none;
+}
