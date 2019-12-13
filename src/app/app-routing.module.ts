@@ -16,8 +16,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/accueil', pathMatch: 'full'},
   {path: 'accueil', component : HomepageComponent},
   {path: 'connexion', component  : SignInComponent},
-  {path: 'actualites', component : ActualitesComponent},
-  {path: 'ressources', component : RessourcesDocumentsComponent},
+  // {path: 'actualites', component : ActualitesComponent},
   {path: 'dashboard', component : DashboardComponent, children: [
     {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent},
