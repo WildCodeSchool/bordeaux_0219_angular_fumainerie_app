@@ -1,0 +1,16 @@
+export class Witness {
+
+  public id!: number;
+  public createAt!: string;
+  public updateAt!: string;
+  public deleteAt!: string;
+  public note!: number;
+  public status!: boolean;
+  public description!: string;
+  public user_id!: number;
+
+  constructor(input: Witness) {
+      Object.assign(this, input);
+  }
+}
+
