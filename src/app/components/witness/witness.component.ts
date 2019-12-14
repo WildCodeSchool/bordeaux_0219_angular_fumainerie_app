@@ -1,4 +1,8 @@
+import { Witness } from './../../shared/models/witness';
+import { WitnessService } from './../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-witness',
@@ -6,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./witness.component.scss']
 })
 export class WitnessComponent implements OnInit {
-
-  constructor() { }
+  witness: Witness[];
+  constructor(private witnessService: WitnessService) { }
 
   ngOnInit() {
+    this.witnessService.getAllWitness().subscribe((witness) => {
+      this.witness = witness;
+    });
   }
 
 }
