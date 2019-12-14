@@ -33,6 +33,7 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
 import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { WitnessComponent} from './components/witness/witness.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     EvenementsComponent,
     BurgerMenuComponent,
     ProjetComponent,
-    BienvenuComponent
+    BienvenuComponent,
+    WitnessComponent
   ],
   imports: [
     BrowserModule,

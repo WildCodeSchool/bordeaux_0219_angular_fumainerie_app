@@ -1,3 +1,4 @@
+import { WitnessComponent } from './components/witness/witness.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
     {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent},
     {path: 'documents', component : DocumentsComponent},
-    {path: 'communication', component : CommuniactionComponent},
+    {path: 'communication', component : WitnessComponent},
     {path: 'evenements', component : EvenementsComponent}
   ]},
   {path: 'sidebar', component : SidebarComponent}
