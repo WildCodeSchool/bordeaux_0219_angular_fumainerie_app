@@ -27,13 +27,16 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
 import { DocumentsComponent } from './components/dashboards/documents/documents.component';
-import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
+import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/witness/witness.component';
+import { QuestionFormComponent } from './components/dashboards/communication/question-form/question-form.component';
+import { WitnessFormComponent } from './components/dashboards/communication/witness-form/witness-form.component';
+import { ViewComponent } from './components/dashboards/communication/view/view.component';
 
 @NgModule({
   declarations: [
@@ -54,12 +57,15 @@ import { WitnessComponent} from './components/witness/witness.component';
     SidebarComponent,
     VidangesComponent,
     DocumentsComponent,
-    CommuniactionComponent,
+    CommunicationComponent,
     EvenementsComponent,
     BurgerMenuComponent,
     ProjetComponent,
     BienvenuComponent,
-    WitnessComponent
+    WitnessComponent,
+    QuestionFormComponent,
+    WitnessFormComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
