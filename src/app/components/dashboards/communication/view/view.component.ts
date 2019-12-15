@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -9,15 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  onWitnessForm() {
-    this.router.navigate(['question']);
-  }
 
-  onQuestionForm() {
-    this.router.navigate(['temoigner']);
-  }
 }

@@ -34,9 +34,10 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/witness/witness.component';
-import { QuestionFormComponent } from './components/dashboards/communication/question-form/question-form.component';
-import { WitnessFormComponent } from './components/dashboards/communication/witness-form/witness-form.component';
+import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
+import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
+import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ViewComponent } from './components/dashboards/communication/view/view.c
     WitnessComponent,
     QuestionFormComponent,
     WitnessFormComponent,
-    ViewComponent
+    ViewComponent,
+    ButtonsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
+import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
-import { QuestionFormComponent } from './components/dashboards/communication/question-form/question-form.component';
-import { WitnessFormComponent } from './components/dashboards/communication/witness-form/witness-form.component';
+import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
+import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
@@ -15,7 +16,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: '/accueil', pathMatch: 'full'},
+  {path: '', redirectTo: 'accueil', pathMatch: 'full'},
   {path: 'accueil', component : HomepageComponent},
   {path: 'connexion', component  : SignInComponent},
   {path: 'dashboard', component : DashboardComponent, children: [
@@ -24,9 +25,10 @@ const routes: Routes = [
     {path: 'documents', component : DocumentsComponent},
     {path: 'communication', component: CommunicationComponent, children: [
       {path: '', redirectTo: 'avis', pathMatch: 'full'},
-      {path: 'avis', component: ViewComponent},
-      {path: 'question', component: QuestionFormComponent},
-      {path: 'temoigner', component: WitnessFormComponent}]},
+      {path: 'avis', component: ViewComponent, children: [
+        {path: '', component: ButtonsComponent},
+        {path: 'question', component: QuestionFormComponent},
+        {path: 'temoigner', component: WitnessFormComponent}]}]},
     {path: 'evenements', component : EvenementsComponent}]},
   {path: 'sidebar', component : SidebarComponent }
 ];
