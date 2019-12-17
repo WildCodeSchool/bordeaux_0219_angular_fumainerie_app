@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UnderConstructionComponent } from '../Pages/under-construction/under-construction.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'enConstruction' },
+  { path: 'enConstruction', component: UnderConstructionComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
