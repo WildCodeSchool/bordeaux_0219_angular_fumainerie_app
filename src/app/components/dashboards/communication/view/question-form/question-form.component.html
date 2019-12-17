@@ -1,1 +1,78 @@
-<p>question-form works!</p>
+<form
+  #createQuestion="ngForm"
+  (ngSubmit)="createQuestion.valid && onFormSubmit(newQuestion)"
+>
+  <div class="example-container boxForm">
+    <div class="imgContainer">
+      <img src="../../../assets/images/close.png" (click)="onClose()" />
+    </div>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Sujet"
+        type="text"
+        name="title"
+        [(ngModel)]="newQuestion.title"
+        #titleRef="ngModel"
+        required
+        minlength="2"
+        maxlength="255"
+      />
+      <div
+        mat-error
+        *ngIf="titleRef?.errors?.required && createQuestion.submitted"
+      >
+        Précise le sujet
+      </div>
+      <div
+        mat-error
+        *ngIf="titleRef?.errors?.minlength && createQuestion.submitted"
+      >
+        Détaille un peu plus
+      </div>
+      <div
+        mat-error
+        *ngIf="titleRef?.errors?.maxlength && createQuestion.submitted"
+      >
+        C'est trop long (255 caractères maximum)
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Question"
+        type="text"
+        name="description"
+        [(ngModel)]="newQuestion.description"
+        #descriptionRef="ngModel"
+        minlength="3"
+        maxlength="255"
+        required
+      ></textarea>
+      <div
+        mat-error
+        *ngIf="descriptionRef?.errors?.required && createQuestion.submitted"
+      >
+        Décris ton problème
+      </div>
+      <div
+        mat-error
+        *ngIf="descriptionRef?.errors?.minlength && createQuestion.submitted"
+      >
+        Détaille un peu plus
+      </div>
+      <div
+        mat-error
+        *ngIf="descriptionRef?.errors?.maxlength && createQuestion.submitted"
+      >
+        C'est trop long (255 caractères maximum)
+      </div>
+    </mat-form-field>
+
+    <div class="container">
+      <button mat-flat-button (click)="onReset()">Reset</button>
+      <button mat-flat-button>Créer</button>
+    </div>
+  </div>
+</form>

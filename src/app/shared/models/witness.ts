@@ -19,7 +19,6 @@ export class Witness {
   public avatar!: string;
   public account_status!: string;
   public function!: string;
-
   constructor(input: Witness) {
       Object.assign(this, input);
   }
