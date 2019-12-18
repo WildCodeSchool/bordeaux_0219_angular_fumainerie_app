@@ -10,7 +10,7 @@ import { ActualitesComponent } from './pages/actualites/actualites.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { config } from 'rxjs';
 const routes: Routes = [
 
   {path: '', redirectTo: '/accueil', pathMatch: 'full'},
@@ -26,9 +26,10 @@ const routes: Routes = [
   ]},
   {path: 'sidebar', component : SidebarComponent}
 ];
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { anchorScrolling : 'enabled' })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  }
+
