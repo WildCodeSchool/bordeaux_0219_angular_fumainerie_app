@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UnderConstructionComponent } from '../pages/under-construction/under-construction.component';
+import { UnderConstructionComponent } from '../Pages/under-construction/under-construction.component';
 
 
 const routes: Routes = [
