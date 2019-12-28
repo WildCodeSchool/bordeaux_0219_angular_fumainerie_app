@@ -32,7 +32,7 @@ import { EvenementsComponent } from './components/dashboards/evenements/evenemen
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/witness/witness.component';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';

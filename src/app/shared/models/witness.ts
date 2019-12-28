@@ -11,6 +11,7 @@ export class Witness {
   public username!: string;
   public avatar!: string;
   public function!: string;
+
   constructor(input: Witness) {
       Object.assign(this, input);
   }
