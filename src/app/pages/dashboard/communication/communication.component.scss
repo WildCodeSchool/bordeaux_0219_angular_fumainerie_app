@@ -1,41 +1,15 @@
 .container{
-
   display: flex;
-  padding-top: 5vh;
-  align-items: baseline;
+  flex: row;
   justify-content: space-between;
-
+  margin-top: 5vh;
 }
-.fauxCaroussel{
-width: 20%;
-height: 40vh;
-}
-.section{
+.leftSide{
+  width: 40%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 16px;
-  padding: 16px;
-  border-radius: 8px;
-  .texte{
-    width: 100%;
-  }
+  flex-direction: column;
 }
 .rightSide{
   background-color: white;
-}
-.leftSide{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 55vh;
-  width: 20%;
-  p{
-    line-height: 3vh;
-    font-size: 1.2em;
-  }
-}
-
-mat-tab-group{
-  overflow: scroll;
+  width: 40%;
 }

@@ -11,8 +11,8 @@ export class WitnessService {
   static URL = 'http://localhost:3000/witness';
   constructor(private http: HttpClient) { }
 
-getAllWitness(): Observable<Witness[]> {
-  return this.http.get<Witness[]>(WitnessService.URL);
-}
+  getAllWitness(): Observable<Witness[]> {
+    return this.http.get<Witness[]>(WitnessService.URL);
+  }
 
 }
