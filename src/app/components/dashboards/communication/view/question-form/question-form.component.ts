@@ -1,4 +1,3 @@
-import { Question } from './../../../../../shared/models/question';
 import { QuestionModalComponent } from './question-modal/question-modal.component';
 import { QuestionService } from './../../../../../shared/services/question.service';
 import { Component, OnInit } from '@angular/core';
@@ -44,32 +43,3 @@ export class QuestionFormComponent implements OnInit {
     });
   }
 }
-
-/* this.route.paramMap.subscribe((params: ParamMap) => {
-                this.newTicket.id = parseInt(params.get('id'));
-                this.ticketService.getById(this.newTicket.id).subscribe(ticket => {
-        this.newTicket = ticket;
-        if (this.newTicket.group) {
-          this.ticketType = 'CURSUS';
-        } else {
-          this.ticketType = 'SCHOOL';
-        }
-      });
-    });
-this.ticketService.formButton = false;
-  }
-
-
-onFormSubmit(newTicket: Ticket); {
-    if (this.ticketType === 'CURSUS') {
-      this.newTicket.group = { id: 178 } as Group;
-      this.newTicket.school = null;
-    } else {
-      this.newTicket.school = { id: 5 };
-      this.newTicket.group = null;
-    }
-    this.ticketService.createTicket(this.newTicket).subscribe(() => {
-      this.router.navigate(['/user']);
-    });
-  }
-} */

@@ -1,3 +1,4 @@
+import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
@@ -68,7 +69,8 @@ import { QuestionModalComponent } from './components/dashboards/communication/vi
     WitnessFormComponent,
     ViewComponent,
     ButtonsComponent,
-    QuestionModalComponent
+    QuestionModalComponent,
+    WitnessModalComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +89,8 @@ import { QuestionModalComponent } from './components/dashboards/communication/vi
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    QuestionModalComponent
+    QuestionModalComponent,
+    WitnessModalComponent,
   ]
 })
 export class AppModule { }

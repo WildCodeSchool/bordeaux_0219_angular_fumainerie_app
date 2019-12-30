@@ -15,4 +15,11 @@ export class WitnessService {
     return this.http.get<Witness[]>(WitnessService.URL);
   }
 
+  public createWitness(witness: Witness): Observable<any> {
+    witness.valided = false;
+    witness.user_id = 0;
+    console.log(witness);
+    return this.http.post(WitnessService.URL, witness);
+  }
+
 }

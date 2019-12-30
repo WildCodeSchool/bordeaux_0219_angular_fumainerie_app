@@ -4,7 +4,7 @@
       <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
     </div>
     <mat-form-field>
-      <input matInput placeholder="Sujet" type="text" placeholder="Sujet" formControlName='topic' />
+      <input matInput placeholder="Sujet" type="text" formControlName='topic' />
     </mat-form-field>
 
     <mat-form-field>
@@ -13,7 +13,7 @@
     </mat-form-field>
 
     <div class="container">
-      <button mat-flat-button (click)="resetForm()">Reset</button>
+      <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
       <button mat-flat-button type="submit">Envoyer</button>
     </div>
   </div>
