@@ -1,6 +1,9 @@
+import { WitnessModalComponent } from './../../witness-form/witness-modal/witness-modal.component';
+import { WitnessService } from './../../../../../../shared/services/witness.service';
 import { MatDialogRef } from '@angular/material';
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,9 +14,11 @@ import { Router } from '@angular/router';
 export class QuestionModalComponent {
 
   constructor(private router: Router,
-              private dialogRef: MatDialogRef<QuestionModalComponent>) {}
+              private dialogRef: MatDialogRef<QuestionModalComponent>,
+              private witnessService: WitnessService) {}
   onClose() {
     this.router.navigate(['dashboard/communication/avis']);
     this.dialogRef.close();
+    this.witnessService.hideWitnessListOnMobile();
   }
 }

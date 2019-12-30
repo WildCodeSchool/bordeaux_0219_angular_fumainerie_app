@@ -1,6 +1,6 @@
 .container{
   display: flex;
-  flex: row;
+  flex-direction: row;
   justify-content: space-between;
   margin-top: 5vh;
 }
@@ -12,4 +12,19 @@
 .rightSide{
   background-color: white;
   width: 40%;
+}
+.invisible{
+  display: none;
+}
+@media (max-width: 600px){
+  .container{
+    flex-direction: column;
+    width: 90%;
+  }
+  .leftSide, .rightSide {
+    width:100%;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
 }

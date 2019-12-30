@@ -13,6 +13,7 @@ export class WitnessComponent implements OnInit {
   witness: Witness[];
   constructor(private witnessService: WitnessService) { }
 
+
   ngOnInit() {
     this.witnessService.getAllWitness().subscribe((witness) => {
       this.witness = witness;

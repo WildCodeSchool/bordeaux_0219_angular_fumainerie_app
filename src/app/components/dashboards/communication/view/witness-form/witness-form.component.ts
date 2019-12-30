@@ -33,6 +33,7 @@ export class WitnessFormComponent implements OnInit {
   }
   onClose() {
       this.router.navigate(['dashboard/communication/avis']);
+      this.witnessService.hideWitnessListOnMobile();
   }
   onSubmitWitnessForm() {
     console.log('modale ouverte?');
