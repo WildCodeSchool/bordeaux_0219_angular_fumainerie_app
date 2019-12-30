@@ -8,7 +8,8 @@ export class Question {
     public username!: string;
     public avatar!: string;
     public function!: string;
-    constructor(input: Question) {
+
+    constructor(input?: Question) {
         Object.assign(this, input);
     }
   }

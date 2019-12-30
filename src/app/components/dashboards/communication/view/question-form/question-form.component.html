@@ -4,25 +4,18 @@
       <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
     </div>
     <mat-form-field>
-      <input
-        matInput
-        placeholder="Sujet"
-        type="text"
-        placeholder="Sujet"
-        formControlName='topic'/>
+      <input matInput placeholder="Sujet" type="text" placeholder="Sujet" formControlName='topic' />
     </mat-form-field>
 
     <mat-form-field>
-      <textarea
-        matInput
-        placeholder="Quelle est votre question?"
-        formControlName='question'>
+      <textarea matInput placeholder="Quelle est votre question?" formControlName='question'>
       </textarea>
     </mat-form-field>
 
     <div class="container">
       <button mat-flat-button (click)="resetForm()">Reset</button>
-      <button mat-flat-button>Envoyer</button>
+      <button mat-flat-button type="submit">Envoyer</button>
     </div>
   </div>
 </form>
+

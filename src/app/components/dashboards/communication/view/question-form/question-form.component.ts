@@ -1,8 +1,11 @@
 import { Question } from './../../../../../shared/models/question';
+import { QuestionModalComponent } from './question-modal/question-modal.component';
 import { QuestionService } from './../../../../../shared/services/question.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog} from '@angular/material';
+
 
 @Component({
   selector: 'app-question-form',
@@ -10,17 +13,18 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   styleUrls: ['./question-form.component.scss']
 })
 export class QuestionFormComponent implements OnInit {
-  questionForm: FormGroup;
 
   constructor(private questionService: QuestionService,
               private router: Router,
               private formbuilder: FormBuilder,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              public dialog: MatDialog) { }
 
+ questionForm: FormGroup;
   ngOnInit() {
     this.questionForm = this.formbuilder.group({
       topic: ['', Validators.required],
-      question: ['', Validators.required], });
+      question: ['', Validators.required]});
   }
   resetForm() {
     this.questionForm.reset();
@@ -29,9 +33,18 @@ export class QuestionFormComponent implements OnInit {
       this.router.navigate(['dashboard/communication/avis']);
   }
   onSubmitQuestionForm() {
-    console.log(this.questionForm.value());
+    console.log('modale ouverte?');
+    console.log(this.questionForm.value);
+    this.questionService.createQuestion(this.questionForm.value).subscribe();
+    const dialogRef = this.dialog.open(QuestionModalComponent, {
+      width: '250px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
+
 /* this.route.paramMap.subscribe((params: ParamMap) => {
                 this.newTicket.id = parseInt(params.get('id'));
                 this.ticketService.getById(this.newTicket.id).subscribe(ticket => {

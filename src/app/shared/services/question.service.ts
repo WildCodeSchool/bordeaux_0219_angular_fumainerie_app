@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QuestionService {
-  static URL = 'http://localhost:3000/question';
+  static URL = 'http://localhost:3000/questions';
   constructor(private http: HttpClient, ) { }
 
   public getAllquestion(): Observable<Question[]> {
@@ -15,7 +15,9 @@ export class QuestionService {
   }
 
   public createQuestion(question: Question): Observable<any> {
-    question.username = 'Toto';
+    question.traited = false;
+    question.user_id = 0;
+    console.log(question);
     return this.http.post(QuestionService.URL, question);
   }
 

@@ -32,11 +32,12 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
 import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
-import { WitnessComponent} from './components/witness/witness.component';
+import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
+import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ButtonsComponent } from './components/dashboards/communication/view/but
     QuestionFormComponent,
     WitnessFormComponent,
     ViewComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    QuestionModalComponent
   ],
   imports: [
     BrowserModule,
@@ -83,6 +85,9 @@ import { ButtonsComponent } from './components/dashboards/communication/view/but
     MatTabsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    QuestionModalComponent
+  ]
 })
 export class AppModule { }
