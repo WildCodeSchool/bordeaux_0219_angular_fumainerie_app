@@ -1,8 +1,10 @@
+import { DialogSignupComponent } from './dialog-signup/dialog-signup.component';
 import { emailValidator } from 'src/app/shared/validators/email-validator';
 import { SignupService } from './../../../shared/services/signup.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -13,7 +15,8 @@ export class SignUpFormComponent implements OnInit {
 
   constructor(private router: Router,
               private formbuilder: FormBuilder,
-              private signupService: SignupService) { }
+              private signupService: SignupService,
+              public dialog: MatDialog) { }
 
     signUpForm: FormGroup;
 
@@ -25,6 +28,7 @@ export class SignUpFormComponent implements OnInit {
 
       onSignUp() {
         this.signupService.postNewUser(this.signUpForm.value);
+        const dialogRef = this.dialog.open(DialogSignupComponent, {width: '250px', });
       }
     }
 
