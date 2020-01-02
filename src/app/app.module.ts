@@ -1,10 +1,10 @@
+import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,12 +27,18 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
 import { DocumentsComponent } from './components/dashboards/documents/documents.component';
-import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
+import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule} from '@angular/material/tabs';
+import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
+import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
+import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
+import { ViewComponent } from './components/dashboards/communication/view/view.component';
+import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
+import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
 
 @NgModule({
   declarations: [
@@ -53,11 +59,18 @@ import {MatTabsModule} from '@angular/material/tabs';
     SidebarComponent,
     VidangesComponent,
     DocumentsComponent,
-    CommuniactionComponent,
+    CommunicationComponent,
     EvenementsComponent,
     BurgerMenuComponent,
     ProjetComponent,
-    BienvenuComponent
+    BienvenuComponent,
+    WitnessComponent,
+    QuestionFormComponent,
+    WitnessFormComponent,
+    ViewComponent,
+    ButtonsComponent,
+    QuestionModalComponent,
+    WitnessModalComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +87,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTabsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    QuestionModalComponent,
+    WitnessModalComponent,
+  ]
 })
 export class AppModule { }

@@ -1,0 +1,25 @@
+<form [formGroup]="witnessForm" (ngSubmit)="onSubmitWitnessForm()">
+  <div class="example-container">
+    <div class="imgContainer">
+      <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
+    </div>
+    <mat-form-field>
+      <input matInput placeholder="Sujet :" type="text" formControlName='title'>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Laissez votre avis :" formControlName='description'>
+      </textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Note / 10" type="number" formControlName='note' />
+    </mat-form-field>
+
+    <div class="container">
+      <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
+      <button mat-flat-button type="submit">Envoyer</button>
+    </div>
+  </div>
+</form>
+
