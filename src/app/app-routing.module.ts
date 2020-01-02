@@ -1,10 +1,10 @@
+import { EventsComponent } from './components/dashboards/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
-import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
 import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
@@ -12,7 +12,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { config } from 'rxjs';
 
 
 const routes: Routes = [
@@ -30,7 +29,7 @@ const routes: Routes = [
         {path: '', component: ButtonsComponent},
         {path: 'question', component: QuestionFormComponent},
         {path: 'temoigner', component: WitnessFormComponent}]}]},
-    {path: 'evenements', component : EvenementsComponent}]},
+    {path: 'evenements', component : EventsComponent }]},
   {path: 'sidebar', component : SidebarComponent }
 ];
 @NgModule({

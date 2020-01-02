@@ -39,6 +39,7 @@ import { WitnessFormComponent } from './components/dashboards/communication/view
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
+import { EventsComponent } from './components/dashboards/events/events.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { QuestionModalComponent } from './components/dashboards/communication/vi
     ViewComponent,
     ButtonsComponent,
     QuestionModalComponent,
-    WitnessModalComponent
+    WitnessModalComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
