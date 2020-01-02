@@ -1,42 +1,42 @@
 
 
-<form>
-    <div class="example-container boxForm">
-      <div class="imgContainer">
-        <button mat-flat-button class='switch'>Connexion</button>
-        <button mat-flat-button class='switch'>S'inscrire</button>
-     </div>
-      <mat-form-field>
-        <input
-          matInput
-          placeholder="Identifiant"
-          type="text"
-          name="login"
-          required
-          minlength="2"
-          maxlength="255"
-        />
-      </mat-form-field>
+<form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+  <div class="example-container boxForm">
+    <div class="imgContainer">
+      <button mat-flat-button class='switch'>Connexion</button>
+      <button mat-flat-button class='switch'>S'inscrire</button>
+    </div>
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Email"
+      type="text"
+      formControlName='email'
+      />
+    </mat-form-field>
+    <div *ngIf="signUpForm.get('credentials.email').errors && !signUpForm.get('credentials.email').pristine" class="error">
+      <div [hidden]="!signUpForm.get('credentials.email').errors.required">Ce champ est requis.</div>
+      <div [hidden]="!signUpForm.get('credentials.email').invalid">Votre email est invalide.</div>
+    </div>
 
-      <mat-form-field>
-        <input
-          matInput
-          placeholder="Mot de passe"
-          type="password"
-          name="password"
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Mot de passe"
+      type="password"
+      formControlName='password'
+      >
+    </mat-form-field>
+    <div *ngIf="signUpForm.get('credentials.email').errors && !signUpForm.get('credentials.email').pristine" class="error">
+      <div [hidden]="!signUpForm.get('credentials.email').errors.required">Ce champ est requis.</div>
+    </div>
 
-        >
 
-      </mat-form-field>
-
-      <div class="container">
-          <button mat-flat-button >
-             Annuler
-            </button>
-            <button mat-flat-button >
-              Se connecter
-            </button>>
-          </div>
-        </div>
-      </form>
+    <div class="container">
+      <button mat-flat-button type="submit" [disabled]="!signUpForm.valid">
+        S'inscrire'
+      </button>>
+    </div>
+  </div>
+</form>
 

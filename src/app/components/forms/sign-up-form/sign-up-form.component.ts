@@ -1,3 +1,6 @@
+import { emailValidator } from 'src/app/shared/validators/email-validator';
+import { SignupService } from './../../../shared/services/signup.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,11 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpFormComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(private router: Router,
+              private formbuilder: FormBuilder,
+              private signupService: SignupService) { }
 
-  ngOnInit() {
-  }
+    signUpForm: FormGroup;
+
+    ngOnInit() {
+      this.signUpForm = this.formbuilder.group({
+        email: ['', Validators.required],
+        password: ['', [Validators.required, emailValidator]]});
+      }
+
+      onSignUp() {
+        this.signupService.postNewUser(this.signUpForm.value);
+      }
+    }
 
 
 
-}
+

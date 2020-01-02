@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  static URL_GET_USER = 'https://localhost:3000/users/:id';
+  static URL_GET_USER = 'https://localhost:3000/auth';
   user: User;
 
 
