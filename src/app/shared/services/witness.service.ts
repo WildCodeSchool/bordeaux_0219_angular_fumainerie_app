@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,12 +22,14 @@ export class WitnessService {
 
 
   getAllWitness(): Observable<Witness[]> {
+    return this.http.get<Witness[]>(WitnessService.URL + '/validations');
+  }
+  getValidedWitness(): Observable<Witness[]> {
     return this.http.get<Witness[]>(WitnessService.URL);
   }
-
   createWitness(witness: Witness): Observable<any> {
-    witness.valided = false;
-    witness.user_id = 0;
+    witness.status = false;
+    witness.user_id = 1;
     console.log(witness);
     return this.http.post(WitnessService.URL, witness);
   }

@@ -1,8 +1,7 @@
+import { map } from 'rxjs/operators';
 import { Witness } from '../../../../../shared/models/witness';
 import { WitnessService } from '../../../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
-
-
 
 @Component({
   selector: 'app-witness',
@@ -13,11 +12,9 @@ export class WitnessComponent implements OnInit {
   witness: Witness[];
   constructor(private witnessService: WitnessService) { }
 
-
   ngOnInit() {
-    this.witnessService.getAllWitness().subscribe((witness) => {
-      this.witness = witness;
-    });
+    this.witnessService.getValidedWitness().subscribe((witness) => {
+      this.witness = witness; }) ;
   }
-
 }
+

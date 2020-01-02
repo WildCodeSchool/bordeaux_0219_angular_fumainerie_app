@@ -6,7 +6,7 @@ export class Witness {
   public deleteAt!: string;
   public note!: number;
   public title!: string;
-  public valided!: boolean;
+  public status!: boolean;
   public description!: string;
   public user_id!: number;
   public username!: string;
