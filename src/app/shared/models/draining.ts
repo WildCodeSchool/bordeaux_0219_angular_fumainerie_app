@@ -1,12 +1,14 @@
 export class Draining {
-  public date: string;
-  public heure: string;
-  public userId: number;
+  public session_date: string;
+  public slot_id: string;
+  public user_id: number;
   public createAt?: string;
   public deleteAt?: string;
   public status?: string;
 
-  constructor(input: Draining) {
-    Object.assign(this, input);
+  constructor(input?: Draining) {
+    if (!input) {
+      Object.assign(this, input);
+    }
   }
 }

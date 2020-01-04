@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {  HttpClientModule  } from '@angular/common/http';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,7 +56,8 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
     RouterModule,
     AngularMaterialModule,
     CarouselModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

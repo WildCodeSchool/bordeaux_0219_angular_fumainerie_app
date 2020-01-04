@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArrayName, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { DrainingService } from '../../../shared/services/draining.service';
-import { Draining } from '../../../shared/models/draining';
 import { User } from 'src/app/shared/models/user';
+import { Draining } from 'src/app/shared/models/draining';
+import { DateAdapter} from '@angular/material/core';
+
 
 @Component({
   selector: 'app-vidanges',
@@ -10,26 +12,49 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./vidanges.component.scss']
 })
 export class VidangesComponent implements OnInit {
+
   currentuser: User;
+  slotData;
+  drainingFormRequest: FormGroup;
+  allDrainingByUser: Draining;
 
-  drainingForm: Draining = new FormGroup({
-    date: new FormControl(''),
-    time: new FormControl(''),
-  });
-
-  constructor(private drainingRequestService: DrainingService) { }
+  constructor(private drainingRequestService: DrainingService, private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
+    this.dateAdapter.setLocale('fr');
+  }
 
   ngOnInit() {
     this.drainingRequestService.getUserId().subscribe( (data: User) => {
-      this.currentuser = data;
+      console.log(data);
+      this.currentuser = data[0];
+      console.log(this.currentuser);
+    });
+
+    this.drainingRequestService.getSlot().subscribe( data => {
+      this.slotData = data;
+      this.drainingFormRequest = this.fb.group({
+        date: [''],
+        slots: ['']
+      });
+    });
+
+    this.drainingRequestService.getAllDrainingRequestByUser(this.currentuser).subscribe( data => {
+      this.drainingRequestService = data;
     });
   }
 
-onSubmit(drainingRequest: Draining) {
-  const test = this.drainingForm.controls.userId.value = this.currentuser.id;
-  console.log(this.drainingForm.value);
-  // console.log(test);
-  return this.drainingRequestService.postDrainingRequest(drainingRequest).subscribe();
+onSubmit(drainingRequest) {
+// Convert date into YYYY-MM-DD
+  const element = new Date(drainingRequest.date);
+  let dateEvent = JSON.stringify(element);
+  dateEvent = dateEvent.slice(1, 11);
+
+  const draining = new Draining();
+  draining.user_id = this.currentuser.id;
+  draining.session_date = dateEvent;
+  draining.slot_id = drainingRequest.slots;
+
+
+  return this.drainingRequestService.postDrainingRequest(draining).subscribe();
+}
 }
 
-}

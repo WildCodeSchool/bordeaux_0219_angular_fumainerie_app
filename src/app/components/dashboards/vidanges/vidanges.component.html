@@ -1,40 +1,32 @@
-<div  class="container">
+<div class="container">
 
 
-<form [formGroup]="drainingForm" (ngSubmit)="onSubmit(drainingForm.value)">
-  <input type="date" formControlName="date">
-  <input type="time" formControlName="time">
+  <div *ngIf="drainingFormRequest" >
+
+    <form [formGroup]="drainingFormRequest" (submit)="onSubmit(drainingFormRequest.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choisissez une date">
+        <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-radio-group color="primary" class="example-radio-group" formControlName="slots">
+        <mat-radio-button class="example-radio-button" *ngFor="let slot of slotData; let i = index" [value]="slot.id">
+          {{slot.name}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <button type="submit" >Valider</button>
+    </form>
+
+    <button class="drainingEmergency">URGENCE VIDANGE</button>
+
+  </div>
+
+  <div class="historyDraining">
 
 
-
-
-
-
-
-  <button type="submit" [disabled]="!drainingForm.valid">Valider</button>
-
-
-
-
-
-
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
 
 
 

@@ -8,16 +8,20 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class DrainingService {
-  static URL = 'http://localhost:3000/drainings';
-  static UrlUser = 'http://localhost:3000/users/2';
+  static URL = 'http://localhost:3000/';
 
   constructor(private http: HttpClient) { }
 
   postDrainingRequest(drainingRequest: Draining): Observable<Draining> {
-    return this.http.post<Draining>(DrainingService.URL, drainingRequest);
+    return this.http.post<Draining>(DrainingService.URL + 'drainingRequest', drainingRequest);
   }
-
   getUserId(): Observable<User> {
-    return this.http.get<User>(DrainingService.UrlUser);
+    return this.http.get<User>(DrainingService.URL + 'user/1');
+  }
+  getSlot(): Observable<any> {
+    return this.http.get(DrainingService.URL + 'slot');
+  }
+  getAllDrainingRequestByUser(user: User): Observable<Draining> {
+    return this.http.get<Draining>(DrainingService.URL + 'drainingRequestByUserId');
   }
 }
