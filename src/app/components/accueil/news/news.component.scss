@@ -1,0 +1,36 @@
+
+
+.body-news {
+  background-color: #fde773;
+  height: 95vh;
+  width: 100vw;
+  border-color: 3px solid red;
+  h2{
+    margin-left: 10vw;
+    padding: 5vh 0;
+  }
+  .news-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 4vh;
+    text-align: center;
+    border-color: 3px solid red;
+    p{
+      width: 45vw;
+    }
+    img{
+      width: 40vw;
+      max-width: 30vw;
+      height: 40vw;
+      max-height: 40vw;
+      box-shadow: 1px 1px 4px;
+    }
+    // .fb-page {
+    //   width: 500px;
+    //   height: 600px;
+    //   box-shadow: 1px 1px 4px;
+    //   border-color: 3px solid red;
+    // }
+  }
+}

@@ -41,6 +41,7 @@ import { ButtonsComponent } from './components/dashboards/communication/view/but
 import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
+import { NewsComponent } from './components/accueil/news/news.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
     WitnessModalComponent,
     DialogSigninComponent,
     DialogSignupComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,
