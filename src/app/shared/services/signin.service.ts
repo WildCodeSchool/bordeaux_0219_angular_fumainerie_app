@@ -10,7 +10,7 @@ export class SigninService {
   static URL = 'http://localhost:3000/auth/signin';
   constructor(private http: HttpClient) { }
 
-  authUser(user): Observable<User> {
-    return this.http.post<any>(SigninService.URL, user);
+  authUser(email: string, password: string): Observable<any> {
+    return this.http.post<any>(SigninService.URL, [email, password]);
   }
 }
