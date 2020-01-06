@@ -1,0 +1,55 @@
+<h2 id="gouvernance">La Gouvernance</h2>
+<mat-card class="mat-parent">
+  <carousel>
+    <div class="carousel-inner" align="center" role="listbox">
+      <slide>
+        <div class="carousel-item" style="display: block; width: 100%;">
+          <div class="col-md-4">
+            <app-card [userCard]='users[0]'></app-card>
+          </div>
+          <div class="col-md-4">
+            <app-card [userCard]='users[1]'></app-card>
+          </div>
+          <div class="col-md-4">
+            <app-card [userCard]='users[2]'></app-card>
+          </div>
+        </div>
+      </slide>
+      <slide>
+        <div class="carousel-item" style="display: block; width: 100%;">
+          <div class="col-md-4">
+            <app-card [userCard]='users[3]'></app-card>
+          </div>
+          <div class="col-md-4">
+            <app-card [userCard]='users[4]'></app-card>
+          </div>
+          <div class="col-md-4">
+            <app-card [userCard]='users[5]'></app-card>
+          </div>
+        </div>
+      </slide>
+      <slide>
+        <div class="carousel-item" style="display: block; width: 100%;">
+          <div class="col-md-4">
+            <app-card [userCard]='users[6]'></app-card>
+          </div>
+          <div class="col-md-4">
+            <app-card [userCard]='users[7]'></app-card>
+          </div>
+          <div class="col-md-4">
+            <app-card [userCard]='users[8]'></app-card>
+          </div>
+        </div>
+      </slide>
+    </div>
+  </carousel>
+</mat-card>
+
+<!--/*for mobile and small  devices */-->
+<mat-card class="mat-parent-small">
+  <carousel>
+    <slide *ngFor="let user of users">
+      <app-card [userCard]='user'></app-card>
+    </slide>
+  </carousel>
+</mat-card>
