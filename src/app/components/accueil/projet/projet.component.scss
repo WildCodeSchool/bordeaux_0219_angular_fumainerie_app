@@ -1,0 +1,22 @@
+.body-projet{
+  background-color: #fde773;
+  height: 95vh;
+  width: 100vw;
+  h2{
+    margin-left: 10vw;
+    padding: 5vh 0;
+  }
+  .projet-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 4vh;
+    p{
+    width: 45vw;
+    }
+    img{
+      width: 40vw;
+      box-shadow: 1px 1px 4px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+
+.menu-responsiv{
+  display: none;
+}
+.page-container{
+  display: flex;
+  width: 100%;
+  .sidebar{
+    width: 15%;
+    background-color: #2bb02b;
+    border-right: solid 1px #037503;
+  }
+}
+.navbar{
+  height: 10vh;
+  text-align: center;
+  margin-bottom: 0;
+}
+.dashboard-container{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+
+  .interface-dashboard{
+    height: 90vh;
+    width: 100%;
+    background-color:#b4e356;
+  }
+  .modal-account{
+    display: flex;
+    font-size: 2.5em;
+    color : white;
+    height: 90vh;
+    width: 100%;
+    background-color :#99cd32;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+.navvbar{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 1.3em;
+  align-self: flex-end;
+  .account{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-left: 50%;
+  }
+}
+ul{
+  display: flex;
+  flex-direction: row;
+  padding-inline-start: 0px;
+  height: 5vw;
+  align-items: center;
+  margin: 0px;
+  li{
+    list-style-type: none;
+    margin-left: 2vw;
+  }
+}
+li:hover{
+  background-color: #ffff73;
+  text-shadow: 0 0 0.2em 0.5em #ffff73
+  a{
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 600px){
+  .menu-responsiv{
+    display: block;
+  }
+  .navbar{
+    display: none;
+  }
+  .sidebar{
+    display: none;
+  }
+}

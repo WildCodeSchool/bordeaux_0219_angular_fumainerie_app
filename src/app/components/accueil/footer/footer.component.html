@@ -1,0 +1,24 @@
+<div id="footer"class="footer">
+  <div class="logo-footer">
+      <img src="../../../../assets/images/Logo 2.png" alt="Logo de la fumainerie">
+  </div>
+  <div class="footer-navbar">
+    <ul>
+      <li><a routerLink="/accueil" fragment="projet">Le projet</a></li>
+      <li><a routerLink="/accueil" fragment="gouvernance">La Gouvernance</a></li>
+      <li><a routerLink="/actualites">Les actualités</a></li>
+      <li><a routerLink="/accueil" fragment="ressources">Ressources Documentation</a></li>
+    </ul>
+  </div>
+  <div class="partners-container">
+    <p>Nos Partenaires</p>
+    <div class="partners">
+      <div *ngFor="let partner of partners">
+        <div class="partner">
+          <a href="{{partner.link}}"><img src="{{partner.img}}" alt="image-partenaire"></a>
+          <!-- <p>{{partner.name}}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
