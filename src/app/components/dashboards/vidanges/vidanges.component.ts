@@ -16,7 +16,7 @@ export class VidangesComponent implements OnInit {
   currentuser: User;
   slotData;
   drainingFormRequest: FormGroup;
-  allDrainingByUser: Draining;
+  allDrainingByUser: Draining[];
 
   constructor(private drainingRequestService: DrainingService, private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
     this.dateAdapter.setLocale('fr');
@@ -24,7 +24,6 @@ export class VidangesComponent implements OnInit {
 
   ngOnInit() {
     this.drainingRequestService.getUserId().subscribe( (data: User) => {
-      console.log(data);
       this.currentuser = data[0];
       console.log(this.currentuser);
     });
@@ -37,8 +36,10 @@ export class VidangesComponent implements OnInit {
       });
     });
 
-    this.drainingRequestService.getAllDrainingRequestByUser(this.currentuser).subscribe( data => {
-      this.drainingRequestService = data;
+    this.drainingRequestService.getAllDrainingRequestByUser(this.currentuser).subscribe( (data) => {
+      console.log(data);
+      this.allDrainingByUser = data;
+      console.log(this.allDrainingByUser);
     });
   }
 
@@ -52,6 +53,8 @@ onSubmit(drainingRequest) {
   draining.user_id = this.currentuser.id;
   draining.session_date = dateEvent;
   draining.slot_id = drainingRequest.slots;
+  console.log(this.currentuser.id);
+  this.allDrainingByUser.push(draining);
 
 
   return this.drainingRequestService.postDrainingRequest(draining).subscribe();

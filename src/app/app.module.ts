@@ -1,7 +1,7 @@
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import {  HttpClientModule  } from '@angular/common/http';
@@ -26,6 +26,9 @@ import { DocumentsComponent } from './components/dashboards/documents/documents.
 import { CommuniactionComponent } from './components/dashboards/communiaction/communiaction.component';
 import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 
 @NgModule({
@@ -57,9 +60,13 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
     AngularMaterialModule,
     CarouselModule.forRoot(),
     HttpClientModule,
-    MatDatepickerModule
+    MatDatepickerModule,
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'fr'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

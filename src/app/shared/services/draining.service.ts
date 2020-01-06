@@ -16,12 +16,12 @@ export class DrainingService {
     return this.http.post<Draining>(DrainingService.URL + 'drainingRequest', drainingRequest);
   }
   getUserId(): Observable<User> {
-    return this.http.get<User>(DrainingService.URL + 'user/1');
+    return this.http.get<User>(DrainingService.URL + 'user/2');
   }
   getSlot(): Observable<any> {
     return this.http.get(DrainingService.URL + 'slot');
   }
-  getAllDrainingRequestByUser(user: User): Observable<Draining> {
-    return this.http.get<Draining>(DrainingService.URL + 'drainingRequestByUserId');
+  getAllDrainingRequestByUser(user: User): Observable<Draining[]> {
+    return this.http.get<Draining[]>(DrainingService.URL + 'drainingRequest');
   }
 }
