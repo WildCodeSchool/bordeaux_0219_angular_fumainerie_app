@@ -21,7 +21,8 @@ export class DrainingService {
   getSlot(): Observable<any> {
     return this.http.get(DrainingService.URL + 'slot');
   }
-  getAllDrainingRequestByUser(user: User): Observable<Draining[]> {
-    return this.http.get<Draining[]>(DrainingService.URL + 'drainingRequest');
+  getAllDrainingRequestByUser(id: number): Observable<Draining[]> {
+    console.log('coucou' + id);
+    return this.http.get<Draining[]>(DrainingService.URL + `drainingRequest/user/${id}`);
   }
 }

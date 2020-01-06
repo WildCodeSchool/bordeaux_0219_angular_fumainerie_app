@@ -24,8 +24,16 @@ export class VidangesComponent implements OnInit {
 
   ngOnInit() {
     this.drainingRequestService.getUserId().subscribe( (data: User) => {
+      // console.log(data);
       this.currentuser = data[0];
-      console.log(this.currentuser);
+      // console.log(this.currentuser);
+
+      this.drainingRequestService.getAllDrainingRequestByUser(data[0].id).subscribe( (data2) => {
+        console.log(data2);
+        this.allDrainingByUser = data2;
+        console.log(this.allDrainingByUser);
+      });
+
     });
 
     this.drainingRequestService.getSlot().subscribe( data => {
@@ -36,11 +44,7 @@ export class VidangesComponent implements OnInit {
       });
     });
 
-    this.drainingRequestService.getAllDrainingRequestByUser(this.currentuser).subscribe( (data) => {
-      console.log(data);
-      this.allDrainingByUser = data;
-      console.log(this.allDrainingByUser);
-    });
+
   }
 
 onSubmit(drainingRequest) {
