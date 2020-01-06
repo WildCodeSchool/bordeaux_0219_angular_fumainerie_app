@@ -6,7 +6,7 @@ export class Event {
   public deleteAt!: string;
   public author!: number;
   public title!: string;
-  public date!: date;
+  public date!: Date;
   public description!: string;
   public user_id!: number;
   public username!: string;

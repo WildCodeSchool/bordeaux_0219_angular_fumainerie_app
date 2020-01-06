@@ -1,4 +1,4 @@
-import { EventsComponent } from './components/dashboards/events/events.component';
+import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';

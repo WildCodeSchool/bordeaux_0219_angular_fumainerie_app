@@ -28,7 +28,6 @@ import { SidebarComponent } from './components/dashboards/sidebar/sidebar.compon
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
 import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
-import { EvenementsComponent } from './components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
@@ -39,8 +38,7 @@ import { WitnessFormComponent } from './components/dashboards/communication/view
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
-import { EventsComponent } from './components/dashboards/events/events.component';
-
+import { EventsComponent } from './pages/dashboard/events/events.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +59,6 @@ import { EventsComponent } from './components/dashboards/events/events.component
     VidangesComponent,
     DocumentsComponent,
     CommunicationComponent,
-    EvenementsComponent,
     BurgerMenuComponent,
     ProjetComponent,
     BienvenuComponent,

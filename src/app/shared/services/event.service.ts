@@ -3,11 +3,12 @@ import { Event } from './../models/events';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class  EventService {
-  static URL = 'http://localhost:3000/events';
+  static URL = 'http://localhost:3000/event';
   constructor(private http: HttpClient) { }
 
   getAllEvents(): Observable<Event[]> {
