@@ -9,10 +9,16 @@ import { EventService } from '../../../shared/services/event.service';
 })
 export class EventsComponent implements OnInit {
   events: Event[];
+  onEventForm = false;
+  button = true;
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
     this.eventService.getAllEvents().subscribe((event) => {
       this.events = event; }) ;
+  }
+  onEventsForm() {
+    this.onEventForm = !this.onEventForm;
+    this.button = !this.button;
   }
 }

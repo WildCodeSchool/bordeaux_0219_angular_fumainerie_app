@@ -1,5 +1,3 @@
-import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
@@ -33,12 +31,17 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
+import { EventModalFormComponent } from './pages/dashboard/events/event-modal-form/event-modal-form.component';
+import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
+import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
+import { HttpClientModule } from '@angular/common/http';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +72,9 @@ import { EventsComponent } from './pages/dashboard/events/events.component';
     ButtonsComponent,
     QuestionModalComponent,
     WitnessModalComponent,
-    EventsComponent
+    EventsComponent,
+    EventsFormComponent,
+    EventModalFormComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +95,7 @@ import { EventsComponent } from './pages/dashboard/events/events.component';
   entryComponents: [
     QuestionModalComponent,
     WitnessModalComponent,
+    EventModalFormComponent
   ]
 })
 export class AppModule { }

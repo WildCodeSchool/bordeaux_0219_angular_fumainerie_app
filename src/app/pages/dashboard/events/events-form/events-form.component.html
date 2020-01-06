@@ -1,0 +1,25 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmitEventForm()">
+  <div class="example-container">
+    <div class="imgContainer">
+      <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
+    </div>
+    <mat-form-field>
+      <input matInput placeholder="Date :" type="date" formControlName='date'>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description :" formControlName='description'>
+      </textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Auteur (La direction par défaut)" type="text" formControlName='auteur' />
+    </mat-form-field>
+
+    <div class="container">
+      <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
+      <button mat-flat-button type="submit" [disabled]="!eventForm.valid">Envoyer</button>
+    </div>
+  </div>
+</form>
+

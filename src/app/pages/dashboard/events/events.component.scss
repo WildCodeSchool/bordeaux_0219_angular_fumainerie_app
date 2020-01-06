@@ -6,6 +6,10 @@
   width: 80%;
   background-color: white;
 }
+.containerG{
+  display: flex;
+  flex-direction: column;
+}
 
 .section{
   display: flex;
@@ -18,4 +22,10 @@ mat-tab-group{
   max-height: 80vh;
   width: 100%;
   border-radius: 3px;
+}
+button{
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+  padding: 8px;
 }
