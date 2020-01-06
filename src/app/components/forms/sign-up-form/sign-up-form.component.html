@@ -3,9 +3,40 @@
 <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
   <div class="example-container boxForm">
     <div class="imgContainer">
-      <button mat-flat-button class='switch'>Connexion</button>
-      <button mat-flat-button class='switch'>S'inscrire</button>
+      <button mat-flat-button class='switch'(click)="goToSignIn()">Connexion</button>
+      <button mat-flat-button class='switch' type="button">S'inscrire</button>
     </div>
+    <mat-form-field>
+      <input matInput placeholder="Nom d'utilisateur" type="text" formControlName='username'>
+    </mat-form-field>
+    <div *ngIf="signUpForm.get('username').errors && !signUpForm.get('username').pristine" class="error">
+      <div [hidden]="!signUpForm.get('username').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Nom"
+      type="text"
+      formControlName='lastname'
+      >
+    </mat-form-field>
+    <div *ngIf="signUpForm.get('lastname').errors && !signUpForm.get('lastname').pristine" class="error">
+      <div [hidden]="!signUpForm.get('lastname').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="prénom"
+      type="text"
+      formControlName='firstname'
+      >
+    </mat-form-field>
+    <div *ngIf="signUpForm.get('firstname').errors && !signUpForm.get('firstname').pristine" class="error">
+      <div [hidden]="!signUpForm.get('firstname').errors.required">Ce champ est requis.</div>
+    </div>
+
     <mat-form-field>
       <input
       matInput
@@ -14,9 +45,9 @@
       formControlName='email'
       />
     </mat-form-field>
-    <div *ngIf="signUpForm.get('credentials.email').errors && !signUpForm.get('credentials.email').pristine" class="error">
-      <div [hidden]="!signUpForm.get('credentials.email').errors.required">Ce champ est requis.</div>
-      <div [hidden]="!signUpForm.get('credentials.email').invalid">Votre email est invalide.</div>
+    <div *ngIf="signUpForm.get('email').errors && !signUpForm.get('email').pristine" class="error">
+      <div [hidden]="!signUpForm.get('email').errors.required">Ce champ est requis.</div>
+      <div [hidden]="!signUpForm.get('email').invalid">Votre email est invalide.</div>
     </div>
 
     <mat-form-field>
@@ -27,15 +58,15 @@
       formControlName='password'
       >
     </mat-form-field>
-    <div *ngIf="signUpForm.get('credentials.email').errors && !signUpForm.get('credentials.email').pristine" class="error">
-      <div [hidden]="!signUpForm.get('credentials.email').errors.required">Ce champ est requis.</div>
+    <div *ngIf="signUpForm.get('password').errors && !signUpForm.get('password').pristine" class="error">
+      <div [hidden]="!signUpForm.get('password').errors.required">Ce champ est requis.</div>
     </div>
 
 
     <div class="container">
       <button mat-flat-button type="submit" [disabled]="!signUpForm.valid">
-        S'inscrire'
-      </button>>
+        S'inscrire
+      </button>
     </div>
   </div>
 </form>

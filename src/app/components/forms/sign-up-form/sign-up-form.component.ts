@@ -22,13 +22,20 @@ export class SignUpFormComponent implements OnInit {
 
     ngOnInit() {
       this.signUpForm = this.formbuilder.group({
-        email: ['', Validators.required],
-        password: ['', [Validators.required, emailValidator]]});
+        email: ['', [Validators.required, emailValidator]],
+        password: ['', [Validators.required]],
+        username: ['', Validators.required],
+        lastname: ['', Validators.required],
+        firstname: ['', Validators.required]
+      });
       }
 
       onSignUp() {
         this.signupService.postNewUser(this.signUpForm.value);
-        const dialogRef = this.dialog.open(DialogSignupComponent, {width: '250px', });
+        this.dialog.open(DialogSignupComponent, {width: '250px'});
+      }
+      goToSignIn() {
+        this.router.navigate(['/connexion']);
       }
     }
 

@@ -95,6 +95,8 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
   entryComponents: [
     QuestionModalComponent,
     WitnessModalComponent,
+    DialogSignupComponent,
+    DialogSigninComponent
   ]
 })
 export class AppModule { }

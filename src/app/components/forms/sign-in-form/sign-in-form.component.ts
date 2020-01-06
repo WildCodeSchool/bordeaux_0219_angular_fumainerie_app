@@ -19,5 +19,8 @@ export class SignInFormComponent implements OnInit {
   goToDashboard() {
     this.router.navigate(['/dashboard']);
   }
+  goToSignUp() {
+    this.router.navigate(['/inscription']);
+  }
 }
 

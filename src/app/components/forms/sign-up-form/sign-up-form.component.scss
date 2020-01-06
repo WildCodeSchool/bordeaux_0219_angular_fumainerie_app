@@ -45,3 +45,9 @@ img {
   float: right;
   width: 18px;
 }
+
+:host {
+  width:100%;
+  height: 100%;
+  background-color: #FFC000;
+}

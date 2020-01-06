@@ -13,6 +13,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { config } from 'rxjs';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
   {path: 'accueil', component : HomepageComponent},
   {path: 'connexion', component  : SignInComponent},
+  {path: 'inscription', component  : SignUpComponent},
   {path: 'dashboard', component : DashboardComponent, children: [
     {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent},

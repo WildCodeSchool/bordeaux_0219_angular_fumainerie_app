@@ -15,7 +15,7 @@ export class DialogSignupComponent implements OnInit {
   ngOnInit() {
   }
   onClose() {
-    this.router.navigate(['accueil']);
+    this.router.navigate(['/accueil']);
     this.dialogRef.close();
   }
 }
