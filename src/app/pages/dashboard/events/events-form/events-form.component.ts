@@ -1,3 +1,4 @@
+import { EventModalFormComponent } from './../event-modal-form/event-modal-form.component';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -24,9 +25,10 @@ export class EventsFormComponent implements OnInit {
   eventForm: FormGroup;
   ngOnInit() {
     this.eventForm = this.formbuilder.group({
-      date: ['', Validators.required],
+      day:  ['', Validators.required],
+      time:  ['', Validators.required],
       description: ['', Validators.required],
-      auteur: ['', Validators.required]
+      auteur: '',
     });
   }
   resetForm() {
@@ -38,7 +40,7 @@ export class EventsFormComponent implements OnInit {
     console.log('modale ouverte?');
     console.log(this.eventForm.value);
     this.eventService.createEvents(this.eventForm.value).subscribe();
-    const dialogRef = this.dialog.open(eventModalComponent, {
+    const dialogRef = this.dialog.open(EventModalFormComponent , {
       width: '250px',
     });
     dialogRef.afterClosed().subscribe(result => {

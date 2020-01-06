@@ -1,15 +1,22 @@
 <form [formGroup]="eventForm" (ngSubmit)="onSubmitEventForm()">
   <div class="example-container">
+
     <div class="imgContainer">
       <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
     </div>
+
     <mat-form-field>
-      <input matInput placeholder="Date :" type="date" formControlName='date'>
+      <input matInput [matDatepicker]="picker" type='date'>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker  ></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder="Description :" formControlName='description'>
-      </textarea>
+      <input matInput type='time'>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description :" formControlName='description'></textarea>
     </mat-form-field>
 
     <mat-form-field>
@@ -20,6 +27,6 @@
       <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
       <button mat-flat-button type="submit" [disabled]="!eventForm.valid">Envoyer</button>
     </div>
+
   </div>
 </form>
-
