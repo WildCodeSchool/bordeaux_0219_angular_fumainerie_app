@@ -25,10 +25,10 @@
 
   <div class="drainingRequest">
     <h3>Demande en cours</h3>
-    <p *ngIf="!allDrainingByUser">
+    <p *ngIf="!allDrainingRequestByUser">
       Pas de demande en cours.
     </p>
-    <div class="drainingRequestByUser" *ngFor="let draining of allDrainingByUser">
+    <div class="drainingRequestByUser" *ngFor="let draining of allDrainingRequestByUser">
       <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
       <p>{{draining.slot_id}}</p>
     </div>
@@ -36,11 +36,11 @@
 
   <div class="history">
     <h3>Historique</h3>
-    <p *ngIf="!allDrainingByUser">
+    <p *ngIf="!allDraining">
       Pas d'historique.
     </p>
     <div class="drainingRequestByUser" *ngFor="let draining of allDrainingByUser">
-      <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
+      <p>{{draining.session_date | date: 'fullDate':'fr'}}</p><br>
       <p>{{draining.slot_id}}</p>
     </div>
   </div>

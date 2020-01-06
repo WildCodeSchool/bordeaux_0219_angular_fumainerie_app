@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DrainingService } from '../../../shared/services/draining.service';
 import { User } from 'src/app/shared/models/user';
-import { Draining } from 'src/app/shared/models/draining';
+import { DrainingRequest } from 'src/app/shared/models/drainingRequest';
 import { DateAdapter} from '@angular/material/core';
 
 
@@ -16,7 +16,8 @@ export class VidangesComponent implements OnInit {
   currentuser: User;
   slotData;
   drainingFormRequest: FormGroup;
-  allDrainingByUser: Draining[];
+  allDrainingRequestByUser: DrainingRequest[];
+  allDraining: DrainingRequest[];
 
   constructor(private drainingRequestService: DrainingService, private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
     this.dateAdapter.setLocale('fr');
@@ -30,8 +31,8 @@ export class VidangesComponent implements OnInit {
 
       this.drainingRequestService.getAllDrainingRequestByUser(data[0].id).subscribe( (data2) => {
         console.log(data2);
-        this.allDrainingByUser = data2;
-        console.log(this.allDrainingByUser);
+        this.allDrainingRequestByUser = data2;
+        console.log(this.allDrainingRequestByUser);
       });
 
     });
@@ -53,12 +54,12 @@ onSubmit(drainingRequest) {
   let dateEvent = JSON.stringify(element);
   dateEvent = dateEvent.slice(1, 11);
 
-  const draining = new Draining();
+  const draining = new DrainingRequest();
   draining.user_id = this.currentuser.id;
   draining.session_date = dateEvent;
   draining.slot_id = drainingRequest.slots;
   console.log(this.currentuser.id);
-  this.allDrainingByUser.push(draining);
+  this.allDrainingRequestByUser.push(draining);
 
 
   return this.drainingRequestService.postDrainingRequest(draining).subscribe();

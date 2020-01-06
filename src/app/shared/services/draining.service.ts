@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Draining } from '../models/draining';
+import { DrainingRequest } from '../models/drainingRequest';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 
@@ -12,17 +12,17 @@ export class DrainingService {
 
   constructor(private http: HttpClient) { }
 
-  postDrainingRequest(drainingRequest: Draining): Observable<Draining> {
-    return this.http.post<Draining>(DrainingService.URL + 'drainingRequest', drainingRequest);
+  postDrainingRequest(drainingRequest: DrainingRequest): Observable<DrainingRequest> {
+    return this.http.post<DrainingRequest>(DrainingService.URL + 'drainingRequest', drainingRequest);
   }
   getUserId(): Observable<User> {
-    return this.http.get<User>(DrainingService.URL + 'user/2');
+    return this.http.get<User>(DrainingService.URL + 'user/1');
   }
   getSlot(): Observable<any> {
     return this.http.get(DrainingService.URL + 'slot');
   }
-  getAllDrainingRequestByUser(id: number): Observable<Draining[]> {
+  getAllDrainingRequestByUser(id: number): Observable<DrainingRequest[]> {
     console.log('coucou' + id);
-    return this.http.get<Draining[]>(DrainingService.URL + `drainingRequest/user/${id}`);
+    return this.http.get<DrainingRequest[]>(DrainingService.URL + `drainingRequest/user/${id}`);
   }
 }
