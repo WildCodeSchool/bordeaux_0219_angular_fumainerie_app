@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { DrainingService } from '../../../shared/services/draining.service';
+import { DrainingRequestService } from '../../../shared/services/drainingRequest.service';
 import { User } from 'src/app/shared/models/user';
 import { DrainingRequest } from 'src/app/shared/models/drainingRequest';
 import { DateAdapter} from '@angular/material/core';
@@ -19,7 +19,7 @@ export class VidangesComponent implements OnInit {
   allDrainingRequestByUser: DrainingRequest[];
   allDraining: DrainingRequest[];
 
-  constructor(private drainingRequestService: DrainingService, private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
+  constructor(private drainingRequestService: DrainingRequestService, private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
     this.dateAdapter.setLocale('fr');
   }
 

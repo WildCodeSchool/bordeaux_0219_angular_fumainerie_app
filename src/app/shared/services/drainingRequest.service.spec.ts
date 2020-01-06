@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DrainingService } from './draining.service';
+import { DrainingRequestService } from './drainingRequest.service';
 
 describe('DrainingService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: DrainingService = TestBed.get(DrainingService);
+    const service: DrainingRequestService = TestBed.get(DrainingRequestService);
     expect(service).toBeTruthy();
   });
 });
