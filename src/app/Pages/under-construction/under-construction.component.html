@@ -1,0 +1,34 @@
+<div class="container">
+
+<div class="description">
+  <h1 class="font-effect-vintage">La Fumainerie</h1>
+
+  <p>Notre site internet est actuellement <span class="construction">en cours de réalisation</span>. <br>
+    Il sera accessible en <span class="date">Février 2020</span>, mais revenez de temps en temps.<span class="evolution"> On ne sait jamais...
+  </span></p>
+
+  <div class="contact">
+    <p>N'hésitez pas a nous retrouvez ici :</p>
+      <div class="icones">
+        <a href="https://fr-fr.facebook.com/pg/lafumaineriebordeaux/about"><img (click)="displayFacebook()" src="../../../assets/icones/icone facebook (1).png" alt="Icone Facebook"></a>
+        <img (click)="displayMail()"  src="../../../assets/icones/icone mail.png" alt="Icone Mail">
+        <img (click)="displayPhone()"src="../../../assets/icones/icone telephone.png" alt="Icone telephone">
+      </div>
+  </div>
+
+  <div class="mail"*ngIf="mail">
+      <h3>lafumainerie@zaclys.net</h3>
+  </div>
+
+  <div class="phone"*ngIf="phone">
+    <h3>+33 (0)6 31 19 55 74</h3>
+  </div>
+
+</div>
+
+
+
+<img class="right_page" src="../../../assets/image-en-construction.png" alt="Une image ecologique avec une plante">
+
+
+</div>

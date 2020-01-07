@@ -41,6 +41,8 @@ import { ViewComponent } from './components/dashboards/communication/view/view.c
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
+import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
+import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { EventsComponent } from './pages/dashboard/events/events.component';
     WitnessModalComponent,
     EventsComponent,
     EventsFormComponent,
-    EventModalFormComponent
+    EventModalFormComponent,
+    DialogSigninComponent,
+    DialogSignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,7 +99,8 @@ import { EventsComponent } from './pages/dashboard/events/events.component';
   entryComponents: [
     QuestionModalComponent,
     WitnessModalComponent,
-    EventModalFormComponent
+    DialogSignupComponent,
+    DialogSigninComponent
   ]
 })
 export class AppModule { }
