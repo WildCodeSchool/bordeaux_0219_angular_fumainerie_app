@@ -1,26 +1,42 @@
 <div class="container-global">
-<div class="menu-responsiv">
-  <app-burger-menu></app-burger-menu>
-</div>
-<div class="page-container">
-  <div class="sidebar">
-    <app-sidebar></app-sidebar>
+
+  <div class="menu-responsiv">
+    <app-burger-menu></app-burger-menu>
   </div>
-  <div class="dashboard-container">
-    <div class="navbar">
-      <h1>Dashboard</h1>
-      <button (click)="changeStatus()">Statut du compte</button>
-    </div>
-    <div class="modal-account" *ngIf="StatusAccountIsComplete != true">
-      <div>
-        Votre compte n'est pas à jour !
-      </div>
-    </div>
-    <div class="interface-dashboard" *ngIf="StatusAccountIsComplete != false">
-      <!-- *ngIf="StatusAccountIsComplete != true" [ngClass]="StatusAccountIsComplete ? 'interface-dashboard' : 'hide-interface'" -->
-      <router-outlet></router-outlet>
+
+  <div class="page-container">
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
     </div>
 
+    <div class="dashboard-container">
+      <div class="navbar">
+
+
+        <div class="navvbar">
+          <ul>
+            <li><a routerLink="/actualites">Les actualités</a></li>
+            <li><a routerLink="/ressources">Ressources documentaires</a></li>
+            <li><button (click)="changeStatus()">Statut</button></li>
+          </ul>
+          <div class="account">
+          <p>{{user.username}}</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal-account" *ngIf="StatusAccountIsComplete != true">
+        <div>
+          Votre compte n'est pas à jour !
+        </div>
+      </div>
+      <div class="interface-dashboard" *ngIf="StatusAccountIsComplete != false">
+        <!-- *ngIf="StatusAccountIsComplete != true" [ngClass]="StatusAccountIsComplete ? 'interface-dashboard' : 'hide-interface'" -->
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
   </div>
-</div>
 </div>
