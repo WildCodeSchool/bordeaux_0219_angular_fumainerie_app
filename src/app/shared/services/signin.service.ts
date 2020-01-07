@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SigninService {
-  static URL = 'http://localhost:3000/auth/signup';
+  static URL = 'http://localhost:3000/auth/signin';
 
   constructor(private http: HttpClient) { }
 

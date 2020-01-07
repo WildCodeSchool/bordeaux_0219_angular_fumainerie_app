@@ -1,5 +1,6 @@
+import { LogInterceptor } from './core/log.interceptor';
 import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
@@ -90,7 +91,13 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
     HttpClientModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide : HTTP_INTERCEPTORS,
+    useClass: LogInterceptor,
+    multi: true
+  }
+],
   bootstrap: [AppComponent],
   entryComponents: [
     QuestionModalComponent,

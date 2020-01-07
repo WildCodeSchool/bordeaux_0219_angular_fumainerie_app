@@ -27,10 +27,10 @@ export class SignInFormComponent implements OnInit {
   }
 
 
-  goToDashboard() {
+  userConnexion() {
     this.signInService.connectUser(this.signInForm.value).subscribe(() => {
-
-      this.router.navigate(['/dashboard']);
+      console.log(this.signInForm.value);
+      // this.router.navigate(['/dashboard']);
     });
   }
   goToSignUp() {
