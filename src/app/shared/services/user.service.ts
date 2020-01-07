@@ -6,18 +6,11 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
+  // User mis en dur pour le moment en attente de signin
+ user1: User = {id: 2, firstname: 'Julie', username: 'producteur', status: 1};
+ user2: User = {id: 1, firstname: 'Erique', username: 'vidangeur', status: 1};
+ user3: User = {id: 3, firstname: 'Olivier', username: 'admin', status: 1};
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  static URL_GET_USER = 'https://localhost:3000/auth';
-  user: User;
-
-
-  getUserById(id: number) {
-     return this.http.get(UserService.URL_GET_USER + '/' + id)
-     .subscribe((user: User) => {
-       this.user = user;
-     });
-
-  }
 }
