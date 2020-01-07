@@ -8,6 +8,9 @@ export class DrainingRequest {
   public createAt?: string;
   public deleteAt?: string;
   public status?: string;
+  public name?: string;
+  public startAt?: string;
+  public endAt?: string;
 
   constructor(input?: DrainingRequest) {
     if (!input) {

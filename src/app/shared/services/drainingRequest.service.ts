@@ -9,9 +9,9 @@ import { UserService } from './user.service';
   providedIn: 'root'
 })
 export class DrainingRequestService {
-  static URL = 'http://localhost:3000/';
 
   constructor(private http: HttpClient, private userService: UserService) { }
+  static URL = 'http://localhost:3000/';
 
   postDrainingRequest(drainingRequest: DrainingRequest): Observable<DrainingRequest> {
     return this.http.post<DrainingRequest>(DrainingRequestService.URL + 'drainingRequest', drainingRequest);
