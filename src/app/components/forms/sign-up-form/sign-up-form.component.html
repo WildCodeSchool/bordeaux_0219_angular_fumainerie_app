@@ -6,12 +6,7 @@
       <button mat-flat-button class='switch'(click)="goToSignIn()">Connexion</button>
       <button mat-flat-button class='switch' type="button">S'inscrire</button>
     </div>
-    <mat-form-field>
-      <input matInput placeholder="Nom d'utilisateur" type="text" formControlName='username'>
-    </mat-form-field>
-    <div *ngIf="signUpForm.get('username').errors && !signUpForm.get('username').pristine" class="error">
-      <div [hidden]="!signUpForm.get('username').errors.required">Ce champ est requis.</div>
-    </div>
+
 
     <mat-form-field>
       <input
