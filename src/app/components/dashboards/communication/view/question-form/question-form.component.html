@@ -14,7 +14,7 @@
 
     <div class="container">
       <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
-      <button mat-flat-button type="submit">Envoyer</button>
+      <button mat-flat-button type="submit" [disabled]="!questionForm.valid">Envoyer</button>
     </div>
   </div>
 </form>

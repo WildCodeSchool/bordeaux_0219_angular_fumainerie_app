@@ -5,25 +5,22 @@
   <div class="form-contact">
 
     <p><span>Téléphone</span>: 06 31 19 55 74</p>
-    <p><span>Email</span>: lafumainerie@zaclys.net</p>
+    <p><span>Email: </span><a href="mailto:lafumainerie@zaclys.net">lafumainerie@zaclys.net</a></p>
 
   </div>
 
   <div class="form-newsletter">
 
     <p>S'abonner à notre newsletter</p>
-    <div class="popup" *ngIf="statusValidationNewsletterPopUp != false" >
-      <p>Abonnement confirmé !</p>
-    </div>
-    <form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="mailForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline">
         <mat-label>Email *</mat-label>
         <input formControlName="email" matInput placeholder="">
-        <div *ngIf="newsForm.get('email').errors && !newsForm.get('email').pristine" class="error">
-          <div [hidden]="!newsForm.get('email').invalid">L'email n'est pas valide.</div>
+        <div *ngIf="mailForm.get('email').errors && !mailForm.get('email').pristine" class="error">
+          <div [hidden]="!mailForm.invalid">Veuillez saisir un mail valide.</div>
         </div>
       </mat-form-field>
-      <button mat-raised-button type="submit" [disabled]=!newsForm.valid>S'abonner</button>
+      <button mat-raised-button type="submit" [disabled]=!mailForm.valid>S'abonner</button>
     </form>
   </div>
 
