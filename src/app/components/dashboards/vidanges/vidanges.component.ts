@@ -4,6 +4,9 @@ import { DrainingRequestService } from '../../../shared/services/drainingRequest
 import { User } from 'src/app/shared/models/user';
 import { DrainingRequest } from 'src/app/shared/models/drainingRequest';
 import { DateAdapter} from '@angular/material/core';
+import { UserService } from '../../../shared/services/user.service';
+import { DrainingService } from '../../../shared/services/draining.service';
+import { Draining } from '../../../shared/models/draining';
 
 
 @Component({
@@ -13,37 +16,41 @@ import { DateAdapter} from '@angular/material/core';
 })
 export class VidangesComponent implements OnInit {
 
-  currentuser: User;
+  // currentuser: User;
   slotData;
+  currentUser: User;
   drainingFormRequest: FormGroup;
   allDrainingRequestByUser: DrainingRequest[];
-  allDraining: DrainingRequest[];
+  allDraining: Draining [];
+  openDetail = false;
 
-  constructor(private drainingRequestService: DrainingRequestService, private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
-    this.dateAdapter.setLocale('fr');
+  // tslint:disable-next-line: max-line-length
+  constructor(private drainingRequestService: DrainingRequestService,
+              private userService: UserService,
+              private drainingService: DrainingService,
+              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
+
+                this.dateAdapter.setLocale('fr');
   }
 
   ngOnInit() {
-    this.drainingRequestService.getUserId().subscribe( (data: User) => {
-      // console.log(data);
-      this.currentuser = data[0];
-      // console.log(this.currentuser);
+   this.currentUser = this.userService.user1;
 
-      this.drainingRequestService.getAllDrainingRequestByUser(data[0].id).subscribe( (data2) => {
-        console.log(data2);
-        this.allDrainingRequestByUser = data2;
-        console.log(this.allDrainingRequestByUser);
+   this.drainingRequestService.getAllDrainingRequestByUser(this.currentUser.id).subscribe( (data2) => {
+      this.allDrainingRequestByUser = data2;
       });
 
-    });
+   this.drainingService.getDrainingByUserId(this.currentUser.id).subscribe( drainings => {
+    this.allDraining = drainings;
+  });
 
-    this.drainingRequestService.getSlot().subscribe( data => {
-      this.slotData = data;
-      this.drainingFormRequest = this.fb.group({
-        date: [''],
-        slots: ['']
+   this.drainingRequestService.getSlot().subscribe( data => {
+        this.slotData = data;
+        this.drainingFormRequest = this.fb.group({
+         date: [''],
+         slots: ['']
       });
-    });
+  });
 
 
   }
@@ -55,14 +62,19 @@ onSubmit(drainingRequest) {
   dateEvent = dateEvent.slice(1, 11);
 
   const draining = new DrainingRequest();
-  draining.user_id = this.currentuser.id;
+  draining.user_id = this.currentUser.id;
   draining.session_date = dateEvent;
   draining.slot_id = drainingRequest.slots;
-  console.log(this.currentuser.id);
+  console.log(this.currentUser.id);
   this.allDrainingRequestByUser.push(draining);
 
 
   return this.drainingRequestService.postDrainingRequest(draining).subscribe();
 }
-}
 
+openDetailsDraining(drainingDetail: Draining) {
+    drainingDetail.show = !drainingDetail.show;
+
+    return drainingDetail;
+  }
+}

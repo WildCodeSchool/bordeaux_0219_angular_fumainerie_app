@@ -22,6 +22,7 @@ export class Draining {
     public deleteAt?: string;
     // tslint:disable-next-line: variable-name
     public valid_account?: string;
+    public show = false;
 
     constructor(input?: Draining) {
       if (!input) {

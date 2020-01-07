@@ -39,9 +39,18 @@
     <p *ngIf="!allDraining">
       Pas d'historique.
     </p>
-    <div class="drainingRequestByUser" *ngFor="let draining of allDrainingByUser">
-      <p>{{draining.session_date | date: 'fullDate':'fr'}}</p><br>
-      <p>{{draining.slot_id}}</p>
+
+    <div *ngIf="allDraining" >
+      <div class="drainingRequestByUser" *ngFor="let draining of allDraining">
+          <p (click)="openDetailsDraining(draining)">{{draining.check_date | date: 'fullDate':'fr'}}</p><br>
+          <div *ngIf="draining.show">
+            <p>{{draining.comments}}</p>
+            <p>{{draining.sawdust_delivery}}</p>
+            <p>{{draining.sawdust_weight}}</p>
+            <p>{{draining.weight}}</p>
+
+          </div>
+      </div>
     </div>
   </div>
 

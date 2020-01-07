@@ -1,4 +1,4 @@
-import { Draining } from 'src/app/shared/models/draining';
+import { Draining } from '../models/draining';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ export class DrainingService {
 
   constructor(private http: HttpClient) {}
 
-  getDrainingByUserId(): Observable<Draining> {
-    return this.http.get<Draining>(DrainingService.URL + 'user/');
+  getDrainingByUserId(id: number): Observable<Draining []> {
+    return this.http.get<Draining []>(DrainingService.URL + 'draining/user/' + id);
   }
 }
