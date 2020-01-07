@@ -1,6 +1,8 @@
 import { Witness } from './../../../shared/models/witness';
 import { WitnessService } from './../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../../../shared/services/news.service';
+import { News } from '../../../shared/models/news';
 
 @Component({
   selector: 'app-bienvenu',
@@ -11,11 +13,16 @@ import { Component, OnInit } from '@angular/core';
 
 export class BienvenuComponent implements OnInit {
   witness: Witness[];
-  constructor(private witnessService: WitnessService) { }
+  news: News[];
+  constructor(private witnessService: WitnessService, private newsService: NewsService) { }
 
   ngOnInit() {
     this.witnessService.getAllWitness().subscribe((witness) => {
       this.witness = witness;
+    });
+
+    this.newsService.getAllNews().subscribe((news) => {
+      this.news = news;
     });
   }
 }
