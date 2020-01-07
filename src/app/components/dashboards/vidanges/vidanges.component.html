@@ -19,13 +19,13 @@
       <button type="submit" >Valider</button>
     </form>
 
-    <button class="drainingEmergency">URGENCE VIDANGE</button>
+    <button (click)="sendEmergency()"class="drainingEmergency">URGENCE VIDANGE</button>
 
   </div>
 
   <div class="drainingRequest">
     <h3>Demande en cours</h3>
-    <p *ngIf="!allDrainingRequestByUser">
+    <p *ngIf="allDrainingRequestByUser.length === 0">
       Pas de demande en cours.
     </p>
     <div class="drainingRequestByUser" *ngFor="let draining of allDrainingRequestByUser">
@@ -41,15 +41,19 @@
     </p>
 
     <div *ngIf="allDraining" >
-      <div class="drainingRequestByUser" *ngFor="let draining of allDraining">
-          <p (click)="openDetailsDraining(draining)">{{draining.check_date | date: 'fullDate':'fr'}}</p><br>
-          <div *ngIf="draining.show">
-            <p>{{draining.comments}}</p>
-            <p>{{draining.sawdust_delivery}}</p>
-            <p>{{draining.sawdust_weight}}</p>
-            <p>{{draining.weight}}</p>
+      <div *ngFor="let draining of allDraining">
+        <div class="allDraining" >
+          <p>{{draining.check_date | date: 'fullDate':'fr'}}</p>
+          <p (click)="openDetailsDraining(draining)">Details</p>
+        </div>
 
-          </div>
+        <div class="detail"*ngIf="draining.show">
+          <p>{{draining.comments}}</p>
+          <p>{{draining.sawdust_delivery}}</p>
+          <p>{{draining.sawdust_weight}}</p>
+          <p>{{draining.weight}}</p>
+
+        </div>
       </div>
     </div>
   </div>

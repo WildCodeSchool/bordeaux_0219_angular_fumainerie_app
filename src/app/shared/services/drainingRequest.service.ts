@@ -16,11 +16,14 @@ export class DrainingRequestService {
   postDrainingRequest(drainingRequest: DrainingRequest): Observable<DrainingRequest> {
     return this.http.post<DrainingRequest>(DrainingRequestService.URL + 'drainingRequest', drainingRequest);
   }
-
   getSlot(): Observable<any> {
     return this.http.get(DrainingRequestService.URL + 'slot');
   }
   getAllDrainingRequestByUser(id: number): Observable<DrainingRequest[]> {
     return this.http.get<DrainingRequest[]>(DrainingRequestService.URL + `drainingRequest/user/${id}`);
+  }
+
+  postEmergencyDrainingRequest(drainingRequestEmergency: DrainingRequest ) {
+    return this.http.post<DrainingRequest>(DrainingRequestService.URL + 'drainingRequest', drainingRequestEmergency );
   }
 }

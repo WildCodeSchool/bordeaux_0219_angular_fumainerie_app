@@ -20,7 +20,7 @@ export class VidangesComponent implements OnInit {
   slotData;
   currentUser: User;
   drainingFormRequest: FormGroup;
-  allDrainingRequestByUser: DrainingRequest[];
+  allDrainingRequestByUser: DrainingRequest[] = [];
   allDraining: Draining [];
   openDetail = false;
 
@@ -38,6 +38,7 @@ export class VidangesComponent implements OnInit {
 
    this.drainingRequestService.getAllDrainingRequestByUser(this.currentUser.id).subscribe( (data2) => {
       this.allDrainingRequestByUser = data2;
+      console.log(this.allDrainingRequestByUser);
       });
 
    this.drainingService.getDrainingByUserId(this.currentUser.id).subscribe( drainings => {
@@ -56,20 +57,29 @@ export class VidangesComponent implements OnInit {
   }
 
 onSubmit(drainingRequest) {
-// Convert date into YYYY-MM-DD
-  const element = new Date(drainingRequest.date);
-  let dateEvent = JSON.stringify(element);
-  dateEvent = dateEvent.slice(1, 11);
+  const dateString = drainingRequest.date.toLocaleDateString().split('/').reverse().join('-');
 
   const draining = new DrainingRequest();
   draining.user_id = this.currentUser.id;
-  draining.session_date = dateEvent;
+  draining.session_date = dateString;
   draining.slot_id = drainingRequest.slots;
   console.log(this.currentUser.id);
   this.allDrainingRequestByUser.push(draining);
 
-
   return this.drainingRequestService.postDrainingRequest(draining).subscribe();
+}
+
+sendEmergency() {
+  const currentDateString = new Date().toLocaleDateString().split('/').reverse().join('-');
+
+  const drainingRequestEmergency = new DrainingRequest();
+
+  drainingRequestEmergency.user_id = this.currentUser.id;
+  drainingRequestEmergency.session_date = currentDateString;
+  drainingRequestEmergency.slot_id = '1';
+  console.log(drainingRequestEmergency);
+
+  return this.drainingRequestService.postEmergencyDrainingRequest(drainingRequestEmergency ).subscribe();
 }
 
 openDetailsDraining(drainingDetail: Draining) {

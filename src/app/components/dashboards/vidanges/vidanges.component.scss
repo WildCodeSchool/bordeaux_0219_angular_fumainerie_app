@@ -1,8 +1,10 @@
-.drainingRequest{
+.drainingRequest, .history{
   border: 1px solid black;
 }
-.drainingRequestByUser{
+.drainingRequestByUser, .allDraining{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+
