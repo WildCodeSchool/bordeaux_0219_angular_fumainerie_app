@@ -10,7 +10,7 @@
       </div>
     </mat-card>
   </div>
-  
+
   <div class="rightSide">
     <mat-tab-group dynamicHeight mat-stretch-tabs style="height: calc(100% - 64px); min-height: calc(100% - 64px);"
     class="fauxCaroussel mat-elevation-z4">
@@ -31,31 +31,31 @@
         </div>
       </div>
     </mat-tab>
-    
+
     <!-- ******* -->
-    
+
     <mat-tab label="Les dernières actus">
       <div class="section mat-elevation-z4">
         <div class="texte">
           <h4>Démarrage</h4>
-          <p>dévut de l'expérimentation avec nos 35 familles.</p>
+      <p>dévut de l'expérimentation avec nos 35 familles.</p>
         </div>
-        <div><img src="http://via.placeholder.com/60x60" alt="placeholder"></div>
+    <div><img src="http://via.placeholder.com/60x60" alt="placeholder"></div>
       </div>
     </mat-tab>
-    
+
     <mat-tab label="Témoignages">
       <div class="section mat-elevation-z4" *ngFor="let item of witness">
         <div class="texte">
           <h4>{{item.username}} </h4>
           <p>{{item.description}}</p>
         </div>
-        <div>
+    <div>
           <img src="http://via.placeholder.com/60x60" alt="placeholder">
         </div>
       </div>
     </mat-tab>
-    
+
   </mat-tab-group>
 </div>
 
