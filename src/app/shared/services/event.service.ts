@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class  EventService {
-  static URL = 'http://localhost:3000/event';
+  static URL = 'http://localhost:3000/event/date';
   constructor(private http: HttpClient) { }
 
   getAllEvents(): Observable<Event[]> {
