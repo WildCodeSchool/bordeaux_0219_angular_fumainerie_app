@@ -13,9 +13,8 @@ export class BienvenuComponent implements OnInit {
   constructor(private witnessService: WitnessService) { }
 
   ngOnInit() {
-    this.witnessService.getAllWitness().subscribe((witness) => {
-      this.witness = witness;
-    });
+    this.witnessService.getValidedWitness().subscribe((witness) => {
+      this.witness = witness; }) ;
   }
 }
 
