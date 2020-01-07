@@ -43,6 +43,7 @@ import { QuestionModalComponent } from './components/dashboards/communication/vi
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
+import { NewsletterModalComponent } from './components/accueil/contact/newsletter-modal/newsletter-modal.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
     EventModalFormComponent,
     DialogSigninComponent,
     DialogSignupComponent,
+    NewsletterModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +102,8 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
     QuestionModalComponent,
     WitnessModalComponent,
     DialogSignupComponent,
-    DialogSigninComponent
+    DialogSigninComponent,
+    NewsletterModalComponent
   ]
 })
 export class AppModule { }
