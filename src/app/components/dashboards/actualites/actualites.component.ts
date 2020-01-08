@@ -1,3 +1,5 @@
+import { NewsService } from './../../../shared/services/news.service';
+import { News } from './../../../shared/models/news';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actualites.component.scss']
 })
 export class ActualitesComponent implements OnInit {
+  news: News[];
 
-  constructor() { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
+    this.newsService.getAllNews().subscribe((news) => {
+      this.news = news;
+    });
   }
 
 }
