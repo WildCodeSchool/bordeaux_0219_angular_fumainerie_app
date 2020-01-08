@@ -1,9 +1,5 @@
 export class Witness {
-
   public id!: number;
-  public createAt!: string;
-  public updateAt!: string;
-  public deleteAt!: string;
   public note!: number;
   public title!: string;
   public status!: boolean;

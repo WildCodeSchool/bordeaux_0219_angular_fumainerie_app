@@ -33,6 +33,10 @@ export class WitnessService {
     console.log(witness);
     return this.http.post(WitnessService.URL, witness);
   }
+  modifyWitness(witness: Witness): Observable<any> {
+    return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
+  }
+
   hideWitnessListOnMobile() {
     console.log('visibleAvantFct =' + this.visible);
     if (this.mobile) {

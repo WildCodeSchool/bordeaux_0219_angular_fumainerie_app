@@ -11,9 +11,14 @@ export class UserService {
 
   static URL_GET_USER = 'https://localhost:3000/auth';
   user: User;
+  user1: User = {
+    id : 1,
+    username : 'baron',
+    accountStatus : 1,
+    function : 'admin'};
 
 
-  getUserById(id: number) {
+getUserById(id: number) {
      return this.http.get(UserService.URL_GET_USER + '/' + id)
      .subscribe((user: User) => {
        this.user = user;

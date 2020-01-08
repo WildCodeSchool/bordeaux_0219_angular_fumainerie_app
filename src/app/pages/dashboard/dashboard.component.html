@@ -27,12 +27,12 @@
       </div>
 
 
-      <div class="modal-account" *ngIf="StatusAccountIsComplete != true">
+      <div class="modal-account" *ngIf="!user.accountStatus">
         <div>
           Votre compte n'est pas à jour !
         </div>
       </div>
-      <div class="interface-dashboard" *ngIf="StatusAccountIsComplete != false">
+      <div class="interface-dashboard" *ngIf="user.accountStatus">
         <!-- *ngIf="StatusAccountIsComplete != true" [ngClass]="StatusAccountIsComplete ? 'interface-dashboard' : 'hide-interface'" -->
         <router-outlet></router-outlet>
       </div>
