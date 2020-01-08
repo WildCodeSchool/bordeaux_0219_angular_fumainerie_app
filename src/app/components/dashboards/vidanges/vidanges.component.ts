@@ -27,10 +27,7 @@ export class VidangesComponent implements OnInit {
   constructor(private drainingRequestService: DrainingRequestService,
               private userService: UserService,
               private drainingService: DrainingService,
-              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {
-
-                this.dateAdapter.setLocale('fr');
-  }
+              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr');}
 
   ngOnInit() {
    this.currentUser = this.userService.user1;
@@ -59,12 +56,12 @@ export class VidangesComponent implements OnInit {
 // Montre les détails de la vidnage en clickant sur details
   openDetailsDraining(drainingDetail: Draining) {
     drainingDetail.show = !drainingDetail.show;
-
     return drainingDetail;
   }
 
 // Envoi d'une demande de vidange
   onSubmit(drainingRequest) {
+    // Convertissement Date.
     const dateString = drainingRequest.date.toLocaleDateString().split('/').reverse().join('-');
 
     const draining = new DrainingRequest();

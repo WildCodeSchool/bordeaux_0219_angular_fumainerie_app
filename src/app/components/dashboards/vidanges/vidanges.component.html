@@ -42,16 +42,23 @@
 
     <div *ngIf="allDraining" >
       <div *ngFor="let draining of allDraining">
-        <div class="allDraining" >
-          <p>{{draining.check_date | date: 'fullDate':'fr'}}</p>
-          <p (click)="openDetailsDraining(draining)">Details</p>
-        </div>
+          <p class="allDraining" (click)="openDetailsDraining(draining)">{{draining.check_date | date: 'fullDate':'fr'}}</p>
 
-        <div class="detail"*ngIf="draining.show">
-          <p>{{draining.comments}}</p>
-          <p>{{draining.sawdust_delivery}}</p>
-          <p>{{draining.sawdust_weight}}</p>
-          <p>{{draining.weight}}</p>
+
+        <div class="detail" *ngIf="draining.show">
+          <div class="table">
+            <p>Commentaire</p>
+            <p>{{draining.comments}}</p>
+          </div>
+          <div class="table">
+            <p>Quantité sciure livrée</p>
+            <p>{{draining.sawdust_delivery}} kg</p>
+          </div>
+          <div class="table">
+            <p>Quantité sciure récupérée</p>
+            <p>{{draining.sawdust_weight}} kg</p>
+          </div>
+
 
         </div>
       </div>
