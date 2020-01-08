@@ -1,4 +1,4 @@
-import { EventModalFormComponent } from './../event-modal-form/event-modal-form.component';
+import { EventModalFormComponent } from '../../../../components/modals/event-modal-form/event-modal-form.component';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

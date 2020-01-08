@@ -11,6 +11,7 @@ export class WitnessService {
   constructor(private http: HttpClient) { }
   mobile = true;
   visible = true;
+  index: number;
 
 /*   visibled(): Observable<boolean> {
     if (this.visible) {
@@ -35,6 +36,9 @@ export class WitnessService {
   }
   modifyWitness(witness: Witness): Observable<any> {
     return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
+  }
+  deleteWitness(): Observable<any> {
+    return this.http.delete(WitnessService.URL + `/${this.index}`);
   }
 
   hideWitnessListOnMobile() {

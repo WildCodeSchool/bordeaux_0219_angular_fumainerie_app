@@ -10,8 +10,10 @@
         <img src="http://via.placeholder.com/60x60" alt="placeholder">
       </div>
       <div class="mat-app-background basic-container">
-        <mat-slide-toggle [formControl]="status" (change)="onChange(i)">Validé</mat-slide-toggle>
+        {{(item.status == 1) ? true: false}}
+        <mat-slide-toggle [checked]="true" (change)="onChange($event, i)">Valider</mat-slide-toggle>
       </div>
-    </div>
+        <mat-icon (click)='deleteWitness(i)'>delete</mat-icon>
+      </div>
   </mat-tab>
 </mat-tab-group>
