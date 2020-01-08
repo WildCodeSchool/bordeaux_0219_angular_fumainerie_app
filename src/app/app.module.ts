@@ -1,3 +1,4 @@
+import { NewsComponent } from './components/accueil/news/news.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
@@ -39,7 +40,6 @@ import { WitnessComponent} from './components/dashboards/communication/view/witn
 import { EventModalFormComponent } from './pages/dashboard/events/event-modal-form/event-modal-form.component';
 import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
 import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
-import { HttpClientModule } from '@angular/common/http';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
@@ -86,6 +86,7 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
     DialogSigninComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
