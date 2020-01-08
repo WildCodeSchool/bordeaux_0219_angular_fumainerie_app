@@ -19,7 +19,7 @@ import { CarouselComponent } from '../../components/carousel/carousel.component'
 import { CardComponent } from '../../components/carousel/card/card.component';
 import { NavbarComponent } from '../../components/accueil/navbar/navbar.component';
 import { HomepageComponent } from '../../pages/homepage/homepage.component';
-import { ActualitesComponent } from '../../pages/actualites/actualites.component';
+import { ActualitesComponent } from '../../components/dashboards/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from '../../pages/ressources-documents/ressources-documents.component';
 import { SignInFormComponent } from '../../components/forms/sign-in-form/sign-in-form.component';
 import { SignInComponent } from '../../pages/sign-in/sign-in.component';

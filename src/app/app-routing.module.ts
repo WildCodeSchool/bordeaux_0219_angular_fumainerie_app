@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { config } from 'rxjs';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ActualitesComponent } from './components/dashboards/actualites/actualites.component';
 
 
 const routes: Routes = [
@@ -32,7 +33,9 @@ const routes: Routes = [
         {path: '', component: ButtonsComponent},
         {path: 'question', component: QuestionFormComponent},
         {path: 'temoigner', component: WitnessFormComponent}]}]},
-    {path: 'evenements', component : EventsComponent }]},
+    {path: 'evenements', component : EventsComponent },
+    {path: 'actualites', component : ActualitesComponent }
+  ]},
   {path: 'sidebar', component : SidebarComponent }
 ];
 @NgModule({

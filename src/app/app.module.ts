@@ -18,8 +18,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
 import { NavbarComponent } from './components/accueil/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { ActualitesComponent } from './pages/actualites/actualites.component';
-import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
@@ -49,6 +47,8 @@ import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsletterModalComponent } from './components/accueil/contact/newsletter-modal/newsletter-modal.component';
+import { ActualitesComponent } from './components/dashboards/actualites/actualites.component';
+import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 
 @NgModule({
   declarations: [

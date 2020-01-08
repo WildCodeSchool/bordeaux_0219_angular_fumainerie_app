@@ -14,11 +14,11 @@
 
 
         <div class="navvbar">
-          <ul>
+          <!-- redit des liens ci-dessous avec les liens en side-bar -->
+          <!-- <ul>
             <li><a routerLink="/actualites">Les actualités</a></li>
             <li><a routerLink="/ressources">Ressources documentaires</a></li>
-            <li><button (click)="changeStatus()">Statut</button></li>
-          </ul>
+          </ul> -->
           <div class="account">
           <p>{{user.username}}</p>
             <p></p>
@@ -32,9 +32,10 @@
           Votre compte n'est pas à jour !
         </div>
       </div>
-      <div class="interface-dashboard" *ngIf="StatusAccountIsComplete != false">
+      <div class="interface-dashboard" *ngIf="user.status">
         <!-- *ngIf="StatusAccountIsComplete != true" [ngClass]="StatusAccountIsComplete ? 'interface-dashboard' : 'hide-interface'" -->
         <router-outlet></router-outlet>
+        <app-footer></app-footer>
       </div>
 
     </div>
