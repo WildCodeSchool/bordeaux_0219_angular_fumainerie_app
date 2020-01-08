@@ -30,7 +30,7 @@ export class WitnessComponent implements OnInit {
     this.witness[index].status = toggle.checked;
     this.witnessService.modifyWitness (this.witness[index]).subscribe();
 }
-  deleteWitness(index: number) {
+  onAskDeleteWitness(index: number) {
     this.witnessService.index = index;
     const dialogRef = this.dialog.open(WitnessDeleteModalComponent, {
       width: '50%'
@@ -40,6 +40,3 @@ export class WitnessComponent implements OnInit {
     });
   }
 }
-
-
-/* this.witnessService.modifyWitness().subscribe; */

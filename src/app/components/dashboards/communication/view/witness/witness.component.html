@@ -13,7 +13,7 @@
         {{(item.status == 1) ? true: false}}
         <mat-slide-toggle [checked]="true" (change)="onChange($event, i)">Valider</mat-slide-toggle>
       </div>
-        <mat-icon (click)='deleteWitness(i)'>delete</mat-icon>
-      </div>
+        <mat-icon (click)='onAskDeleteWitness(item.id)'>delete</mat-icon>
+    </div>
   </mat-tab>
 </mat-tab-group>

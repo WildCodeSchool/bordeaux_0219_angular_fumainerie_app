@@ -31,13 +31,13 @@ export class WitnessService {
   createWitness(witness: Witness): Observable<any> {
     witness.status = false;
     witness.user_id = 1;
-    console.log(witness);
     return this.http.post(WitnessService.URL, witness);
   }
   modifyWitness(witness: Witness): Observable<any> {
     return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
   }
   deleteWitness(): Observable<any> {
-    return this.http.delete(WitnessService.URL + `/${this.index}`);
+    console.log('delete id: ' + this.index);
+    return this.http.delete<Witness>(WitnessService.URL + `/${this.index}`);
   }
 }

@@ -21,7 +21,6 @@ export class ButtonsComponent implements OnInit {
   }
 
   onQuestionForm() {
-    this.witnessService.hideWitnessListOnMobile();
     this.router.navigate(['/dashboard/communication/avis/question']);
   }
 
