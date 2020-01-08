@@ -1,13 +1,64 @@
-<div class="box-essai">
-  <div class="essai">
-<img src="https://www.wesco.fr/media/catalog/product/cache/19/image/1800x/040ec09b1e35df139433887a97daa66f/5/3/53798_P_53798_PD@P2@XL.jpg"
-     alt="planning">
+<div class="container">
+
+
+  <div *ngIf="drainingFormRequest" >
+
+    <form [formGroup]="drainingFormRequest" (submit)="onSubmit(drainingFormRequest.value)">
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choisissez une date">
+        <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-radio-group color="primary" class="example-radio-group" formControlName="slots">
+        <mat-radio-button class="example-radio-button" *ngFor="let slot of slotData; let i = index" [value]="slot.id">
+          {{slot.name}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <button type="submit" >Valider</button>
+    </form>
+
+    <button (click)="sendEmergency()"class="drainingEmergency">URGENCE VIDANGE</button>
+
   </div>
-  <div class="essai">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+
+  <div class="drainingRequest">
+    <h3>Demande en cours</h3>
+    <p *ngIf="allDrainingRequestByUser.length === 0">
+      Pas de demande en cours.
+    </p>
+    <div class="drainingRequestByUser" *ngFor="let draining of allDrainingRequestByUser">
+      <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
+      <p>{{draining.name}}</p>
+    </div>
   </div>
-  <div class="essai">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+
+  <div class="history">
+    <h3>Historique</h3>
+    <p *ngIf="!allDraining">
+      Pas d'historique.
+    </p>
+
+    <div *ngIf="allDraining" >
+      <div *ngFor="let draining of allDraining">
+        <div class="allDraining" >
+          <p>{{draining.check_date | date: 'fullDate':'fr'}}</p>
+          <p (click)="openDetailsDraining(draining)">Details</p>
+        </div>
+
+        <div class="detail"*ngIf="draining.show">
+          <p>{{draining.comments}}</p>
+          <p>{{draining.sawdust_delivery}}</p>
+          <p>{{draining.sawdust_weight}}</p>
+          <p>{{draining.weight}}</p>
+
+        </div>
+      </div>
+    </div>
   </div>
+
+
+
 
 </div>

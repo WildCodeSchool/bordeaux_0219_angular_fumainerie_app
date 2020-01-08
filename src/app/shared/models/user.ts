@@ -4,14 +4,14 @@ export class User {
   public updateAt?: string;
   public deleteAt?: string;
   public firstname?: string;
-  public lastnam?: string;
+  public lastname?: string;
   public birthDate?: string;
   public phone?: string;
   public email?: string;
   public username?: string;
   public password?: string;
   public avatar?: string;
-  public status?: string;
+  public status?: boolean;
   public accountStatus?: number;
   public function?: string;
 

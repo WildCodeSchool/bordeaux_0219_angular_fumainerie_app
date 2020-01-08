@@ -1,9 +1,12 @@
+import { NewsComponent } from './components/accueil/news/news.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {  HttpClientModule  } from '@angular/common/http';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './components/accueil/contact/contact.component';
@@ -27,6 +30,9 @@ import { VidangesComponent } from './components/dashboards/vidanges/vidanges.com
 import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
@@ -34,7 +40,6 @@ import { WitnessComponent} from './components/dashboards/communication/view/witn
 import { EventModalFormComponent } from './pages/dashboard/events/event-modal-form/event-modal-form.component';
 import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
 import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
-import { HttpClientModule } from '@angular/common/http';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
@@ -81,6 +86,7 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
     DialogSigninComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -92,11 +98,16 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
     RouterModule,
     AngularMaterialModule,
     CarouselModule.forRoot(),
+    HttpClientModule,
+    MatDatepickerModule,
     FormsModule,
     HttpClientModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'fr'
+  }],
   bootstrap: [AppComponent],
   entryComponents: [
     QuestionModalComponent,
@@ -107,3 +118,4 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
   ]
 })
 export class AppModule { }
+
