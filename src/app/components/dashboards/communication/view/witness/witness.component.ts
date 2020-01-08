@@ -1,4 +1,3 @@
-import { map } from 'rxjs/operators';
 import { Witness } from '../../../../../shared/models/witness';
 import { WitnessService } from '../../../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';

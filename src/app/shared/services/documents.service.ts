@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DocumentsService {
-static URL = 'http://localhost:3000/documents/';
+static URL = 'http://localhost:3000/document';
 
   constructor(private http: HttpClient) { }
 

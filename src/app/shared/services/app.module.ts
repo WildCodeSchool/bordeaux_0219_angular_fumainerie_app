@@ -1,3 +1,5 @@
+import { EventsFormComponent } from './../../pages/dashboard/events/events-form/events-form.component';
+import { EventsComponent } from './../../pages/dashboard/events/events.component';
 import { WitnessModalComponent } from '../../components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
@@ -28,7 +30,6 @@ import { SidebarComponent } from '../../components/dashboards/sidebar/sidebar.co
 import { VidangesComponent } from '../../components/dashboards/vidanges/vidanges.component';
 import { DocumentsComponent } from '../../components/dashboards/documents/documents.component';
 import { CommunicationComponent } from '../../pages/dashboard/communication/communication.component';
-import { EvenementsComponent } from '../../components/dashboards/evenements/evenements.component';
 import { BurgerMenuComponent } from '../../components/burger-menu/burger-menu.component';
 import { ProjetComponent } from '../../components/accueil/projet/projet.component';
 import { BienvenuComponent } from '../../components/accueil/bienvenu/bienvenu.component';
@@ -42,7 +43,6 @@ import { QuestionModalComponent } from '../../components/dashboards/communicatio
 import { DialogSigninComponent } from '../../components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from '../../components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsComponent } from '../../components/accueil/news/news.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +63,6 @@ import { NewsComponent } from '../../components/accueil/news/news.component';
     VidangesComponent,
     DocumentsComponent,
     CommunicationComponent,
-    EvenementsComponent,
     BurgerMenuComponent,
     ProjetComponent,
     BienvenuComponent,
@@ -77,6 +76,8 @@ import { NewsComponent } from '../../components/accueil/news/news.component';
     DialogSigninComponent,
     DialogSignupComponent,
     NewsComponent,
+    EventsComponent,
+    EventsFormComponent,
   ],
   imports: [
     BrowserModule,
