@@ -41,7 +41,7 @@ import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.compon
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
 import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
-import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
+import { WitnessModalComponent } from './components/modals/witness-modal/witness-modal.component';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
@@ -49,7 +49,7 @@ import { ButtonsComponent } from './components/dashboards/communication/view/but
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
-import { NewsletterModalComponent } from './components/accueil/contact/newsletter-modal/newsletter-modal.component';
+import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 
 
 @NgModule({

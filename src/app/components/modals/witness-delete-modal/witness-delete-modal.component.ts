@@ -19,6 +19,8 @@ export class WitnessDeleteModalComponent implements OnInit {
     this.dialogRef.close();
   }
   onDelete() {
+    this.dialogRef.close();
+    console.log(this.witnessService.index);
     this.witnessService.deleteWitness();
   }
 }

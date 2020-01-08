@@ -33,7 +33,6 @@ export class QuestionFormComponent implements OnInit {
   }
   onClose() {
       this.router.navigate(['dashboard/communication/avis']);
-      this.witnessService.hideWitnessListOnMobile();
   }
   onSubmitQuestionForm() {
     console.log('modale ouverte?');

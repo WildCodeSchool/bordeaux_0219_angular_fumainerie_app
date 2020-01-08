@@ -1,4 +1,4 @@
-import { WitnessModalComponent } from './witness-modal/witness-modal.component';
+import { WitnessModalComponent } from '../../../../modals/witness-modal/witness-modal.component';
 import { WitnessService } from './../../../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -33,7 +33,6 @@ export class WitnessFormComponent implements OnInit {
   }
   onClose() {
       this.router.navigate(['dashboard/communication/avis']);
-      this.witnessService.hideWitnessListOnMobile();
   }
   onSubmitWitnessForm() {
     console.log('modale ouverte?');

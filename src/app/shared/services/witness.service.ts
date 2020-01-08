@@ -40,13 +40,4 @@ export class WitnessService {
   deleteWitness(): Observable<any> {
     return this.http.delete(WitnessService.URL + `/${this.index}`);
   }
-
-  hideWitnessListOnMobile() {
-    console.log('visibleAvantFct =' + this.visible);
-    if (this.mobile) {
-      this.visible = !this.visible;
-     }
-    console.log('visibleApresFct =' + this.visible);
-  }
-
 }

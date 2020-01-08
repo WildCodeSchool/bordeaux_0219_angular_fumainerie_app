@@ -18,6 +18,5 @@ export class QuestionModalComponent {
   onClose() {
     this.router.navigate(['dashboard/communication/avis']);
     this.dialogRef.close();
-    this.witnessService.hideWitnessListOnMobile();
   }
 }
