@@ -25,7 +25,7 @@ export class EventsFormComponent implements OnInit {
   eventForm: FormGroup;
   ngOnInit() {
     this.eventForm = this.formbuilder.group({
-      day:  ['', Validators.required],
+      date:  ['', Validators.required],
       time:  ['', Validators.required],
       description: ['', Validators.required],
       auteur: '',
@@ -39,6 +39,8 @@ export class EventsFormComponent implements OnInit {
   onSubmitEventForm() {
     console.log('modale ouverte?');
     console.log(this.eventForm.value);
+    this.eventForm.value.date = this.eventForm.value.date.toLocaleDateString().split('/').reverse().join('-');
+    this.eventForm.value.time = this.eventForm.value.time + ':00';
     this.eventService.createEvents(this.eventForm.value).subscribe();
     const dialogRef = this.dialog.open(EventModalFormComponent , {
       width: '250px',

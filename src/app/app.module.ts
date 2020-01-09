@@ -118,7 +118,8 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     DialogSignupComponent,
     DialogSigninComponent,
     NewsletterModalComponent,
-    WitnessDeleteModalComponent
+    WitnessDeleteModalComponent,
+    EventModalFormComponent,
   ]
 })
 export class AppModule { }
