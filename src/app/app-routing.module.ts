@@ -1,3 +1,4 @@
+import { AuthGardGuard } from './core/auth-gard.guard';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
@@ -18,7 +19,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'accueil', pathMatch: 'full'},
+  {path: '', redirectTo: 'accueil', pathMatch: 'full', canActivate: []},
   {path: 'accueil', component : HomepageComponent},
   {path: 'connexion', component  : SignInComponent},
   {path: 'inscription', component  : SignUpComponent},
