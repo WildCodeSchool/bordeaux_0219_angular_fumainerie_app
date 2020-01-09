@@ -6,13 +6,14 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class LogInterceptor implements HttpInterceptor {
 
-  constructor(private injector: Injector) {}
+  constructor(private injector: Injector,
+              public userService: UserService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const userService = this.injector.get(UserService);
     const tokenReq = req.clone({
       setHeaders: {
-        // Autorization:   `Bearer ${userService.getToken()}`  // ajout du bearer du token
+        Autorization:   `Bearer ${userService.getToken()}`  // ajout du bearer du token
       }
     });
 

@@ -9,6 +9,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
   static URL_GET_USER = 'https://localhost:3000/auth';
+  static URL_GET_TOKEN = '';
 
   // User mis en dur pour le moment en attente de signin
 
@@ -27,7 +28,8 @@ getUserById(id: number) {
 
   }
 
-  getToken() {
-
+  getToken(): string {
+    return localStorage.getItem('token');
   }
+
 }
