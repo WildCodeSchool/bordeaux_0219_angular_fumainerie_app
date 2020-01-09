@@ -1,14 +1,12 @@
 export class Witness {
-  public id!: number;
+  public id: number;
   public note?: number;
   public title?: string;
   public status?: any;
   public description?: string;
   public user_id?: number;
-
-  public username?: string;
+  public firstname?: string;
   public avatar?: string;
-  public function?: string;
 
   constructor(input: Witness) {
       Object.assign(this, input);

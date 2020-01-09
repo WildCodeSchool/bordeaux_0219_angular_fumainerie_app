@@ -23,10 +23,10 @@ export class WitnessService {
 
 
   getAllWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL + '/validations');
+    return this.http.get<Witness[]>(WitnessService.URL);
   }
   getValidedWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL);
+    return this.http.get<Witness[]>(WitnessService.URL + `/valided`);
   }
   createWitness(witness: Witness): Observable<any> {
     witness.status = false;
