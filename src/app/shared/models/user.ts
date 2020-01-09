@@ -11,7 +11,8 @@ export class User {
   public username?: string;
   public password?: string;
   public avatar?: string;
-  public status?: number;
+  public status?: boolean;
+  public accountStatus?: number;
   public function?: string;
 
   constructor(input: User) {

@@ -1,3 +1,6 @@
+import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
+import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
+import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
@@ -37,18 +40,17 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
-import { EventModalFormComponent } from './pages/dashboard/events/event-modal-form/event-modal-form.component';
 import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
-import { WitnessModalComponent } from './components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
+import { WitnessModalComponent } from './components/modals/witness-modal/witness-modal.component';
 import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
 import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
-import { QuestionModalComponent } from './components/dashboards/communication/view/question-form/question-modal/question-modal.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
-import { NewsletterModalComponent } from './components/accueil/contact/newsletter-modal/newsletter-modal.component';
+import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
+
 
 @NgModule({
   declarations: [
@@ -86,7 +88,8 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
     DialogSigninComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
-    NewsComponent
+    NewsComponent,
+    WitnessDeleteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +117,8 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
     WitnessModalComponent,
     DialogSignupComponent,
     DialogSigninComponent,
-    NewsletterModalComponent
+    NewsletterModalComponent,
+    WitnessDeleteModalComponent
   ]
 })
 export class AppModule { }

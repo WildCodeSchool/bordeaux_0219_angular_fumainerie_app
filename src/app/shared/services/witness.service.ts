@@ -11,6 +11,7 @@ export class WitnessService {
   constructor(private http: HttpClient) { }
   mobile = true;
   visible = true;
+  index: number;
 
 /*   visibled(): Observable<boolean> {
     if (this.visible) {
@@ -22,23 +23,21 @@ export class WitnessService {
 
 
   getAllWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL + '/validations');
+    return this.http.get<Witness[]>(WitnessService.URL);
   }
   getValidedWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL);
+    return this.http.get<Witness[]>(WitnessService.URL + `/valided`);
   }
   createWitness(witness: Witness): Observable<any> {
     witness.status = false;
     witness.user_id = 1;
-    console.log(witness);
     return this.http.post(WitnessService.URL, witness);
   }
-  hideWitnessListOnMobile() {
-    console.log('visibleAvantFct =' + this.visible);
-    if (this.mobile) {
-      this.visible = !this.visible;
-     }
-    console.log('visibleApresFct =' + this.visible);
+  modifyWitness(witness: Witness): Observable<any> {
+    return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
   }
-
+  deleteWitness(): Observable<any> {
+    console.log('delete id: ' + this.index);
+    return this.http.delete<Witness>(WitnessService.URL + `/${this.index}`);
+  }
 }

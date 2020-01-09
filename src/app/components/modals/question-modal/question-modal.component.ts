@@ -1,5 +1,4 @@
-import { WitnessModalComponent } from './../../witness-form/witness-modal/witness-modal.component';
-import { WitnessService } from './../../../../../../shared/services/witness.service';
+import { WitnessService } from '../../../shared/services/witness.service';
 import { MatDialogRef } from '@angular/material';
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
@@ -19,6 +18,5 @@ export class QuestionModalComponent {
   onClose() {
     this.router.navigate(['dashboard/communication/avis']);
     this.dialogRef.close();
-    this.witnessService.hideWitnessListOnMobile();
   }
 }

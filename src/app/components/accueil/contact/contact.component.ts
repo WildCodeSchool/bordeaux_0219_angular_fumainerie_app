@@ -1,4 +1,4 @@
-import { NewsletterModalComponent } from './newsletter-modal/newsletter-modal.component';
+import { NewsletterModalComponent } from '../../modals/newsletter-modal/newsletter-modal.component';
 import { NewsletterService } from './../../../shared/services/newsletter.service';
 import { Component, OnInit } from '@angular/core';
 import { emailValidator } from 'src/app/shared/validators/email-validator';

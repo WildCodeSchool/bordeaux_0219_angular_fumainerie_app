@@ -1,4 +1,4 @@
-import { WitnessService } from './../../../../../../shared/services/witness.service';
+import { WitnessService } from '../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
@@ -14,7 +14,6 @@ export class WitnessModalComponent {
               private witnessService: WitnessService,
               private dialogRef: MatDialogRef<WitnessModalComponent>) {}
   onClose() {
-    this.witnessService.hideWitnessListOnMobile();
     this.router.navigate(['dashboard/communication/avis']);
     this.dialogRef.close();
   }
