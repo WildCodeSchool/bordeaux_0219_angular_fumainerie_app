@@ -9,7 +9,7 @@ import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +51,7 @@ import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
+import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 
 
 @NgModule({
@@ -90,7 +91,8 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
-    WitnessDeleteModalComponent
+    WitnessDeleteModalComponent,
+    EventDeleteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -129,7 +131,9 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     DialogSignupComponent,
     DialogSigninComponent,
     NewsletterModalComponent,
-    WitnessDeleteModalComponent
+    WitnessDeleteModalComponent,
+    EventModalFormComponent,
+    EventDeleteModalComponent
   ]
 })
 export class AppModule { }
