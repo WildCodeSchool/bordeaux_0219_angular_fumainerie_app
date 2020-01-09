@@ -33,7 +33,7 @@ getUserById(id: number) {
   }
 
   public connexion(user: User) {
-    return this.http.post(UserService.URL_AUTH + '/signin', {email: 'koin@canard.fr', password: 'free'}).pipe(
+    return this.http.post(UserService.URL_AUTH + '/signin', user).pipe(
       tap((token: any) => localStorage.set('TOKEN', token)
     ));
     }

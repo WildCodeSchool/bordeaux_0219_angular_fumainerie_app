@@ -1,6 +1,6 @@
 
 
-<form>
+<form [formGroup]="signInForm" (ngSubmit)="userConnexion()">
   <div class="example-container boxForm">
     <div class="imgContainer">
       <button mat-flat-button class='switch'>Connexion</button>
@@ -12,9 +12,7 @@
         placeholder="Identifiant"
         type="text"
         name="login"
-        required
-        minlength="2"
-        maxlength="255"
+        formControlName='email'
       />
     </mat-form-field>
 
@@ -23,8 +21,7 @@
         matInput
         placeholder="Mot de passe"
         type="password"
-        name="password"
-
+        formControlName="password"
       >
 
     </mat-form-field>
@@ -33,7 +30,7 @@
         <button mat-flat-button >
            Annuler
           </button>
-      <button mat-flat-button (click)="userConnexion()">
+      <button mat-flat-button type="submit" [disabled]="!signInForm.valid">
         Se connecter
       </button>
     </div>
