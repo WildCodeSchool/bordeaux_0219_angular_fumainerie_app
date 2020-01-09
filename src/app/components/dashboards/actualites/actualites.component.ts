@@ -11,6 +11,7 @@ export class ActualitesComponent implements OnInit {
   news: News[];
   events: Event[];
   onEventForm = false;
+  onActualiteForm = false;
   button = true;
 
   constructor(private newsService: NewsService) { }
@@ -22,6 +23,10 @@ export class ActualitesComponent implements OnInit {
   }
   onEventsForm() {
     this.onEventForm = !this.onEventForm;
+    this.button = !this.button;
+  }
+  onActualitesForm() {
+    this.onActualiteForm = !this.onActualiteForm;
     this.button = !this.button;
   }
 }

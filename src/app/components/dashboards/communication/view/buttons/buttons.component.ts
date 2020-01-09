@@ -16,11 +16,13 @@ export class ButtonsComponent implements OnInit {
     console.log('visible =' + this.witnessService.visible);
   }
   onWitnessForm() {
+    this.witnessService.hideWitnessListOnMobile();
     this.router.navigate(['/dashboard/communication/avis/temoigner']);
 
   }
 
   onQuestionForm() {
+    this.witnessService.hideWitnessListOnMobile();
     this.router.navigate(['/dashboard/communication/avis/question']);
   }
 

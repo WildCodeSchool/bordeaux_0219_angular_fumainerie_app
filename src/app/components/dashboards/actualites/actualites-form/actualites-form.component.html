@@ -1,0 +1,32 @@
+<p>actualites-form works!</p>
+<form [formGroup]="actualiteForm" (ngSubmit)="onSubmitActualiteForm()">
+  <div class="example-container">
+
+    <div class="imgContainer">
+      <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
+    </div>
+
+    <mat-form-field>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Titre :" formControlName='title'></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description :" formControlName='description'></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Lien :" formControlName='link'></textarea>
+    </mat-form-field>
+
+    <div class="container">
+      <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
+      <button mat-flat-button type="submit" [disabled]="!actualiteForm.valid">Envoyer</button>
+    </div>
+
+  </div>
+</form>

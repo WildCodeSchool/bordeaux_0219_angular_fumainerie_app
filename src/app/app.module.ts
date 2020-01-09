@@ -50,6 +50,7 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
 import { ActualitesComponent } from './components/dashboards/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
+import { ActualitesFormComponent } from './components/dashboards/actualites/actualites-form/actualites-form.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
-    WitnessDeleteModalComponent
+    WitnessDeleteModalComponent,
+    ActualitesFormComponent
   ],
   imports: [
     BrowserModule,

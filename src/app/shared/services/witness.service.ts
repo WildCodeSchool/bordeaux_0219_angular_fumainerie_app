@@ -7,11 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WitnessService {
-  static URL = 'http://localhost:3000/witness';
   constructor(private http: HttpClient) { }
+  static URL = 'http://localhost:3000/witness';
   mobile = true;
   visible = true;
   index: number;
+  hideWitnessListOnMobile() {
+    throw new Error("Method not implemented.");
+  }
 
 /*   visibled(): Observable<boolean> {
     if (this.visible) {
