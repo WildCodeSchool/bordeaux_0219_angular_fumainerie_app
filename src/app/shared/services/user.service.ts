@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +33,6 @@ getUserById(id: number) {
   getToken(): string {
     return localStorage.getItem('token');
   }
+
 
 }
