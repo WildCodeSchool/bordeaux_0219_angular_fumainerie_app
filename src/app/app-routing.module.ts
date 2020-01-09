@@ -23,13 +23,13 @@ const routes: Routes = [
   {path: 'accueil', component : HomepageComponent},
   {path: 'connexion', component  : SignInComponent},
   {path: 'inscription', component  : SignUpComponent},
-  {path: 'dashboard', component : DashboardComponent, children: [
+  {path: 'dashboard', component : DashboardComponent, canActivate: [AuthGuard], children: [
     {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
     {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
-    {path: 'communication', component: CommunicationComponent, children: [
+    {path: 'communication', component: CommunicationComponent, canActivate: [AuthGuard], children: [
       {path: '', redirectTo: 'avis', pathMatch: 'full'},
-      {path: 'avis', component: ViewComponent, children: [
+      {path: 'avis', component: ViewComponent, canActivate: [AuthGuard], children: [
         {path: '', component: ButtonsComponent},
         {path: 'question', component: QuestionFormComponent, canActivate: [AuthGuard]},
         {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},

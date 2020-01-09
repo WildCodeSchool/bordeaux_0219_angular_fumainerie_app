@@ -1,3 +1,4 @@
+import { UserService } from './../../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms';
@@ -17,7 +18,8 @@ export class SignInFormComponent implements OnInit {
 
   constructor(private router: Router,
               private formbuilder: FormBuilder,
-              private signInService: SigninService) { }
+              private userService: UserService
+              ) { }
 
   ngOnInit() {
     this.signInForm = this.formbuilder.group({
@@ -28,8 +30,9 @@ export class SignInFormComponent implements OnInit {
 
 
   userConnexion() {
-    this.signInService.connectUser(this.signInForm.value).subscribe(() => {
-      console.log(this.signInForm.value);
+    this.userService.connexion(this.signInForm.value).subscribe((token: any) => {
+
+
       // this.router.navigate(['/dashboard']);
     });
   }

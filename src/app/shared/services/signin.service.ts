@@ -17,7 +17,7 @@ export class SigninService {
 
 
 
-  connectUser(user: User): Observable<User> {
+  connectUser(user: User): Observable<User> {   // a virer  déplacé dans le user xservice
     return this.http.post<User>(SigninService.URL, user);
 
   }
