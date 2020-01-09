@@ -2,12 +2,13 @@ import { WitnessDeleteModalComponent } from './components/modals/witness-delete-
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
+import { LogInterceptor } from './core/log.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {  HttpClientModule  } from '@angular/common/http';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -107,10 +108,20 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     HttpClientModule,
     MatTabsModule
   ],
-  providers: [{
+
+  providers: [
+    {
     provide: LOCALE_ID,
     useValue: 'fr'
-  }],
+    },
+
+    {
+    provide : HTTP_INTERCEPTORS,
+    useClass: LogInterceptor,
+    multi: true
+  }
+],
+
   bootstrap: [AppComponent],
   entryComponents: [
     QuestionModalComponent,

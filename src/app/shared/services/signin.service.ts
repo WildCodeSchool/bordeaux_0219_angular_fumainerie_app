@@ -1,4 +1,3 @@
-import { User } from 'src/app/shared/models/user';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -13,4 +12,15 @@ export class SigninService {
   authUser(email: string, password: string): Observable<any> {
     return this.http.post<any>(SigninService.URL, [email, password]);
   }
+
+  // code Homepage
+
+
+  // constructor(private http: HttpClient) { }
+
+  // connectUser(user: User): Observable<User> {
+  //   return this.http.post<User>(SigninService.URL, user);
+
+  // }
+
 }

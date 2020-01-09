@@ -26,4 +26,8 @@ getUserById(id: number) {
      });
 
   }
+
+  getToken() {
+
+  }
 }
