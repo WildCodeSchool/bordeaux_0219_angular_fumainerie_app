@@ -13,11 +13,9 @@
       </mat-tab>
     </mat-tab-group>
   </div>
-  <button *ngIf='button'mat-button class='yellowButton'(click)='onEventsForm()'>Poster un évènement</button>
-      <!--  *ngIf="user.satus==admin" -->
-  <div class='form' *ngIf="onEventForm">
-    <app-events-form ></app-events-form>
-  </div>
-
+  <button *ngIf="button && user.function == 'admin'" mat-button class='yellowButton'(click)='onEventsForm()'>Poster un évènement</button>
+<div class='form' *ngIf="onEventForm">
+<app-events-form ></app-events-form>
+</div>
 </div>
 

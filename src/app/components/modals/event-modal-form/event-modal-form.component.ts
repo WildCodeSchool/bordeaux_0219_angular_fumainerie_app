@@ -1,6 +1,7 @@
 import { MatDialogRef } from '@angular/material';
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
+import { EventService } from '../../../shared/services/event.service';
 
 @Component({
   selector: 'app-event-modal-form',
@@ -10,9 +11,10 @@ import { Router } from '@angular/router';
 export class EventModalFormComponent {
 
   constructor(private router: Router,
+              private eventService: EventService,
               private dialogRef: MatDialogRef<EventModalFormComponent>) {}
   onClose() {
-    this.router.navigate(['dashboard/communication/avis']);
+    this.router.navigate(['dashboard/evenements']);
     this.dialogRef.close();
   }
 }
