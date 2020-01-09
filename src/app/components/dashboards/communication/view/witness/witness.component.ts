@@ -24,7 +24,7 @@ export class WitnessComponent implements OnInit {
               private userService: UserService) { }
 
   ngOnInit() {
-    this.user = this.userService.user;
+    this.user = this.userService.user1;
     if (this.user.function === 'admin') {
       this.witnessService.getAllWitness().subscribe((witness) => {
         this.witness = witness;

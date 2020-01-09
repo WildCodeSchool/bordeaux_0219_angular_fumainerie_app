@@ -8,17 +8,28 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NewsService {
-  static URL = 'http://localhost:3000/news';
 
   constructor(private http: HttpClient) { }
+  static URL = 'http://localhost:3000/news';
+  index: number;
+
 
   getAllNews(): Observable<News[]> {
     return this.http.get<News[]>(NewsService.URL);
   }
-
+  getValidedNews(): Observable<News[]> {
+    return this.http.get<News[]>(NewsService.URL + `/valided`);
+  }
   createNews(news: News): Observable<any> {
-    console.log(news);
+    news.status = true;
+    news.user_id = 1;
     return this.http.post(NewsService.URL, news);
   }
-
+  modifyNews(news: News): Observable<any> {
+    return this.http.put(NewsService.URL + `/${news.id}`, news);
+  }
+  deleteNews(): Observable<any> {
+    console.log('delete id: ' + this.index);
+    return this.http.delete<News>(NewsService.URL + `/${this.index}`);
+  }
 }
