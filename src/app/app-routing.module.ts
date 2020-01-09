@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { config } from 'rxjs';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { AuthGuard } from './core/auth.guard';
 
 
 const routes: Routes = [
@@ -24,15 +25,15 @@ const routes: Routes = [
   {path: 'inscription', component  : SignUpComponent},
   {path: 'dashboard', component : DashboardComponent, children: [
     {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
-    {path: 'vidanges', component : VidangesComponent},
-    {path: 'documents', component : DocumentsComponent},
+    {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
+    {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
     {path: 'communication', component: CommunicationComponent, children: [
       {path: '', redirectTo: 'avis', pathMatch: 'full'},
       {path: 'avis', component: ViewComponent, children: [
         {path: '', component: ButtonsComponent},
-        {path: 'question', component: QuestionFormComponent},
-        {path: 'temoigner', component: WitnessFormComponent}]}]},
-    {path: 'evenements', component : EventsComponent }]},
+        {path: 'question', component: QuestionFormComponent, canActivate: [AuthGuard]},
+        {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},
+    {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]}]},
   {path: 'sidebar', component : SidebarComponent }
 ];
 @NgModule({

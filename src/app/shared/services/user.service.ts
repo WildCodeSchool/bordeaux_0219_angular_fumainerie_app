@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
   static URL_GET_USER = 'https://localhost:3000/auth';
+  static URL_GET_TOKEN = '';
 
   // User mis en dur pour le moment en attente de signin
 
@@ -26,4 +29,10 @@ getUserById(id: number) {
      });
 
   }
+
+  getToken(): string {
+    return localStorage.getItem('token');
+  }
+
+
 }
