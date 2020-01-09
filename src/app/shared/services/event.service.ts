@@ -13,6 +13,7 @@ export class  EventService {
 
   button = true;
   onEventForm = false;
+  index: number;
 
   constructor(private http: HttpClient,
               private userService: UserService) { }
@@ -25,5 +26,9 @@ export class  EventService {
     console.log(event);
     event.user_id = this.userService.user.id;
     return this.http.post(EventService.URL, event);
+  }
+  deleteEvent(): Observable<any> {
+    console.log('delete id: ' + this.index);
+    return this.http.delete<Event>(EventService.URL + `/${this.index}`);
   }
 }

@@ -1,10 +1,12 @@
+import { EventDeleteModalComponent } from './../../../components/modals/event-delete-modal/event-delete-modal.component';
 import { Router } from '@angular/router';
 import { User } from './../../../shared/models/user';
 import { UserService } from './../../../shared/services/user.service';
 import { Event } from '../../../shared/models/events';
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../../shared/services/event.service';
-import { BoundEventAst } from '@angular/compiler';
+import { MatDialog } from '@angular/material';
+
 
 
 @Component({
@@ -20,6 +22,7 @@ export class EventsComponent implements OnInit {
 
   constructor(private eventService: EventService,
               private userService: UserService,
+              private dialog: MatDialog,
               private router: Router) { }
 
   ngOnInit() {
@@ -31,4 +34,14 @@ export class EventsComponent implements OnInit {
     this.onEventForm = !this.onEventForm;
     this.button = !this.button;
   }
-}
+  onAskDeleteEvent(index: number) {
+      this.eventService.index = index;
+      const dialogRef = this.dialog.open(EventDeleteModalComponent, {
+        width: '50%'
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+    }
+  }
+

@@ -9,6 +9,9 @@
             <p>{{item.description}}</p>
             <small>--{{item.author}}--</small>
           </div>
+          <div class='admin' *ngIf="user.function==='admin'" >
+            <mat-icon (click)='onAskDeleteEvent(item.id)'>delete</mat-icon>
+          </div>
         </div>
       </mat-tab>
     </mat-tab-group>
