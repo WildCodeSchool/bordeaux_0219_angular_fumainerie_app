@@ -20,14 +20,14 @@
             <li><a routerLink="/ressources">Ressources documentaires</a></li>
           </ul> -->
           <div class="account">
-          <p>{{user.username}}</p>
+          <p>{{user.firstname}}</p>
             <p></p>
           </div>
         </div>
       </div>
 
 
-      <div class="modal-account" *ngIf="StatusAccountIsComplete != true">
+      <div class="modal-account" *ngIf="!user.status">
         <div>
           Votre compte n'est pas à jour !
         </div>
@@ -40,4 +40,4 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

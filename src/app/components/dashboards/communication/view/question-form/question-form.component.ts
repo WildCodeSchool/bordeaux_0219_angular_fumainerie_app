@@ -1,5 +1,5 @@
 import { WitnessService } from './../../../../../shared/services/witness.service';
-import { QuestionModalComponent } from './question-modal/question-modal.component';
+import { QuestionModalComponent } from '../../../../modals/question-modal/question-modal.component';
 import { QuestionService } from './../../../../../shared/services/question.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -33,7 +33,6 @@ export class QuestionFormComponent implements OnInit {
   }
   onClose() {
       this.router.navigate(['dashboard/communication/avis']);
-      this.witnessService.hideWitnessListOnMobile();
   }
   onSubmitQuestionForm() {
     console.log('modale ouverte?');

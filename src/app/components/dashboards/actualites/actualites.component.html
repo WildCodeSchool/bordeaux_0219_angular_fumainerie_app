@@ -1,8 +1,5 @@
-<p>actualites works!</p>
-<div class="rightSide">
-  <mat-tab-group dynamicHeight mat-stretch-tabs style="height: calc(100% - 64px); min-height: calc(100% - 64px);"
-  class="fauxCaroussel mat-elevation-z4">
 
+<mat-tab-group>
   <mat-tab label="Les dernières actus">
     <div class="section mat-elevation-z4" *ngFor="let item of news">
       <div class="texte">
@@ -14,6 +11,12 @@
       </div>
     </div>
   </mat-tab>
+</mat-tab-group>
+<div>
 
-  </mat-tab-group>
-</div>
+
+  <button *ngIf='button'mat-button class='yellowButton'(click)='onEventsForm()'>Poster un évènement</button>
+      <!--  *ngIf="user.satus==admin" -->
+  <div class='form' *ngIf="onEventForm">
+    <app-events-form ></app-events-form>
+  </div>

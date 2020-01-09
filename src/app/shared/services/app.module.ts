@@ -1,6 +1,6 @@
 import { EventsFormComponent } from './../../pages/dashboard/events/events-form/events-form.component';
 import { EventsComponent } from './../../pages/dashboard/events/events.component';
-import { WitnessModalComponent } from '../../components/dashboards/communication/view/witness-form/witness-modal/witness-modal.component';
+import { WitnessModalComponent} from '../../components/modals/witness-modal/witness-modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from '../../modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
@@ -39,10 +39,10 @@ import { QuestionFormComponent } from '../../components/dashboards/communication
 import { WitnessFormComponent } from '../../components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from '../../components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from '../../components/dashboards/communication/view/buttons/buttons.component';
-import { QuestionModalComponent } from '../../components/dashboards/communication/view/question-form/question-modal/question-modal.component';
 import { DialogSigninComponent } from '../../components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from '../../components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsComponent } from '../../components/accueil/news/news.component';
+import { QuestionModalComponent } from '../../components/modals/question-modal/question-modal.component';
 @NgModule({
   declarations: [
     AppComponent,

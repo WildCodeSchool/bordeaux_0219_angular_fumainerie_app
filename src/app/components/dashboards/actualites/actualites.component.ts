@@ -9,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActualitesComponent implements OnInit {
   news: News[];
+  events: Event[];
+  onEventForm = false;
+  button = true;
 
   constructor(private newsService: NewsService) { }
 
@@ -17,5 +20,8 @@ export class ActualitesComponent implements OnInit {
       this.news = news;
     });
   }
-
+  onEventsForm() {
+    this.onEventForm = !this.onEventForm;
+    this.button = !this.button;
+  }
 }
