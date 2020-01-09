@@ -25,8 +25,8 @@ export class ActualitesComponent implements OnInit {
     this.onEventForm = !this.onEventForm;
     this.button = !this.button;
   }
-  onActualitesForm() {
-    this.onActualiteForm = !this.onActualiteForm;
-    this.button = !this.button;
-  }
+  // onActualitesForm() {
+  //   this.onActualiteForm = !this.onActualiteForm;
+  //   this.button = !this.button;
+  // }
 }

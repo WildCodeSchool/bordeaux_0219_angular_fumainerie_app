@@ -2,12 +2,13 @@ import { WitnessDeleteModalComponent } from './components/modals/witness-delete-
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
+import { LogInterceptor } from './core/log.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {  HttpClientModule  } from '@angular/common/http';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -50,7 +51,7 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
 import { ActualitesComponent } from './components/dashboards/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
-import { ActualitesFormComponent } from './components/dashboards/actualites/actualites-form/actualites-form.component';
+// import { ActualitesFormComponent } from './components/dashboards/actualites/actualites-form/actualites-form.component';
 
 
 @NgModule({
@@ -90,8 +91,8 @@ import { ActualitesFormComponent } from './components/dashboards/actualites/actu
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
-    WitnessDeleteModalComponent,
-    ActualitesFormComponent
+    WitnessDeleteModalComponent
+    // ActualitesFormComponent
   ],
   imports: [
     BrowserModule,
@@ -109,10 +110,20 @@ import { ActualitesFormComponent } from './components/dashboards/actualites/actu
     HttpClientModule,
     MatTabsModule
   ],
-  providers: [{
+
+  providers: [
+    {
     provide: LOCALE_ID,
     useValue: 'fr'
-  }],
+    },
+
+    {
+    provide : HTTP_INTERCEPTORS,
+    useClass: LogInterceptor,
+    multi: true
+  }
+],
+
   bootstrap: [AppComponent],
   entryComponents: [
     QuestionModalComponent,
