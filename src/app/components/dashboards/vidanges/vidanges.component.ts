@@ -21,13 +21,14 @@ export class VidangesComponent implements OnInit {
   currentUser: User;
   drainingFormRequest: FormGroup;
   allDrainingRequestByUser: DrainingRequest[] = [];
-  allDraining: Draining [];
+  allDraining: Draining [] = [];
+  nextDraining: Draining;
 
   // tslint:disable-next-line: max-line-length
   constructor(private drainingRequestService: DrainingRequestService,
               private userService: UserService,
               private drainingService: DrainingService,
-              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr');}
+              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr'); }
 
   ngOnInit() {
    this.currentUser = this.userService.user1;
@@ -42,6 +43,10 @@ export class VidangesComponent implements OnInit {
     this.allDraining = drainings;
    });
 
+   this.drainingService.getNextDrainingByUserId(this.currentUser.id).subscribe( draining => {
+    this.nextDraining = draining;
+   });
+
    this.drainingRequestService.getSlot().subscribe( data => {
         this.slotData = data;
         this.drainingFormRequest = this.fb.group({
@@ -53,7 +58,7 @@ export class VidangesComponent implements OnInit {
 
 }
 
-// Montre les détails de la vidnage en clickant sur details
+// Montre les détails de la vidange en clickant sur details
   openDetailsDraining(drainingDetail: Draining) {
     drainingDetail.show = !drainingDetail.show;
     return drainingDetail;
@@ -85,7 +90,9 @@ export class VidangesComponent implements OnInit {
     drainingRequestEmergency.session_date = currentDateString;
     drainingRequestEmergency.slot_id = '1';
 
-    return this.drainingRequestService.postEmergencyDrainingRequest(drainingRequestEmergency ).subscribe();
+    this.allDraining.push(drainingRequestEmergency);
+
+    return this.drainingRequestService.postDrainingRequest(drainingRequestEmergency ).subscribe();
   }
 
 }

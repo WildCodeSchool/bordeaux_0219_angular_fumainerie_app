@@ -11,7 +11,11 @@ export class DrainingService {
 
   constructor(private http: HttpClient) {}
 
-  getDrainingByUserId(id: number): Observable<Draining []> {
-    return this.http.get<Draining []>(DrainingService.URL + 'draining/user/' + id);
+  getDrainingByUserId(id: number): Observable<Draining[]> {
+    return this.http.get<Draining[]>(DrainingService.URL + 'draining/user/' + id);
+  }
+
+  getNextDrainingByUserId(id: number): Observable<Draining> {
+    return this.http.get<Draining>(DrainingService.URL + 'draining/user/' + id + '/next');
   }
 }

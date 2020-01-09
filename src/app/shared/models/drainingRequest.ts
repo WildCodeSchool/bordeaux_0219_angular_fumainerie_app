@@ -11,6 +11,7 @@ export class DrainingRequest {
   public name?: string;
   public startAt?: string;
   public endAt?: string;
+  public show: boolean;
 
   constructor(input?: DrainingRequest) {
     if (!input) {
