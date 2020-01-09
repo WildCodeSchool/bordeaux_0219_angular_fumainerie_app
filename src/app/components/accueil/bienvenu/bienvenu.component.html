@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="leftSide">
+    <mat-card>
+      <h1>Bienvenue à la fumainerie</h1>
+      <div class="intro">
+        <p>Et si se libérer du tout-à-l'égout était l'une des solutions pour préserver notre ressource en eau? <br><br>
+          Pour vous en convaincre, La Fumainerie déploie - sur Bordeaux - le premier réseau français de sanitaires
+          écologiques adaptés à la ville!
+        </p>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="rightSide">
+    <mat-tab-group dynamicHeight mat-stretch-tabs style="height: calc(100% - 64px); min-height: calc(100% - 64px);"
+      class="fauxCaroussel mat-elevation-z4">
+      <mat-tab label="Facebook">
+        <div class="section mat-elevation-z4">
+          <div class="texte">
+            <h4>Recompenses</h4>
+            <p>Prix de l'innovation 2019. Nous en sommes très fiers</p>
+          </div>
+          <div><img src="http://via.placeholder.com/60x60" alt="placeholder"></div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Les dernières actus">
+        <div class="section mat-elevation-z4">
+          <div class="texte">
+            <h4>Démarrage</h4>
+            <p>dévut de l'expérimentation avec nos 35 familles.</p>
+          </div>
+          <div><img src="http://via.placeholder.com/60x60" alt="placeholder"></div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Témoignages">
+        <div class="section mat-elevation-z4" *ngFor="let item of witness">
+          <div class="texte">
+            <h4>{{item.username}} </h4>
+            <p>{{item.description}}</p>
+          </div>
+          <div>
+            <img src="http://via.placeholder.com/60x60" alt="placeholder">
+          </div>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+  </div>
+</div>

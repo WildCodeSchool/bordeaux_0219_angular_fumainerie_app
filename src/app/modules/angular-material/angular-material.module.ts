@@ -30,9 +30,10 @@ import { MatAutocompleteModule,
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatStepperModule } from '@angular/material';
+  MatStepperModule,
+  MatFormFieldModule
 
-
+} from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -70,6 +71,11 @@ import { MatAutocompleteModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule]
+    MatTooltipModule,
+    MatFormFieldModule
+  ],
+  providers: [
+    MatDatepickerModule
+  ]
 })
 export class AngularMaterialModule { }

@@ -5,14 +5,11 @@ img #imgCard{
       margin-top: 0px;
 }
 @media only screen and (max-width: 990px) {
-
   #imgCard{
     max-height: 400px;
     width: auto;
   }
 }
-
-
 /*for ipad and other lage tabs*/
 @media only screen and (max-width: 768px) {
 
@@ -21,12 +18,11 @@ img #imgCard{
     width: auto;
   }
 }
-
 /*for mobile devices*/
 @media only screen and (max-width: 500px) {
   #imgCard{
     max-height: 300px;
     width: auto;
- 
+
   }
 }
