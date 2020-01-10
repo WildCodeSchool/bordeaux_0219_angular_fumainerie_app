@@ -23,6 +23,12 @@
 
   </div>
 
+  <div class="nextDraining">
+  <h3>Prochaine vidange prévu le </h3>
+
+  </div>
+
+
   <div class="drainingRequest">
     <h3>Demande en cours</h3>
     <p *ngIf="allDrainingRequestByUser.length === 0">
@@ -36,22 +42,29 @@
 
   <div class="history">
     <h3>Historique</h3>
-    <p *ngIf="!allDraining">
+    <p *ngIf="allDraining.length===0">
       Pas d'historique.
     </p>
 
     <div *ngIf="allDraining" >
       <div *ngFor="let draining of allDraining">
-        <div class="allDraining" >
-          <p>{{draining.check_date | date: 'fullDate':'fr'}}</p>
-          <p (click)="openDetailsDraining(draining)">Details</p>
-        </div>
+          <p class="allDraining" (click)="openDetailsDraining(draining)">{{draining.check_date | date: 'fullDate':'fr'}}</p>
 
-        <div class="detail"*ngIf="draining.show">
-          <p>{{draining.comments}}</p>
-          <p>{{draining.sawdust_delivery}}</p>
-          <p>{{draining.sawdust_weight}}</p>
-          <p>{{draining.weight}}</p>
+
+        <div class="detail" *ngIf="draining.show">
+          <div class="table">
+            <p>Commentaire</p>
+            <p>{{draining.comments}}</p>
+          </div>
+          <div class="table">
+            <p>Quantité sciure livrée</p>
+            <p>{{draining.sawdust_delivery}} kg</p>
+          </div>
+          <div class="table">
+            <p>Quantité sciure récupérée</p>
+            <p>{{draining.sawdust_weight}} kg</p>
+          </div>
+
 
         </div>
       </div>

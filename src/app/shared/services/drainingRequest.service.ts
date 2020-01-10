@@ -14,7 +14,7 @@ export class DrainingRequestService {
   static URL = 'http://localhost:3000/';
 
   postDrainingRequest(drainingRequest: DrainingRequest): Observable<DrainingRequest> {
-    return this.http.post<DrainingRequest>(DrainingRequestService.URL + 'drainingRequest', drainingRequest);
+    return this.http.post<DrainingRequest>(DrainingRequestService.URL + 'drainingRequest/draining', drainingRequest);
   }
   getSlot(): Observable<any> {
     return this.http.get(DrainingRequestService.URL + 'slot');
@@ -23,7 +23,7 @@ export class DrainingRequestService {
     return this.http.get<DrainingRequest[]>(DrainingRequestService.URL + `drainingRequest/user/${id}`);
   }
 
-  postEmergencyDrainingRequest(drainingRequestEmergency: DrainingRequest ) {
-    return this.http.post<DrainingRequest>(DrainingRequestService.URL + 'drainingRequest', drainingRequestEmergency );
-  }
+  // postEmergencyDrainingRequest(drainingRequestEmergency: DrainingRequest ) {
+  //   return this.http.post<DrainingRequest>(DrainingRequestService.URL + 'drainingRequest', drainingRequestEmergency );
+  // }
 }
