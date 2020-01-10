@@ -56,7 +56,7 @@ export class VidangesComponent implements OnInit {
 
 }
 
-// Montre les détails de la vidnage en clickant sur details
+// Montre les détails de la vidange en clickant sur details
   openDetailsDraining(drainingDetail: Draining) {
     drainingDetail.show = !drainingDetail.show;
 
