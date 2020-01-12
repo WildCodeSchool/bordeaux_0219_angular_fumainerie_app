@@ -34,13 +34,14 @@ export class EventsComponent implements OnInit {
     this.onEventForm = !this.onEventForm;
     this.button = !this.button;
   }
-  onAskDeleteEvent(index: number) {
+  onAskDeleteEvent(index: number, i: number) {
       this.eventService.index = index;
       const dialogRef = this.dialog.open(EventDeleteModalComponent, {
         width: '50%'
       });
       dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
+        if (result) {
+        this.events.splice(i, 1); }
       });
     }
   }
