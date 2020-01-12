@@ -9,18 +9,12 @@ import { User } from '../../../shared/models/user';
   templateUrl: './communication.component.html',
   styleUrls: ['./communication.component.scss']
 })
-export class CommunicationComponent implements OnInit, OnChanges {
-  visible: boolean;
+export class CommunicationComponent implements OnInit {
   user: User;
-  constructor(private witnessService: WitnessService,
-              private userService: UserService) {}
+  constructor(private userService: UserService) {}
 
     ngOnInit() {
-      this.visible = this.witnessService.visible;
       this.user = this.userService.user;
     }
-    ngOnChanges() {
-    this.visible = this.witnessService.visible;
-  }
 
 }
