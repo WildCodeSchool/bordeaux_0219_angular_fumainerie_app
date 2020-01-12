@@ -1,10 +1,10 @@
-import { UserService } from './../../../../shared/services/user.service';
-import { EventModalFormComponent } from '../../../../components/modals/event-modal-form/event-modal-form.component';
+import { UserService } from '../../../shared/services/user.service';
+import { EventModalFormComponent } from '../../modals/event-modal-form/event-modal-form.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog} from '@angular/material';
-import { EventService } from '../../../../shared/services/event.service';
+import { EventService } from '../../../shared/services/event.service';
 
 
 @Component({

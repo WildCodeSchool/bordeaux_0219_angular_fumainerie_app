@@ -1,9 +1,9 @@
-import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
+import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
-import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
-import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
+import { QuestionFormComponent } from './components/forms/question-form/question-form.component';
+import { WitnessFormComponent } from './components/forms/witness-form/witness-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';

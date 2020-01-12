@@ -41,10 +41,10 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
-import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
+import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { WitnessModalComponent } from './components/modals/witness-modal/witness-modal.component';
-import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
-import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
+import { QuestionFormComponent } from './components/forms/question-form/question-form.component';
+import { WitnessFormComponent } from './components/forms/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
@@ -52,6 +52,7 @@ import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-si
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
+import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { EventDeleteModalComponent } from './components/modals/event-delete-moda
     NewsletterModalComponent,
     NewsComponent,
     WitnessDeleteModalComponent,
-    EventDeleteModalComponent
+    EventDeleteModalComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
