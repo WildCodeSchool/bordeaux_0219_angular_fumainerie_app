@@ -53,6 +53,7 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
+import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
 
 
 @NgModule({
@@ -94,7 +95,8 @@ import { QuestionComponent } from './components/dashboards/communication/view/qu
     NewsComponent,
     WitnessDeleteModalComponent,
     EventDeleteModalComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuestionDeleteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -129,6 +131,7 @@ import { QuestionComponent } from './components/dashboards/communication/view/qu
   bootstrap: [AppComponent],
   entryComponents: [
     QuestionModalComponent,
+    QuestionDeleteModalComponent,
     WitnessModalComponent,
     DialogSignupComponent,
     DialogSigninComponent,

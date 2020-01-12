@@ -1,1 +1,21 @@
-<p>question works!</p>
+<mat-tab-group>
+  <mat-tab label="Questions">
+    <div class="section mat-elevation-z4" *ngFor="let item of questions; let i = index">
+      <div class='all'>
+        <div class="texte">
+          <h4>{{item.topic }}</h4>
+          <h3> {{item.firstname}} {{item.lastname}}</h3>
+          <p>{{item.question}}</p>
+          <p>Repondre: <a href="mailto:item.email">{{item.email}}</a></p>
+        </div>
+      </div>
+      <div class='admin'>
+        <div class="mat-app-background basic-container">
+          <mat-slide-toggle [checked]="(item.traited)?true:false" (change)="onChange($event, i)">Répondu
+          </mat-slide-toggle>
+          <mat-icon (click)='onAskDeleteQuestion(item.id, i)'>delete</mat-icon>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

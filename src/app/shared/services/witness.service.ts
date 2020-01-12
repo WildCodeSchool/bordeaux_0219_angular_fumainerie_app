@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { Witness } from './../models/witness';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -8,29 +9,18 @@ import { Observable } from 'rxjs';
 })
 export class WitnessService {
   static URL = 'http://localhost:3000/witness';
-  constructor(private http: HttpClient) { }
-  mobile = true;
-  visible = true;
-
-
-/*   visibled(): Observable<boolean> {
-    if (this.visible) {
-      return Observable.of(true);
-    } else {
-      return Observable.of(false);
-    }
-  } */
-
+  constructor(private http: HttpClient,
+              private userService: UserService) { }
 
   getAllWitness(): Observable<Witness[]> {
     return this.http.get<Witness[]>(WitnessService.URL);
   }
   getValidedWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL + `/valided`);
+    return this.http.get<Witness[]>(WitnessService.URL + `/validations`);
   }
   createWitness(witness: Witness): Observable<any> {
     witness.status = false;
-    witness.user_id = 1;
+    witness.user_id = this.userService.user.id;
     return this.http.post(WitnessService.URL, witness);
   }
   modifyWitness(witness: Witness): Observable<any> {
