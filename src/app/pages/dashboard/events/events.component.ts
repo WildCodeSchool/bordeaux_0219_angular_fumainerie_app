@@ -17,7 +17,7 @@ import { MatDialog } from '@angular/material';
 export class EventsComponent implements OnInit {
   user: User;
   events: Event[];
-  onEventForm =  false;
+
   button =  true;
 
   constructor(private eventService: EventService,
@@ -31,8 +31,7 @@ export class EventsComponent implements OnInit {
     this.user = this.userService.user;
   }
   onEventsForm() {
-    this.onEventForm = !this.onEventForm;
-    this.button = !this.button;
+    this.router.navigate(['/dashboard/evenements/nouvel']);
   }
   onAskDeleteEvent(index: number, i: number) {
       this.eventService.index = index;

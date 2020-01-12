@@ -1,7 +1,6 @@
-import { Event } from './../../../../shared/models/events';
 import { UserService } from './../../../../shared/services/user.service';
 import { EventModalFormComponent } from '../../../../components/modals/event-modal-form/event-modal-form.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog} from '@angular/material';
@@ -35,6 +34,7 @@ export class EventsFormComponent implements OnInit {
     this.eventForm.reset();
   }
   onClose() {
+    this.router.navigate(['/dashboard/evenements']);
   }
   onSubmitEventForm() {
     console.log('modale ouverte?');
@@ -42,14 +42,16 @@ export class EventsFormComponent implements OnInit {
     this.eventForm.value.date = this.eventForm.value.date.toLocaleDateString().split('/').reverse().join('-');
     this.eventForm.value.time = this.eventForm.value.time + ':00';
     if (this.eventForm.value.author === '') {
-      this.eventForm.value.author = 'La direction';
+      this.eventForm.value.author = 'La Collégiale';
     }
     this.eventService.createEvents(this.eventForm.value).subscribe();
     const dialogRef = this.dialog.open(EventModalFormComponent , {
       width: '250px',
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+      if (result) {
+        this.router.navigate(['/dashboard/evenements']);
+       }
+      });
+    }
   }
-}

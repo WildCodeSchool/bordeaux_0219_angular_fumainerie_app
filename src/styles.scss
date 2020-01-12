@@ -43,3 +43,10 @@ body { margin: 0; font-family: 'Sarabun', sans-serif; }
 .carousel-indicators {
   display:none
 }
+mat-icon, mat-slide-toggle{
+  color: green;
+}
+
+mat-icon:hover{
+  cursor: pointer;
+}

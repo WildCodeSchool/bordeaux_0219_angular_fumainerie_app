@@ -1,3 +1,4 @@
+import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
@@ -12,9 +13,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { config } from 'rxjs';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { AuthGuard } from './core/auth.guard';
+
 
 
 const routes: Routes = [
@@ -33,9 +34,12 @@ const routes: Routes = [
         {path: '', component: ButtonsComponent},
         {path: 'question', component: QuestionFormComponent, canActivate: [AuthGuard]},
         {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},
-    {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]}]},
-  {path: 'sidebar', component : SidebarComponent }
-];
+    {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]},
+    {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]}
+    ]},
+  {path: 'sidebar', component: SidebarComponent }];
+
+
 @NgModule({
   imports: [RouterModule.forRoot(routes, { anchorScrolling : 'enabled' })],
   exports: [RouterModule],
