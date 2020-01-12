@@ -14,8 +14,7 @@ export class EventModalFormComponent {
               private eventService: EventService,
               private dialogRef: MatDialogRef<EventModalFormComponent>) {}
   onClose() {
-    this.router.navigate(['dashboard/evenements']);
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 }
 

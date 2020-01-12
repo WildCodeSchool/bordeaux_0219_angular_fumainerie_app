@@ -21,6 +21,6 @@ this.dialogRef.close();
 }
 onDelete() {
 this.eventService.deleteEvent().subscribe();
-this.dialogRef.close();
+this.dialogRef.close(true);
 }
 }

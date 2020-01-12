@@ -11,7 +11,7 @@ export class WitnessService {
   constructor(private http: HttpClient) { }
   mobile = true;
   visible = true;
-  index: number;
+
 
 /*   visibled(): Observable<boolean> {
     if (this.visible) {
@@ -36,8 +36,8 @@ export class WitnessService {
   modifyWitness(witness: Witness): Observable<any> {
     return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
   }
-  deleteWitness(): Observable<any> {
-    console.log('delete id: ' + this.index);
-    return this.http.delete<Witness>(WitnessService.URL + `/${this.index}`);
+  deleteWitness(id: number ): Observable<any> {
+    console.log('delete id: ' + id);
+    return this.http.delete<Witness>(WitnessService.URL + `/${id}`);
   }
 }

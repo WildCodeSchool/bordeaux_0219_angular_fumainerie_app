@@ -18,13 +18,13 @@ export class WitnessComponent implements OnInit {
   status = new FormControl();
   user: User;
 
-
   constructor(private witnessService: WitnessService,
               private dialog: MatDialog,
               private userService: UserService) { }
 
   ngOnInit() {
     this.user = this.userService.user;
+
     if (this.user.function === 'admin') {
       this.witnessService.getAllWitness().subscribe((witness) => {
         this.witness = witness;
@@ -35,18 +35,24 @@ export class WitnessComponent implements OnInit {
       });
     }
   }
+
   onChange(toggle, index: number) {
-    console.log(toggle.checked);
     this.witness[index].status = toggle.checked;
     this.witnessService.modifyWitness(this.witness[index]).subscribe();
   }
-  onAskDeleteWitness(index: number) {
-    this.witnessService.index = index;
+
+  onAskDeleteWitness(index: number, i: number) {
     const dialogRef = this.dialog.open(WitnessDeleteModalComponent, {
-      width: '50%'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+      width: '50%' });
+    const instance = dialogRef.componentInstance;
+    instance.index = index;
+
+    dialogRef.afterClosed().subscribe(isDeleted => {
+      if (isDeleted) {
+        this.witness.splice(i, 1);
+
+
+      }
+  });
   }
 }

@@ -13,9 +13,9 @@
       </div>
       <div class='admin' *ngIf="user.function==='admin'" >
         <div class="mat-app-background basic-container">
-          <mat-slide-toggle [checked]="true" (change)="onChange($event, i)">Valider</mat-slide-toggle>
+          <mat-slide-toggle [checked]="(item.status)?true:false" (change)="onChange($event, i)">Valider</mat-slide-toggle>
         </div>
-        <mat-icon (click)='onAskDeleteWitness(item.id)'>delete</mat-icon>
+        <mat-icon (click)='onAskDeleteWitness(item.id, i)'>delete</mat-icon>
       </div>
     </div>
   </mat-tab>

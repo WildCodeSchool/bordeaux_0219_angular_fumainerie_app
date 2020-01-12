@@ -1,6 +1,6 @@
-import { WitnessService } from './../../../../../shared/services/witness.service';
-import { QuestionModalComponent } from '../../../../modals/question-modal/question-modal.component';
-import { QuestionService } from './../../../../../shared/services/question.service';
+import { WitnessService } from '../../../shared/services/witness.service';
+import { QuestionModalComponent } from '../../modals/question-modal/question-modal.component';
+import { QuestionService } from '../../../shared/services/question.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
