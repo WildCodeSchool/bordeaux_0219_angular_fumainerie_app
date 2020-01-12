@@ -45,8 +45,10 @@ export class WitnessComponent implements OnInit {
     const dialogRef = this.dialog.open(WitnessDeleteModalComponent, {
       width: '50%'
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    dialogRef.afterClosed().subscribe(isDeleted => {
+      if (isDeleted) {
+        this.witness = this.witness.splice(index, 1);
+      }
+  });
   }
 }
