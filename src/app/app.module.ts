@@ -52,6 +52,7 @@ import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-si
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
+import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { EventDeleteModalComponent } from './components/modals/event-delete-moda
     NewsletterModalComponent,
     NewsComponent,
     WitnessDeleteModalComponent,
-    EventDeleteModalComponent
+    EventDeleteModalComponent,
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,

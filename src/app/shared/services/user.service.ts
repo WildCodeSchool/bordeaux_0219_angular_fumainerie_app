@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { User } from 'src/app/shared/models/user';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
 import { tap } from 'rxjs/operators';
+import { Home } from '../models/home';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ import { tap } from 'rxjs/operators';
 export class UserService {
 
   constructor(private http: HttpClient) {}
+  static URL = 'http://localhost:3000';
   static URL_AUTH = 'http://localhost:3000/auth';
-  static URL_GET_TOKEN = '';
 
   // User mis en dur pour le moment en attente de signin
 
@@ -21,24 +22,28 @@ export class UserService {
   user: User = this.user1;
 
 
-getUserById(id: number) {
-     return this.http.get(UserService.URL_AUTH + '/' + id)
-     .subscribe((user: User) => {
-       this.user = user;
-     });
+  getUserById(id: number) {
+    return this.http.get(UserService.URL_AUTH + '/' + id)
+    .subscribe((user: User) => {
+      this.user = user;
+    });
 
   }
-  getUser() {
-    return true;    // get user pour guard à définir
+  getToken() {
+    return localStorage.getItem('TOKEN');
   }
 
+  postUpdateUserForm(user: User, id: number) {
+    return this.http.put(UserService.URL + `/user/${id}`, user);
+  }
+
+  postHomeForm(home: Home, id: number) {
+    return this.http.post(UserService.URL + `/home/${id}`, home);
+
+  }
   public connexion(user: User) {
     return this.http.post(UserService.URL_AUTH + '/signin', user).pipe(
       tap((token: any) => localStorage.set('TOKEN', token)
-    ));
+      ));
     }
-
-
-
-
-}
+  }

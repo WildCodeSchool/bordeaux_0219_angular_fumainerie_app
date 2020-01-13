@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   StatusAccountIsComplete = true;
 
   ngOnInit() {
-    this.user = this.userService.user1;
+
   }
 
 }

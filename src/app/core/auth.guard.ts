@@ -14,14 +14,15 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       // check si user déja récupéré, sinon > connecter
-      if (this.service.getUser()) {
+      if (this.service.getUserById(4) !== null) {
         return true;
 
       } else {
-        // this.router.navigate(['/accueil']);
+        this.router.navigate(['/accueil']);
+      }
 
       }
 
   }
 
-}
+
