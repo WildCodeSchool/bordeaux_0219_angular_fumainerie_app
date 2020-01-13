@@ -8,8 +8,8 @@
 
 }
 .fauxCaroussel{
-width: 45vw;
-height: 45vh;
+  width: 45vw;
+  height: 45vh;
 }
 .section{
   display: flex;
@@ -40,14 +40,22 @@ h1{
     line-height: 3vh;
     font-size: 1.2em;
   }
-  .mat-card{
+  .mat-card, .intro{
     background-color: #fde773 ;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  }
+  .mat-card {
+    border-radius: 0px;
   }
 }
+
 .intro{
   width: 40vw;
-  border: 1px dotted white;;
+  border-radius: 5px;
   margin-top: 12%;
+  padding: 2rem;
 }
 mat-tab-group{
   overflow: scroll;

@@ -31,7 +31,7 @@ export const gouvernanceMock: GouvernancePersonality[] =
     name: 'Mathieu Preel',
     picture: url + '5.jpg',
     details: '“Rien ne se perd, rien ne se créé, tout se transforme.” A. Lavoisier'
-  },
+  }, // rajouter une ligne au mock
   {
     id: 5,
     name: 'Aurélie Morin',
