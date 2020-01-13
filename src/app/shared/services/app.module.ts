@@ -19,8 +19,6 @@ import { CarouselComponent } from '../../components/carousel/carousel.component'
 import { CardComponent } from '../../components/carousel/card/card.component';
 import { NavbarComponent } from '../../components/accueil/navbar/navbar.component';
 import { HomepageComponent } from '../../pages/homepage/homepage.component';
-import { ActualitesComponent } from '../../components/dashboards/actualites/actualites.component';
-import { RessourcesDocumentsComponent } from '../../pages/ressources-documents/ressources-documents.component';
 import { SignInFormComponent } from '../../components/forms/sign-in-form/sign-in-form.component';
 import { SignInComponent } from '../../pages/sign-in/sign-in.component';
 import { SignUpComponent } from '../../pages/sign-up/sign-up.component';
@@ -43,6 +41,7 @@ import { DialogSigninComponent } from '../../components/forms/sign-in-form/dialo
 import { DialogSignupComponent } from '../../components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsComponent } from '../../components/accueil/news/news.component';
 import { QuestionModalComponent } from '../../components/modals/question-modal/question-modal.component';
+import { RessourcesDocumentsComponent } from '../../pages/ressources-documents/ressources-documents.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +51,7 @@ import { QuestionModalComponent } from '../../components/modals/question-modal/q
     CardComponent,
     NavbarComponent,
     HomepageComponent,
-    ActualitesComponent,
+    NewsComponent,
     RessourcesDocumentsComponent,
     SignInFormComponent,
     SignInComponent,

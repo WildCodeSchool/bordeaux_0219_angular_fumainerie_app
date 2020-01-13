@@ -11,7 +11,11 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
   static URL = 'http://localhost:3000/news';
+  visible = true;
   index: number;
+  hideNewsListOnMobile() {
+    throw new Error("Method not implemented.");
+  }
 
 
   getAllNews(): Observable<News[]> {

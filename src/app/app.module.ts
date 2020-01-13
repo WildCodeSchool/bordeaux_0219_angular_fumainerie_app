@@ -1,3 +1,4 @@
+import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
@@ -48,10 +49,11 @@ import { ButtonsComponent } from './components/dashboards/communication/view/but
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
-import { ActualitesComponent } from './components/dashboards/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
-// import { ActualitesFormComponent } from './components/dashboards/actualites/actualites-form/actualites-form.component';
+import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
+import { NewComponent } from './components/dashboards/communication/view/new/new.component';
+import { NewsFormComponent } from './components/dashboards/communication/view/news-form/news-form.component';
 
 
 @NgModule({
@@ -63,7 +65,6 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     CardComponent,
     NavbarComponent,
     HomepageComponent,
-    ActualitesComponent,
     RessourcesDocumentsComponent,
     SignInFormComponent,
     SignInComponent,
@@ -91,8 +92,10 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
-    WitnessDeleteModalComponent
-    // ActualitesFormComponent
+    WitnessDeleteModalComponent,
+    NewsDeleteModalComponent,
+    NewComponent,
+    NewsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -131,7 +134,9 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
     DialogSignupComponent,
     DialogSigninComponent,
     NewsletterModalComponent,
-    WitnessDeleteModalComponent
+    WitnessDeleteModalComponent,
+    NewsDeleteModalComponent,
+    NewsModalComponent,
   ]
 })
 export class AppModule { }

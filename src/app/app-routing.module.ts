@@ -1,3 +1,4 @@
+import { NewsComponent } from './components/accueil/news/news.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
@@ -14,7 +15,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { config } from 'rxjs';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { ActualitesComponent } from './components/dashboards/actualites/actualites.component';
 import { AuthGuard } from './core/auth.guard';
 
 
@@ -28,7 +28,7 @@ const routes: Routes = [
     {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
     {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
-    {path: 'actualites', component : ActualitesComponent, canActivate: [AuthGuard]},
+    {path: 'news', component : NewsComponent, canActivate: [AuthGuard]},
     {path: 'communication', component: CommunicationComponent, children: [
       {path: '', redirectTo: 'avis', pathMatch: 'full'},
       {path: 'avis', component: ViewComponent, children: [

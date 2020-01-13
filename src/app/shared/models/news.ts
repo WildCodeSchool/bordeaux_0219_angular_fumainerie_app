@@ -9,7 +9,7 @@ export class News {
   public description!: string;
   public link!: string;
   public user_id!: number;
-  public status: boolean;
+  public status: any;
 
   constructor(input: News) {
       Object.assign(this, input);

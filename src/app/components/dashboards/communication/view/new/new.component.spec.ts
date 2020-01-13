@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActualiteModalFormComponent } from './actualite-modal-form.component';
+import { NewComponent } from './new.component';
 
-describe('ActualitesModalFormComponent', () => {
-  let component: ActualiteModalFormComponent;
-  let fixture: ComponentFixture<ActualiteModalFormComponent>;
+describe('NewComponent', () => {
+  let component: NewComponent;
+  let fixture: ComponentFixture<NewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActualiteModalFormComponent ]
+      declarations: [ NewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActualiteModalFormComponent);
+    fixture = TestBed.createComponent(NewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
