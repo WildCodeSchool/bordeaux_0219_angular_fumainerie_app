@@ -1,9 +1,18 @@
 .drainingRequest, .history{
   border: 1px solid black;
 }
-.drainingRequestByUser, .allDraining{
+.drainingRequestByUser, .detail{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+.allDraining{
+  width: 15vw;
+  text-align: center;
+  margin-left: 20px;
+}
+.allDraining:hover{
+background-color: white;
+border-radius: 15px;
 }
 

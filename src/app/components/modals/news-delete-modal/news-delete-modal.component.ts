@@ -8,7 +8,7 @@ import { NewsService } from '../../../shared/services/news.service';
   styleUrls: ['./news-delete-modal.component.scss']
 })
 export class NewsDeleteModalComponent implements OnInit {
-
+  index: number;
   constructor( private dialogRef: MatDialogRef<NewsDeleteModalComponent>,
                private newsService: NewsService) { }
 
@@ -18,8 +18,8 @@ export class NewsDeleteModalComponent implements OnInit {
       this.dialogRef.close();
     }
     onDelete() {
-      this.newsService.deleteNews().subscribe();
-      this.dialogRef.close();
+      this.newsService.deleteNews(this.index).subscribe(() => {
+        this.dialogRef.close(true);
+        });
     }
-
   }

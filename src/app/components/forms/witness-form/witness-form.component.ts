@@ -1,5 +1,5 @@
-import { WitnessModalComponent } from '../../../../modals/witness-modal/witness-modal.component';
-import { WitnessService } from './../../../../../shared/services/witness.service';
+import { WitnessModalComponent } from '../../modals/witness-modal/witness-modal.component';
+import { WitnessService } from '../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';

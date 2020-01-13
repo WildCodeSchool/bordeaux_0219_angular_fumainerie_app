@@ -1,5 +1,5 @@
-import { NewsModalComponent } from '../../../../modals/news-modal/news-modal.component'; // a créer
-import { NewsService } from '../../../../../shared/services/news.service';
+import { NewsModalComponent } from '../../modals/news-modal/news-modal.component';
+import { NewsService } from '../../../shared/services/news.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -11,7 +11,6 @@ import { MatDialog } from '@angular/material';
   styleUrls: ['./news-form.component.scss']
 })
 export class NewsFormComponent implements OnInit {
-
   constructor(private newsService: NewsService,
               private router: Router,
               private formBuilder: FormBuilder,
@@ -39,7 +38,7 @@ export class NewsFormComponent implements OnInit {
       console.log(this.newsForm.value);
       this.newsService.createNews(this.newsForm.value).subscribe();
       const dialogRef = this.dialog.open(NewsModalComponent, {
-        width: '250px',
+        width: '50%',
       });
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog is closed');

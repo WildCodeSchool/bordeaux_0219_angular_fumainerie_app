@@ -10,7 +10,7 @@ import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,10 +40,10 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
-import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
+import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { WitnessModalComponent } from './components/modals/witness-modal/witness-modal.component';
-import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
-import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
+import { QuestionFormComponent } from './components/forms/question-form/question-form.component';
+import { WitnessFormComponent } from './components/forms/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
@@ -53,7 +53,10 @@ import { RessourcesDocumentsComponent } from './pages/ressources-documents/resso
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
-import { NewsFormComponent } from './components/dashboards/communication/view/news-form/news-form.component';
+import { NewsFormComponent } from './components/forms/news-form/news-form.component';
+import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
+import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
+import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
 
 
 @NgModule({
@@ -92,10 +95,13 @@ import { NewsFormComponent } from './components/dashboards/communication/view/ne
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
-    WitnessDeleteModalComponent,
-    NewsDeleteModalComponent,
     NewComponent,
-    NewsFormComponent
+    NewsDeleteModalComponent,
+    WitnessDeleteModalComponent,
+    NewsFormComponent,
+    EventDeleteModalComponent,
+    QuestionComponent,
+    QuestionDeleteModalComponent
   ],
   imports: [
     BrowserModule,
@@ -130,6 +136,7 @@ import { NewsFormComponent } from './components/dashboards/communication/view/ne
   bootstrap: [AppComponent],
   entryComponents: [
     QuestionModalComponent,
+    QuestionDeleteModalComponent,
     WitnessModalComponent,
     DialogSignupComponent,
     DialogSigninComponent,
@@ -137,6 +144,8 @@ import { NewsFormComponent } from './components/dashboards/communication/view/ne
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
     NewsModalComponent,
+    EventModalFormComponent,
+    EventDeleteModalComponent
   ]
 })
 export class AppModule { }

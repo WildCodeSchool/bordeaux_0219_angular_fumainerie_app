@@ -10,14 +10,18 @@ export class LogInterceptor implements HttpInterceptor {
               public userService: UserService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const userService = this.injector.get(UserService);
-    const tokenReq = req.clone({
-      setHeaders: {
-        Autorization:   `Bearer ${userService.getToken()}`  // ajout du bearer du token
-      }
-    });
 
-    return next.handle(tokenReq);
+    const token = localStorage.getItem('TOKEN');
+
+    if (!token) {
+      return next.handle(req);
+    }
+
+    const headers = req.headers.set('Autorization', `Bearer ${token}`);
+
+    const authReq = req.clone({headers});
+    return next.handle(authReq);
+
 
   }
 

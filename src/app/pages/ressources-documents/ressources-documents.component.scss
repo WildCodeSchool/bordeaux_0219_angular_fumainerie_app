@@ -4,12 +4,13 @@
   justify-content: center;
   height: 90vh;
   mat-form-field{
-    width: 80vw;
+    width: 100%;
   }
 }
 .document{
   border-bottom: 1px solid black;
-  width: 80vw;
+  width: 90%;
+  margin: auto
 }
 ul{
   padding-inline-start: 0px;

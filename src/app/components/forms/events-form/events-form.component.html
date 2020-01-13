@@ -5,14 +5,16 @@
       <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
     </div>
 
+
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Date de l'évènement" type='date'>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
+      <input matInput id='time' type='time' placeholder="Heure et date de l'évènement" formControlName='time'>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput id='time' type='time' placeholder="Heure de l'évènement">
+      <input matInput [matDatepicker]="picker" label="Date de l'évènement" placeholder="jj/mm/aaaa" formControlName='date'>
+      <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="!eventForm.valid">Entrez une date valide.</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -20,7 +22,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Auteur (La direction par défaut)" type="text" formControlName='auteur' />
+      <input matInput placeholder="Auteur ( 'La Collégiale' par défaut ):" type="text" formControlName='author' />
     </mat-form-field>
 
     <div class="container">

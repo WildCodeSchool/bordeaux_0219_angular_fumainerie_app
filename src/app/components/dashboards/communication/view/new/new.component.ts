@@ -23,7 +23,8 @@ export class NewComponent implements OnInit {
               private userService: UserService) { }
 
     ngOnInit() {
-      this.user = this.userService.user1;
+      this.user = this.userService.user;
+
       if (this.user.function === 'admin') {
         this.newsService.getAllNews().subscribe((news) => {
           this.news = news;
@@ -35,17 +36,21 @@ export class NewComponent implements OnInit {
       }
     }
     onChange(toggle, index: number) {
-      console.log(toggle.checked);
       this.news[index].status = toggle.checked;
       this.newsService.modifyNews(this.news[index]).subscribe();
     }
-    onAskDeleteNews(index: number) {
-      this.newsService.index = index;
+
+    onAskDeleteNews(index: number, i: number) {
       const dialogRef = this.dialog.open(NewsDeleteModalComponent, {
-        width: '50%'
+        width: '50%' });
+      const instance = dialogRef.componentInstance;
+      instance.index = index;
+
+      dialogRef.afterClosed().subscribe(isDeleted => {
+        if (isDeleted) {
+          this.news.splice(i, 1);
+        }
       });
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-      });
-    }
   }
+}
+

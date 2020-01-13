@@ -1,4 +1,4 @@
-
+import { UserService } from './user.service';
 import { News } from '../models/news';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -8,15 +8,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NewsService {
-
-  constructor(private http: HttpClient) { }
   static URL = 'http://localhost:3000/news';
-  visible = true;
-  index: number;
-  hideNewsListOnMobile() {
-    throw new Error("Method not implemented.");
-  }
-
+  constructor(private http: HttpClient,
+              private userService: UserService) { }
 
   getAllNews(): Observable<News[]> {
     return this.http.get<News[]>(NewsService.URL);
@@ -25,15 +19,15 @@ export class NewsService {
     return this.http.get<News[]>(NewsService.URL + `/valided`);
   }
   createNews(news: News): Observable<any> {
-    news.status = true;
-    news.user_id = 1;
+    news.status = false;
+    news.user_id = this.userService.user.id;
     return this.http.post(NewsService.URL, news);
   }
   modifyNews(news: News): Observable<any> {
     return this.http.put(NewsService.URL + `/${news.id}`, news);
   }
-  deleteNews(): Observable<any> {
-    console.log('delete id: ' + this.index);
-    return this.http.delete<News>(NewsService.URL + `/${this.index}`);
+  deleteNews(id: number): Observable<any> {
+    console.log('delete id: ' + id);
+    return this.http.delete<News>(NewsService.URL + `/${id}`);
   }
 }

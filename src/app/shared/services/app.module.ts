@@ -1,4 +1,5 @@
-import { EventsFormComponent } from './../../pages/dashboard/events/events-form/events-form.component';
+import { NewsModalComponent } from './../../components/modals/news-modal/news-modal.component';
+
 import { EventsComponent } from './../../pages/dashboard/events/events.component';
 import { WitnessModalComponent} from '../../components/modals/witness-modal/witness-modal.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,8 +34,6 @@ import { ProjetComponent } from '../../components/accueil/projet/projet.componen
 import { BienvenuComponent } from '../../components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from '../../components/dashboards/communication/view/witness/witness.component';
-import { QuestionFormComponent } from '../../components/dashboards/communication/view/question-form/question-form.component';
-import { WitnessFormComponent } from '../../components/dashboards/communication/view/witness-form/witness-form.component';
 import { ViewComponent } from '../../components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from '../../components/dashboards/communication/view/buttons/buttons.component';
 import { DialogSigninComponent } from '../../components/forms/sign-in-form/dialog-signin/dialog-signin.component';
@@ -42,6 +41,9 @@ import { DialogSignupComponent } from '../../components/forms/sign-up-form/dialo
 import { NewsComponent } from '../../components/accueil/news/news.component';
 import { QuestionModalComponent } from '../../components/modals/question-modal/question-modal.component';
 import { RessourcesDocumentsComponent } from '../../pages/ressources-documents/ressources-documents.component';
+import { EventsFormComponent } from '../../components/forms/events-form/events-form.component';
+import { QuestionFormComponent } from '../../components/forms/question-form/question-form.component';
+import { WitnessFormComponent } from '../../components/forms/witness-form/witness-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +79,7 @@ import { RessourcesDocumentsComponent } from '../../pages/ressources-documents/r
     NewsComponent,
     EventsComponent,
     EventsFormComponent,
+    NewsModalComponent,
   ],
   imports: [
     BrowserModule,

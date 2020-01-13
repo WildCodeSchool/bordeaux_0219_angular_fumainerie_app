@@ -1,3 +1,4 @@
+import { NewsService } from './../../../shared/services/news.service';
 import { MatDialogRef } from '@angular/material';
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 export class NewsModalComponent {
 
   constructor(private router: Router,
+              private newsService: NewsService,
               private dialogRef: MatDialogRef<NewsModalComponent>) {}
   onClose() {
     this.router.navigate(['dashboard/communication/avis']);
