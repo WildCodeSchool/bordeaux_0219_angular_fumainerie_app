@@ -1,3 +1,4 @@
+import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
         {path: 'question', component: QuestionFormComponent, canActivate: [AuthGuard]},
         {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},
     {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]},
+    {path: 'actualites', component : NewComponent, canActivate: [AuthGuard]},
     {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]}
     ]},
   {path: 'sidebar', component: SidebarComponent }];

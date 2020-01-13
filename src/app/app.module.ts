@@ -101,7 +101,8 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
     NewsFormComponent,
     EventDeleteModalComponent,
     QuestionComponent,
-    QuestionDeleteModalComponent
+    QuestionDeleteModalComponent,
+    NewsModalComponent,
   ],
   imports: [
     BrowserModule,

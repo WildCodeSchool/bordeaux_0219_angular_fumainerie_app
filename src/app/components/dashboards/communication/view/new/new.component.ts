@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { News } from '../../../../../shared/models/news';
 import { UserService } from '../../../../../shared/services/user.service';
 import { MatDialog } from '@angular/material';
@@ -20,7 +21,8 @@ export class NewComponent implements OnInit {
 
   constructor(private newsService: NewsService,
               private dialog: MatDialog,
-              private userService: UserService) { }
+              private userService: UserService,
+              private router: Router) { }
 
     ngOnInit() {
       this.user = this.userService.user;
@@ -34,6 +36,9 @@ export class NewComponent implements OnInit {
           this.news = news;
         });
       }
+    }
+    onNewsForm() {
+      this.router.navigate(['dashboard/evenements;']);
     }
     onChange(toggle, index: number) {
       this.news[index].status = toggle.checked;
