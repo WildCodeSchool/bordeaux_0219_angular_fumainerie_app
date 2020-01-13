@@ -7,14 +7,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+  token: string;
   constructor(private router: Router,
-              private service: UserService) {}
+              private service: UserService) {
+                this.token = JSON.parse(localStorage.getItem('TOKEN'))  || null;
+              }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       // check si user déja récupéré, sinon > connecter
-      if (this.service.getUserById(4) !== null) {
+      if (this.token !== null) {
+        this.service.getToken(this.token);
         return true;
 
       } else {

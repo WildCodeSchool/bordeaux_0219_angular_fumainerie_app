@@ -20,6 +20,7 @@ export class UserService {
   user1: User = {id: 1, firstname: 'Olivier', function : 'admin', status : true};
 
   user: User = this.user1;
+  token: string;
 
 
   getUserById(id: number) {
@@ -29,8 +30,8 @@ export class UserService {
     });
 
   }
-  getToken() {
-    return localStorage.getItem('TOKEN');
+  getToken(token) {
+    this.token = token;
   }
 
   postUpdateUserForm(user: User, id: number) {

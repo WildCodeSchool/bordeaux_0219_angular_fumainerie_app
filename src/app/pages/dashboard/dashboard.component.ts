@@ -20,5 +20,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
 
   }
+  changeStatus() {
+    this.StatusAccountIsComplete = !this.StatusAccountIsComplete;
+  }
+  getAccountStatus() {
 
+  }
 }
