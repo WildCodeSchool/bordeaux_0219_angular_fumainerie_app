@@ -35,9 +35,7 @@ export class FormValidationComponent implements OnInit {
 
   }
     completeHome() {
-      // const token = this.userService.getToken();
-      // console.log(token);
-      // return this.userService.postHomeForm(this.validationHomeForm.value, token).subscribe();
+      return this.userService.postHomeForm(this.validationHomeForm.value).subscribe();
     }
 
   }

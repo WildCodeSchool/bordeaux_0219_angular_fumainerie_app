@@ -38,13 +38,15 @@ export class UserService {
     return this.http.put(UserService.URL + `/user/${id}`, user);
   }
 
-  postHomeForm(home: Home, id: number) {
-    return this.http.post(UserService.URL + `/home/${id}`, home);
+  postHomeForm(home: Home) {
+    return this.http.post(UserService.URL + '/home', home);
 
   }
   public connexion(user: User) {
-    return this.http.post(UserService.URL_AUTH + '/signin', user).pipe(
-      tap((token: any) => localStorage.set('TOKEN', token)
-      ));
+    return this.http.post(UserService.URL_AUTH + '/signin',user).pipe(
+      tap((token: any) => localStorage.set('TOKEN', token))
+      );
     }
+ //{observe: 'response'}
+  
   }
