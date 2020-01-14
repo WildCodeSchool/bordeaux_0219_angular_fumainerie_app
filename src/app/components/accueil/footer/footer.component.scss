@@ -1,6 +1,6 @@
 .footer{
   background-color: #fde773;
-  height: 25%; // initialement 30%
+  height: 15%; // initialement 30% //25
   width: 100%;
   display: flex;
   align-items: center;
@@ -9,8 +9,8 @@
   .logo-footer{
     width: 20%;
     img{
-      width: 175px;
-      height: 175px;
+      width: 75px;
+      height: 75px;
       border-radius: 50%;
     }
   }
@@ -34,8 +34,8 @@
       justify-content: space-evenly;
       img{
         // width: 75px;
-        // height: 75px;
-        // border-radius: 50%;
+        height: 75px;
+        border-radius: 50%;
         margin-left: 2px;
         margin-right: 2px;
       }

@@ -1,25 +1,21 @@
 import { Partner } from './../../../shared/models/partner';
 export let partnerList: Partner[] = [
     {
-      name: '',
-      img: '../../../../assets/images/PartnerLogo1.png',
-      link: ''
+      name: 'Leesu',
+      img: '../../../../assets/images/leesu.jpg'
     },
     {
-      name: '',
-      img: '../../../../assets/images/PartnerLogo2.png',
-      link: ''
+      name: 'Un petit coin de paradis',
+      img: '../../../../assets/images/PartnerLogo2.png'
 
     },
     {
-      name: '',
-      img: '../../../../assets/images/PartnerLogo3.png',
-      link: ''
+      name: 'Toopi',
+      img: '../../../../assets/images/toopi.jpg'
     },
     {
-      name: '',
-      img: '../../../../assets/images/PartnerLogo4.png',
-      link: ''
+      name: 'Wild Code shcool',
+      img: '../../../../assets/images/WCS.jpg'
     },
   ];
 
