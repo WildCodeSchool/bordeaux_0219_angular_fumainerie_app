@@ -10,8 +10,6 @@ export class AppComponent implements OnInit {
   title = 'fumainerie-angular';
   constructor(private witnessService: WitnessService) {}
   ngOnInit() {
-    if (window.screen.width < 600) {
-      this.witnessService.mobile = true;
     }
-  }
 }
+

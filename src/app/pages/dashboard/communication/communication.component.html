@@ -1,8 +1,9 @@
 <div class="container">
   <div class="leftSide">
-    <app-view></app-view>
+    <app-view *ngIf="user.function !== 'admin'"></app-view>
+    <app-question *ngIf="user.function == 'admin'"></app-question>
   </div>
-  <div class="rightSide" *ngIf="visible">
+  <div class="rightSide">
       <app-witness></app-witness>
   </div>
 </div>

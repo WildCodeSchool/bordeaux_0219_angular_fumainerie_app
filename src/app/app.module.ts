@@ -1,3 +1,4 @@
+import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
@@ -22,7 +23,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
 import { NavbarComponent } from './components/accueil/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { ActualitesComponent } from './pages/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
@@ -41,10 +41,10 @@ import { ProjetComponent } from './components/accueil/projet/projet.component';
 import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.component';
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
-import { EventsFormComponent } from './pages/dashboard/events/events-form/events-form.component';
+import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { WitnessModalComponent } from './components/modals/witness-modal/witness-modal.component';
-import { QuestionFormComponent } from './components/dashboards/communication/view/question-form/question-form.component';
-import { WitnessFormComponent } from './components/dashboards/communication/view/witness-form/witness-form.component';
+import { QuestionFormComponent } from './components/forms/question-form/question-form.component';
+import { WitnessFormComponent } from './components/forms/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
@@ -53,6 +53,11 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
+import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
+import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
+import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
+import { NewsFormComponent } from './components/forms/news-form/news-form.component';
+import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 
 
 @NgModule({
@@ -64,7 +69,6 @@ import { FormValidationComponent } from './pages/dashboard/form-validation/form-
     CardComponent,
     NavbarComponent,
     HomepageComponent,
-    ActualitesComponent,
     RessourcesDocumentsComponent,
     SignInFormComponent,
     SignInComponent,
@@ -95,6 +99,12 @@ import { FormValidationComponent } from './pages/dashboard/form-validation/form-
     WitnessDeleteModalComponent,
     EventDeleteModalComponent,
     FormValidationComponent
+    QuestionComponent,
+    QuestionDeleteModalComponent,
+    NewsDeleteModalComponent,
+    NewsModalComponent,
+    NewsFormComponent,
+    NewsLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -129,13 +139,16 @@ import { FormValidationComponent } from './pages/dashboard/form-validation/form-
   bootstrap: [AppComponent],
   entryComponents: [
     QuestionModalComponent,
+    QuestionDeleteModalComponent,
     WitnessModalComponent,
     DialogSignupComponent,
     DialogSigninComponent,
     NewsletterModalComponent,
     WitnessDeleteModalComponent,
     EventModalFormComponent,
-    EventDeleteModalComponent
+    EventDeleteModalComponent,
+    NewsModalComponent,
+    NewsDeleteModalComponent
   ]
 })
 export class AppModule { }

@@ -20,5 +20,12 @@ export class NewsService {
     console.log(news);
     return this.http.post(NewsService.URL, news);
   }
-
+  deleteNews(id: number ): Observable<any> {
+    console.log('delete id: ' + id);
+    return this.http.delete<News>(NewsService.URL + `/${id}`);
+  }
+  modifyNews(news: News): Observable<any> {
+    return this.http.put(NewsService.URL + `/${news.id}`, news);
+  }
 }
+

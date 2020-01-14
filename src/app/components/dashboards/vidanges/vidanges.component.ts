@@ -102,7 +102,18 @@ sendEmergency() {
     drainingRequestEmergency.session_date = currentDateString;
     drainingRequestEmergency.slot_id = 1;
 
-    this.allDraining.push(drainingRequestEmergency);
+    // Afficher nouvelle demande de vidange sur le front.
+    const fakedraining = new DrainingRequest();
+    fakedraining.user_id = this.currentUser.id;
+    fakedraining.session_date = currentDateString;
+    fakedraining.slot_id = 1;
+    this.slotData.forEach( element => {
+    if ( fakedraining.slot_id === element.id) {
+    fakedraining.name = element.name;
+    }
+  });
+
+    this.allDrainingRequestByUser.push(fakedraining);
 
     return this.drainingRequestService.postDrainingRequest(drainingRequestEmergency ).subscribe();
   }
