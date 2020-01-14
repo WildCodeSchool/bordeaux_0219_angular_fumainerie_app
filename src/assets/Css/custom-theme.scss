@@ -2,12 +2,9 @@
 
 @include mat-core();
 
-
-
 $custom-theme-primary: mat-palette($mat-light-blue);
 $custom-theme-accent: mat-palette($mat-orange, A200, A100, A400);
 $custom-theme-warn: mat-palette($mat-red);
-
 
 $mat-red: (
 50: #ffebee,

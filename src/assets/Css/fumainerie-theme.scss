@@ -1,0 +1,54 @@
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define hour application's custom theme.
+$my-theme-primary: mat-palette($mat-amber);
+$my-theme-accent: mat-palette($mat-purple);
+$my-theme-warn: mat-palette($mat-blue);
+
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+
+// Include theme styles for Angular Material components.
+@include angular-material-theme($my-theme);
+
+
+// primary chromatic universe from la fumainerie
+// color in use everywhere
+
+// $mat-black: (
+// 20: #000000,
+// 40: #2C2C2C,
+// 60: #656565,
+// 80: #939393,
+// 100: #C3C3C3,
+// );
+
+// $mat-yellow: (
+// 20: #9A7900,
+// 40: #C79D00,
+// 60: #F9C400,
+// 80: #FFCC0F,
+// 100: #FFD745,
+// );
+
+// secondary chromatic universe
+// use only where we need show a detail or to dynamise a part
+
+// $mat-purple: (
+// 20: #380468,
+// 40: #490686,
+// 60: #5C08A8,
+// 80: #4935B1,
+// 100: #8740C7,
+// );
+
+// $mat-blue: (
+// 20: #042F65,
+// 40: #073D83,
+// 60: #094DA3,
+// 80: #1A63C1,
+// 100:#417AC4,
+// );
