@@ -1,7 +1,7 @@
-h2{
-  margin-left: 10vw;
-  padding-top: 5vh;
+.body-contact {
+  height: 30vh;
 }
+
 span{
   text-decoration: underline;
 }
@@ -12,7 +12,7 @@ span{
 .forms-container{
   display: flex;
   align-items: center;
-  height: 40%;
+  // height: 40%;
 }
 .form-contact{
   width: 50%;
@@ -24,12 +24,6 @@ span{
     flex-direction: column;
     align-items: center;
   }
-  // .mat-form-field{
-  //   width: 70%;
-  // }
-  // textarea{
-  //   resize: none;
-  // }
 }
 .form-newsletter{
   width: 50%;
