@@ -43,16 +43,16 @@
       </slide>
       <slide>
         <div class="carousel-item" style="display: block; width: 100%;">
-          <div class="col-md-3">
+          <div class="col-md-3" *ngIf="users[8]">
             <app-card [userCard]='users[8]'></app-card>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" *ngIf="users[9]">
             <app-card [userCard]='users[9]'></app-card>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" *ngIf="users[10]">
             <app-card [userCard]='users[10]'></app-card>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" *ngIf="users[11]">
             <app-card [userCard]='users[11]'></app-card>
           </div>
         </div>

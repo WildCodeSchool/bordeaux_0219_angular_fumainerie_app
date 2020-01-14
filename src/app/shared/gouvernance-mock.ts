@@ -56,24 +56,24 @@ export const gouvernanceMock: GouvernancePersonality[] =
     picture: url + '6.jpg',
     details: 'Role au sein de l\'association'
   },
-  {
-    id: 9,
-    name: 'Nom Prénom',
-    picture: url + '6.jpg',
-    details: 'Role au sein de l\'association'
-  },
-  {
-    id: 10,
-    name: 'Nom Prénom',
-    picture: url + '6.jpg',
-    details: 'Role au sein de l\'association'
-  },
-  {
-    id: 11,
-    name: 'Nom Prénom',
-    picture: url + '6.jpg',
-    details: 'Role au sein de l\'association'
-  },
+  // {
+  //   id: 9,
+  //   name: 'Nom Prénom',
+  //   picture: url + '6.jpg',
+  //   details: 'Role au sein de l\'association'
+  // },
+  // {
+  //   id: 10,
+  //   name: 'Nom Prénom',
+  //   picture: url + '6.jpg',
+  //   details: 'Role au sein de l\'association'
+  // },
+    // {
+    //   id: 11,
+    //   name: 'Nom Prénom',
+    //   picture: url + '6.jpg',
+    //   details: 'Role au sein de l\'association'
+    // },
 
   ];
 
