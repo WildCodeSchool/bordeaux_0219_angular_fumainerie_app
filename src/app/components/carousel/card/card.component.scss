@@ -3,6 +3,7 @@ img #imgCard{
   width: calc(100% + 32px);
   margin: 0 -16px 16px -16px;
   margin-top: 0px;
+  min-height: 700px;
 }
 @media only screen and (max-width: 990px) {
   #imgCard{
@@ -34,10 +35,17 @@ img #imgCard{
 }
 p {
   opacity: 0%;
+  padding-bottom: 0px;
 }
 .example-card:hover{
   p {
     opacity: 100%;
+    font-weight: bold;
   }
 }
-
+.details {
+  height: 95px;
+}
+.citation {
+  height: 20px;
+}
