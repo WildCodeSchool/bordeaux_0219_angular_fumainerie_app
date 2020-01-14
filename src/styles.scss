@@ -35,7 +35,7 @@ html, body {
 
 body {
   margin: 0;
-  font-family: 'Sarabun', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
 }
 .carousel-control.left,.carousel-control.right {
@@ -61,6 +61,9 @@ mat-icon:hover{
 //   }
 p{
   line-height: 3vh;
+}
+h2{
+  margin-left: 10vw;
 }
 // .mat-card {
 //   background-color: #FFD745 ;

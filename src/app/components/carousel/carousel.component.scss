@@ -1,11 +1,13 @@
-h2{
-  margin-left: 10vw;
+
+h2 {
+  padding-top: 2vh;
 }
+
 p {
   width: 80%;
   margin-left: 10%;
-  font-size: 1.3rem;
-
+  background-color: white;
+  padding: 2vh;
 }
 .carousal-main{
   position: absolute;
@@ -15,21 +17,55 @@ p {
 max-height: 500px;
 width: 100%;
 position: relative;
-background-color:white;
+// background-color:white;
 }
 .mat-parent {
-background-color:white;
+// background-color:white;
 margin-top: 3%;
 width: 80%;
 margin-left: 10%;
 }
 .mat-parent-small{
-display: none;
+  display: none;
 }
 .mat-card-image {
   width: calc(100% + 32px);
   margin: 0 -16px 16px -16px;
 }
+// .intro {
+//   background-color:white;
+
+// }
+// parallax begin
+
+.parallax {
+  /* The image used */
+  background-image: url("../../../assets/image-en-construction.png");
+
+  /* Full height */
+  // height: 52vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+// parallax end
+
+
+
+
+
+
+
 /*for ipad and other lage tabs*/
 @media only screen and (max-width: 768px) {
 .mat-parent-small{
@@ -39,7 +75,7 @@ display: none;
   display: none;
 }
 .mat-parent-small {
-background-color:white;
+// background-color:white;
 margin-top: 19%;
 width: 96%;
 position: relative;
@@ -57,7 +93,7 @@ height: 440px;
 .carousel-item{
 height: 385px;
 width: 100%;
-background-color:white;
+// background-color:white;
 }
 }
 // .intro{
