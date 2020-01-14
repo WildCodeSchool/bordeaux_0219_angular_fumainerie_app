@@ -1,3 +1,5 @@
+import { NewsFormComponent } from './components/forms/news-form/news-form.component';
+import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
@@ -17,7 +19,6 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { AuthGuard } from './core/auth.guard';
 
 
-
 const routes: Routes = [
 
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -35,7 +36,9 @@ const routes: Routes = [
         {path: 'question', component: QuestionFormComponent, canActivate: [AuthGuard]},
         {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},
     {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]},
-    {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]}
+    {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]},
+    {path: 'actualites', component : NewsLinkComponent , canActivate: [AuthGuard]},
+    {path: 'actualites/nouvelle', component: NewsFormComponent, canActivate: [AuthGuard]},
     ]},
   {path: 'sidebar', component: SidebarComponent }];
 

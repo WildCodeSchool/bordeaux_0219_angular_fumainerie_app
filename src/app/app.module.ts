@@ -1,3 +1,4 @@
+import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
@@ -22,7 +23,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
 import { NavbarComponent } from './components/accueil/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { ActualitesComponent } from './pages/actualites/actualites.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
@@ -54,6 +54,9 @@ import { NewsletterModalComponent } from './components/modals/newsletter-modal/n
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
 import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
+import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
+import { NewsFormComponent } from './components/forms/news-form/news-form.component';
+import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 
 
 @NgModule({
@@ -65,7 +68,6 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
     CardComponent,
     NavbarComponent,
     HomepageComponent,
-    ActualitesComponent,
     RessourcesDocumentsComponent,
     SignInFormComponent,
     SignInComponent,
@@ -96,7 +98,11 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
     WitnessDeleteModalComponent,
     EventDeleteModalComponent,
     QuestionComponent,
-    QuestionDeleteModalComponent
+    QuestionDeleteModalComponent,
+    NewsDeleteModalComponent,
+    NewsModalComponent,
+    NewsFormComponent,
+    NewsLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -138,7 +144,9 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
     NewsletterModalComponent,
     WitnessDeleteModalComponent,
     EventModalFormComponent,
-    EventDeleteModalComponent
+    EventDeleteModalComponent,
+    NewsModalComponent,
+    NewsDeleteModalComponent
   ]
 })
 export class AppModule { }
