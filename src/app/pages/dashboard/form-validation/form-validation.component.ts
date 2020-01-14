@@ -1,9 +1,9 @@
+import { User } from './../../../shared/models/user';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { UserService } from 'src/app/shared/services/user.service';
-import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-form-validation',
@@ -19,22 +19,23 @@ export class FormValidationComponent implements OnInit {
               private userService: UserService,
               public dialog: MatDialog) { }
 
-
+    user: User;
 
   ngOnInit() {
-
+    this.user = this.userService.user;
     this.validationHomeForm = this.formbuilder.group({
-      phoneNumber: ['', [Validators.required]],
+
       adress: ['', [Validators.required]],
-      adressComplement : ['', [Validators.required]],
+      address_plus : ['', [Validators.required]],
       zip: ['', [Validators.required]],
       city: ['', [Validators.required]],
-      adultNbr: ['', [Validators.required]],
-      childNbr: ['', [Validators.required]]
+      adult_nbr: ['', [Validators.required]],
+      child_nbr: ['', [Validators.required]]
     });
 
   }
     completeHome() {
+
       return this.userService.postHomeForm(this.validationHomeForm.value).subscribe();
     }
 

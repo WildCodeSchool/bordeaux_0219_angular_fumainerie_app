@@ -22,6 +22,7 @@ export class UserService {
   }
 
   postHomeForm(home: Home) {
+    home.user_id = this.user.id;
     return this.http.post(UserService.URL + '/home', home);
 
   }

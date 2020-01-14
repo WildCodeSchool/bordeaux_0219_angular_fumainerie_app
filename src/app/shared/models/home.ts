@@ -15,4 +15,5 @@ export class Home {
   public child_nbr!: number;
   public rapport!: string;
   public user_id!: number;
+
 }

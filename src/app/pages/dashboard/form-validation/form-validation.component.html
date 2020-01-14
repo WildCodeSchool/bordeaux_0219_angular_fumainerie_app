@@ -2,19 +2,7 @@
 
 
 <form [formGroup]="validationHomeForm" (ngSubmit)="completeHome()">
-  <div class="example-container boxForm">
 
-    <mat-form-field>
-      <input
-      matInput
-      placeholder="Téléphone"
-      type="text"
-      formControlName='phoneNumber'
-      >
-    </mat-form-field>
-    <div *ngIf="validationHomeForm.get('phoneNumber').errors && !validationHomeForm.get('phoneNumber').pristine" class="error">
-      <div [hidden]="!validationHomeForm.get('phoneNumber').errors.required">Ce champ est requis.</div>
-    </div>
 
     <mat-form-field>
       <input
@@ -33,7 +21,7 @@
       matInput
       placeholder="Complément d'adresse"
       type="text"
-      formControlName='adressComplement'
+      formControlName='address_plus'
       />
     </mat-form-field>
     <div *ngIf="validationHomeForm.get('adressComplement').errors && !validationHomeForm.get('adressComplement').pristine" class="error">
@@ -70,7 +58,7 @@
       matInput
       placeholder="Nombre d'adulte"
       type="number"
-      formControlName='adultNbr'
+      formControlName='adult_nbr'
       >
     </mat-form-field>
     <div *ngIf="validationHomeForm.get('adultNbr').errors && !validationHomeForm.get('adultNbr').pristine" class="error">
