@@ -31,7 +31,7 @@ export class VidangesComponent implements OnInit {
               private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr'); }
 
   ngOnInit() {
-   this.currentUser = this.userService.user1;
+   this.currentUser = this.userService.user;
 
    this.drainingRequestService.getAllDrainingRequestByUser(this.currentUser.id).subscribe( (data2) => {
       this.allDrainingRequestByUser = data2;

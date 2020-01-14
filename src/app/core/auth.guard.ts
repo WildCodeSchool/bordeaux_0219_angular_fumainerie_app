@@ -17,8 +17,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       // check si user déja récupéré, sinon > connecter
-      if (this.token !== null) {
-        this.service.getToken(this.token);
+      if (this.service.user) {
         return true;
 
       } else {
