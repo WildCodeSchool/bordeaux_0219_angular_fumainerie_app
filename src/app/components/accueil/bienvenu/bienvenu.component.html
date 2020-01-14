@@ -1,7 +1,7 @@
-
+<!-- <div class="parallax"> -->
 <div class="container">
   <div class="leftSide">
-    <mat-card>
+    <mat-card color="primary">
       <h1>Bienvenue à la fumainerie</h1>
       <div class="intro">
         <p>"FUMAIN n. m. (du latin fimus, fumier ; humanus, humain). Sous-produit du système digestif humain valorisé à des fins agricoles.<br><br>
@@ -13,8 +13,8 @@
     </mat-card>
   </div>
 
-  <div class="rightSide">
-    <mat-tab-group dynamicHeight mat-stretch-tabs style="height: calc(100% - 64px); min-height: calc(100% - 64px);"
+  <div class="rightSide"  color="primary" >
+    <mat-tab-group  color="primary" dynamicHeight mat-stretch-tabs style="height: calc(100% - 64px); min-height: calc(100% - 64px);"
     class="fauxCaroussel mat-elevation-z4">
 
     <mat-tab label="Facebook">
@@ -35,7 +35,7 @@
       </div>
     </mat-tab>
 
-    <mat-tab label="Les dernières actus">
+    <mat-tab  color="primary" label="Les dernières actus">
       <div class="section mat-elevation-z4" *ngFor="let item of news">
         <div class="texte">
           <h4>{{item.title}}</h4>
@@ -61,3 +61,4 @@
     </mat-tab-group>
   </div>
 </div>
+<!-- </div> -->

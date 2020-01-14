@@ -1,5 +1,6 @@
 .body-projet{
-  background-color: #fde773;
+  // background-color: #fde773;
+  // neutralisation de la couleur de fond d'écran
   height: 95vh;
   width: 100vw;
   h2{
@@ -11,20 +12,48 @@
     align-items: center;
     justify-content: space-around;
     padding-top: 4vh;
-
-
-    p{
-    width: 45vw;
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-    padding: 2rem;
-    }
-    img{
-      width: 40vw;
+    font-size: 1.6rem;
+    p, img {
       box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
       0px 4px 5px 0px rgba(0, 0, 0, 0.14),
       0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     }
+    p{
+      background-color: #FFD745;
+      width: 45vw;
+      padding: 2rem;
+    }
+    img{
+      width: 40vw;
+    }
   }
+}
+// parallax begin
+
+body, html {
+  height: 100%;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../../../../assets/image-en-construction.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+mat-card {
+  border-radius: 0px;
 }
