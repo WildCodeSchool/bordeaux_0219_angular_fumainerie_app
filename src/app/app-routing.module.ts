@@ -1,3 +1,5 @@
+
+import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'connexion', component  : SignInComponent},
   {path: 'inscription', component  : SignUpComponent},
   {path: 'dashboard', component : DashboardComponent, canActivate: [AuthGuard], children: [
-    {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
+    {path: '', redirectTo: 'validation', pathMatch: 'full'},
+    {path: 'validation', component: FormValidationComponent, canActivate: [AuthGuard]},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
     {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
     {path: 'communication', component: CommunicationComponent, canActivate: [AuthGuard], children: [

@@ -52,6 +52,7 @@ import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-si
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
+import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
 import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
@@ -97,6 +98,7 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsComponent,
     WitnessDeleteModalComponent,
     EventDeleteModalComponent,
+    FormValidationComponent
     QuestionComponent,
     QuestionDeleteModalComponent,
     NewsDeleteModalComponent,
