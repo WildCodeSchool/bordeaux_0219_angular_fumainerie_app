@@ -7,7 +7,6 @@ import { News } from '../../../shared/models/news';
 @Component({
   selector: 'app-bienvenu',
   templateUrl: './bienvenu.component.html',
-  // template: `<mat-card color="primary"></mat-card>`,
   styleUrls: ['./bienvenu.component.scss'],
 })
 

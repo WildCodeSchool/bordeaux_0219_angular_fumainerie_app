@@ -29,15 +29,20 @@ $fumainerie-angular-theme: mat-light-theme($fumainerie-angular-primary, $fumaine
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 
-body { margin: 0; font-family: 'Sarabun', sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1.6rem;
+}
 .carousel-control.left,.carousel-control.right {
   background-image: none;
 }
 .yellowButton{
   background-color: #F9C400;
-  color:#272767;
   margin-top: 50px;
   padding: 20px;
 }
@@ -45,7 +50,7 @@ body { margin: 0; font-family: 'Sarabun', sans-serif; }
   display:none
 }
 mat-icon, mat-slide-toggle{
-  color: green;
+  color: #5C08A8;
 }
 
 mat-icon:hover{
@@ -54,3 +59,13 @@ mat-icon:hover{
 // mat-tab-group, mat-card, p {
 
 //   }
+p{
+  line-height: 3vh;
+}
+// .mat-card {
+//   background-color: #FFD745 ;
+//   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+//   0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+//   0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+//   border-radius: 0px;
+// }

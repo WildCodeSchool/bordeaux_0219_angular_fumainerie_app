@@ -1,22 +1,23 @@
 .container{
-  height: 65vh;
+  height: 52vh;
   width: 100vw;
   display: flex;
-  padding-top: 5vh;
-  align-items: baseline;
+  padding: 1vh;
+  align-items: center;
   justify-content: space-around;
 
 }
 .fauxCaroussel{
   width: 45vw;
-  height: 45vh;
+  height: 52vh;
+  background-color: white;
+  padding: 1vh;
 }
 .section{
   display: flex;
   align-items: center;
   justify-content: center;
-  // margin: 16px;
-  padding: 16px;
+  padding: 1vh;
   box-shadow: none;
   .texte{
     width: 100%;
@@ -25,18 +26,12 @@
 h1{
   font-weight: 600;
   font-size: 4rem;
-  margin-top: 6%;
 }
 .leftSide{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 55vh;
   width: 45vw;
-  p{
-    line-height: 3vh;
-    font-size: 1.2em;
-  }
   .mat-card {
     background-color: #FFD745 ;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
@@ -48,10 +43,6 @@ h1{
 
 .intro{
   width: 40vw;
-  border-radius: 5px;
-  margin-top: 12%;
-  padding: 2rem;
-  font-size: 1.3rem;
 }
 mat-tab-group{
   overflow: scroll;
@@ -60,18 +51,16 @@ mat-tab-group{
   width: 60px;
   height: 60px;
 }
-// parallax begin
 
-body, html {
-  height: 100%;
-}
+
+// parallax begin
 
 .parallax {
   /* The image used */
   background-image: url("../../../../assets/image-en-construction.png");
 
   /* Full height */
-  height: 100%;
+  height: 52vh;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -89,4 +78,9 @@ body, html {
 
 // mat-tab-group {
 //   color: red;
+// }
+
+
+// div {
+//   border: 1px solid black;
 // }
