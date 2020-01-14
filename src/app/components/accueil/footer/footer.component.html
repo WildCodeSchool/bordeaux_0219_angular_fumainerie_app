@@ -11,12 +11,10 @@
     </ul>
   </div>
   <div class="partners-container">
-    <p>Nos Partenaires</p>
     <div class="partners">
       <div *ngFor="let partner of partners">
         <div class="partner">
-          <a href="{{partner.link}}"><img src="{{partner.img}}" alt="image-partenaire"></a>
-          <!-- <p>{{partner.name}}</p> -->
+          <img src="{{partner.img}}" alt="image-partenaire">
         </div>
       </div>
     </div>
