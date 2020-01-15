@@ -1,12 +1,10 @@
 .footer{
   background-color: #F9C400;
-
-  height: 15%; // initialement 30% //25
+  height: 15%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #F9C400;
 
   .logo-footer{
     width: 20%;
@@ -16,6 +14,7 @@
       border-radius: 50%;
     }
   }
+
   .footer-navbar{
     width: 20%;
     list-style : none;
@@ -25,6 +24,7 @@
       color: black;
     }
   }
+
   .partners-container{
     display: flex;
     flex-direction: column;
@@ -35,7 +35,6 @@
       text-align: center;
       justify-content: space-evenly;
       img{
-        // width: 75px;
         height: 75px;
         border-radius: 50%;
         margin-left: 2px;
@@ -43,10 +42,12 @@
       }
     }
   }
+
   li{
     list-style: none;
   }
 }
+
 @media (max-width: 400px){
   .footer{
     flex-direction: column;

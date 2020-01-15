@@ -19,21 +19,23 @@ export class NewsLinkComponent implements OnInit {
               private userService: UserService,
               private dialog: MatDialog,
               private router: Router) { }
-  user: User;
-  news: News[];
+    user: User;
+    news: News[];
 
-  button =  true;
+    button =  true;
 
-  ngOnInit() {
-    this.newsService.getAllNews().subscribe((news) => {
-    this.news = news; }) ;
-    this.user = this.userService.user;
-  }
-  onNewsForm() {
-    this.router.navigate(['/dashboard/actualites/nouvelle']);
-  }
-  onAskDeleteNews(index: number, i: number) {
+    ngOnInit() {
+      this.newsService.getAllNews().subscribe((news) => {
+        this.news = news;
+      });
+      this.user = this.userService.user;
+    }
 
+    onNewsForm() {
+      this.router.navigate(['/dashboard/actualites/nouvelle']);
+    }
+
+    onAskDeleteNews(index: number, i: number) {
       const dialogRef = this.dialog.open(NewsDeleteModalComponent, {
         width: '50%'
       });
@@ -42,12 +44,13 @@ export class NewsLinkComponent implements OnInit {
 
       dialogRef.afterClosed().subscribe(isDeleted => {
         if (isDeleted) {
-        this.news.splice(i, 1); }
+          this.news.splice(i, 1);
+        }
       });
     }
+
     onChange(toggle, index: number) {
       this.news[index].status = toggle.checked;
       this.newsService.modifyNews(this.news[index]).subscribe();
     }
   }
-

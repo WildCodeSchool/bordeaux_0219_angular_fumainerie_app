@@ -1,8 +1,5 @@
 <div class="container">
-
-
   <div *ngIf="drainingFormRequest" >
-
     <form [formGroup]="drainingFormRequest" (submit)="onSubmit(drainingFormRequest.value)">
       <mat-form-field class="example-full-width">
         <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choisissez une date">
@@ -25,9 +22,7 @@
 
   <div class="nextDraining">
   <h3>Prochaine vidange prévu le </h3>
-
   </div>
-
 
   <div class="drainingRequest">
     <h3>Demande en cours</h3>
@@ -50,7 +45,6 @@
       <div *ngFor="let draining of allDraining">
           <p class="allDraining" (click)="openDetailsDraining(draining)">{{draining.check_date | date: 'fullDate':'fr'}}</p>
 
-
         <div class="detail" *ngIf="draining.show">
           <div class="table">
             <p>Commentaire</p>
@@ -64,14 +58,8 @@
             <p>Quantité sciure récupérée</p>
             <p>{{draining.sawdust_weight}} kg</p>
           </div>
-
-
         </div>
       </div>
     </div>
   </div>
-
-
-
-
 </div>

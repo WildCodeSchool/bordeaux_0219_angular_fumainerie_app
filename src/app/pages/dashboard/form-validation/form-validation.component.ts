@@ -1,9 +1,8 @@
 import { User } from './../../../shared/models/user';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
-import { UserService } from 'src/app/shared/services/user.service';
+import { UserService } from '../../../../../src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-form-validation',
@@ -41,6 +40,5 @@ export class FormValidationComponent implements OnInit {
     completeHome() {
       return this.userService.postHomeForm(this.validationHomeForm.value, this.validationUserForm.value).subscribe();
     }
-
   }
 

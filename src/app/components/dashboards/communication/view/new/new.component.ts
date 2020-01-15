@@ -37,9 +37,11 @@ export class NewComponent implements OnInit {
         });
       }
     }
+
     onNewsForm() {
       this.router.navigate(['dashboard/evenements;']);
     }
+
     onChange(toggle, index: number) {
       this.news[index].status = toggle.checked;
       this.newsService.modifyNews(this.news[index]).subscribe();
@@ -52,10 +54,9 @@ export class NewComponent implements OnInit {
       instance.index = index;
 
       dialogRef.afterClosed().subscribe(isDeleted => {
-        if (isDeleted) {
-          this.news.splice(i, 1);
-        }
-      });
-  }
-}
-
+          if (isDeleted) {
+            this.news.splice(i, 1);
+          }
+        });
+      }
+    }

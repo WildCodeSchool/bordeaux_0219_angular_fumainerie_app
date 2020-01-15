@@ -1,9 +1,8 @@
 import { NewsletterModalComponent } from '../../modals/newsletter-modal/newsletter-modal.component';
 import { NewsletterService } from './../../../shared/services/newsletter.service';
 import { Component, OnInit } from '@angular/core';
-import { emailValidator } from 'src/app/shared/validators/email-validator';
+import { emailValidator } from '../../../shared/validators/email-validator';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog} from '@angular/material';
 
 @Component({
@@ -11,12 +10,10 @@ import { MatDialog} from '@angular/material';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit {
 
+export class ContactComponent implements OnInit {
   constructor(private newsletterService: NewsletterService,
-              private router: Router,
               private formBuilder: FormBuilder,
-              private route: ActivatedRoute,
               public dialog: MatDialog) { }
 
   mailForm: FormGroup;

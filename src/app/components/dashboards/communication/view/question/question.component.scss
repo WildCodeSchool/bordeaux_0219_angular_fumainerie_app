@@ -9,6 +9,7 @@
     width: 100%;
   }
 }
+
 mat-tab-group{
   background-color: white;
   max-height: 80vh;
@@ -20,6 +21,7 @@ mat-tab-group{
   display: flex;
   flex-direction: row;
 }
+
 @media (max-width: 600px){
   mat-tab-group{
     max-height: 40vh;

@@ -21,6 +21,5 @@ export class LogInterceptor implements HttpInterceptor {
     const authReq = req.clone({headers});
 
     return next.handle(authReq);
-
   }
 }

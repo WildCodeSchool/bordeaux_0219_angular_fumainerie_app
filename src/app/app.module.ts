@@ -47,7 +47,6 @@ import { WitnessFormComponent } from './components/forms/witness-form/witness-fo
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
-import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
@@ -93,7 +92,6 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     EventsComponent,
     EventsFormComponent,
     EventModalFormComponent,
-    DialogSigninComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
@@ -146,7 +144,6 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     QuestionDeleteModalComponent,
     WitnessModalComponent,
     DialogSignupComponent,
-    DialogSigninComponent,
     NewsletterModalComponent,
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,

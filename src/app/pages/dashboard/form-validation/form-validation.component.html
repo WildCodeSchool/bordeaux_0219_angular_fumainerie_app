@@ -24,7 +24,6 @@
   </div>
 </form>
 
-
 <form [formGroup]="validationHomeForm" >
 
   <mat-form-field>
@@ -111,8 +110,6 @@
   <div *ngIf="validationHomeForm.get('child_nbr').errors && !validationHomeForm.get('child_nbr').pristine" class="error">
     <div [hidden]="!validationHomeForm.get('child_nbr').errors.required">Ce champ est requis.</div>
   </div>
-
-
 
 </form>
 

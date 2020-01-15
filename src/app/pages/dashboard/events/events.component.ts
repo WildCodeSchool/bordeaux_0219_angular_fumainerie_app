@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from '../../../shared/services/event.service';
 import { MatDialog } from '@angular/material';
 
-
-
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -25,23 +23,24 @@ export class EventsComponent implements OnInit {
               private dialog: MatDialog,
               private router: Router) { }
 
-  ngOnInit() {
-    this.eventService.getAllEvents().subscribe((event) => {
-      this.events = event; }) ;
-    this.user = this.userService.user;
-  }
-  onEventsForm() {
-    this.router.navigate(['/dashboard/evenements/nouvel']);
-  }
-  onAskDeleteEvent(index: number, i: number) {
-      this.eventService.index = index;
-      const dialogRef = this.dialog.open(EventDeleteModalComponent, {
-        width: '50%'
-      });
-      dialogRef.afterClosed().subscribe(result => {
-        if (result) {
-        this.events.splice(i, 1); }
-      });
-    }
-  }
+    ngOnInit() {
+      this.eventService.getAllEvents().subscribe((event) => {
+        this.events = event; }) ;
+      this.user = this.userService.user;
+      }
 
+      onEventsForm() {
+        this.router.navigate(['/dashboard/evenements/nouvel']);
+      }
+
+      onAskDeleteEvent(index: number, i: number) {
+        this.eventService.index = index;
+        const dialogRef = this.dialog.open(EventDeleteModalComponent, {
+          width: '50%'
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          if (result) {
+            this.events.splice(i, 1); }
+          });
+        }
+      }

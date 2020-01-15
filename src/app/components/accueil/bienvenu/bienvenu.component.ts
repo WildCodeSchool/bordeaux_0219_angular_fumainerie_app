@@ -10,7 +10,6 @@ import { News } from '../../../shared/models/news';
   styleUrls: ['./bienvenu.component.scss'],
 })
 
-
 export class BienvenuComponent implements OnInit {
   witness: Witness[];
   news: News[];

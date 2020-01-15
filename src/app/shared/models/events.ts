@@ -10,6 +10,7 @@ export class Event {
   public date!: Date;
   public heure!: Time;
   public description!: string;
+  // tslint:disable-next-line: variable-name
   public user_id!: number;
   public username!: string;
 

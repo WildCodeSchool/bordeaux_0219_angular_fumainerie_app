@@ -2,7 +2,7 @@ import { WitnessModalComponent } from '../../modals/witness-modal/witness-modal.
 import { WitnessService } from '../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatDialog} from '@angular/material';
 
 
@@ -15,11 +15,9 @@ export class WitnessFormComponent implements OnInit {
   constructor(private witnessService: WitnessService,
               private router: Router,
               private formbuilder: FormBuilder,
-              private route: ActivatedRoute,
               public dialog: MatDialog) { }
 
   witnessForm: FormGroup;
-
 
   ngOnInit() {
     this.witnessForm = this.formbuilder.group({
@@ -28,12 +26,15 @@ export class WitnessFormComponent implements OnInit {
       description: ['', Validators.required],
     });
   }
+
   resetForm() {
     this.witnessForm.reset();
   }
+
   onClose() {
       this.router.navigate(['dashboard/communication/avis']);
   }
+
   onSubmitWitnessForm() {
     console.log('modale ouverte?');
     console.log(this.witnessForm.value);

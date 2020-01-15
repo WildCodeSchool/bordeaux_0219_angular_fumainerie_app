@@ -5,6 +5,7 @@
 span{
   text-decoration: underline;
 }
+
 .popup{
   width: 100%;
   border-radius: 30px;
@@ -12,19 +13,21 @@ span{
 .forms-container{
   display: flex;
   align-items: center;
-  // height: 40%;
 }
+
 .form-contact{
   width: 50%;
   p{
     text-align: center;
   }
+
   form{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
+
 .form-newsletter{
   width: 50%;
   display: flex;
@@ -33,20 +36,23 @@ span{
   .mat-form-field{
     width: 60%;
   }
+
   p{
     text-align: center;;
   }
+
   form{
     display: flex;
     flex-direction: column;
     align-items: center;
     button{
-      background-color: #fde773;
+      background-color: #F9C400;
       width: 20%;
       align-self: center;
     }
   }
 }
+
 @media (max-width: 400px){
   .forms-container{
     flex-direction: column;
@@ -55,6 +61,7 @@ span{
       .mat-form-field{
         width: 150%;
       }
+
       button{
         width: auto;
       }

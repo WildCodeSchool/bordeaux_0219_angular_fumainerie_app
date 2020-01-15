@@ -13,10 +13,10 @@
               <mat-slide-toggle [checked]="(item.status)?true:false" (change)="onChange($event, i)">En ligne</mat-slide-toggle>
             </div>
             <mat-icon class='admin'(click)='onAskDeleteNews(item.id, i)'>delete</mat-icon>
-            </div>
           </div>
-        </mat-tab>
-      </mat-tab-group>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
   <button *ngIf="user.function == 'admin'" mat-button class='yellowButton'(click)='onNewsForm()'>Poster une actualité</button>
 </div>

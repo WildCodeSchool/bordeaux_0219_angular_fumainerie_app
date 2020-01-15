@@ -14,7 +14,6 @@ $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
 // Include theme styles for Angular Material components.
 @include angular-material-theme($my-theme);
 
-
 // primary chromatic universe from la fumainerie
 // color in use everywhere
 

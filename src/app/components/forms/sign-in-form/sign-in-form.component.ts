@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import {  Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { emailValidator } from 'src/app/shared/validators/email-validator';
 
-
 @Component({
   selector: 'app-sign-in-form',
   templateUrl: './sign-in-form.component.html',
@@ -27,16 +26,13 @@ export class SignInFormComponent implements OnInit {
     });
   }
 
-
   userConnexion() {
-
     this.userService.connexion(this.signInForm.value).subscribe(() => {
         this.router.navigate(['/dashboard']);
     });
-
   }
+
   goToSignUp() {
     this.router.navigate(['/inscription']);
   }
 }
-

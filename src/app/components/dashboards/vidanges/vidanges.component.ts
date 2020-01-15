@@ -14,8 +14,8 @@ import { Draining } from '../../../shared/models/draining';
   templateUrl: './vidanges.component.html',
   styleUrls: ['./vidanges.component.scss']
 })
-export class VidangesComponent implements OnInit {
 
+export class VidangesComponent implements OnInit {
   slotData: Slot[];
   slotById: Slot[];
   currentUser: User;
@@ -28,14 +28,14 @@ export class VidangesComponent implements OnInit {
   constructor(private drainingRequestService: DrainingRequestService,
               private userService: UserService,
               private drainingService: DrainingService,
-              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr'); }
+              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr');
+            }
 
   ngOnInit() {
    this.currentUser = this.userService.user;
 
    this.drainingRequestService.getAllDrainingRequestByUser(this.currentUser.id).subscribe( (data2) => {
       this.allDrainingRequestByUser = data2;
-
    });
 
    this.drainingService.getDrainingByUserId(this.currentUser.id).subscribe( drainings => {
@@ -52,21 +52,18 @@ export class VidangesComponent implements OnInit {
          date: ['', Validators.required],
          slots: ['', Validators.required]
       });
-
   });
-
-
 }
 
-// Montre les détails de la vidange en clickant sur details
+// Show detail when click on details
   openDetailsDraining(drainingDetail: Draining) {
     drainingDetail.show = !drainingDetail.show;
     return drainingDetail;
   }
 
-// Envoi d'une demande de vidange
+// Send a draining request
   onSubmit(drainingRequest) {
-    // Convertissement Date.
+    // Convert date
     const dateString = drainingRequest.date.toLocaleDateString().split('/').reverse().join('-');
 
     const draining = new DrainingRequest();
@@ -74,35 +71,34 @@ export class VidangesComponent implements OnInit {
     draining.session_date = dateString;
     draining.slot_id = drainingRequest.slots;
 
-    // Afficher nouvelle demande de vidange sur le front.
+    // Print new drainong request on the front
     const fakedraining = new DrainingRequest();
     fakedraining.user_id = this.currentUser.id;
     fakedraining.session_date = dateString;
     fakedraining.slot_id = drainingRequest.slots;
     this.slotData.forEach( element => {
-    if ( fakedraining.slot_id === element.id) {
-    fakedraining.name = element.name;
-    }
-  });
+      if ( fakedraining.slot_id === element.id) {
+        fakedraining.name = element.name;
+      }
+    });
 
     this.allDrainingRequestByUser.push(fakedraining);
-
 
     return this.drainingRequestService.postDrainingRequest(draining).subscribe();
   }
 
-// Envoi d'une demande urgente de vidange
-sendEmergency() {
-    // Convertissement Date.
+  // Send a emergency draining request
+  sendEmergency() {
+    // Convert date.
     const currentDateString = new Date().toLocaleDateString().split('/').reverse().join('-');
-    // Creation d'une nouvelle demande de vidange.
+    // Create a new draining request.
     const drainingRequestEmergency = new DrainingRequest();
 
     drainingRequestEmergency.user_id = this.currentUser.id;
     drainingRequestEmergency.session_date = currentDateString;
     drainingRequestEmergency.slot_id = 1;
 
-    // Afficher nouvelle demande de vidange sur le front.
+    // Print new drainong request on the front
     const fakedraining = new DrainingRequest();
     fakedraining.user_id = this.currentUser.id;
     fakedraining.session_date = currentDateString;
@@ -117,5 +113,4 @@ sendEmergency() {
 
     return this.drainingRequestService.postDrainingRequest(drainingRequestEmergency ).subscribe();
   }
-
 }
