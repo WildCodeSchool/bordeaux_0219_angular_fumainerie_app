@@ -5,14 +5,15 @@
   padding: 1vh;
   align-items: center;
   justify-content: space-around;
-
 }
+
 .fauxCaroussel{
   width: 45vw;
   height: 52vh;
   background-color: white;
   padding: 1vh;
 }
+
 .section{
   display: flex;
   align-items: center;
@@ -23,10 +24,12 @@
     width: 100%;
   }
 }
+
 h1{
   font-weight: 600;
   font-size: 4rem;
 }
+
 .leftSide{
   display: flex;
   flex-direction: column;
@@ -44,16 +47,17 @@ h1{
 .intro{
   width: 40vw;
 }
+
 mat-tab-group{
   overflow: scroll;
 }
+
 .logo-fb {
   width: 60px;
   height: 60px;
 }
 
 // parallax begin
-
 .parallax {
   /* The image used */
   background-image: url("../../../../assets/images/parallax-3.jpg");
@@ -77,12 +81,3 @@ mat-tab-group{
   }
 }
 // parallax end
-
-// mat-tab-group {
-//   color: red;
-// }
-
-
-// div {
-//   border: 1px solid black;
-// }
