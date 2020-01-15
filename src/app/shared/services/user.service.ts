@@ -1,7 +1,7 @@
-import { User } from 'src/app/shared/models/user';
+import { User } from './../models/user';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 import { Home } from '../models/home';
 
 @Injectable({
@@ -16,6 +16,21 @@ export class UserService {
   user: User ;
   token: string;
 
+  public getMe() {
+    return this.http.get(UserService.URL + '/user/me').pipe(
+      tap((user: User) => {
+        this.user = user;
+      })
+    );
+  }
+
+  public isLogged( ) {
+    return this.getMe().pipe(
+      map((user: User) => {
+        return (user != null);
+      }
+    ));
+  }
 
   postUpdateUserForm(user: User, id: number) {
     return this.http.put(UserService.URL + `/user/${id}`, user);

@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'connexion', component  : SignInComponent},
   {path: 'inscription', component  : SignUpComponent},
   {path: 'dashboard', component : DashboardComponent, canActivate: [AuthGuard], children: [
-    {path: '', redirectTo: 'validation', pathMatch: 'full'},
+    {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     {path: 'validation', component: FormValidationComponent, canActivate: [AuthGuard]},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
     {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
