@@ -1,5 +1,4 @@
 export class Home {
-
   public id!: number;
   public createAt!: string;
   public updateAt!: string;

@@ -1,5 +1,5 @@
 import { User } from 'src/app/shared/models/user';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { Home } from '../models/home';
@@ -16,16 +16,14 @@ export class UserService {
   user: User ;
   token: string;
 
-
   postUpdateUserForm(user: User, id: number) {
     return this.http.put(UserService.URL + `/user/${id}`, user);
   }
 
-  postHomeForm(home: Home) {
-    home.user_id = this.user.id;
-    return this.http.post(UserService.URL + '/home', home);
-
+  postHomeForm(home: Home, user: User) {
+    return this.http.post(UserService.URL + '/home', [home, user]);
   }
+
   public connexion(user: User) {
     return this.http.post(UserService.URL_AUTH + '/signin', user, {observe: 'response'}).pipe(
       tap((response: HttpResponse<User>) => {

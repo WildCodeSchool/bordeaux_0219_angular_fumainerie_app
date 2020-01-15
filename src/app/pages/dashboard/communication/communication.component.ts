@@ -11,7 +11,7 @@ export class CommunicationComponent implements OnInit {
   user: User;
   constructor(private userService: UserService) {}
 
-    ngOnInit() {
-      this.user = this.userService.user;
-    }
+  ngOnInit() {
+    this.user = this.userService.user;
+  }
 }

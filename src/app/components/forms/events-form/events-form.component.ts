@@ -1,7 +1,7 @@
 import { EventModalFormComponent } from '../../modals/event-modal-form/event-modal-form.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatDialog} from '@angular/material';
 import { EventService } from '../../../shared/services/event.service';
 
@@ -10,7 +10,6 @@ import { EventService } from '../../../shared/services/event.service';
   templateUrl: './events-form.component.html',
   styleUrls: ['./events-form.component.scss']
 })
-
 export class EventsFormComponent implements OnInit {
 
   constructor(private router: Router,

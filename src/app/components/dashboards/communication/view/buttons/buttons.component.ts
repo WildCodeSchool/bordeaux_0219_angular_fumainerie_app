@@ -16,7 +16,6 @@ export class ButtonsComponent implements OnInit {
   onWitnessForm() {
     this.router.navigate(['/dashboard/communication/avis/temoigner']);
   }
-
   onQuestionForm() {
     this.router.navigate(['/dashboard/communication/avis/question']);
   }

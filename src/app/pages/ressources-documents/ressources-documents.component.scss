@@ -41,6 +41,7 @@ mat-label{
 
 h2{
   margin-bottom: 3vh;
+  // margin-left: 10vw;
 }
 
 .title {
@@ -58,10 +59,10 @@ h2{
   background-image: url("../../../assets/images/parallax-2.jpg");
   /* second choice*/
   background-image: url("../../../assets/images/parallax-5.jpg");
-  
+
   /* Full height */
   height: 77vh;
-  
+
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;

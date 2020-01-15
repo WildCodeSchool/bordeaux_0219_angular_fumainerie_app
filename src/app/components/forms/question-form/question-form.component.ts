@@ -16,31 +16,31 @@ export class QuestionFormComponent implements OnInit {
               private formbuilder: FormBuilder,
               public dialog: MatDialog) { }
 
- questionForm: FormGroup;
-  ngOnInit() {
-    this.questionForm = this.formbuilder.group({
-      topic: ['', Validators.required],
-      question: ['', Validators.required]});
-  }
+    questionForm: FormGroup;
+    ngOnInit() {
+      this.questionForm = this.formbuilder.group({
+        topic: ['', Validators.required],
+        question: ['', Validators.required]});
+      }
 
-  resetForm() {
-    this.questionForm.reset();
-  }
+      resetForm() {
+        this.questionForm.reset();
+      }
 
-  onClose() {
-      this.router.navigate(['dashboard/communication/avis']);
-  }
+      onClose() {
+        this.router.navigate(['dashboard/communication/avis']);
+      }
 
-  onSubmitQuestionForm() {
-    console.log('modale ouverte?');
-    console.log(this.questionForm.value);
-    this.questionService.createQuestion(this.questionForm.value).subscribe();
-    const dialogRef = this.dialog.open(QuestionModalComponent, {
-      width: '250px',
-    });
+      onSubmitQuestionForm() {
+        console.log('modale ouverte?');
+        console.log(this.questionForm.value);
+        this.questionService.createQuestion(this.questionForm.value).subscribe();
+        const dialogRef = this.dialog.open(QuestionModalComponent, {
+          width: '250px',
+        });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-}
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+        });
+      }
+    }

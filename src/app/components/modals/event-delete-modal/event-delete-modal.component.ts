@@ -7,7 +7,6 @@ import { EventService } from '../../../shared/services/event.service';
   templateUrl: './event-delete-modal.component.html',
   styleUrls: ['./event-delete-modal.component.scss']
 })
-
 export class EventDeleteModalComponent implements OnInit {
   constructor( private dialogRef: MatDialogRef<EventDeleteModalComponent>,
                private eventService: EventService) { }

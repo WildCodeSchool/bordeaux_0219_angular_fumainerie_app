@@ -7,7 +7,6 @@ import { NewsService } from '../../../shared/services/news.service';
   templateUrl: './news-delete-modal.component.html',
   styleUrls: ['./news-delete-modal.component.scss']
 })
-
 export class NewsDeleteModalComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<NewsDeleteModalComponent>,
               private newsService: NewsService) { }

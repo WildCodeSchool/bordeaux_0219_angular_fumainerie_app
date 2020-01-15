@@ -1,6 +1,6 @@
 import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/shared/models/user';
+import { User } from '../../../../src/app/shared/models/user';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +8,6 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  UserService: any;
 
   constructor(private userService: UserService ) { }
 
@@ -17,6 +16,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.user;
-    this.accountStatus = this.user.accountStatus;
+    this.accountStatus = this.user.account_status;
   }
 }

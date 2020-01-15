@@ -1,5 +1,4 @@
 export class DrainingRequest {
-
   // tslint:disable-next-line: variable-name
   public session_date: string;
   // tslint:disable-next-line: variable-name

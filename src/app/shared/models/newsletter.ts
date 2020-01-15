@@ -7,4 +7,3 @@ export class Newsletter {
     Object.assign(this, input);
   }
 }
-

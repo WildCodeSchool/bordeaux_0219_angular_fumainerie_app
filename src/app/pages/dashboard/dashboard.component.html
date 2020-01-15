@@ -20,13 +20,11 @@
         </div>
       </div>
 
-      <div class="form-div" *ngIf="!user.accountStatus">
-        <div>
-          <app-form-validation></app-form-validation>
-        </div>
-      </div>
 
-      <div class="interface-dashboard" *ngIf="user.accountStatus">
+      <div class="form-div" *ngIf="!accountStatus">
+        <app-form-validation></app-form-validation>
+      </div>
+      <div class="interface-dashboard" *ngIf="accountStatus">
         <router-outlet></router-outlet>
       </div>
     </div>

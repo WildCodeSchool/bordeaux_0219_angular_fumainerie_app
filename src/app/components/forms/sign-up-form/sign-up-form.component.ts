@@ -1,5 +1,5 @@
 import { DialogSignupComponent } from './dialog-signup/dialog-signup.component';
-import { emailValidator } from 'src/app/shared/validators/email-validator';
+import { emailValidator } from '../../../../../src/app/shared/validators/email-validator';
 import { SignupService } from './../../../shared/services/signup.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -27,14 +27,14 @@ export class SignUpFormComponent implements OnInit {
         lastname: ['', Validators.required],
         firstname: ['', Validators.required]
       });
-      }
-
-      onSignUp() {  // Pas encore de gestion d'erreur en cas d'email déjà existant (dialog s'ouvre dans tous les cas)
-          this.signupService.postNewUser(this.signUpForm.value).subscribe();
-          this.dialog.open(DialogSignupComponent, {width: '250px'});
-      }
-
-      goToSignIn() {
-        this.router.navigate(['/connexion']);
-      }
     }
+
+    onSignUp() {  // Pas encore de gestion d'erreur en cas d'email déjà existant (dialog s'ouvre dans tous les cas)
+    this.signupService.postNewUser(this.signUpForm.value).subscribe();
+    this.dialog.open(DialogSignupComponent, {width: '250px'});
+  }
+
+  goToSignIn() {
+    this.router.navigate(['/connexion']);
+  }
+}

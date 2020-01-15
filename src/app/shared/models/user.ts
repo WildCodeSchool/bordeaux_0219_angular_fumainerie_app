@@ -5,14 +5,14 @@ export class User {
   public deleteAt?: string;
   public firstname?: string;
   public lastname?: string;
-  public birthDate?: string;
+  public birth_date?: string;
   public phone?: string;
   public email?: string;
   public username?: string;
   public password?: string;
   public avatar?: string;
-  public status?: boolean;
-  public accountStatus?: number;
+  public email_status?: boolean;
+  public account_status?: number;
   public function?: string;
 
   constructor(input: User) {

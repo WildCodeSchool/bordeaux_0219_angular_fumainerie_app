@@ -12,7 +12,6 @@ import { MatDialog } from '@angular/material';
   templateUrl: './news.link.component.html',
   styleUrls: ['./news.link.component.scss']
 })
-
 export class NewsLinkComponent implements OnInit {
   @Input() checked: boolean;
 

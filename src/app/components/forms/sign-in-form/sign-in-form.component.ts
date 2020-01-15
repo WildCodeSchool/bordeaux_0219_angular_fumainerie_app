@@ -30,8 +30,8 @@ export class SignInFormComponent implements OnInit {
     this.userService.connexion(this.signInForm.value).subscribe(() => {
         this.router.navigate(['/dashboard']);
     });
-
   }
+
   goToSignUp() {
     this.router.navigate(['/inscription']);
   }
