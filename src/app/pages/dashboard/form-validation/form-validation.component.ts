@@ -29,7 +29,7 @@ export class FormValidationComponent implements OnInit {
         phone: ['', [Validators.required]]
       });
       this.validationHomeForm = this.formbuilder.group({
-
+        type: ['', [Validators.required]],
         adress: ['', [Validators.required]],
         adress_plus : ['', [Validators.required]],
         zip: ['', [Validators.required]],

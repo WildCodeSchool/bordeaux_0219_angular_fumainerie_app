@@ -30,6 +30,18 @@
   <mat-form-field>
     <input
     matInput
+    placeholder="Type de logement"
+    type="text"
+    formControlName='type'
+    >
+  </mat-form-field>
+  <div *ngIf="validationHomeForm.get('type').errors && !validationHomeForm.get('type').pristine" class="error">
+    <div [hidden]="!validationHomeForm.get('type').errors.required">Ce champ est requis.</div>
+  </div>
+
+  <mat-form-field>
+    <input
+    matInput
     placeholder="Adresse"
     type="text"
     formControlName='adress'
