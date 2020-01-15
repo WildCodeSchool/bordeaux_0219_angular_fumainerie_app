@@ -9,6 +9,7 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  UserService: any;
 
   constructor(private userService: UserService ) { }
 

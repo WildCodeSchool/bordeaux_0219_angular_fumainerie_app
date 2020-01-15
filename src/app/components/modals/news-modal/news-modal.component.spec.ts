@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NewsModalComponent } from './news-modal.component';
+import { from } from 'rxjs';
 
 describe('NewsModalComponent', () => {
   let component: NewsModalComponent;

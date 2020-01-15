@@ -7,7 +7,7 @@ import { News } from '../../../shared/models/news';
 @Component({
   selector: 'app-bienvenu',
   templateUrl: './bienvenu.component.html',
-  styleUrls: ['./bienvenu.component.scss']
+  styleUrls: ['./bienvenu.component.scss'],
 })
 
 

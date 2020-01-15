@@ -1,7 +1,6 @@
-import { UserService } from './../../../shared/services/user.service';
-import { WitnessService } from './../../../shared/services/witness.service';
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { User } from '../../../shared/models/user';
+import { UserService } from '../../../shared/services/user.service';
 
 
 @Component({
@@ -18,3 +17,4 @@ export class CommunicationComponent implements OnInit {
     }
 
 }
+// ajouter le news modal
