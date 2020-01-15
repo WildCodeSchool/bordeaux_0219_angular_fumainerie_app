@@ -8,18 +8,19 @@ import { NewsService } from '../../../shared/services/news.service';
   styleUrls: ['./news-delete-modal.component.scss']
 })
 export class NewsDeleteModalComponent implements OnInit {
+  constructor(private dialogRef: MatDialogRef<NewsDeleteModalComponent>,
+              private newsService: NewsService) { }
   index: number;
-  constructor( private dialogRef: MatDialogRef<NewsDeleteModalComponent>,
-               private newsService: NewsService) { }
 
-    ngOnInit() {
-    }
-    onClose() {
-      this.dialogRef.close();
-    }
-    onDelete() {
-      this.newsService.deleteNews(this.index).subscribe(() => {
-        this.dialogRef.close(true);
-        });
-    }
+  ngOnInit() {
   }
+
+  onClose() {
+    this.dialogRef.close();
+  }
+
+  onDelete() {
+    this.newsService.deleteNews(this.index).subscribe();
+    this.dialogRef.close(true);
+  }
+}

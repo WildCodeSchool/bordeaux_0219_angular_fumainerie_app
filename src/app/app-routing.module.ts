@@ -1,4 +1,7 @@
-import { NewComponent } from './components/dashboards/communication/view/new/new.component';
+
+import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
+import { NewsFormComponent } from './components/forms/news-form/news-form.component';
+import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
@@ -18,7 +21,6 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { AuthGuard } from './core/auth.guard';
 
 
-
 const routes: Routes = [
 
   {path: '', redirectTo: 'accueil', pathMatch: 'full'},
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'connexion', component  : SignInComponent},
   {path: 'inscription', component  : SignUpComponent},
   {path: 'dashboard', component : DashboardComponent, canActivate: [AuthGuard], children: [
-    {path: '', redirectTo: 'vidanges', pathMatch: 'full'},
+    {path: '', redirectTo: 'validation', pathMatch: 'full'},
+    {path: 'validation', component: FormValidationComponent, canActivate: [AuthGuard]},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
     {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
     {path: 'communication', component: CommunicationComponent, canActivate: [AuthGuard], children: [
@@ -36,8 +39,9 @@ const routes: Routes = [
         {path: 'question', component: QuestionFormComponent, canActivate: [AuthGuard]},
         {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},
     {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]},
-    {path: 'actualites', component : NewComponent, canActivate: [AuthGuard]},
-    {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]}
+    {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]},
+    {path: 'actualites', component : NewsLinkComponent , canActivate: [AuthGuard]},
+    {path: 'actualites/nouvelle', component: NewsFormComponent, canActivate: [AuthGuard]},
     ]},
   {path: 'sidebar', component: SidebarComponent }];
 

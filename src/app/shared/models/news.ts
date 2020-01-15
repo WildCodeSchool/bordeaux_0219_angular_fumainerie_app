@@ -6,10 +6,10 @@ export class News {
   public deleteAt!: string;
   public type!: string;
   public title!: string;
+  public status!: boolean;
   public description!: string;
   public link!: string;
   public user_id!: number;
-  public status?: any;
 
   constructor(input: News) {
       Object.assign(this, input);

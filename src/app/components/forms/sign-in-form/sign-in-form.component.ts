@@ -29,11 +29,10 @@ export class SignInFormComponent implements OnInit {
 
 
   userConnexion() {
-    // this.userService.connexion(this.signInForm.value).subscribe((token: any) => {
 
-
-      this.router.navigate(['/dashboard']);
-    // });
+    this.userService.connexion(this.signInForm.value).subscribe(() => {
+        this.router.navigate(['/dashboard']);
+    });
 
   }
   goToSignUp() {

@@ -1,27 +1,26 @@
-<p>actualites-form works!</p>
 <form [formGroup]="newsForm" (ngSubmit)="onSubmitNewsForm()">
   <div class="example-container">
-
     <div class="imgContainer">
       <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
     </div>
-
     <mat-form-field>
-      <textarea matInput placeholder="Titre :" formControlName='title'></textarea>
+      <input matInput placeholder="Titre :" type="text" formControlName='title' />
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder="Description :" formControlName='description'></textarea>
+      <textarea matInput placeholder="Description :" formControlName='description'>
+      </textarea>
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder="Lien :" formControlName='link'></textarea>
+      <textarea matInput placeholder="Lien :" formControlName='link'>
+      </textarea>
     </mat-form-field>
 
     <div class="container">
       <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
       <button mat-flat-button type="submit" [disabled]="!newsForm.valid">Envoyer</button>
     </div>
-
   </div>
 </form>
+

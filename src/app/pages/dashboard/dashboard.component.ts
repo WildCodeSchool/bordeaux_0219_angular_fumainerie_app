@@ -11,15 +11,17 @@ import { User } from 'src/app/shared/models/user';
 export class DashboardComponent implements OnInit {
   UserService: any;
 
-  constructor(private service: DashboardService,
-              private userService: UserService ) { }
+  constructor(private userService: UserService ) { }
 
 
   user: User;
-  StatusAccountIsComplete = true;
+  accountStatus: number;
 
   ngOnInit() {
-    this.user = this.userService.user1;
+    this.user = this.userService.user;
+    this.accountStatus = this.user.accountStatus;
+
   }
+
 
 }

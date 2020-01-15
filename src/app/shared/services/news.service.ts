@@ -23,11 +23,12 @@ export class NewsService {
     news.user_id = this.userService.user.id;
     return this.http.post(NewsService.URL, news);
   }
-  modifyNews(news: News): Observable<any> {
-    return this.http.put(NewsService.URL + `/${news.id}`, news);
-  }
-  deleteNews(id: number): Observable<any> {
+  deleteNews(id: number ): Observable<any> {
     console.log('delete id: ' + id);
     return this.http.delete<News>(NewsService.URL + `/${id}`);
   }
+  modifyNews(news: News): Observable<any> {
+    return this.http.put(NewsService.URL + `/${news.id}`, news);
+  }
 }
+

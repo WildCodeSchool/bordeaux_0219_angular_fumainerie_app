@@ -1,4 +1,4 @@
-import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
+import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
@@ -51,12 +51,14 @@ import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-si
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
-import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
-import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
+import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
 import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
+import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
+import { NewsFormComponent } from './components/forms/news-form/news-form.component';
+import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 
 
 @NgModule({
@@ -100,9 +102,13 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
     WitnessDeleteModalComponent,
     NewsFormComponent,
     EventDeleteModalComponent,
+    FormValidationComponent,
     QuestionComponent,
     QuestionDeleteModalComponent,
+    NewsDeleteModalComponent,
     NewsModalComponent,
+    NewsFormComponent,
+    NewsLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -146,7 +152,9 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
     NewsDeleteModalComponent,
     NewsModalComponent,
     EventModalFormComponent,
-    EventDeleteModalComponent
+    EventDeleteModalComponent,
+    NewsModalComponent,
+    NewsDeleteModalComponent
   ]
 })
 export class AppModule { }
