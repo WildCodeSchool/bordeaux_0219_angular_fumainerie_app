@@ -1,7 +1,7 @@
 .body-projet{
   height: 68vh;
   width: 100vw;
-  
+
   .projet-container{
     display: flex;
     align-items: center;
@@ -11,16 +11,15 @@
       0px 4px 5px 0px rgba(0, 0, 0, 0.14),
       0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     }
+
     p{
       background-color: #FFD745;
       width: 45vw;
-      padding: 2rem;
+      padding: 2vh;
     }
+
     img{
       width: 40vw;
     }
   }
-}
-mat-card {
-  border-radius: 0px;
 }
