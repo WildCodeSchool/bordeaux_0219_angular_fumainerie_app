@@ -8,6 +8,7 @@ import { log } from 'util';
   templateUrl: './ressources-documents.component.html',
   styleUrls: ['./ressources-documents.component.scss']
 })
+
 export class RessourcesDocumentsComponent implements OnInit {
   dataSearch: Document[];
   searchWord: string;
@@ -21,7 +22,7 @@ export class RessourcesDocumentsComponent implements OnInit {
 
   search(word: string) {
     this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {
-    this.dataSearch = data;
+      this.dataSearch = data;
     });
   }
 }

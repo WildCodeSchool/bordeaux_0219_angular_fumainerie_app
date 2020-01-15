@@ -1,0 +1,85 @@
+<form [formGroup]="validationHomeForm" (ngSubmit)="completeHome()">
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Adresse"
+      type="text"
+      formControlName='adress'
+      >
+    </mat-form-field>
+
+    <div *ngIf="validationHomeForm.get('adress').errors && !validationHomeForm.get('adress').pristine" class="error">
+      <div [hidden]="!validationHomeForm.get('adress').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Complément d'adresse"
+      type="text"
+      formControlName='address_plus'
+      />
+    </mat-form-field>
+
+    <div *ngIf="validationHomeForm.get('adressComplement').errors && !validationHomeForm.get('adressComplement').pristine" class="error">
+      <div [hidden]="!validationHomeForm.get('adressComplement').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Code postal"
+      type="text"
+      formControlName='zip'
+      >
+    </mat-form-field>
+
+    <div *ngIf="validationHomeForm.get('zip').errors && !validationHomeForm.get('zip').pristine" class="error">
+      <div [hidden]="!validationHomeForm.get('zip').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Ville"
+      type="text"
+      formControlName='city'
+      >
+    </mat-form-field>
+
+    <div *ngIf="validationHomeForm.get('city').errors && !validationHomeForm.get('city').pristine" class="error">
+      <div [hidden]="!validationHomeForm.get('city').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Nombre d'adulte"
+      type="number"
+      formControlName='adult_nbr'
+      >
+    </mat-form-field>
+
+    <div *ngIf="validationHomeForm.get('adultNbr').errors && !validationHomeForm.get('adultNbr').pristine" class="error">
+      <div [hidden]="!validationHomeForm.get('adultNbr').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Nombre d'enfant"
+      type="number"
+      formControlName='childNbr'
+      >
+    </mat-form-field>
+
+    <div *ngIf="validationHomeForm.get('childNbr').errors && !validationHomeForm.get('childNbr').pristine" class="error">
+      <div [hidden]="!validationHomeForm.get('childNbr').errors.required">Ce champ est requis.</div>
+    </div>
+</form>
+
+<div class="container">
+  <button mat-flat-button type="submit" [disabled]="!validationHomeForm.valid">
+    Complétez votre inscription
+  </button>
+</div>

@@ -2,33 +2,77 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 90vh;
   mat-form-field{
-    width: 80vw;
+    width: 100%;
   }
 }
+
 .document{
   border-bottom: 1px solid black;
-  width: 80vw;
+  width: 90%;
+  margin: auto
 }
+
 ul{
   padding-inline-start: 0px;
   margin: 0px;
 }
+
 mat-label{
   font-size: 1.5em;
 }
+
 .contentDocument{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .list_documents{
   height: 50vh;
-  background-color: #fde773;
+  background-color: #F9C400;
   padding: 2vh;
   overflow: scroll;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 0px;
 }
+
 h2{
   margin-bottom: 3vh;
 }
+
+.title {
+  margin-left: 0vw;
+}
+
+.recherche :focus{
+  background-color: white;
+}
+
+// parallax begin
+
+.parallax {
+  /* The image used */
+  background-image: url("../../../assets/images/parallax-2.jpg");
+  /* second choice*/
+  background-image: url("../../../assets/images/parallax-5.jpg");
+  
+  /* Full height */
+  height: 77vh;
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+// parallax end

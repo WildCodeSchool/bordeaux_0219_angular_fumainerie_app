@@ -11,8 +11,8 @@ import { MatDialog} from '@angular/material';
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.scss']
 })
-export class SignUpFormComponent implements OnInit {
 
+export class SignUpFormComponent implements OnInit {
   constructor(private router: Router,
               private formbuilder: FormBuilder,
               private signupService: SignupService,
@@ -24,21 +24,17 @@ export class SignUpFormComponent implements OnInit {
       this.signUpForm = this.formbuilder.group({
         email: ['', [Validators.required, emailValidator]],
         password: ['', [Validators.required]],
-        username: ['', Validators.required],
         lastname: ['', Validators.required],
         firstname: ['', Validators.required]
       });
       }
 
-      onSignUp() {
-        this.signupService.postNewUser(this.signUpForm.value);
-        this.dialog.open(DialogSignupComponent, {width: '250px'});
+      onSignUp() {  // Pas encore de gestion d'erreur en cas d'email déjà existant (dialog s'ouvre dans tous les cas)
+          this.signupService.postNewUser(this.signUpForm.value).subscribe();
+          this.dialog.open(DialogSignupComponent, {width: '250px'});
       }
+
       goToSignIn() {
         this.router.navigate(['/connexion']);
       }
     }
-
-
-
-

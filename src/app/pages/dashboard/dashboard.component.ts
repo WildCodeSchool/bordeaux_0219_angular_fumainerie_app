@@ -1,4 +1,4 @@
-import { DashboardService } from './../../shared/services/dashboard.service';
+import { UserService } from './../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/models/user';
 
@@ -8,20 +8,15 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  UserService: any;
 
-  constructor(private service: DashboardService) { }
-
+  constructor(private userService: UserService ) { }
 
   user: User;
-  StatusAccountIsComplete = true;
+  accountStatus: number;
 
   ngOnInit() {
-
-  }
-  changeStatus() {
-    this.StatusAccountIsComplete = !this.StatusAccountIsComplete;
-  }
-  getAccountStatus() {
-
+    this.user = this.userService.user;
+    this.accountStatus = this.user.accountStatus;
   }
 }

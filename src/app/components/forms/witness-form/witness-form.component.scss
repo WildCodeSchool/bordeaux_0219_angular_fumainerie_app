@@ -1,0 +1,31 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  //Form border
+  text-align: center;
+  background-color: white;
+  padding: 50px 0 50px 0;
+  border-radius: 3px;
+}
+
+.example-container > * {
+  width: 80%;
+  margin: auto;
+}
+
+button {
+  color:#272767;
+  background-color: #FDE773;
+  width: 80px;
+  margin: 30px 5px 0 5px;
+}
+
+.imgContainer {
+  margin-right: 50px;
+  margin-left: auto;
+}
+
+img {
+  float: right;
+  width: 18px;
+}

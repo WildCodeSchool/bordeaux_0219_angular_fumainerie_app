@@ -31,7 +31,7 @@ import { MatAutocompleteModule,
   MatToolbarModule,
   MatTooltipModule,
   MatStepperModule,
-
+  MatFormFieldModule
 } from '@angular/material';
 
 @NgModule({
@@ -70,6 +70,11 @@ import { MatAutocompleteModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule]
+    MatTooltipModule,
+    MatFormFieldModule
+  ],
+  providers: [
+    MatDatepickerModule
+  ]
 })
 export class AngularMaterialModule { }

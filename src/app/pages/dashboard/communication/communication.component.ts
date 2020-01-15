@@ -1,22 +1,17 @@
-import { WitnessService } from './../../../shared/services/witness.service';
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
-
+import { User } from '../../../shared/models/user';
+import { UserService } from '../../../shared/services/user.service';
 
 @Component({
   selector: 'app-communication',
   templateUrl: './communication.component.html',
   styleUrls: ['./communication.component.scss']
 })
-export class CommunicationComponent implements OnInit, OnChanges {
-  visible: boolean;
-
-  constructor(private witnessService: WitnessService) {}
+export class CommunicationComponent implements OnInit {
+  user: User;
+  constructor(private userService: UserService) {}
 
     ngOnInit() {
-      this.visible = this.witnessService.visible;
+      this.user = this.userService.user;
     }
-    ngOnChanges() {
-    this.visible = this.witnessService.visible;
-  }
-
 }

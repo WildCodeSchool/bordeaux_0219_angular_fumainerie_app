@@ -1,21 +1,23 @@
-
 .menu-responsiv{
   display: none;
 }
+
 .page-container{
   display: flex;
   width: 100%;
   .sidebar{
     width: 15%;
-    background-color: #2bb02b;
-    border-right: solid 1px #037503;
+    background-color: #fde773;
+    border-right: solid 1px #fdd610;
   }
 }
+
 .navbar{
   height: 10vh;
   text-align: center;
   margin-bottom: 0;
 }
+
 .dashboard-container{
   display: flex;
   flex-direction: column;
@@ -25,20 +27,15 @@
   .interface-dashboard{
     height: 90vh;
     width: 100%;
-    background-color:#b4e356;
+    background-color:white;
   }
-  .modal-account{
-    display: flex;
-    font-size: 2.5em;
-    color : white;
+  .form-div{
     height: 90vh;
     width: 100%;
-    background-color :#99cd32;
-    align-items: center;
-    justify-content: center;
 
   }
 }
+
 .navvbar{
   display: flex;
   flex-direction: row;
@@ -52,6 +49,7 @@
     margin-left: 50%;
   }
 }
+
 ul{
   display: flex;
   flex-direction: row;
@@ -64,6 +62,7 @@ ul{
     margin-left: 2vw;
   }
 }
+
 li:hover{
   background-color: #ffff73;
   text-shadow: 0 0 0.2em 0.5em #ffff73
@@ -76,9 +75,11 @@ li:hover{
   .menu-responsiv{
     display: block;
   }
+
   .navbar{
     display: none;
   }
+
   .sidebar{
     display: none;
   }

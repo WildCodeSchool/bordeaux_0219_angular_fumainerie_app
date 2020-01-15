@@ -1,0 +1,29 @@
+.section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 3px;
+  .texte{
+    width: 100%;
+  }
+}
+
+mat-tab-group{
+  background-color: white;
+  max-height: 80vh;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.admin{
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px){
+  mat-tab-group{
+    max-height: 40vh;
+  }
+}

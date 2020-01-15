@@ -6,6 +6,7 @@
   align-items: flex-end;
   border-bottom: 1px solid black;
 }
+
 ul{
   display: flex;
   flex-direction: row;
@@ -15,30 +16,68 @@ ul{
   margin: 0px;
   li{
     list-style-type: none;
-    margin-left: 2vw;
+    padding: 2px;
+  }
+  li:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #5C08A8;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  li:hover:before {
+    visibility: visible;
+    width: 100%;
   }
 }
-li:hover{
-  background-color: #fde773;
-  text-decoration: underline;
-  box-shadow: 0 0 0.2em 0.5em #fde773;
-}
+
 img{
   height: 30vh;
 }
+
 button{
-  background-color: #fde773;
-  color: black;
+  background-color: #F9C400;
   font-weight: 600;
   margin-left: 2vw;
   border: none;
   border-radius: 15px;
 }
+
 button:hover{
-  background-color: #fde773;
-  box-shadow: 0 0 0em 0.5em #fde773;
-  color: black;
+  background-color: #5C08A8;
+  box-shadow: 0 0 0em 0.5em #5C08A8;
+  transition : 0.3s;
+  color: white;
 }
+
 a{
   color: black;
+  position: relative;
+  text-decoration: none;
+  margin-left: 2vw;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../../../../assets/image-en-construction.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
 }
