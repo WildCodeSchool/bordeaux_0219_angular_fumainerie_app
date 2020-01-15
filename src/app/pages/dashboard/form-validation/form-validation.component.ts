@@ -12,7 +12,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class FormValidationComponent implements OnInit {
 
-
+  validationUserForm: FormGroup;
   validationHomeForm: FormGroup;
 
   constructor(private formbuilder: FormBuilder,
@@ -21,22 +21,25 @@ export class FormValidationComponent implements OnInit {
 
     user: User;
 
-  ngOnInit() {
-    this.user = this.userService.user;
-    this.validationHomeForm = this.formbuilder.group({
+    ngOnInit() {
+      this.user = this.userService.user;
+      this.validationUserForm = this.formbuilder.group({
 
-      adress: ['', [Validators.required]],
-      address_plus : ['', [Validators.required]],
-      zip: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      adult_nbr: ['', [Validators.required]],
-      child_nbr: ['', [Validators.required]]
-    });
+        birth_date: ['', [Validators.required]],
+        phone: ['', [Validators.required]]
+      });
+      this.validationHomeForm = this.formbuilder.group({
 
-  }
+        adress: ['', [Validators.required]],
+        adress_plus : ['', [Validators.required]],
+        zip: ['', [Validators.required]],
+        city: ['', [Validators.required]],
+        adult_nbr: ['', [Validators.required]],
+        child_nbr: ['', [Validators.required]]
+      });
+    }
     completeHome() {
-
-      return this.userService.postHomeForm(this.validationHomeForm.value).subscribe();
+      return this.userService.postHomeForm(this.validationHomeForm.value, this.validationUserForm.value).subscribe();
     }
 
   }

@@ -98,7 +98,7 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsComponent,
     WitnessDeleteModalComponent,
     EventDeleteModalComponent,
-    FormValidationComponent
+    FormValidationComponent,
     QuestionComponent,
     QuestionDeleteModalComponent,
     NewsDeleteModalComponent,

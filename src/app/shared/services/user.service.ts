@@ -21,9 +21,9 @@ export class UserService {
     return this.http.put(UserService.URL + `/user/${id}`, user);
   }
 
-  postHomeForm(home: Home) {
+  postHomeForm(home: Home, user: User) {
     home.user_id = this.user.id;
-    return this.http.post(UserService.URL + '/home', home);
+    return this.http.post(UserService.URL + '/home', [home, user]);
 
   }
   public connexion(user: User) {
