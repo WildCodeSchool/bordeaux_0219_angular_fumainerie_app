@@ -1,38 +1,43 @@
 img #imgCard{
-
   width: calc(100% + 32px);
   margin: 0 -16px 16px -16px;
   margin-top: 0px;
   min-height: 1200px;
 }
+
 .example-card {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
   0px 4px 5px 0px rgba(0, 0, 0, 0.14),
   0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   border-radius: 0px;
+  p {
+    opacity: 0%;
+    padding-bottom: 0px;
+  }
 }
-p {
-  opacity: 0%;
-  padding-bottom: 0px;
-}
+
 .example-card:hover{
   p {
     opacity: 100%;
     font-weight: bold;
   }
 }
+
 .details {
   height: 95px;
 }
+
 .citation {
   height: 20px;
 }
+
 @media only screen and (max-width: 990px) {
   #imgCard{
     max-height: 400px;
     width: auto;
   }
 }
+
 /*for ipad and other lage tabs*/
 @media only screen and (max-width: 768px) {
 
@@ -41,11 +46,11 @@ p {
     width: auto;
   }
 }
+
 /*for mobile devices*/
 @media only screen and (max-width: 500px) {
   #imgCard{
     max-height: 300px;
     width: auto;
-
   }
 }
