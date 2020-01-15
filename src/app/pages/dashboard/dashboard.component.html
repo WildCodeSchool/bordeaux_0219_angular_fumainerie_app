@@ -12,7 +12,6 @@
     <div class="dashboard-container">
       <div class="navbar">
 
-
         <div class="navvbar">
           <div class="account">
           <p>{{user.firstname}}</p>
@@ -28,9 +27,7 @@
       <div class="interface-dashboard" *ngIf="accountStatus">
         <router-outlet></router-outlet>
       </div>
-
     </div>
   </div>
 </div>
-<!-- neutralisation du footer en attendant son ajustement css -->
 <app-footer></app-footer>

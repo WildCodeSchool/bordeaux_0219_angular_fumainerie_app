@@ -1,6 +1,7 @@
 form{
   margin-top: 5vh;
 }
+
 .example-container {
   margin-top: 500px;
   display: flex;
@@ -19,15 +20,17 @@ form{
 }
 
 button {
-  color:#272767;
-  background-color: #FDE773;
+  color: black;
+  background-color: #F9C400;
   width: 80px;
   margin: 30px 5px 0 5px;
 }
+
 .imgContainer {
   margin-right: 50px;
   margin-left: auto;
 }
+
 img {
   float: right;
   width: 18px;

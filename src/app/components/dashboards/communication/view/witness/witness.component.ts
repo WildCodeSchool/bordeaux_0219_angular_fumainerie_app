@@ -22,37 +22,35 @@ export class WitnessComponent implements OnInit {
               private dialog: MatDialog,
               private userService: UserService) { }
 
-  ngOnInit() {
-    this.user = this.userService.user;
+    ngOnInit() {
+      this.user = this.userService.user;
 
-    if (this.user.function === 'admin') {
-      this.witnessService.getAllWitness().subscribe((witness) => {
-        this.witness = witness;
-      });
-    } else {
-      this.witnessService.getValidedWitness().subscribe((witness) => {
-        this.witness = witness;
-      });
-    }
-  }
-
-  onChange(toggle, index: number) {
-    this.witness[index].status = toggle.checked;
-    this.witnessService.modifyWitness(this.witness[index]).subscribe();
-  }
-
-  onAskDeleteWitness(index: number, i: number) {
-    const dialogRef = this.dialog.open(WitnessDeleteModalComponent, {
-      width: '50%' });
-    const instance = dialogRef.componentInstance;
-    instance.index = index;
-
-    dialogRef.afterClosed().subscribe(isDeleted => {
-      if (isDeleted) {
-        this.witness.splice(i, 1);
-
-
+      if (this.user.function === 'admin') {
+        this.witnessService.getAllWitness().subscribe((witness) => {
+          this.witness = witness;
+        });
+      } else {
+        this.witnessService.getValidedWitness().subscribe((witness) => {
+          this.witness = witness;
+        });
       }
-  });
-  }
-}
+    }
+
+    onChange(toggle, index: number) {
+      this.witness[index].status = toggle.checked;
+      this.witnessService.modifyWitness(this.witness[index]).subscribe();
+    }
+
+    onAskDeleteWitness(index: number, i: number) {
+      const dialogRef = this.dialog.open(WitnessDeleteModalComponent, {
+        width: '50%' });
+      const instance = dialogRef.componentInstance;
+      instance.index = index;
+
+      dialogRef.afterClosed().subscribe(isDeleted => {
+          if (isDeleted) {
+            this.witness.splice(i, 1);
+          }
+        });
+      }
+    }

@@ -12,6 +12,7 @@ export class ButtonsComponent implements OnInit {
 
   ngOnInit() {
   }
+
   onWitnessForm() {
     this.router.navigate(['/dashboard/communication/avis/temoigner']);
   }
@@ -19,7 +20,7 @@ export class ButtonsComponent implements OnInit {
     this.router.navigate(['/dashboard/communication/avis/question']);
   }
 
-    onNewsForm() {
-      this.router.navigate(['/dashboard/communication/avis/actualite']);
-    }
+  onNewsForm() {
+    this.router.navigate(['/dashboard/communication/avis/actualite']);
   }
+}

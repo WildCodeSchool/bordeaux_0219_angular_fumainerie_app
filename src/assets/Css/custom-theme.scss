@@ -39,7 +39,6 @@ A700: white,
 )
 );
 
-
 @function mat-palette($base-palette, $default: 500, $lighter: 100, $darker: 700) {
   $result: map_merge($base-palette, (
   default: map-get($base-palette, $default),
@@ -59,7 +58,6 @@ A700: white,
   }
   @return $result;
 }
-
 
 $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
 

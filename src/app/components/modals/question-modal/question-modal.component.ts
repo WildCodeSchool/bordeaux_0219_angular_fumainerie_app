@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 
 export class QuestionModalComponent {
-
   constructor(private router: Router,
               private dialogRef: MatDialogRef<QuestionModalComponent>) {}
 

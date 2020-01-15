@@ -38,17 +38,21 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
 }
+
 .carousel-control.left,.carousel-control.right {
   background-image: none;
 }
+
 .yellowButton{
   background-color: #F9C400;
   margin-top: 50px;
   padding: 20px;
 }
+
 .carousel-indicators {
   display:none
 }
+
 mat-icon, mat-slide-toggle{
   color: #5C08A8;
 }
@@ -60,6 +64,7 @@ mat-icon:hover{
 p{
   line-height: 3vh;
 }
+
 h2{
   margin-left: 10vw;
 }

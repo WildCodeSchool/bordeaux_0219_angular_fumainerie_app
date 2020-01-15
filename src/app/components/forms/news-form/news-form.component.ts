@@ -12,40 +12,39 @@ import { MatDialog} from '@angular/material';
 })
 
 export class NewsFormComponent implements OnInit {
-
   constructor(private router: Router,
               private newsService: NewsService,
               private formbuilder: FormBuilder,
               public dialog: MatDialog) { }
 
-  newsForm: FormGroup;
+    newsForm: FormGroup;
 
-  ngOnInit() {
-    this.newsForm = this.formbuilder.group({
-      title:  ['', Validators.required],
-      description: ['', Validators.required],
-      link: ['', Validators.required],
-    });
-  }
+    ngOnInit() {
+      this.newsForm = this.formbuilder.group({
+        title:  ['', Validators.required],
+        description: ['', Validators.required],
+        link: ['', Validators.required],
+      });
+    }
 
-  resetForm() {
-    this.newsForm.reset();
-  }
+    resetForm() {
+      this.newsForm.reset();
+    }
 
-  onClose() {
-    this.router.navigate(['/dashboard/actualites']);
-  }
+    onClose() {
+      this.router.navigate(['/dashboard/actualites']);
+    }
 
-  onSubmitNewsForm() {
-    this.newsService.createNews(this.newsForm.value).subscribe();
-    const dialogRef = this.dialog.open(NewsModalComponent , {
-      width: '250px',
-    });
+    onSubmitNewsForm() {
+      this.newsService.createNews(this.newsForm.value).subscribe();
+      const dialogRef = this.dialog.open(NewsModalComponent , {
+        width: '250px',
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.router.navigate(['/dashboard/actualites']);
-       }
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.router.navigate(['/dashboard/actualites']);
+        }
       });
     }
   }

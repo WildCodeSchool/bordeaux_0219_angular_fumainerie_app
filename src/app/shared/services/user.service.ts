@@ -1,5 +1,5 @@
-import { User } from './../models/user';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { User } from 'src/app/shared/models/user';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap, map } from 'rxjs/operators';
 import { Home } from '../models/home';
@@ -38,8 +38,8 @@ export class UserService {
 
   postHomeForm(home: Home, user: User) {
     return this.http.post(UserService.URL + '/home', [home, user]);
-
   }
+
   public connexion(user: User) {
     return this.http.post(UserService.URL_AUTH + '/signin', user, {observe: 'response'}).pipe(
       tap((response: HttpResponse<User>) => {

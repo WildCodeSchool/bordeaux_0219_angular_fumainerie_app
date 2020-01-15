@@ -21,10 +21,12 @@ export class QuestionComponent implements OnInit {
     this.questionService.getAllquestion().subscribe((questions) => {
       this.questions = questions; });
   }
+
   onChange(toggle, index: number) {
     this.questions[index].traited = toggle.checked;
     this.questionService.modifyQuestion(this.questions[index]).subscribe();
   }
+
   onAskDeleteQuestion(index: number, i: number) {
     const dialogRef = this.dialog.open(QuestionDeleteModalComponent, {
       width: '50%' });

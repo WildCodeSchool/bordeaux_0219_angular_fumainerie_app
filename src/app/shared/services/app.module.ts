@@ -1,5 +1,4 @@
 import { NewsModalComponent } from './../../components/modals/news-modal/news-modal.component';
-
 import { EventsComponent } from './../../pages/dashboard/events/events.component';
 import { WitnessModalComponent} from '../../components/modals/witness-modal/witness-modal.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +35,6 @@ import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from '../../components/dashboards/communication/view/witness/witness.component';
 import { ViewComponent } from '../../components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from '../../components/dashboards/communication/view/buttons/buttons.component';
-import { DialogSigninComponent } from '../../components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from '../../components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsComponent } from '../../components/accueil/news/news.component';
 import { QuestionModalComponent } from '../../components/modals/question-modal/question-modal.component';
@@ -74,7 +72,6 @@ import { WitnessFormComponent } from '../../components/forms/witness-form/witnes
     ButtonsComponent,
     QuestionModalComponent,
     WitnessModalComponent,
-    DialogSigninComponent,
     DialogSignupComponent,
     NewsComponent,
     EventsComponent,
@@ -101,7 +98,6 @@ import { WitnessFormComponent } from '../../components/forms/witness-form/witnes
     QuestionModalComponent,
     WitnessModalComponent,
     DialogSignupComponent,
-    DialogSigninComponent
   ]
 })
 export class AppModule { }

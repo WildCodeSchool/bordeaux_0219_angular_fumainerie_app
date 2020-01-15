@@ -5,7 +5,6 @@
       <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
     </div>
 
-
     <mat-form-field>
       <input matInput id='time' type='time' placeholder="Heure et date de l'évènement" formControlName='time'>
     </mat-form-field>
@@ -29,6 +28,5 @@
       <button mat-flat-button type="button" (click)="resetForm()">Effacer</button>
       <button mat-flat-button type="submit" [disabled]="!eventForm.valid">Envoyer</button>
     </div>
-
   </div>
 </form>
