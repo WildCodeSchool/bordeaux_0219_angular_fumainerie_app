@@ -19,4 +19,7 @@ export class ButtonsComponent implements OnInit {
     this.router.navigate(['/dashboard/communication/avis/question']);
   }
 
-}
+    onNewsForm() {
+      this.router.navigate(['/dashboard/communication/avis/actualite']);
+    }
+  }

@@ -12,6 +12,5 @@ export class CarouselComponent implements OnInit {
   users = gouvernanceMock;
 
   ngOnInit() {
-
   }
-  }
+}

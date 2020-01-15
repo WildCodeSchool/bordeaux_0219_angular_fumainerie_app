@@ -1,6 +1,6 @@
 import { UserService } from './../shared/services/user.service';
 import { Injectable, Injector } from '@angular/core';
-import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent, HttpResponse } from '@angular/common/http';
+import { HttpInterceptor, HttpHandler, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -18,11 +18,9 @@ export class LogInterceptor implements HttpInterceptor {
     }
 
     const headers = req.headers.set('Autorization', `Bearer ${token}`);
-
     const authReq = req.clone({headers});
+
     return next.handle(authReq);
 
-
   }
-
 }

@@ -23,7 +23,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/carousel/card/card.component';
 import { NavbarComponent } from './components/accueil/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
@@ -50,7 +49,9 @@ import { ButtonsComponent } from './components/dashboards/communication/view/but
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
+import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
+import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
@@ -96,9 +97,12 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
+    NewComponent,
+    NewsDeleteModalComponent,
     WitnessDeleteModalComponent,
+    NewsFormComponent,
     EventDeleteModalComponent,
-    FormValidationComponent
+    FormValidationComponent,
     QuestionComponent,
     QuestionDeleteModalComponent,
     NewsDeleteModalComponent,
@@ -145,6 +149,8 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     DialogSigninComponent,
     NewsletterModalComponent,
     WitnessDeleteModalComponent,
+    NewsDeleteModalComponent,
+    NewsModalComponent,
     EventModalFormComponent,
     EventDeleteModalComponent,
     NewsModalComponent,
