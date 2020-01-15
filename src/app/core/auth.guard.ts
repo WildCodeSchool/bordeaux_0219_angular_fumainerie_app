@@ -1,7 +1,8 @@
 import { UserService } from './../shared/services/user.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,12 @@ export class AuthGuard implements CanActivate {
         // check si user déja récupéré, sinon > connecter
         if (this.service.user) {
           return true;
-        } else {
-          this.router.navigate(['/connexion']);
         }
+        return this.service.isLogged().pipe(catchError(err => {
+
+          this.router.navigate(['/connexion']);
+          return throwError(err);
+        }));
+
       }
     }
