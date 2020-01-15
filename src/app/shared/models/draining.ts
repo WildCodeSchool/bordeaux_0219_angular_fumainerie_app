@@ -18,14 +18,15 @@ export class Draining {
     public home_id?: number;
     // tslint:disable-next-line: variable-name
     public user_id?: number;
-    public createAt?: string;
+    public createAt?: Date;
     public deleteAt?: string;
     // tslint:disable-next-line: variable-name
     public valid_account?: string;
     public show = false;
+    public slot_id: number;
 
     constructor(input?: Draining) {
-      if (!input) {
+      if (input) {
         Object.assign(this, input);
       }
     }

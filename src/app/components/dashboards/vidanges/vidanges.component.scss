@@ -1,17 +1,17 @@
 .drainingRequest, .history{
   border: 1px solid black;
 }
-.drainingRequestByUser, .detail{
+.dallDrainingRequestForCurrentUser, .detail{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.allDraining{
+.allDrainingForCurrentUser{
   width: 15vw;
   text-align: center;
   margin-left: 20px;
 }
-.allDraining:hover{
+.allDrainingForCurrentUser:hover{
 background-color: white;
 border-radius: 15px;
 }
