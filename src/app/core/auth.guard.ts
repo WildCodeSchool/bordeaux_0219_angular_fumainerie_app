@@ -18,8 +18,9 @@ export class AuthGuard implements CanActivate {
       next: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         // check si user déja récupéré, sinon > connecter
+        return true; // put down this ligne under the if function for activate the authentification
         if (this.service.user) {
-          return true;
+
         }
         return this.service.isLogged().pipe(catchError(err => {
 
@@ -29,3 +30,13 @@ export class AuthGuard implements CanActivate {
 
       }
     }
+
+
+
+
+
+
+
+
+
+

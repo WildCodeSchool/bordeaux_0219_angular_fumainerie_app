@@ -14,19 +14,18 @@
 
         <div class="navvbar">
           <div class="account">
-          <p>{{user.firstname}}</p>
-            <p></p>
+          <p>Bienvenue {{user.firstname}}</p>
           </div>
         </div>
       </div>
 
-<!--
+
       <div class="form-div" *ngIf="!accountStatus">
-        <app-form-validation></app-form-validation>
+        <!-- <app-form-validation></app-form-validation> -->
       </div>
-      <div class="interface-dashboard" *ngIf="accountStatus"> -->
+      <div class="interface-dashboard" *ngIf="accountStatus">
         <router-outlet></router-outlet>
-      <!-- </div> -->
+      </div>
     </div>
   </div>
 </div>
