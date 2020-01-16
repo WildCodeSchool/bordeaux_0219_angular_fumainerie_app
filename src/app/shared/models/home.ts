@@ -9,6 +9,7 @@ export class Home {
   public address_plus!: string;
   public zip!: number;
   public city!: string;
+  public phone?: string;
   // tslint:disable-next-line: variable-name
   public emptying_story!: string;
   public startAt!: string;
