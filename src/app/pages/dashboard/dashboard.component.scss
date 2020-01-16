@@ -1,3 +1,6 @@
+// import scss variable
+@import './../../../assets/Css/fumainerie-theme.scss';
+
 .menu-responsiv{
   display: none;
 }
@@ -7,16 +10,10 @@
   width: 100%;
   .sidebar{
     width: 15%;
-    background-color: #FFD745;
-    // border-right: solid 1px red;
+    background-color: $primary60;
   }
 }
 
-.navbar{
-  height: 10vh;
-  text-align: center;
-  margin-bottom: 0;
-}
 
 .dashboard-container{
   display: flex;
@@ -32,13 +29,13 @@
   .form-div{
     height: 90vh;
     width: 100%;
-
   }
 }
 
 .navvbar{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
   font-size: 1.3em;
   align-self: flex-end;
@@ -46,9 +43,9 @@
     display: flex;
     align-items: center;
     padding: 15px;
-    margin-left: 50%;
   }
 }
+// box-shadow: $box-shadow;
 
 ul{
   display: flex;
@@ -63,13 +60,15 @@ ul{
   }
 }
 
-li:hover{
-  background-color: #ffff73;
-  text-shadow: 0 0 0.2em 0.5em #ffff73
-  a{
-    text-decoration: none;
-  }
-}
+// li:hover{
+//   background-color: #ffff73;
+//   text-shadow: 0 0 0.2em 0.5em #ffff73
+//   a{
+//     text-decoration: none;
+//   }
+// }
+
+
 
 @media (max-width: 600px){
   .menu-responsiv{
