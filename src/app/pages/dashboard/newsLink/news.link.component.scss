@@ -1,20 +1,20 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
 .section{
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 16px;
   padding: 16px;
-  border-radius: 3px;
+  box-shadow: none;
   .texte{
     width: 100%;
   }
 }
 
 mat-tab-group{
-  background-color: white;
   max-height: 80vh;
   width: 100%;
-  border-radius: 3px;
 }
 
 .admin{
@@ -29,6 +29,8 @@ mat-tab-group{
   margin-top: 5vh;
   width: 80%;
   background-color: white;
+  box-shadow: $box-shadow;
+  border-radius: 0px;
 }
 
 .containerG{

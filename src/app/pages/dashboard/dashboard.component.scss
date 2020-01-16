@@ -14,7 +14,6 @@
   }
 }
 
-
 .dashboard-container{
   display: flex;
   flex-direction: column;
@@ -24,7 +23,7 @@
   .interface-dashboard{
     height: 90vh;
     width: 100%;
-    background-color:white;
+    // background-color:white;
   }
   .form-div{
     height: 90vh;
@@ -59,16 +58,27 @@ ul{
     margin-left: 2vw;
   }
 }
+.parallax {
+  /* The image used */
+  background-image: url("../../../assets/images/parallax-5.jpg");
 
-// li:hover{
-//   background-color: #ffff73;
-//   text-shadow: 0 0 0.2em 0.5em #ffff73
-//   a{
-//     text-decoration: none;
-//   }
-// }
+  /* Full height */
+  height: 101%;
 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+// parallax end
 
 @media (max-width: 600px){
   .menu-responsiv{
