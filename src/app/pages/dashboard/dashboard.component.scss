@@ -36,7 +36,7 @@
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  font-size: 1.3em;
+  font-size: 1.6em;
   align-self: flex-end;
   .account{
     display: flex;
@@ -44,7 +44,6 @@
     padding: 15px;
   }
 }
-// box-shadow: $box-shadow;
 
 ul{
   display: flex;
@@ -58,27 +57,11 @@ ul{
     margin-left: 2vw;
   }
 }
+
 .parallax {
   /* The image used */
   background-image: url("../../../assets/images/parallax-5.jpg");
-
-  /* Full height */
-  height: 101%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-
-/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}
-// parallax end
 
 @media (max-width: 600px){
   .menu-responsiv{
