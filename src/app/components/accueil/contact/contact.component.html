@@ -11,13 +11,8 @@
       <p>S'abonner à notre newsletter</p>
     <form [formGroup]="mailForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="outline">
-          <mat-label>Nom *:</mat-label>
-          <input formControlName="NAME" matInput placeholder="Nom: ">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
           <mat-label>Email *</mat-label>
           <input formControlName="EMAIL" matInput placeholder="">
-
           <div *ngIf="mailForm.get('EMAIL').errors && !mailForm.get('EMAIL').pristine" class="error">
             <div [hidden]="!mailForm.invalid">Veuillez saisir un mail valide.</div>
           </div>

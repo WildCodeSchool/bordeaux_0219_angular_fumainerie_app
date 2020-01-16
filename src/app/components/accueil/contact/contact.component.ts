@@ -29,7 +29,6 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.mailForm = this.formBuilder.group({
-      NAME: ['', [Validators.required]],
       EMAIL: ['', [Validators.required, emailValidator]]
     });
   }
@@ -39,7 +38,6 @@ export class ContactComponent implements OnInit {
       if (this.mailForm.status === 'VALID' && this.mailForm.status === 'VALID') {
 
       const params = new HttpParams()
-        .set('NAME', this.mailForm.value)
         .set('EMAIL', this.mailForm.value)
         .set('b_46dee92b175ee958c07343421_8aa6f29244', ''); // hidden input name
 
