@@ -47,7 +47,7 @@ export class VidangesComponent implements OnInit {
 
 
   ngOnInit() {
-   this.currentUser = this.userService.user2;
+   this.currentUser = this.userService.user4;
 
   //  Producteur
    this.drainingRequestService.getSlot().subscribe( data => {
@@ -108,19 +108,23 @@ export class VidangesComponent implements OnInit {
 
   // Creation des demandes
   addRequest(drainingRequest: any) {
-    console.log(drainingRequest);
     drainingRequest.session_date = drainingRequest.session_date.toLocaleDateString().split('/').reverse().join('-');
     drainingRequest.name = drainingRequest.slot_id.name;
     drainingRequest.slot_id = drainingRequest.slot_id.id;
+    console.log(drainingRequest);
 
-    this.arrayDrainingRequest.push(drainingRequest);
+    return this.arrayDrainingRequest.push(drainingRequest);
   }
 
 // Envoi un tableau de demande de vidange
   submit() {
+    console.log(this.arrayDrainingRequest);
+
     for (const drainingRequest of this.arrayDrainingRequest) {
-      this.allDrainingRequestForCurrentUser.push(drainingRequest);
+     this.allDrainingRequestForCurrentUser.push(drainingRequest);
     }
+    this.isRequestAlreadyCreate = true;
+    console.log( 'array' + this.arrayDrainingRequest);
     return this.drainingRequestService.postDrainingRequest(this.arrayDrainingRequest).subscribe();
   }
 
@@ -168,6 +172,11 @@ openDetailsCustomer(home: Home) {
 
     this.drainingRequestService.updateDrainingRequest(accepted).subscribe();
     this.drainingService.updateDrainingUser(userId).subscribe();
+    this.allDrainingRequestUnchecked.filter(userDraining => userDraining.filter( (draining) => {
+      draining.status === 0; }
+      ));
+    console.log('Je suis unchecked' + this.allDrainingRequestUnchecked);
+
 }
 
 }

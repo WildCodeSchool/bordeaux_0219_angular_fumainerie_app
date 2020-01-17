@@ -16,6 +16,7 @@ export class DrainingRequestService {
   postDrainingRequest(drainingRequest: DrainingRequest[]): Observable<DrainingRequest[]> {
     return this.http.post<DrainingRequest[]>(DrainingRequestService.URL + '/drainingRequest/draining', drainingRequest);
   }
+
   getSlot(): Observable<any> {
     return this.http.get(DrainingRequestService.URL + '/slot');
   }

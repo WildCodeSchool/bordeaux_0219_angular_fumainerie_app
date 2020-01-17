@@ -20,7 +20,7 @@ export class DrainingService {
     return this.http.get<DrainingRequest>(DrainingService.URL + 'drainingRequest/user/' + id + '/next');
   }
 
-  updateDrainingUser(userId: number): Observable<Draining> {
-    return this.http.put<Draining>(DrainingService.URL + 'draining/status/', userId);
+  updateDrainingUser(id: number): Observable<Draining> {
+    return this.http.put<Draining>(DrainingService.URL + 'draining/status', {id});
   }
 }
