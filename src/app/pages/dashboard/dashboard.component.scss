@@ -4,6 +4,10 @@
 .menu-responsiv{
   display: none;
 }
+h2 {
+  text-align: center;
+  margin-left: 0vw;
+}
 
 .page-container{
   display: flex;
@@ -23,7 +27,6 @@
   .interface-dashboard{
     height: 90vh;
     width: 100%;
-    // background-color:white;
   }
   .form-div{
     height: 90vh;
@@ -42,6 +45,7 @@
     display: flex;
     align-items: center;
     padding: 15px;
+    text-align: center;
   }
 }
 

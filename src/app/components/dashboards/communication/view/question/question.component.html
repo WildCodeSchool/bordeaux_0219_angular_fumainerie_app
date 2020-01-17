@@ -3,8 +3,8 @@
     <div class="section mat-elevation-z4" *ngFor="let item of questions; let i = index">
       <div class='all'>
         <div class="texte">
-          <h4>{{item.topic }}</h4>
-          <h3> {{item.firstname}} {{item.lastname}}</h3>
+          <h3>{{item.topic }}</h3>
+          <h4> {{item.firstname}} {{item.lastname}}</h4>
           <p>{{item.question}}</p>
           <p>Repondre: <a href="mailto:item.email">{{item.email}}</a></p>
         </div>
