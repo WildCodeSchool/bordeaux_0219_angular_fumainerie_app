@@ -15,7 +15,7 @@ export class UserService {
 
   // to delete data user for activate the authentification
   // tslint:disable-next-line: max-line-length
-  user: User = {id: 8, function: 'admin', firstname: 'olivier', lastname: 'darb', birth_date: null, email: 'prout@hotmail.fr', password: 'null', account_status: 1};
+  user: User = {id: 8, function: 'admin', firstname: 'olivier', lastname: 'darb', birth_date: null, email: 'olivier@hotmail.fr', password: 'null', account_status: 1};
   token: string;
 
   public getMe() {
