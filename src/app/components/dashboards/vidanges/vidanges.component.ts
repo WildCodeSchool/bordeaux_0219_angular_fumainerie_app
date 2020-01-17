@@ -17,6 +17,12 @@ import { Draining } from '../../../shared/models/draining';
 })
 export class VidangesComponent implements OnInit {
 
+  // tslint:disable-next-line: max-line-length
+  constructor(private drainingRequestService: DrainingRequestService,
+              private userService: UserService,
+              private drainingService: DrainingService,
+              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr'); }
+
   slotData: Slot[];
   currentUser: User;
   drainingFormRequest: FormGroup;
@@ -39,11 +45,6 @@ export class VidangesComponent implements OnInit {
   // Vidangeur
   allDrainingRequestUnchecked: any[];
 
-  // tslint:disable-next-line: max-line-length
-  constructor(private drainingRequestService: DrainingRequestService,
-              private userService: UserService,
-              private drainingService: DrainingService,
-              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr'); }
 
   ngOnInit() {
    this.currentUser = this.userService.user2;
@@ -151,12 +152,22 @@ openDetailsCustomer(home: Home) {
   return home;
 }
 
-acceptRequest(accepted: DrainingRequest) {
+  async acceptRequest(accepted: any) {
 
-  console.log(accepted);
-  this.accepteDrainingArray.push(accepted);
-  console.log(this.accepteDrainingArray);
-  this.drainingRequestService.updateDrainingRequest(accepted).subscribe();
+    for ( const request of this.allDrainingRequestUnchecked) {
+      for (const draining of request) {
+        if ( draining.id === accepted.draining_id) {
+          accepted.user_id = draining.user_id;
+        }
+      }
+    }
+    // this.accepteDrainingArray.push(accepted);
+    // console.log(this.accepteDrainingArray);
+    const userId = accepted.user_id;
+    console.log(userId);
+
+    this.drainingRequestService.updateDrainingRequest(accepted).subscribe();
+    this.drainingService.updateDrainingUser(userId).subscribe();
 }
 
 }
