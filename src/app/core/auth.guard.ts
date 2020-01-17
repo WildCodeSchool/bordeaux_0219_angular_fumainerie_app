@@ -11,7 +11,6 @@ export class AuthGuard implements CanActivate {
   token: string;
   constructor(private router: Router,
               private service: UserService) {
-      this.token = JSON.parse(localStorage.getItem('TOKEN'))  || null;
     }
 
     canActivate(

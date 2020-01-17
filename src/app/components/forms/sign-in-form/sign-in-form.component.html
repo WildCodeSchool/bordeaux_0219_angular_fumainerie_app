@@ -32,10 +32,7 @@
     </div>
 
     <div class="container">
-        <button mat-flat-button >
-           Annuler
-          </button>
-          <button mat-flat-button type="submit">   <!--  [disabled]="!signInForm.valid"> -->
+          <button mat-flat-button type="submit" [disabled]="!signInForm.valid">
           Se connecter
       </button>
     </div>

@@ -39,14 +39,14 @@ export class UserService {
   }
 
   postHomeForm(home: Home, user: User) {
-    return this.http.post(UserService.URL + '/home', [home, user]);
+    return this.http.post(UserService.URL + '/home/update', [home, user]);
   }
 
   public connexion(user: User) {
     return this.http.post(UserService.URL_AUTH + '/signin', user, {observe: 'response'}).pipe(
-      tap((response: HttpResponse<User>) => {
+      tap((response: HttpResponse<any>) => {
         const token = response.headers.get('JWT-TOKEN');
-        localStorage.setItem('TOKEN', token);
+        localStorage.setItem('JWT-TOKEN', token);
         this.user = response.body;
         return response.body;
       }));

@@ -34,6 +34,19 @@
     <mat-form-field>
       <input
       matInput
+      placeholder="Date de naissance"
+      type="date"
+      formControlName='birth_date'
+      >
+    </mat-form-field>
+
+    <div *ngIf="signUpForm.get('birth_date').errors && !signUpForm.get('birth_date').pristine" class="error">
+      <div [hidden]="!signUpForm.get('birth_date').errors.required">Ce champ est requis.</div>
+    </div>
+
+    <mat-form-field>
+      <input
+      matInput
       placeholder="Email"
       type="text"
       formControlName='email'
