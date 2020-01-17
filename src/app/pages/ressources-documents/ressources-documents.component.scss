@@ -7,6 +7,7 @@
   }
 }
 
+
 .document{
   border-bottom: 1px solid black;
   width: 90%;
@@ -41,23 +42,16 @@ mat-label{
 
 h2{
   margin-bottom: 3vh;
-  // margin-left: 10vw;
 }
 
 .title {
   margin-left: 0vw;
 }
 
-.recherche :focus{
-  background-color: white;
-}
-
 // parallax begin
 
 .parallax {
   /* The image used */
-  background-image: url("../../../assets/images/parallax-2.jpg");
-  /* second choice*/
   background-image: url("../../../assets/images/parallax-5.jpg");
 
   /* Full height */

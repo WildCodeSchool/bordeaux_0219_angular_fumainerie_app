@@ -1,5 +1,12 @@
+// import scss variable
+@import './../../../assets/Css/fumainerie-theme.scss';
+
 .menu-responsiv{
   display: none;
+}
+h2 {
+  text-align: center;
+  margin-left: 0vw;
 }
 
 .page-container{
@@ -7,15 +14,8 @@
   width: 100%;
   .sidebar{
     width: 15%;
-    background-color: #fde773;
-    border-right: solid 1px #fdd610;
+    background-color: $primary60;
   }
-}
-
-.navbar{
-  height: 10vh;
-  text-align: center;
-  margin-bottom: 0;
 }
 
 .dashboard-container{
@@ -27,26 +27,25 @@
   .interface-dashboard{
     height: 90vh;
     width: 100%;
-    background-color:white;
   }
   .form-div{
     height: 90vh;
     width: 100%;
-
   }
 }
 
 .navvbar{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
-  font-size: 1.3em;
+  font-size: 1.6em;
   align-self: flex-end;
   .account{
     display: flex;
     align-items: center;
     padding: 15px;
-    margin-left: 50%;
+    text-align: center;
   }
 }
 
@@ -63,12 +62,9 @@ ul{
   }
 }
 
-li:hover{
-  background-color: #ffff73;
-  text-shadow: 0 0 0.2em 0.5em #ffff73
-  a{
-    text-decoration: none;
-  }
+.parallax {
+  /* The image used */
+  background-image: url("../../../assets/images/parallax-5.jpg");
 }
 
 @media (max-width: 600px){

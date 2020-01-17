@@ -4,7 +4,7 @@ import { EventModalFormComponent } from './components/modals/event-modal-form/ev
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
 import { LogInterceptor } from './core/log.interceptor';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientJsonpModule} from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
@@ -60,6 +60,7 @@ import { NewsFormComponent } from './components/forms/news-form/news-form.compon
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,7 +107,8 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsDeleteModalComponent,
     NewsModalComponent,
     NewsFormComponent,
-    NewsLinkComponent
+    NewsLinkComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -122,7 +124,8 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     MatDatepickerModule,
     FormsModule,
     HttpClientModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientJsonpModule
   ],
 
   providers: [

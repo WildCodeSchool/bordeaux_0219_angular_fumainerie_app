@@ -1,10 +1,15 @@
-import { NewsletterModalComponent } from '../../modals/newsletter-modal/newsletter-modal.component';
-import { NewsletterService } from './../../../shared/services/newsletter.service';
+import { NewsletterModalComponent } from './../../modals/newsletter-modal/newsletter-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { emailValidator } from '../../../shared/validators/email-validator';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog} from '@angular/material';
+import { HttpClient, HttpParams} from '@angular/common/http';
+import { stringify } from 'querystring';
 
+interface MailChimpResponse {
+  result: string;
+  msg: string;
+}
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -12,25 +17,50 @@ import { MatDialog} from '@angular/material';
 })
 
 export class ContactComponent implements OnInit {
-  constructor(private newsletterService: NewsletterService,
-              private formBuilder: FormBuilder,
+  submitted = false;
+  mailChimpEndpoint = 'https://gmail.us4.list-manage.com/subscribe/post-json?u=46dee92b175ee958c07343421&id=8aa6f29244&';
+  error = '';
+// <form action="https://gmail.us4.list-manage.com/subscribe/post-json?u=46dee92b175ee958c07343421&amp;id=8aa6f29244"
+  constructor(private http: HttpClient,
               public dialog: MatDialog) { }
 
-  mailForm: FormGroup;
 
-  ngOnInit() {
-    this.mailForm = this.formBuilder.group({
-      email: ['', [Validators.required, emailValidator]]
-    });
+  mailForm = new FormGroup({
+    EMAIL: new FormControl('', [Validators.required, emailValidator]),
+  });
+
+
+ngOnInit() {
   }
 
-  onSubmit() {
-      this.newsletterService.addEmail(this.mailForm.value).subscribe();
+onSubmit() {
+  this.error = '';
+  if (this.mailForm.status === 'VALID' && this.mailForm.status === 'VALID') {
+
+      const params = new HttpParams()
+        .set('EMAIL', (this.mailForm.get('EMAIL').value))
+        .set('b_46dee92b175ee958c07343421_8aa6f29244', ''); // hidden input name
+
+      const mailChimpUrl = this.mailChimpEndpoint + params.toString();
+
+      // 'c' refers to the jsonp callback param key. This is specific to Mailchimp
+      this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
+        if (response.result && response.result !== 'error') {
+          this.submitted = true;
+        } else {
+          this.error = response.msg;
+        }
+      }, error => {
+        console.error(error);
+        this.error = 'Sorry, an error occurred.';
+      });
       const dialogRef = this.dialog.open(NewsletterModalComponent, {
         width: '50%'
       });
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
+        this.mailForm.reset();
       });
   }
+}
 }
