@@ -1,4 +1,4 @@
-<div class="container-global">
+<div class="parallax">
 
   <div class="menu-responsiv">
     <app-burger-menu></app-burger-menu>
@@ -14,20 +14,18 @@
 
         <div class="navvbar">
           <div class="account">
-          <p>{{user.firstname}}</p>
-            <p></p>
+          <h2>Bienvenue {{user.firstname}}</h2>
           </div>
         </div>
       </div>
 
-
       <div class="form-div" *ngIf="!accountStatus">
-        <app-form-validation></app-form-validation>
+        <!-- <app-form-validation></app-form-validation> -->
       </div>
       <div class="interface-dashboard" *ngIf="accountStatus">
         <router-outlet></router-outlet>
       </div>
     </div>
   </div>
+  <!-- <app-footer></app-footer> -->
 </div>
-<app-footer></app-footer>

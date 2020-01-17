@@ -107,7 +107,8 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsDeleteModalComponent,
     NewsModalComponent,
     NewsFormComponent,
-    NewsLinkComponent
+    NewsLinkComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,

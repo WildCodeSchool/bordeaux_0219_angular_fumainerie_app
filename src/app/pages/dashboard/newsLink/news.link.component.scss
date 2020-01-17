@@ -1,25 +1,8 @@
-.section{
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
+.containerG{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 16px;
-  padding: 16px;
-  border-radius: 3px;
-  .texte{
-    width: 100%;
-  }
-}
-
-mat-tab-group{
-  background-color: white;
-  max-height: 80vh;
-  width: 100%;
-  border-radius: 3px;
-}
-
-.admin{
-  display: flex;
-  flex-direction: row;
 }
 
 .container{
@@ -29,11 +12,30 @@ mat-tab-group{
   margin-top: 5vh;
   width: 80%;
   background-color: white;
+  box-shadow: $box-shadow;
+  border-radius: 0px;
 }
 
-.containerG{
+.section{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  box-shadow: none;
+  .texte{
+    width: 100%;
+  }
+}
+
+mat-tab-group{
+  max-height: 80vh;
+  width: 100%;
+}
+
+.admin{
+  display: flex;
+  flex-direction: row;
 }
 
 button{
@@ -43,8 +45,15 @@ button{
   padding: 8px;
 }
 
+.yellowButton {
+  background-color: $primary60;
+  border-radius: 0px;
+  box-shadow: $box-shadow;
+ }
+
 @media (max-width: 600px){
   mat-tab-group{
     max-height: 40vh;
   }
 }
+
