@@ -20,7 +20,6 @@ export class ContactComponent implements OnInit {
   submitted = false;
   // tslint:disable-next-line: max-line-length
   mailChimpEndpoint = 'https://zaclys.us4.list-manage.com/subscribe/post-json?u=a1a172a1f21c9caa69eba4268&id=bc3bb22ceb&';
-  // mailChimpEndpoint = 'https://gmail.us4.list-manage.com/subscribe/post-json?u=46dee92b175ee958c07343421&id=8aa6f29244&';
   error = '';
   constructor(private http: HttpClient,
               public dialog: MatDialog) { }
@@ -41,7 +40,6 @@ export class ContactComponent implements OnInit {
         const params = new HttpParams()
         .set('EMAIL', (this.mailForm.get('EMAIL').value))
         .set('b_a1a172a1f21c9caa69eba4268_bc3bb22ceb', ''); // hidden input name
-        // .set('b_46dee92b175ee958c07343421_8aa6f29244', ''); // hidden input name
 
         const mailChimpUrl = this.mailChimpEndpoint + params.toString();
 
