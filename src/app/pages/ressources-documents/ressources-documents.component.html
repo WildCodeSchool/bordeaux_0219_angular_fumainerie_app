@@ -22,6 +22,9 @@
           </div>
         </div>
       </ul>
+      <button mat-button class='yellowButton'
+              *ngIf="user.function!=='admin'"
+              (click)="onUploadForm()"></button>
     </div>
   </div>
 </div>

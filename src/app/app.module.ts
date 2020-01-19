@@ -1,3 +1,4 @@
+import { RessourcesDocumentsComponent } from './Pages/ressources-documents/ressources-documents.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
@@ -49,7 +50,6 @@ import { ViewComponent } from './components/dashboards/communication/view/view.c
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
-import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
@@ -59,6 +59,7 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
+import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
 
 
 
@@ -109,6 +110,7 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
+    UploadFormComponent,
   ],
   imports: [
     BrowserModule,

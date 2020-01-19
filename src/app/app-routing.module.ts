@@ -1,4 +1,5 @@
-
+import { RessourcesDocumentsComponent } from './Pages/ressources-documents/ressources-documents.component';
+import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
 import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
@@ -40,6 +41,8 @@ const routes: Routes = [
         {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},
     {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]},
     {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]},
+    {path: 'documents', component : RessourcesDocumentsComponent , canActivate: [AuthGuard]},
+    {path: 'documents/uploader', component: UploadFormComponent, canActivate: [AuthGuard]},
     {path: 'actualites', component : NewsLinkComponent , canActivate: [AuthGuard]},
     {path: 'actualites/nouvelle', component: NewsFormComponent, canActivate: [AuthGuard]},
     ]},
