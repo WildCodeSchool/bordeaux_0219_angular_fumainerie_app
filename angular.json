@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "./src/assets/Css/fumainerie-theme.scss",
+              "src/assets/Css/fumainerie-theme.scss",
               "src/styles.scss"
             ],
             "scripts": []
