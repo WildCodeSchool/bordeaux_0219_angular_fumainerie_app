@@ -1,9 +1,6 @@
 <form [formGroup]="signInForm" (ngSubmit)="userConnexion()">
   <div class="example-container boxForm">
-    <div class="imgContainer">
-      <button mat-flat-button class='switch' type="button">Connexion</button>
-      <button mat-flat-button class='switch'(click)='goToSignUp()'>S'inscrire</button>
-   </div>
+    <p class="top">Connexion</p>
     <mat-form-field>
       <input
         matInput
@@ -32,9 +29,13 @@
     </div>
 
     <div class="container">
-          <button mat-flat-button type="submit" [disabled]="!signInForm.valid">
+      <button mat-flat-button type="submit" [disabled]="!signInForm.valid">
           Se connecter
       </button>
     </div>
+      <p>
+        <a routerLink="/inscription">S'inscrire ?</a>
+      </p>
   </div>
 </form>
+  
