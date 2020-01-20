@@ -13,9 +13,11 @@ export class UserService {
   static URL = 'http://localhost:3000';
   static URL_AUTH = 'http://localhost:3000/auth';
 
+  // to delete data user for activate the authentification
   // tslint:disable-next-line: max-line-length
-  user: User;
+  user: User = {id: 8, function: 'admin', firstname: 'olivier', lastname: 'darb', birth_date: null, email: 'prout@hotmail.fr', password: 'null', account_status: 1};
   token: string;
+
 
   public getMe() {
     return this.http.get(UserService.URL + '/user/me').pipe(
