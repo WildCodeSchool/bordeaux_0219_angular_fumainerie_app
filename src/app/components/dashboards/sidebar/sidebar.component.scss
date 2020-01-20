@@ -16,6 +16,7 @@
       border-radius: 50%;
     }
   }
+
   .onglet{
     display: flex;
     align-items: center;
@@ -23,6 +24,7 @@
     height: 50px;
     margin-top: 5%;
   }
+
   .onglet:hover {
     transition: 1s;
     background-color: $secondary6;
@@ -32,26 +34,18 @@
   a{
     color: black;
   }
-  a:hover{
-    text-decoration: none;
-    transition: 1s;
-    color: white;
-  }
 
-  // ne fonctionne pas
-  // a:active :visited {
-  //   text-decoration: none;
-  //   background-color: $secondary6;
-  //   color: white;
-  // }
-  // p:active, div:active {
-  //   background-color: $secondary6;
-  // }
-  
   p {
     margin: 0px;
   }
+
+  .is-active {
+    transition: 1s;
+    background-color: $secondary6;
+    color: white;
+  }
 }
+
 @media (max-width: 600px){
   img{
     display: none;
