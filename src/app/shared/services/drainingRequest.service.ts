@@ -36,9 +36,7 @@ export class DrainingRequestService {
     delete accepted.draining_id;
 
     console.log(accepted);
-    const put = this.http.put<DrainingRequest>(DrainingRequestService.URL + `/drainingrequest/${id}/accepte`, accepted);
-
-    return put;
+    return this.http.put<DrainingRequest>(DrainingRequestService.URL + `/drainingrequest/${id}/accepte`, accepted);
   }
 
 }

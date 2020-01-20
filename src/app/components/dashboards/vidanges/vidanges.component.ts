@@ -44,10 +44,10 @@ export class VidangesComponent implements OnInit {
 
   // Vidangeur
   allDrainingRequestUnchecked: any[];
-
+  allDrainingAccepted: any[] = [];
 
   ngOnInit() {
-   this.currentUser = this.userService.user4;
+   this.currentUser = this.userService.user2;
 
   //  Producteur
    this.drainingRequestService.getSlot().subscribe( data => {
@@ -63,17 +63,14 @@ export class VidangesComponent implements OnInit {
      // tslint:disable-next-line: prefer-for-of
      for (let i = 0; i < data.length; i++) {
        this.allDrainingRequestForCurrentUser = data;
-       const emergency =  data[i].emergency;
-       const comparaison2 = data[i].accepted;
 
-       if (emergency === 1) {
+       if ( data[i].emergency === 1) {
          this.emergencyForCurrentUser.push(data[i]);
-         this.isEmergencyAlreadyCreate = true;
-         this.allDrainingRequestForCurrentUser = data;
          this.allDrainingRequestForCurrentUser.splice(i, 1);
-     } else if ( comparaison2 === 0 ) {
-         this.isRequestAlreadyCreate = true;
-     } else {
+         this.isEmergencyAlreadyCreate = true;
+
+     } else if ( data[i].accepted === 0 ) {
+       this.isRequestAlreadyCreate = true;
      }
     }
   });
@@ -89,15 +86,20 @@ export class VidangesComponent implements OnInit {
 
     // Vidangeur
    this.drainingRequestService.getAllDrainingRequestUnchecked().subscribe( data => {
+
      this.allDrainingRequestUnchecked = data;
      this.accepteDrainingForm = this.fb.group({
       draining_id: ['', Validators.required],
-      accepted: ['1']
-     });
-
+      accepted: ['1'] });
     });
 
+   this.drainingService.getDrainingAccepted().subscribe( data => {
+     console.log(data);
+
+     this.allDrainingAccepted = data;
+    });
 }
+
 // Producteur
 
 // Montre les détails de la vidange en clickant sur details
@@ -148,6 +150,7 @@ sendEmergency() {
   this.emergency.push(drainingRequestEmergency);
   return this.drainingRequestService.postDrainingRequest(this.emergency).subscribe();
   }
+
 // Fin producteur
 
 // Vidangeur
@@ -158,25 +161,19 @@ openDetailsCustomer(home: Home) {
 
   async acceptRequest(accepted: any) {
 
-    for ( const request of this.allDrainingRequestUnchecked) {
+    for ( const [i, request] of this.allDrainingRequestUnchecked.entries()) {
       for (const draining of request) {
         if ( draining.id === accepted.draining_id) {
+          accepted.session_date = draining.session_date;
           accepted.user_id = draining.user_id;
+          accepted.vidangeur_id = this.currentUser.id;
+          this.allDrainingRequestUnchecked.splice(i, 1);
         }
       }
     }
-    // this.accepteDrainingArray.push(accepted);
-    // console.log(this.accepteDrainingArray);
     const userId = accepted.user_id;
-    console.log(userId);
-
     this.drainingRequestService.updateDrainingRequest(accepted).subscribe();
     this.drainingService.updateDrainingUser(userId).subscribe();
-    this.allDrainingRequestUnchecked.filter(userDraining => userDraining.filter( (draining) => {
-      draining.status === 0; }
-      ));
-    console.log('Je suis unchecked' + this.allDrainingRequestUnchecked);
-
-}
-
+    this.allDrainingRequestUnchecked.filter( userDraining => {userDraining.filter((draining) => draining.status === 0); });
+  }
 }

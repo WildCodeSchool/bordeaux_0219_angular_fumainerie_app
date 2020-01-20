@@ -29,25 +29,24 @@
     </form>
 
   </div>
-    <button *ngIf="!isEmergencyAlreadyCreate" (click)="sendEmergency()"class="drainingEmergency">URGENCE VIDANGE</button>
+    <button *ngIf="!isEmergencyAlreadyCreate" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
 
 
-  <!-- <div *ngIf="nextDrainingForProducteur" class="nextDraining">
-  <h3>Prochaine vidange prévu le {{nextDrainingForProducteur[0].session_date| date: 'fullDate':'fr'}}</h3> -->
-
-  <!-- </div> -->
+<div *ngIf="nextDrainingForProducteur" class="nextDraining">
+<h3>Prochaine vidange prévu le {{nextDrainingForProducteur[0].session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDrainingForProducteur[0].name}}</h3>
 
 
+</div>
+
+
+<h2 class="emergency" *ngIf="isEmergencyAlreadyCreate">Urgence prise en compte le {{emergencyForCurrentUser[0].session_date | date: 'fullDate':'fr' }}</h2>
   <div class="drainingRequest">
     <h3>Demande en cours</h3>
-    <h2 *ngIf="isEmergencyAlreadyCreate">Urgence prise en compte le {{emergencyForCurrentUser[0].session_date | date: 'fullDate':'fr' }}</h2>
-    </div>
-    <p *ngIf="allDrainingRequestForCurrentUser.length === 0">
-      Pas de demande en cours.
-    </p>
+    <p *ngIf="allDrainingRequestForCurrentUser.length === 0">Pas de demande en cours.</p>
     <div class="allDrainingRequestForCurrentUser" *ngFor="let draining of allDrainingRequestForCurrentUser">
       <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
       <p>{{draining.name}}</p>
+    </div>
   </div>
 
   <div class="history">
@@ -58,7 +57,7 @@
 
     <div *ngIf="allDrainingForCurrentUser.length&gt;0 " >
       <div *ngFor="let draining of allDrainingForCurrentUser">
-          <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.check_date | date: 'fullDate':'fr'}}</p>
+          <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.session_date | date: 'fullDate':'fr'}}</p>
 
 
         <div class="detail" *ngIf="draining.show">
@@ -87,31 +86,60 @@
 
 <div *ngIf="currentUser.fonction === 'vidangeur'">
 
-  <div *ngFor="let user of allDrainingRequestUnchecked">
-    <p>{{user[0].firstname}} {{user[0].lastname}}</p>
-    <button *ngIf="!user[0].show" (click)="openDetailsCustomer(user[0])">Detail client</button>
+  <div class="draining_non_traité">
+    <h2>Demande non traitées</h2>
 
-      <div *ngIf="user[0].show">
-      <p>{{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
-      <p>{{user[0].phone}}</p>
-      <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
+    <div *ngFor="let user of allDrainingRequestUnchecked">
+
+      <div class="info_client">
+        <h3>Client: {{user[0].firstname}} {{user[0].lastname}}</h3>
+        <button *ngIf="!user[0].show" (click)="openDetailsCustomer(user[0])">Detail client</button>
       </div>
 
-    <div >
+      <div class="detail_info" *ngIf="user[0].show">
+        <div>
+          <p>Addresse: {{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
+          <p>Télephone: {{user[0].phone}}</p>
+        </div>
+        <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
+      </div>
 
-      <form [formGroup]="accepteDrainingForm" (ngSubmit)="acceptRequest(accepteDrainingForm.value)">
-
-        <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
-          <mat-radio-button *ngFor="let request of user" [value]="request.id">
-            {{request.session_date | date: 'fullDate':'fr' }} {{request.name}}
-          </mat-radio-button>
-        </mat-radio-group>
-
-        <button type="submit" [disabled]="!accepteDrainingForm.valid">Valider</button>
-
-      </form>
+      <div >
+        <form [formGroup]="accepteDrainingForm" (ngSubmit)="acceptRequest(accepteDrainingForm.value)">
+        <div>
+            <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
+              <mat-radio-button class="radio-button" *ngFor="let request of user" [value]="request.id">
+                {{request.session_date | date: 'fullDate':'fr' }} {{request.name}}
+              </mat-radio-button>
+            </mat-radio-group>
+        </div>
+          <button type="submit" [disabled]="accepteDrainingForm.pristine">Valider</button>
+        </form>
+      </div>
 
     </div>
+  </div>
+
+</div>
+
+<div class="draining_accepted">
+  <h2>Demande acceptées</h2>
+
+  <div class="accepted" *ngFor="let draining of allDrainingAccepted">
+    <div class="info_client">
+      <div class="vidange">
+        <p>Le {{draining.session_date}}</p>
+        <p>Créneau : {{draining.name}}</p>
+      </div>
+      <p>{{draining.firstname}} {{draining.lastname}}</p>
+      <div class="client">
+        <p>{{draining.phone}}</p>
+        <p>{{draining.address}}, {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
+      </div>
+
+    </div>
+
+
 
   </div>
 

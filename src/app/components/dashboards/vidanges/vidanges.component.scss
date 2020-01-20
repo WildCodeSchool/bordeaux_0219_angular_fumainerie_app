@@ -1,10 +1,19 @@
-.drainingRequest, .history{
+.drainingRequest, .history, .draining_non_traité, .draining_accepted, .accepted{
   border: 1px solid black;
 }
-.dallDrainingRequestForCurrentUser, .detail{
+.dallDrainingRequestForCurrentUser, .detail {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+.info_client, .detail_info, form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 5%;
+}
+.detail_info{
+  background-color: white;
 }
 .allDrainingForCurrentUser{
   width: 15vw;
@@ -14,5 +23,8 @@
 .allDrainingForCurrentUser:hover{
 background-color: white;
 border-radius: 15px;
+}
+.radio-button{
+  margin-left: 30px;
 }
 

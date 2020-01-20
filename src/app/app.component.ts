@@ -13,13 +13,5 @@ export class AppComponent implements OnInit {
   constructor(private witnessService: WitnessService) {}
 
   obseTest = new BehaviorSubject(23);
-  ngOnInit() {
-    if (window.screen.width < 600) {
-      this.witnessService.mobile = true;
-    }
-
-    this.obseTest.asObservable().subscribe(value => console.log(value));
-
-    this.obseTest.next(24);
-  }
+  ngOnInit() {  }
 }

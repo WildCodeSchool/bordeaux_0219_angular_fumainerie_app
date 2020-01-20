@@ -9,7 +9,7 @@ export class Draining {
     public comments?: string;
     public weight?: number;
     // tslint:disable-next-line: variable-name
-    public check_date?: Date;
+    public session_date?: Date;
     // tslint:disable-next-line: variable-name
     public sawdust_delivery?: number;
     // tslint:disable-next-line: variable-name
@@ -20,10 +20,10 @@ export class Draining {
     public user_id?: number;
     public createAt?: Date;
     public deleteAt?: string;
-    // tslint:disable-next-line: variable-name
-    public valid_account?: string;
     public show = false;
     public slot_id: number;
+    public status?: number;
+    public vidangeur_id?: number;
 
     constructor(input?: Draining) {
       if (input) {
