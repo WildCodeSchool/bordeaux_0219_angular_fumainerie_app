@@ -23,6 +23,7 @@
 .drainingEmergency {
   color: $secondary10;
 }
+
 .center {
   justify-content: center;
   text-align: center;
@@ -30,7 +31,7 @@
 }
 
 button{
-  background-color: #F9C400;
+  background-color: $primary60;
   font-weight: 600;
   padding: 10px;
   transition : 0.3s;
@@ -39,11 +40,9 @@ button{
 }
 
 .drainingRequest, .history {
-  background-color: #FFD745 ;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-  0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-  0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 0px;
+  background-color: $primary100;
+  box-shadow: $box-shadow;
+  border-radius: $br;
   padding: 1vh;
   margin-bottom: 1vh;
   border: none;

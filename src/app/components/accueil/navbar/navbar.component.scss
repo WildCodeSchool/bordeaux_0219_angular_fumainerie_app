@@ -1,3 +1,5 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
 .navvbar{
   display: flex;
   flex-direction: row;
@@ -25,7 +27,7 @@ ul{
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #5C08A8;
+    background-color: $secondary6;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
   }
@@ -39,7 +41,7 @@ img{
 }
 
 button{
-  background-color: #F9C400;
+  background-color: $primary60;
   font-weight: 600;
   margin-left: 2vw;
   padding: 10px;
@@ -49,7 +51,7 @@ button{
 }
 
 button:hover{
-  background-color: #5C08A8;
+  background-color: $secondary6;
   transition : 0.3s;
   color: white;
 }

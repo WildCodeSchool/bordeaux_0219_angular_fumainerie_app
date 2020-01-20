@@ -7,7 +7,7 @@
 
 // Define hour application's custom theme.
 $my-theme-primary: mat-palette($mat-amber);
-$my-theme-accent: mat-palette($mat-blue);
+$my-theme-accent: mat-palette($mat-amber);
 $my-theme-warn: mat-palette($mat-purple);
 
 $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
@@ -16,7 +16,7 @@ $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
 @include angular-material-theme($my-theme);
 
 
-// primary chromatic universe from la fumainerie
+// primary chromatic universe from La Fumainerie
 // color must use everywhere
 
 $primary2: #000000;
@@ -25,27 +25,11 @@ $primary6: #656565;
 $primary8: #939393;
 $primary10: #C3C3C3;
 
-// $mat-black: (
-// 2: #000000,
-// 4: #2C2C2C,
-// 6: #656565,
-// 8: #939393,
-// 10: #C3C3C3,
-// );
-
 $primary20: #9A7900;
 $primary40: #C79D00;
 $primary60: #F9C400;
 $primary80: #FFCC0F;
 $primary100: #FFD745;
-
-// $mat-amber: (
-// 20: #9A7900,
-// 40: #C79D00,
-// 60: #F9C400,
-// 80: #FFCC0F,
-// 100: #FFD745,
-// );
 
 // secondary chromatic universe
 // use only where we need show a detail or to dynamise a part
@@ -56,27 +40,12 @@ $secondary6: #5C08A8;
 $secondary8: #4935B1;
 $secondary10: #8740C7;
 
-// $mat-purple: (
-// 2: #380468,
-// 4: #490686,
-// 6: #5C08A8,
-// 8: #4935B1,
-// 10: #8740C7,
-// );
-
 $secondary20: #042F65;
 $secondary40: #073D83;
 $secondary60: #094DA3;
 $secondary80: #1A63C1;
 $secondary100: #417AC4;
 
-// $mat-blue: (
-// 20: #042F65,
-// 40: #073D83,
-// 60: #094DA3,
-// 80: #1A63C1,
-// 100:#417AC4,
-// );
 
 // box-shadows like angular theme
 $box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
@@ -85,18 +54,19 @@ $box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
 
 $br: 0px;
 
+$burgerBarHeight: 1px;
+$burgerWidth: 24px;
+
 // try to use scss
-@if ($box-shadow == $box-shadow) {
-  $border-radius: 0px;
-}
+// @if ($box-shadow == $box-shadow) {
+//   $border-radius: 0px;
+// }
+// $background-color: #FFD745;
+// $color: red;
 
-// $colori: (background-color: red); exemple de variable de propriété ne fonctionne pas
-
-// box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-// 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-// 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-// border-radius: 0px;
-
+// @if ($background-color == #FFD745) {
+//   $border-radius: 0px
+// }
 
 // angular default theme
 

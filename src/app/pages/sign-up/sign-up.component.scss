@@ -1,7 +1,8 @@
+@import './../../../assets/Css/fumainerie-theme.scss';
 :host {
   display: block;
   width:100%;
   height: 100%;
-  background-color:#F9C400;
+  background-color: $primary60;
   padding:5% 0;
 }

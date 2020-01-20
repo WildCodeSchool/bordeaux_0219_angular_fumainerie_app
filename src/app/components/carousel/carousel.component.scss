@@ -1,3 +1,5 @@
+@import './../../../assets/Css/fumainerie-theme.scss';
+
 h2 {
   padding-top: 2vh;
 }
@@ -7,10 +9,8 @@ p {
   margin-left: 10%;
   background-color: white;
   padding: 2vh;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-  0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-  0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 0px;
+  box-shadow: $box-shadow;
+  border-radius: $br;
 }
 
 .carousel-item{
@@ -31,9 +31,6 @@ p {
 
 // parallax begin
 .parallax {
-  /* The image used */
-  background-image: url("../../../assets/images/parallax-1.jpg");
-  /* second choice */
   background-image: url("../../../assets/images/parallax-6.jpg");
 
   /* Full height */
@@ -65,7 +62,6 @@ p {
   }
 
   .mat-parent-small {
-    // background-color:white;
     margin-top: 19%;
     width: 96%;
     position: relative;
@@ -85,6 +81,5 @@ p {
   .carousel-item{
     height: 385px;
     width: 100%;
-    // background-color:white;
   }
 }

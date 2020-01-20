@@ -1,3 +1,4 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
 
 .container{
   height: 52vh;
@@ -37,10 +38,8 @@ h1{
   align-items: center;
   width: 45vw;
   .mat-card {
-    background-color: #FFD745 ;
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    background-color: $primary100 ;
+    box-shadow: $box-shadow;
     border-radius: 0px;
   }
 }
