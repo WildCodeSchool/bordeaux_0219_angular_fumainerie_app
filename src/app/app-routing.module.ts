@@ -1,4 +1,4 @@
-import { RessourcesDocumentsComponent } from './Pages/ressources-documents/ressources-documents.component';
+import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
 import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';

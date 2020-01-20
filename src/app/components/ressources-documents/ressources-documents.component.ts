@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
-import { User } from './../../shared/models/user';
-import { UserService } from './../../shared/services/user.service';
-import { DocumentsService } from './../../shared/services/documents.service';
+import { User } from '../../shared/models/user';
+import { UserService } from '../../shared/services/user.service';
+import { DocumentsService } from '../../shared/services/documents.service';
 import { Component, OnInit } from '@angular/core';
 import { Document } from '../../shared/models/document';
 
@@ -20,9 +20,7 @@ export class RessourcesDocumentsComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    if (this.userService.user !== undefined) {
-      this.user = this.userService.user;
-    }
+    this.user = this.userService.user;
     this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
       this.dataSearch = data;
     });
@@ -33,9 +31,5 @@ export class RessourcesDocumentsComponent implements OnInit {
       this.dataSearch = data;
     });
   }
-  onUploadForm() {
-    this.router.navigate(['/dashboard/documents/uploader']);
-  }
-
 }
 

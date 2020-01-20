@@ -38,7 +38,7 @@ import { ButtonsComponent } from '../../components/dashboards/communication/view
 import { DialogSignupComponent } from '../../components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsComponent } from '../../components/accueil/news/news.component';
 import { QuestionModalComponent } from '../../components/modals/question-modal/question-modal.component';
-import { RessourcesDocumentsComponent } from '../../pages/ressources-documents/ressources-documents.component';
+import { RessourcesDocumentsComponent } from '../../components/ressources-documents/ressources-documents.component';
 import { EventsFormComponent } from '../../components/forms/events-form/events-form.component';
 import { QuestionFormComponent } from '../../components/forms/question-form/question-form.component';
 import { WitnessFormComponent } from '../../components/forms/witness-form/witness-form.component';

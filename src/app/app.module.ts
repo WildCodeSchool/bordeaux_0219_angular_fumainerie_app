@@ -1,4 +1,4 @@
-import { RessourcesDocumentsComponent } from './Pages/ressources-documents/ressources-documents.component';
+import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
