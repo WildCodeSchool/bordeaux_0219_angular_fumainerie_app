@@ -1,23 +1,60 @@
-.drainingRequest, .history{
-  border: 1px solid black;
-}
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
 .drainingRequestByUser, .detail{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 .allDraining{
   width: 15vw;
-  text-align: center;
   margin-left: 20px;
 }
 
-.allDraining:hover{
-background-color: white;
-border-radius: 15px;
+// .allDraining:hover{
+// background-color: white;
+// border-radius: 15px;
+// }
+
+// .allDraining:hover{
+// background-color: white;
+// border-radius: 15px;
+// }
+
+.drainingEmergency {
+  color: $secondary10;
+}
+.center {
+  justify-content: center;
+  text-align: center;
+  margin: 1vh;
 }
 
-.allDraining:hover{
-background-color: white;
-border-radius: 15px;
+button{
+  background-color: #F9C400;
+  font-weight: 600;
+  padding: 10px;
+  transition : 0.3s;
+  border-radius: 5px;
+  border: none;
 }
+
+.drainingRequest, .history {
+  background-color: #FFD745 ;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+  0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+  0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 0px;
+  padding: 1vh;
+  margin-bottom: 1vh;
+  border: none;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $secondary2 !important;;
+ }
+
+.mat-radio-button {
+   margin-right: 1vh;
+   margin-left: 1vh;
+ }
