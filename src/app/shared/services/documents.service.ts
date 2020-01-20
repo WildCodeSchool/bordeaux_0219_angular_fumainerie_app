@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class DocumentsService {
 static URL = 'http://localhost:3000/document';
+document: Document;
 
   constructor(private http: HttpClient) { }
 
@@ -20,4 +21,37 @@ getAllDocuments(): Observable<Document[]> {
   return this.http.get<Document[]>(DocumentsService.URL);
 }
 
+
+
+public getAll(): Observable<Document[]> {
+  return this.http
+  .get(DocumentsService.URL)
+  .pipe(map(this.convertDateFromServerTodocuments));
+}
+
+private convertDateFromServerTodocuments(documents: any[]): Document[] {
+  return documents.map(document => new document(document));
+}
+
+public getById(id: number): Observable<Document> {
+  return this.http
+  .get(DocumentsService.URL + '/' + id)
+  .pipe(map((document: Document) => new Document(document)));
+}
+
+public create(fd: FormData): Observable<any> {
+  return this.http
+  .post(DocumentsService.URL + '/file' , fd);
+}
+
+
+public update(id: number, fd: FormData): Observable<any> {
+  return this.http
+  .put(DocumentsService.URL + '/fileupload/' + id, fd);
+}
+
+public delete(id: number): Observable<any> {
+  return this.http
+  .delete(DocumentsService.URL + '/' + id);
+}
 }

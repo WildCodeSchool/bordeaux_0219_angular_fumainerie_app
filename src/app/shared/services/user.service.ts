@@ -16,6 +16,14 @@ export class UserService {
   // tslint:disable-next-line: max-line-length
   user: User;
   token: string;
+  user1: User =  {
+    id: 488,
+    firstname: 'Lolo',
+    lastname: 'Lili',
+    function: 'admin',
+    account_status: 1
+  };
+
 
   public getMe() {
     return this.http.get(UserService.URL + '/user/me').pipe(
@@ -33,11 +41,11 @@ export class UserService {
     ));
   }
 
-  postUpdateUserForm(user: User, id: number) {
+postUpdateUserForm(user: User, id: number) {
     return this.http.put(UserService.URL + `/user/${id}`, user);
   }
 
-  postHomeForm(home: Home, user: User) {
+postHomeForm(home: Home, user: User) {
     return this.http.post(UserService.URL + '/home/update', [home, user]);
   }
 
