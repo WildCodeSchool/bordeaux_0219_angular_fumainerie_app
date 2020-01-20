@@ -36,7 +36,7 @@ export class FormValidationComponent implements OnInit {
       });
     }
     completeHome() {
-      return this.userService.postHomeForm(this.validationHomeForm.value, this.user).subscribe(() => {
+      this.userService.postHomeForm(this.validationHomeForm.value, this.user).subscribe(() => {
         this.router.navigate(['/dashboard']);
       });
     }

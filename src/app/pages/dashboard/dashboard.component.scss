@@ -1,6 +1,7 @@
 // import scss variable
 @import './../../../assets/Css/fumainerie-theme.scss';
 
+
 .menu-responsiv{
   display: none;
 }
@@ -12,6 +13,7 @@ h2 {
 .page-container{
   display: flex;
   width: 100%;
+  background-image: none;
   .sidebar{
     width: 15%;
     background-color: $primary60;
