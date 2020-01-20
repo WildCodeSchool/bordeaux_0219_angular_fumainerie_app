@@ -20,6 +20,7 @@ export class AuthGuard implements CanActivate {
         if (this.service.user) {
           return true;
         }
+        console.log(localStorage.getItem('JWT-TOKEN'));
         return this.service.isLogged().pipe(catchError(err => {
           this.router.navigate(['/connexion']);
           return throwError(err);

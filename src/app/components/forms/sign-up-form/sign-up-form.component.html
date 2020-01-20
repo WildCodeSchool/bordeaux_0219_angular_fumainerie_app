@@ -1,10 +1,6 @@
 <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
   <div class="example-container boxForm">
-    <div class="imgContainer">
-      <button mat-flat-button class='switch'(click)="goToSignIn()">Connexion</button>
-      <button mat-flat-button class='switch' type="button">S'inscrire</button>
-    </div>
-
+    <p class="top">Inscription</p>
     <mat-form-field>
       <input
       matInput
@@ -76,6 +72,8 @@
         S'inscrire
       </button>
     </div>
-
+    <p>
+      <a routerLink="/connexion">Déjà inscrit ?</a>
+    </p>
   </div>
 </form>
