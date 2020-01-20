@@ -7,3 +7,18 @@
   background-color: $primary60;
   padding:5% 0;
 }
+
+img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  box-shadow: $box-shadow;
+  transition: all .3s ease-in-out;
+}
+
+img:hover{
+  transform: scale(1.1);
+}

@@ -14,6 +14,9 @@
   background-color: white;
   box-shadow: $box-shadow;
   border-radius: $br;
+  p:first-child{
+    margin-bottom: 50px;
+  }
 }
 
 .example-container > * {
