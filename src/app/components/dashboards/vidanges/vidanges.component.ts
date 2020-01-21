@@ -181,8 +181,12 @@ openDetailsCustomer(home: Home) {
   }
 
   openDialog(draining: any): void {
+    console.log(draining);
+
     const dialogRef = this.dialog.open(DrainingComponent, {
-      width: '250px',
+      width: '50%',
+      height: '70%',
+      disableClose: true,
       data: draining
     });
 

@@ -1,17 +1,64 @@
-<form [formGroup]="drainingForm">
+<form [formGroup]="drainingForm" (ngSubmit)="onFormSubmit()">
+  <mat-icon class="material-icons" (click)="onNoClick()">close</mat-icon>
+
+  <h2>{{data.firstname}} {{data.lastname}}</h2>
+
+<div class="address">
+  <h3>Adresse: </h3>
+  <p>{{data.address}}, {{data.address_plus}} {{data.zip}} {{data.city}}</p>
+
+</div>
+
+<div class="address">
+  <h3>{{data.session_date}}</h3>
+  <mat-slide-toggle formControlName="done_draining" value="false">
+    <span *ngIf="done_draining.value === false || done_draining.value === 0"> Non Effectué</span>
+    <span *ngIf="done_draining.value === true">Effectué</span>
+  </mat-slide-toggle>
+</div>
+
+<div class="time">
   <mat-form-field class="example-full-width">
-    <input matInput formControlName="comments" placeholder="Choisissez une date">
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput formControlName="session_date" placeholder="Choisissez une date">
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <mat-slide-toggle formControlName="done_draining">Effectué</mat-slide-toggle>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput formControlName="session_date" placeholder="Choisissez une date">
+    <label for="site_arrival_time">Début de la vidange</label>
+    <input matInput formControlName="site_arrival_time" >
+    <mat-hint>hh:mm</mat-hint>
   </mat-form-field>
 
+  <mat-form-field class="example-full-width">
+    <label for="site_leave_time">Fin de la vidange</label>
+    <input matInput formControlName="site_leave_time" >
+    <mat-hint>hh:mm</mat-hint>
+  </mat-form-field>
+</div>
 
+<mat-form-field class="example-full-width">
+  <label for="weight">Poids de la vidange:</label>
+  <input matInput formControlName="weight">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <label for="sawdust_weight">Quantité de sciure livrée</label>
+  <input matInput formControlName="sawdust_weight">
+  <mat-hint>Kg</mat-hint>
+</mat-form-field>
+
+<mat-form-field >
+  <label for="coments">Commentaire</label>
+  <textarea matInput formControlName="comments"></textarea>
+</mat-form-field>
+
+
+
+
+<button type="submit">Valider</button>
 </form>
-
+<!--
+session_date: [this.data.session_date, Validators.required],
+name: [this.data.name, Validators.required],
+user_id: [this.data.user_id, Validators.required],
+comments: ['', Validators.required],
+done_draining: [this.data.done_draining, Validators.required],
+site_arrival_time: ['', Validators.required],
+site_leave_time: ['', Validators.required],
+weight: ['', Validators.required],
+sawdust_weight: ['', Validators.required], -->

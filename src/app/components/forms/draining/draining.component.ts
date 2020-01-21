@@ -20,7 +20,7 @@ export class DrainingComponent implements OnInit {
       name: [this.data.name, Validators.required],
       user_id: [this.data.user_id, Validators.required],
       comments: ['', Validators.required],
-      done_draining: ['', Validators.required],
+      done_draining: [this.data.done_draining, Validators.required],
       site_arrival_time: ['', Validators.required],
       site_leave_time: ['', Validators.required],
       weight: ['', Validators.required],
