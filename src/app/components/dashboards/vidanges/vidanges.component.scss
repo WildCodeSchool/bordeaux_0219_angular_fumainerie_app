@@ -4,7 +4,7 @@
 .dallDrainingRequestForCurrentUser, .detail {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 .info_client, .detail_info, form{
   display: flex;
@@ -17,7 +17,6 @@
 }
 .allDrainingForCurrentUser{
   width: 15vw;
-  text-align: center;
   margin-left: 20px;
 }
 .allDrainingForCurrentUser:hover{
@@ -28,3 +27,21 @@ border-radius: 15px;
   margin-left: 30px;
 }
 
+// .drainingRequest, .history {
+//   background-color: $primary100;
+//   box-shadow: $box-shadow;
+//   border-radius: $br;
+//   padding: 1vh;
+//   margin-bottom: 1vh;
+//   border: none;
+// }
+
+// ::ng-deep .mat-focused .mat-form-field-label {
+//   /*change color of label*/
+//   color: $secondary2 !important;
+//  }
+
+// .mat-radio-button {
+//    margin-right: 1vh;
+//    margin-left: 1vh;
+//  }

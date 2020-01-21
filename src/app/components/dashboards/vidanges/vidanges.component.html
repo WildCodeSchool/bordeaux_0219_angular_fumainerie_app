@@ -1,9 +1,6 @@
 <div class="container">
-
-<div *ngIf="currentUser.fonction === 'producteur'">
-  <div *ngIf="drainingFormRequest && !isRequestAlreadyCreate" >
-
-    <form [formGroup]="drainingFormRequest">
+  <div *ngIf="drainingFormRequest && currentUser.function ==='producteur'" >
+    <form [formGroup]="drainingFormRequest" (submit)="onSubmit(drainingFormRequest.value)">
       <mat-form-field class="example-full-width">
         <input matInput formControlName="session_date" [matDatepicker]="picker" placeholder="Choisissez une date">
         <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -26,13 +23,22 @@
       </ul>
 
 
-    </form>
 
+
+      <button type="submit" >Valider</button>
+    </form>
+    <div class="center">
+    <button (click)="sendEmergency()"class="drainingEmergency">URGENCE VIDANGE</button>
+  </div>
+  </div>
+
+  <div class="nextDraining">
+  <h3>Prochaine vidange prévu le </h3>
   </div>
     <button *ngIf="!isEmergencyAlreadyCreate" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
 
 
-<div *ngIf="nextDrainingForProducteur" class="nextDraining">
+<div *ngIf="!nextDrainingForProducteur" class="nextDraining">
 <h3>Prochaine vidange prévu le {{nextDrainingForProducteur[0].session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDrainingForProducteur[0].name}}</h3>
 
 
@@ -59,7 +65,6 @@
       <div *ngFor="let draining of allDrainingForCurrentUser">
           <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.session_date | date: 'fullDate':'fr'}}</p>
 
-
         <div class="detail" *ngIf="draining.show">
           <div class="table">
             <p>Commentaire</p>
@@ -73,8 +78,6 @@
             <p>Quantité sciure récupérée</p>
             <p>{{draining.sawdust_weight}} kg</p>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -84,7 +87,7 @@
 
 </div>
 
-<div *ngIf="currentUser.fonction === 'vidangeur'">
+<div *ngIf="currentUser.function === 'vidangeur'">
 
   <div class="draining_non_traité">
     <h2>Demande non traitées</h2>
@@ -145,4 +148,3 @@
 
 </div>
 
-</div>

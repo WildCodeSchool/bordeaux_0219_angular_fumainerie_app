@@ -1,22 +1,26 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
 .body-projet{
-  background-color: #fde773;
-  height: 95vh;
+  height: 68vh;
   width: 100vw;
-  h2{
-    margin-left: 10vw;
-    padding: 5vh 0;
-  }
+
   .projet-container{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-top: 4vh;
-    p{
-    width: 45vw;
+    p, img {
+      box-shadow: $box-shadow;
     }
+
+    p{
+      background-color: $primary100;
+      width: 45vw;
+      padding: 2vh;
+      text-align: justify;
+    }
+
     img{
       width: 40vw;
-      box-shadow: 1px 1px 4px;
     }
   }
 }

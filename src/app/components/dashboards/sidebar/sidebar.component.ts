@@ -6,12 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
+
 export class SidebarComponent implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
   clickedLogo() {
     this.router.navigate(['/dashboard']);
   }

@@ -1,5 +1,8 @@
 export class Partner {
   name: string;
   img: string;
-  link: string;
+
+  constructor(input?: Partner) {
+    Object.assign(this, input);
+  }
 }

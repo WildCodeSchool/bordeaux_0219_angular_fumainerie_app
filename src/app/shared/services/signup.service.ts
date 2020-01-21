@@ -13,5 +13,7 @@ export class SignupService {
 
   postNewUser(user: User): Observable<User> {
     return this.http.post<User>(SignupService.URL, user);
+
   }
+
 }

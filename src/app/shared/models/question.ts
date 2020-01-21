@@ -5,9 +5,10 @@ export class Question {
     public question!: string;
     public traited!: boolean;
     public user_id!: number;
-    public username!: string;
-    public avatar!: string;
-    public function!: string;
+    public firstname!: string;
+    public lastname!: string;
+    public email!: string;
+
 
     constructor(input?: Question) {
         Object.assign(this, input);

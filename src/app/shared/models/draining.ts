@@ -30,4 +30,5 @@ export class Draining {
         Object.assign(this, input);
       }
     }
-}
+  }
+

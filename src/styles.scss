@@ -9,14 +9,15 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+@import './assets/Css/fumainerie-theme.scss';
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$fumainerie-angular-primary: mat-palette($mat-indigo);
-$fumainerie-angular-accent: mat-palette($mat-pink, A200, A100, A400);
+$fumainerie-angular-primary: mat-palette($mat-amber);
+$fumainerie-angular-accent: mat-palette($mat-amber, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$fumainerie-angular-warn: mat-palette($mat-red);
+$fumainerie-angular-warn: mat-palette($mat-purple);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $fumainerie-angular-theme: mat-light-theme($fumainerie-angular-primary, $fumainerie-angular-accent, $fumainerie-angular-warn);
@@ -28,18 +29,50 @@ $fumainerie-angular-theme: mat-light-theme($fumainerie-angular-primary, $fumaine
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 
-body { margin: 0; font-family: 'Sarabun', sans-serif; }
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
 .carousel-control.left,.carousel-control.right {
   background-image: none;
 }
+
 .yellowButton{
-  background-color: #FDE773;
-  color:#272767;
+  background-color: $primary60;
   margin-top: 50px;
   padding: 20px;
+  border-radius: $br;
+  box-shadow: $box-shadow;
 }
+
 .carousel-indicators {
   display:none
 }
+
+mat-icon, mat-slide-toggle, a {
+  color: $secondary6;
+}
+a:hover {
+  color: $secondary10;
+}
+.mat-tab-label-content {
+  color: $secondary10;
+}
+mat-icon:hover{
+  cursor: pointer;
+}
+
+p{
+  line-height: 3vh;
+}
+
+h2{
+  margin-left: 10vw;
+}
+
