@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../shared/models/user';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-documents',
   templateUrl: './documents.component.html',
