@@ -27,16 +27,8 @@ export class UploadFormComponent implements OnInit {
   // Création du FormGroup
   buildForm = this.fb.group({
     title: ['', Validators.required],
-    duration: ['', [Validators.required, Validators.pattern(/^[0-9]\d*$/)]],
-    link1: ['', Validators.required],
-    link2: ['', Validators.required],
-    link3: [''],
-    link4: [''],
-    link5: [''],
-    link6: [''],
     description: ['', [Validators.required, Validators.minLength(5)]],
-    importOne: ['', Validators.required ],
-    importTwo: ['', Validators.required ],
+    import: ['', Validators.required ],
   });
 
   constructor(
@@ -50,20 +42,12 @@ export class UploadFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.user = this.userService.user1;
+    this.user = this.userService.user;
     // Recupération des données à l'initialisation
     this.buildForm.patchValue({
             title: this.data.title,
-            duration: this.data.duration,
-            link1: this.data.link1,
-            link2: this.data.link2,
-            link3: this.data.link3,
-            link4: this.data.link4,
-            link5: this.data.link5,
-            link6: this.data.link6,
             description: this.data.description,
-            importOne: '',
-            importtwo: '',
+            import: '',
             id: this.data.id
     });
 
@@ -93,16 +77,8 @@ export class UploadFormComponent implements OnInit {
 
     const fd = new FormData();
     fd.append('title', this.buildForm.get('title').value);
-    fd.append('duration', this.buildForm.get('duration').value);
-    fd.append('link1', this.buildForm.get('link1').value);
-    fd.append('link2', this.buildForm.get('link2').value);
-    fd.append('link3', this.buildForm.get('link3').value);
-    fd.append('link4', this.buildForm.get('link4').value);
-    fd.append('link5', this.buildForm.get('link5').value);
-    fd.append('link6', this.buildForm.get('link6').value);
     fd.append('description', this.buildForm.get('description').value);
-    fd.append('userSupport', this.selectedFile[0]);
-    fd.append('kulteurSupport', this.selectedFile[0]);
+    fd.append('import', this.selectedFile);
     if (this.id) {
       fd.append('id', this.id.toString() );
     }
@@ -114,11 +90,9 @@ export class UploadFormComponent implements OnInit {
     } else {
       save$ = this.documentsService.update(Number(fd.get('id')), fd);
     }
-
     save$.subscribe((result) => this.dialogRef.close(result));
   }
 
-  // Reset le Formulaire
   onReset() {
     this.buildForm.markAsUntouched();
     this.buildForm.reset();
