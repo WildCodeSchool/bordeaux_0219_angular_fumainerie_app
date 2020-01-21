@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { User } from '../../shared/models/user';
 import { UserService } from '../../shared/services/user.service';
 import { DocumentsService } from '../../shared/services/documents.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Document } from '../../shared/models/document';
 
 @Component({
@@ -12,6 +12,9 @@ import { Document } from '../../shared/models/document';
 })
 
 export class RessourcesDocumentsComponent implements OnInit {
+  // Input de l'affichage de la parallax à true par défaut
+  @Input() isParallaxEnable = true;
+
   dataSearch: Document[];
   searchWord: string;
   user: User;
@@ -24,6 +27,8 @@ export class RessourcesDocumentsComponent implements OnInit {
     this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
       this.dataSearch = data;
     });
+
+
   }
 
   search(word: string) {
