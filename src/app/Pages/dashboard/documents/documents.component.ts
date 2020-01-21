@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./documents.component.scss']
 })
 export class DocumentsComponent implements OnInit {
+  title = false;
   user: User;
   constructor(private userService: UserService,
               private router: Router) { }

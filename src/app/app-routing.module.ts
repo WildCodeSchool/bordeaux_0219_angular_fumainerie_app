@@ -1,8 +1,8 @@
-import { DocumentsComponent } from './components/dashboards/documents/documents.component';
+import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
 import { WitnessComponent } from './components/dashboards/communication/view/witness/witness.component';
 import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
-import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
+import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';

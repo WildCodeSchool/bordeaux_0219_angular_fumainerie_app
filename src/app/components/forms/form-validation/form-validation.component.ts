@@ -1,8 +1,8 @@
-import { User } from './../../../shared/models/user';
+import { User } from '../../../shared/models/user';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { UserService } from '../../../../../src/app/shared/services/user.service';
+import { UserService } from '../../../shared/services/user.service';
 import { Home } from 'src/app/shared/models/home';
 import { Router } from '@angular/router';
 

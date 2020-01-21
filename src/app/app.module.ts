@@ -31,7 +31,6 @@ import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-for
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
-import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { registerLocaleData } from '@angular/common';
@@ -52,13 +51,14 @@ import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-si
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
-import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
+import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
 import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
+import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
 
 
 
