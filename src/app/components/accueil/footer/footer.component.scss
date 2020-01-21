@@ -1,5 +1,7 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
 .footer{
-  background-color: #F9C400;
+  background-color: $primary60;
   height: 15%;
   width: 100%;
   display: flex;

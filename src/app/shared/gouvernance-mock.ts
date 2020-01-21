@@ -48,7 +48,7 @@ export const gouvernanceMock: GouvernancePersonality[] =
   {
     id: 6,
     name: 'Eric Bosc',
-    picture: url + '6.jpg',
+    picture: url + '7.jpg',
     details: '',
     citation: ''
   },
@@ -62,7 +62,7 @@ export const gouvernanceMock: GouvernancePersonality[] =
   {
     id: 8,
     name: 'Jean-Christophe Aguas',
-    picture: url + '6.jpg',
+    picture: url + '9.jpg',
     details: '',
     citation: ''
   },

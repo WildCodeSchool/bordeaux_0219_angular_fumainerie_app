@@ -38,17 +38,13 @@ mat-tab-group{
   flex-direction: row;
 }
 
-button{
+.yellowButton {
+  background-color: $primary60;
+  border-radius: $br;
   width: 80%;
   margin: auto;
   margin-top: 25px;
   padding: 8px;
-}
-
-.yellowButton {
-  background-color: $primary60;
-  border-radius: 0px;
-  box-shadow: $box-shadow;
  }
 
 @media (max-width: 600px){
