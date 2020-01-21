@@ -24,5 +24,7 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('JWT-TOKEN');
     this.userService.user = null;
     this.router.navigate(['/accueil']);
+    this.user = this.userService.user;
+    this.accountStatus = this.user.account_status;
   }
 }

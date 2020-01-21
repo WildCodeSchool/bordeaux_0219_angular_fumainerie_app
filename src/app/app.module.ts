@@ -1,7 +1,6 @@
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
-import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
 import { LogInterceptor } from './core/log.interceptor';
@@ -94,7 +93,6 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     WitnessModalComponent,
     EventsComponent,
     EventsFormComponent,
-    EventModalFormComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
     DrainingComponent,
@@ -155,7 +153,6 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
     NewsModalComponent,
-    EventModalFormComponent,
     EventDeleteModalComponent,
     NewsModalComponent,
     NewsDeleteModalComponent

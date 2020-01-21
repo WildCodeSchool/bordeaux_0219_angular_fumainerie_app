@@ -1,6 +1,10 @@
 import { Time } from '@angular/common';
 
 export class Draining {
+
+
+
+
     public id?: number;
     // tslint:disable-next-line: variable-name
     public site_arrival_time?: string;
@@ -25,10 +29,12 @@ export class Draining {
     public status?: number;
     public vidangeur_id?: number;
 
-    constructor(input?: Draining) {
-      if (input) {
-        Object.assign(this, input);
-      }
+
+
+  constructor(input?: Draining) {
+    if (!input) {
+      Object.assign(this, input);
+
     }
   }
-
+}

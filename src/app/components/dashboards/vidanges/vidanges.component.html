@@ -65,6 +65,7 @@
       <div *ngFor="let draining of allDrainingForCurrentUser">
           <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.session_date | date: 'fullDate':'fr'}}</p>
 
+
         <div class="detail" *ngIf="draining.show">
           <div class="table">
             <p>Commentaire</p>
@@ -78,6 +79,8 @@
             <p>Quantité sciure récupérée</p>
             <p>{{draining.sawdust_weight}} kg</p>
           </div>
+
+
         </div>
       </div>
     </div>
@@ -128,18 +131,18 @@
 <div class="draining_accepted">
   <h2>Demande acceptées</h2>
 
-  <div class="accepted" *ngFor="let draining of allDrainingAccepted">
-    <div (click)="openDialog(draining)" class="info_client">
+  <div  *ngFor="let draining of allDrainingAccepted">
+    <div>
+      <div class="client">
+        <p>Client: {{draining.firstname}} {{draining.lastname}}</p>
+        <p>Téléphone: {{draining.phone}}</p>
+        <p>Adresse: {{draining.address}}, {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
+      </div>
+
       <div class="vidange">
         <p>Le {{draining.session_date}}</p>
         <p>Créneau : {{draining.name}}</p>
       </div>
-      <p>{{draining.firstname}} {{draining.lastname}}</p>
-      <div class="client">
-        <p>{{draining.phone}}</p>
-        <p>{{draining.address}}, {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
-      </div>
-
     </div>
 
 

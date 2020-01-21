@@ -1,4 +1,5 @@
 export class Home {
+
 public phone!: string;
 public id!: number;
 public createAt!: string;
