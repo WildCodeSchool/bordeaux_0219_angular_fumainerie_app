@@ -15,6 +15,7 @@ export class BurgerMenuComponent implements OnInit {
   ngOnInit() {
     this.active = this.init || false;
   }
+
   onBurgerClicked() {
     this.active = !this.active;
     this.opened.emit();

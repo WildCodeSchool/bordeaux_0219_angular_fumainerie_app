@@ -1,0 +1,22 @@
+<div class="containerG">
+  <div class="container">
+    <mat-tab-group>
+      <mat-tab label="Actualités">
+        <div class="section mat-elevation-z4" *ngFor="let item of news, let i = index">
+          <div class="texte" >
+            <h3> {{item.title}}</h3>
+            <p>{{item.description}}</p>
+            <a href="{{item.link}}">{{item.link}}</a>
+          </div>
+          <div class='admin' *ngIf="user.function==='admin'" >
+            <div class="mat-app-background basic-container">
+              <mat-slide-toggle [checked]="(item.status)?true:false" (change)="onChange($event, i)">En ligne</mat-slide-toggle>
+            </div>
+            <mat-icon class='admin'(click)='onAskDeleteNews(item.id, i)'>delete</mat-icon>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <button *ngIf="user.function == 'admin'" mat-button class='yellowButton'(click)='onNewsForm()'>Poster une actualité</button>
+</div>

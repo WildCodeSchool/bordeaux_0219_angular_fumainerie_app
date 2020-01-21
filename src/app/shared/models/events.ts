@@ -1,3 +1,4 @@
+import { Time } from '@angular/common';
 export class Event {
 
   public id!: number;
@@ -7,7 +8,9 @@ export class Event {
   public author!: number;
   public title!: string;
   public date!: Date;
+  public heure!: Time;
   public description!: string;
+  // tslint:disable-next-line: variable-name
   public user_id!: number;
   public username!: string;
 

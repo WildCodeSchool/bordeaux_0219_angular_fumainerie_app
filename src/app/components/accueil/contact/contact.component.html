@@ -1,27 +1,24 @@
-<h2>Nous contacter</h2>
+<div class="body-contact">
+  <h2>Nous contacter</h2>
+  <div class="forms-container" id="contact">
+    <div class="form-contact">
+      <p><span>Téléphone</span>: 06 31 19 55 74</p>
+      <p><span>Email: </span><a href="mailto:lafumainerie@zaclys.net">lafumainerie@zaclys.net</a></p>
+    </div>
 
-<div class="forms-container" id="contact">
+    <div class="form-newsletter">
 
-  <div class="form-contact">
-
-    <p><span>Téléphone</span>: 06 31 19 55 74</p>
-    <p><span>Email: </span><a href="mailto:lafumainerie@zaclys.net">lafumainerie@zaclys.net</a></p>
-
-  </div>
-
-  <div class="form-newsletter">
-
-    <p>S'abonner à notre newsletter</p>
+      <p>S'abonner à notre newsletter</p>
     <form [formGroup]="mailForm" (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="outline">
-        <mat-label>Email *</mat-label>
-        <input formControlName="email" matInput placeholder="">
-        <div *ngIf="mailForm.get('email').errors && !mailForm.get('email').pristine" class="error">
-          <div [hidden]="!mailForm.invalid">Veuillez saisir un mail valide.</div>
-        </div>
-      </mat-form-field>
-      <button mat-raised-button type="submit" [disabled]=!mailForm.valid>S'abonner</button>
-    </form>
+        <mat-form-field appearance="outline">
+          <mat-label>Email *</mat-label>
+          <input formControlName="EMAIL" matInput placeholder="">
+          <div *ngIf="mailForm.get('EMAIL').errors && !mailForm.get('EMAIL').pristine" class="error">
+            <div [hidden]="!mailForm.invalid">Veuillez saisir un mail valide.</div>
+          </div>
+        </mat-form-field>
+        <button mat-raised-button type="submit" [disabled]=!mailForm.valid>S'abonner</button>
+      </form>
+    </div>
   </div>
-
 </div>

@@ -1,22 +1,25 @@
 .body-projet{
-  background-color: #fde773;
-  height: 95vh;
+  height: 68vh;
   width: 100vw;
-  h2{
-    margin-left: 10vw;
-    padding: 5vh 0;
-  }
+
   .projet-container{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-top: 4vh;
-    p{
-    width: 45vw;
+    p, img {
+      box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     }
+
+    p{
+      background-color: #FFD745;
+      width: 45vw;
+      padding: 2vh;
+    }
+
     img{
       width: 40vw;
-      box-shadow: 1px 1px 4px;
     }
   }
 }
