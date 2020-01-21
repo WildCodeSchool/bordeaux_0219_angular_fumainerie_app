@@ -30,7 +30,6 @@ const routes: Routes = [
   {path: 'inscription', component  : SignUpComponent},
   {path: 'dashboard', component : DashboardComponent, canActivate: [AuthGuard], children: [
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-    {path: 'validation', component: FormValidationComponent, canActivate: [AuthGuard]},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
     {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
     {path: 'communication', component: CommunicationComponent, canActivate: [AuthGuard], children: [
@@ -41,7 +40,7 @@ const routes: Routes = [
         {path: 'temoigner', component: WitnessFormComponent, canActivate: [AuthGuard]}]}]},
     {path: 'evenements', component : EventsComponent , canActivate: [AuthGuard]},
     {path: 'evenements/nouvel', component: EventsFormComponent, canActivate: [AuthGuard]},
-    {path: 'documents', component : RessourcesDocumentsComponent , canActivate: [AuthGuard]},
+    {path: 'documents', component : DocumentsComponent , canActivate: [AuthGuard]},
     {path: 'documents/uploader', component: UploadFormComponent, canActivate: [AuthGuard]},
     {path: 'actualites', component : NewsLinkComponent , canActivate: [AuthGuard]},
     {path: 'actualites/nouvelle', component: NewsFormComponent, canActivate: [AuthGuard]},
