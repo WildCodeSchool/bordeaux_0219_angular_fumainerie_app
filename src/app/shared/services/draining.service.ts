@@ -26,4 +26,7 @@ export class DrainingService {
   getDrainingAccepted(): Observable<any[]> {
     return this.http.get<any[]>(DrainingService.URL + 'draining/accepted');
   }
+  savePerson(draining: Draining) {
+    console.log(draining);
+ }
 }

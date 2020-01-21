@@ -48,6 +48,7 @@ import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSigninComponent } from './components/forms/sign-in-form/dialog-signin/dialog-signin.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewsletterModalComponent } from './components/accueil/contact/newsletter-modal/newsletter-modal.component';
+import { DrainingComponent } from './components/forms/draining/draining.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
     DialogSigninComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
+    DrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -112,7 +114,8 @@ import { NewsletterModalComponent } from './components/accueil/contact/newslette
     WitnessModalComponent,
     DialogSignupComponent,
     DialogSigninComponent,
-    NewsletterModalComponent
+    NewsletterModalComponent,
+    DrainingComponent
   ]
 })
 export class AppModule { }

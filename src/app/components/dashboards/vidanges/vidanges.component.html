@@ -126,7 +126,7 @@
   <h2>Demande acceptées</h2>
 
   <div class="accepted" *ngFor="let draining of allDrainingAccepted">
-    <div class="info_client">
+    <div (click)="openDialog(draining)" class="info_client">
       <div class="vidange">
         <p>Le {{draining.session_date}}</p>
         <p>Créneau : {{draining.name}}</p>

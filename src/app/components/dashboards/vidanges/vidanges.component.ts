@@ -9,6 +9,8 @@ import { DateAdapter} from '@angular/material/core';
 import { UserService } from '../../../shared/services/user.service';
 import { DrainingService } from '../../../shared/services/draining.service';
 import { Draining } from '../../../shared/models/draining';
+import { MatDialog } from '@angular/material';
+import { DrainingComponent } from '../../forms/draining/draining.component';
 
 @Component({
   selector: 'app-vidanges',
@@ -21,7 +23,8 @@ export class VidangesComponent implements OnInit {
   constructor(private drainingRequestService: DrainingRequestService,
               private userService: UserService,
               private drainingService: DrainingService,
-              private fb: FormBuilder, private dateAdapter: DateAdapter<any>) {this.dateAdapter.setLocale('fr'); }
+              private fb: FormBuilder, private dateAdapter: DateAdapter<any>,
+              public dialog: MatDialog) {this.dateAdapter.setLocale('fr'); }
 
   slotData: Slot[];
   currentUser: User;
@@ -175,5 +178,14 @@ openDetailsCustomer(home: Home) {
     this.drainingRequestService.updateDrainingRequest(accepted).subscribe();
     this.drainingService.updateDrainingUser(userId).subscribe();
     this.allDrainingRequestUnchecked.filter( userDraining => {userDraining.filter((draining) => draining.status === 0); });
+  }
+
+  openDialog(draining: any): void {
+    const dialogRef = this.dialog.open(DrainingComponent, {
+      width: '250px',
+      data: draining
+    });
+
+    dialogRef.afterClosed();
   }
 }
