@@ -9,7 +9,7 @@ import { DateAdapter} from '@angular/material/core';
 import { UserService } from '../../../shared/services/user.service';
 import { DrainingService } from '../../../shared/services/draining.service';
 import { Draining } from '../../../shared/models/draining';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { DrainingComponent } from '../../forms/draining/draining.component';
 
 @Component({
@@ -46,7 +46,7 @@ export class VidangesComponent implements OnInit {
   // Fin Producteur
 
   // Vidangeur
-  allDrainingRequestUnchecked: any[];
+  allDrainingRequestUnchecked: any[] = [];
   allDrainingAccepted: any[] = [];
 
   ngOnInit() {
@@ -88,18 +88,16 @@ export class VidangesComponent implements OnInit {
 
     // Vidangeur
    this.drainingRequestService.getAllDrainingRequestUnchecked().subscribe( data => {
-
      this.allDrainingRequestUnchecked = data;
+
      this.accepteDrainingForm = this.fb.group({
       draining_id: ['', Validators.required],
       accepted: ['1'] });
     });
 
-   this.drainingService.getDrainingAccepted(this.currentUser.id).subscribe( data => {
-     this.allDrainingAccepted = data;
-  });
-}
+   this.drainingService.getDrainingAccepted(this.currentUser.id).subscribe( data => {this.allDrainingAccepted = data; });
 
+}
 // Producteur
 
 // Montre les détails de la vidange en clickant sur details
@@ -119,13 +117,10 @@ export class VidangesComponent implements OnInit {
 
 // Envoi un tableau de demande de vidange
   submit() {
-    console.log(this.arrayDrainingRequest);
-
     for (const drainingRequest of this.arrayDrainingRequest) {
      this.allDrainingRequestForCurrentUser.push(drainingRequest);
-    }
+     }
     this.isRequestAlreadyCreate = true;
-    console.log( 'array' + this.arrayDrainingRequest);
     return this.drainingRequestService.postDrainingRequest(this.arrayDrainingRequest).subscribe();
   }
 
@@ -145,7 +140,7 @@ sendEmergency() {
     drainingRequestEmergency.name = element.name;
     }
   });
-  this.allDrainingRequestForCurrentUser.push(drainingRequestEmergency);
+  // this.allDrainingRequestForCurrentUser.push(drainingRequestEmergency);
   this.emergency.push(drainingRequestEmergency);
   return this.drainingRequestService.postDrainingRequest(this.emergency).subscribe();
   }
@@ -166,18 +161,20 @@ openDetailsCustomer(home: Home) {
           accepted.session_date = draining.session_date;
           accepted.user_id = draining.user_id;
           accepted.vidangeur_id = this.currentUser.id;
+
           this.allDrainingRequestUnchecked.splice(i, 1);
         }
       }
     }
     const userId = accepted.user_id;
     this.drainingRequestService.updateDrainingRequest(accepted).subscribe();
-    this.drainingService.updateDrainingUser(userId).subscribe();
+    this.drainingService.updateDrainingUser(userId).subscribe( () => {
+      this.allDrainingAccepted.push(accepted);
+    });
     this.allDrainingRequestUnchecked.filter( userDraining => {userDraining.filter((draining) => draining.status === 0); });
   }
 
   openDialog(draining: any): void {
-    console.log(draining);
 
     const dialogRef = this.dialog.open(DrainingComponent, {
       width: '50%',

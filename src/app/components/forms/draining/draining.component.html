@@ -47,10 +47,7 @@
   <textarea matInput formControlName="comments"></textarea>
 </mat-form-field>
 
-
-
-
-<button type="submit">Valider</button>
+<button type="submit" [mat-dialog-close]="data">Valider</button>
 </form>
 <!--
 session_date: [this.data.session_date, Validators.required],
