@@ -1,3 +1,4 @@
+
 import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -26,7 +27,10 @@ export class DrainingService {
   getDrainingAccepted(userId: number): Observable<any[]> {
     return this.http.get<any[]>(DrainingService.URL + 'draining/accepted/' + userId);
   }
-  savePerson(draining: Draining) {
+  saveDrainingDone(draining: Draining): Observable<Draining> {
+    const id = draining.id;
     console.log(draining);
+
+    return this.http.put<Draining>(DrainingService.URL + 'draining/' + id, draining);
  }
 }

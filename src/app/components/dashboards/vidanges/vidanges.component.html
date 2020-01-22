@@ -80,8 +80,6 @@
       </div>
     </div>
 
-
-
   </div>
 
   <div *ngIf="currentUser.function === 'vidangeur'">
@@ -105,7 +103,7 @@
           <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
         </div>
 
-        <div >
+
           <form [formGroup]="accepteDrainingForm" (ngSubmit)="acceptRequest(accepteDrainingForm.value)">
           <div>
               <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
@@ -116,14 +114,16 @@
           </div>
             <button type="submit" [disabled]="accepteDrainingForm.pristine">Valider</button>
           </form>
-        </div>
+        
 
       </div>
     </div>
 
 
     <div class="draining_accepted">
-      <h2>Demande acceptées</h2>
+      <h2>Demande acceptées - Planning</h2>
+
+      <p *ngIf="allDrainingAccepted.length === 0">Pas demande pour le moment</p>
 
       <div class="accepted" *ngFor="let draining of allDrainingAccepted">
         <div (click)="openDialog(draining)" class="info_client">
