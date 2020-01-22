@@ -25,7 +25,6 @@ export class EventsComponent implements OnInit {
 
     ngOnInit() {
       this.user = this.userService.user;
-      console.log(this.user);
       this.eventService.getAllEvents().subscribe((event) => {
         this.events = event; }) ;
       }

@@ -51,7 +51,6 @@ export class VidangesComponent implements OnInit {
 
   ngOnInit() {
    this.currentUser = this.userService.user;
-   console.log(this.currentUser);
   //  Producteur
    this.drainingRequestService.getSlot().subscribe( data => {
         this.slotData = data;

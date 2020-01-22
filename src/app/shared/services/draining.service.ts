@@ -1,4 +1,3 @@
-import { UserService } from './user.service';
 import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';

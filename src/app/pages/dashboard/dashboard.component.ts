@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.user;
-    console.log(localStorage.getItem('JWT-TOKEN'));
     this.accountStatus = this.user.account_status;
   }
   logOut() {
