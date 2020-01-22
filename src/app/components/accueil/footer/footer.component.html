@@ -4,17 +4,21 @@
   </div>
   <div class="footer-navbar">
     <ul>
-      <li><a routerLink="/accueil" fragment="projet">Le projet</a></li>
-      <li><a routerLink="/accueil" fragment="gouvernance">La Gouvernance</a></li>
-      <li><a routerLink="/accueil" fragment="news">Les actualités</a></li>
-      <li><a routerLink="/accueil" fragment="ressources">Ressources Documentaires</a></li>
+      <div class="left-side">
+        <a routerLink="/accueil" fragment="projet"><li>Le projet</li></a>
+        <a routerLink="/accueil" fragment="news"><li>Les actualités</li></a>
+      </div>
+      <div class="right-side">
+        <a routerLink="/accueil" fragment="gouvernance"><li>La Gouvernance</li></a>
+        <a routerLink="/accueil" fragment="ressources"><li>Ressources Documentaires</li></a>
+      </div>
     </ul>
   </div>
   <div class="partners-container">
     <div class="partners">
       <div *ngFor="let partner of partners">
         <div class="partner">
-          <img src="{{partner.img}}" alt="image-partenaire">
+          <img src="{{partner.img}}"  title="{{partner.name}}" >
         </div>
       </div>
     </div>

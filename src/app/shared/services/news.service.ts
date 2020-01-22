@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { UserService } from './user.service';
 import { News } from '../models/news';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NewsService {
-  static URL = 'http://localhost:3000/news';
+  static URL = environment.url + '/news';
   constructor(private http: HttpClient,
               private userService: UserService) { }
 

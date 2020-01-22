@@ -1,3 +1,6 @@
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
+import { DrainingComponent } from './components/forms/draining/draining.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
@@ -108,7 +111,9 @@ import { DrainingComponent } from './components/forms/draining/draining.componen
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
-    DrainingComponent
+    DrainingComponent,
+    EventModalFormComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +138,6 @@ import { DrainingComponent } from './components/forms/draining/draining.componen
     provide: LOCALE_ID,
     useValue: 'fr'
     },
-
     {
     provide : HTTP_INTERCEPTORS,
     useClass: LogInterceptor,

@@ -16,6 +16,8 @@ export class DrainingComponent implements OnInit {
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<DrainingComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private drainingService: DrainingService) { }
 
   ngOnInit() {
+    console.log(this.data);
+
     this.drainingForm = this.fb.group({
       id: [this.data.id, Validators.required],
       session_date: [this.data.session_date, Validators.required],

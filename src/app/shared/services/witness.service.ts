@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { UserService } from './user.service';
 import { Witness } from './../models/witness';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WitnessService {
-  static URL = 'http://localhost:3000/witness';
+  static URL = environment.url + '/witness';
   constructor(private http: HttpClient,
               private userService: UserService) { }
 

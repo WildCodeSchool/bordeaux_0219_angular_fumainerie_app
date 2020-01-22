@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { UserService } from './user.service';
 import { Question } from './../models/question';
 import { Injectable } from '@angular/core';
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QuestionService {
-  static URL = 'http://localhost:3000/question';
+  static URL = environment.url + '/question';
   constructor(private http: HttpClient,
               private userService: UserService) { }
 
