@@ -21,8 +21,10 @@ export class Draining {
     public createAt?: Date;
     public deleteAt?: string;
     public show = false;
+    // tslint:disable-next-line: variable-name
     public slot_id: number;
     public status?: number;
+    // tslint:disable-next-line: variable-name
     public vidangeur_id?: number;
 
     constructor(input?: Draining) {

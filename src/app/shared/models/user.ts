@@ -12,7 +12,7 @@ export class User {
   public password?: string;
   public avatar?: string;
   public status?: number;
-  public fonction?: string;
+  public function?: string;
 
   constructor(input: User) {
     Object.assign(this, input);
