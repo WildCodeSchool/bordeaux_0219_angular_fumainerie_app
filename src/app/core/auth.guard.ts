@@ -21,10 +21,20 @@ export class AuthGuard implements CanActivate {
           return true;
         }
         return this.service.isLogged().pipe(catchError(err => {
-
           this.router.navigate(['/connexion']);
           return throwError(err);
-        }));
+        })
+        );
 
       }
     }
+
+
+
+
+
+
+
+
+
+

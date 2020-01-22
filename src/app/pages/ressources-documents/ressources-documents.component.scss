@@ -1,3 +1,5 @@
+@import './../../../assets/Css/fumainerie-theme.scss';
+
 .container{
   display: flex;
   flex-direction: column;
@@ -30,34 +32,25 @@ mat-label{
 
 .list_documents{
   height: 50vh;
-  background-color: #F9C400;
+  background-color: $primary100;
   padding: 2vh;
   overflow: scroll;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-  0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-  0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  border-radius: 0px;
+  box-shadow: $box-shadow;
+  border-radius: $br;
 }
 
 h2{
   margin-bottom: 3vh;
-  // margin-left: 10vw;
 }
 
 .title {
   margin-left: 0vw;
 }
 
-.recherche :focus{
-  background-color: white;
-}
-
 // parallax begin
 
 .parallax {
   /* The image used */
-  background-image: url("../../../assets/images/parallax-2.jpg");
-  /* second choice*/
   background-image: url("../../../assets/images/parallax-5.jpg");
 
   /* Full height */

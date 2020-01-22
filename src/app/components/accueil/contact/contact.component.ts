@@ -18,49 +18,49 @@ interface MailChimpResponse {
 
 export class ContactComponent implements OnInit {
   submitted = false;
-  mailChimpEndpoint = 'https://gmail.us4.list-manage.com/subscribe/post-json?u=46dee92b175ee958c07343421&id=8aa6f29244&';
+  // tslint:disable-next-line: max-line-length
+  mailChimpEndpoint = 'https://zaclys.us4.list-manage.com/subscribe/post-json?u=a1a172a1f21c9caa69eba4268&id=bc3bb22ceb&';
   error = '';
-// <form action="https://gmail.us4.list-manage.com/subscribe/post-json?u=46dee92b175ee958c07343421&amp;id=8aa6f29244"
   constructor(private http: HttpClient,
               public dialog: MatDialog) { }
 
 
-  mailForm = new FormGroup({
-    EMAIL: new FormControl('', [Validators.required, emailValidator]),
-  });
+    mailForm = new FormGroup({
+      EMAIL: new FormControl('', [Validators.required, emailValidator]),
+    });
 
 
-ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-onSubmit() {
-  this.error = '';
-  if (this.mailForm.status === 'VALID' && this.mailForm.status === 'VALID') {
+    onSubmit() {
+      this.error = '';
+      if (this.mailForm.status === 'VALID' && this.mailForm.status === 'VALID') {
 
-      const params = new HttpParams()
+        const params = new HttpParams()
         .set('EMAIL', (this.mailForm.get('EMAIL').value))
-        .set('b_46dee92b175ee958c07343421_8aa6f29244', ''); // hidden input name
+        .set('b_a1a172a1f21c9caa69eba4268_bc3bb22ceb', ''); // hidden input name
 
-      const mailChimpUrl = this.mailChimpEndpoint + params.toString();
+        const mailChimpUrl = this.mailChimpEndpoint + params.toString();
 
-      // 'c' refers to the jsonp callback param key. This is specific to Mailchimp
-      this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
-        if (response.result && response.result !== 'error') {
-          this.submitted = true;
-        } else {
-          this.error = response.msg;
-        }
-      }, error => {
-        console.error(error);
-        this.error = 'Sorry, an error occurred.';
-      });
-      const dialogRef = this.dialog.open(NewsletterModalComponent, {
-        width: '50%'
-      });
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-        this.mailForm.reset();
-      });
+        // 'c' refers to the jsonp callback param key. This is specific to Mailchimp
+        this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
+          if (response.result && response.result !== 'error') {
+            this.submitted = true;
+          } else {
+            this.error = response.msg;
+          }
+        }, error => {
+          console.error(error);
+          this.error = 'Sorry, an error occurred.';
+        });
+        const dialogRef = this.dialog.open(NewsletterModalComponent, {
+          width: '50%'
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+          this.mailForm.reset();
+        });
+      }
+    }
   }
-}
-}

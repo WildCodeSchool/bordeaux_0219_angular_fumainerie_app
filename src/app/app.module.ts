@@ -1,3 +1,4 @@
+import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
@@ -100,12 +101,12 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsFormComponent,
     EventDeleteModalComponent,
     FormValidationComponent,
-    QuestionComponent,
     QuestionDeleteModalComponent,
     NewsDeleteModalComponent,
     NewsModalComponent,
     NewsFormComponent,
-    NewsLinkComponent
+    NewsLinkComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,

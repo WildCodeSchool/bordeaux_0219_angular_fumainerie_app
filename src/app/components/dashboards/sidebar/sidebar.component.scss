@@ -1,3 +1,5 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
 .sidebar{
   display: flex;
   flex-direction: column;
@@ -14,6 +16,7 @@
       border-radius: 50%;
     }
   }
+
   .onglet{
     display: flex;
     align-items: center;
@@ -21,13 +24,28 @@
     height: 50px;
     margin-top: 5%;
   }
+
+  .onglet:hover {
+    transition: 1s;
+    background-color: $secondary6;
+    color: white;
+  }
+
   a{
     color: black;
   }
-  a:hover{
-    text-decoration: none;
+
+  p {
+    margin: 0px;
+  }
+
+  .is-active {
+    transition: 1s;
+    background-color: $secondary6;
+    color: white;
   }
 }
+
 @media (max-width: 600px){
   img{
     display: none;
