@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DrainingRequest } from '../models/drainingRequest';
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class DrainingRequestService {
 
   constructor(private http: HttpClient, private userService: UserService) { }
-  static URL = 'http://localhost:3000';
+  static URL = environment.url + '';
 
   postDrainingRequest(drainingRequest: DrainingRequest[]): Observable<DrainingRequest[]> {
     return this.http.post<DrainingRequest[]>(DrainingRequestService.URL + '/drainingRequest/draining', drainingRequest);
