@@ -1,4 +1,5 @@
 import { UserService } from './../../shared/services/user.service';
+import { DashboardService } from './../../shared/services/dashboard.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../../src/app/shared/models/user';
 import { Router } from '@angular/router';
@@ -19,7 +20,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.user = this.userService.user;
     this.accountStatus = this.user.account_status;
-    console.log(this.user.account_status);
   }
   logOut() {
     localStorage.removeItem('JWT-TOKEN');

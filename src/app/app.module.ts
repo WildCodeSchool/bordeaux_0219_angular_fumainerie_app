@@ -1,7 +1,9 @@
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
+import { DrainingComponent } from './components/forms/draining/draining.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
-import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
 import { LogInterceptor } from './core/log.interceptor';
@@ -93,7 +95,6 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     WitnessModalComponent,
     EventsComponent,
     EventsFormComponent,
-    EventModalFormComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
@@ -109,6 +110,9 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
+    DrainingComponent,
+    EventModalFormComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +137,6 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     provide: LOCALE_ID,
     useValue: 'fr'
     },
-
     {
     provide : HTTP_INTERCEPTORS,
     useClass: LogInterceptor,
@@ -151,10 +154,10 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
     NewsModalComponent,
-    EventModalFormComponent,
     EventDeleteModalComponent,
     NewsModalComponent,
-    NewsDeleteModalComponent
+    NewsDeleteModalComponent,
+    DrainingComponent
   ]
 })
 export class AppModule { }

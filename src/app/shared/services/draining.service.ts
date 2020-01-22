@@ -1,21 +1,33 @@
-import { Draining } from '../models/draining';
+import { environment } from './../../../environments/environment';
+import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { DrainingRequest } from '../models/drainingRequest';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DrainingService {
-  static URL = 'http://localhost:3000/';
+  static URL = environment.url + '/';
 
   constructor(private http: HttpClient) {}
 
-  getDrainingByUserId(id: number): Observable<Draining[]> {
+  getDrainingForCurrentUser(id: number): Observable<Draining[]> {
     return this.http.get<Draining[]>(DrainingService.URL + 'draining/user/' + id);
   }
 
-  getNextDrainingByUserId(id: number): Observable<Draining> {
-    return this.http.get<Draining>(DrainingService.URL + 'draining/user/' + id + '/next');
+  getNextDrainingByUserId(id: number): Observable<DrainingRequest> {
+    return this.http.get<DrainingRequest>(DrainingService.URL + 'drainingRequest/user/' + id + '/next');
   }
+
+  updateDrainingUser(id: number): Observable<Draining> {
+    return this.http.put<Draining>(DrainingService.URL + 'draining/status', {id});
+  }
+  getDrainingAccepted(): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining/accepted');
+  }
+  savePerson(draining: Draining) {
+    console.log(draining);
+ }
 }

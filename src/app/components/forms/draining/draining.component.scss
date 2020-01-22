@@ -1,0 +1,16 @@
+.time{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+}
+.address{
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: medium;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}

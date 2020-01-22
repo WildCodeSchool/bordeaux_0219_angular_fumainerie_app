@@ -5,17 +5,22 @@ export class DrainingRequest {
   public slot_id: number;
   // tslint:disable-next-line: variable-name
   public user_id: number;
-  public createAt?: string;
+  public createAt?: Date;
   public deleteAt?: string;
   public status?: string;
   public name?: string;
   public startAt?: string;
   public endAt?: string;
   public show: boolean;
+  public accepted?: number;
+  public emergency?: number;
+  // tslint:disable-next-line: variable-name
+  public draining_id: number;
 
   constructor(input?: DrainingRequest) {
-    if (!input) {
+    if (input) {
       Object.assign(this, input);
+      this.createAt = new Date(input.createAt);
     }
   }
 }
