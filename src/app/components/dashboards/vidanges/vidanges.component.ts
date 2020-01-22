@@ -97,10 +97,8 @@ export class VidangesComponent implements OnInit {
     });
 
    this.drainingService.getDrainingAccepted().subscribe( data => {
-     console.log(data);
-
      this.allDrainingAccepted = data;
-    });
+  });
 }
 
 // Producteur
@@ -116,7 +114,6 @@ export class VidangesComponent implements OnInit {
     drainingRequest.session_date = drainingRequest.session_date.toLocaleDateString().split('/').reverse().join('-');
     drainingRequest.name = drainingRequest.slot_id.name;
     drainingRequest.slot_id = drainingRequest.slot_id.id;
-    console.log(drainingRequest);
 
     return this.arrayDrainingRequest.push(drainingRequest);
   }
