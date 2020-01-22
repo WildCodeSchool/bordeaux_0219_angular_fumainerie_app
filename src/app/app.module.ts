@@ -1,7 +1,10 @@
 import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
+import { DrainingComponent } from './components/forms/draining/draining.component';
+import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
-import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
 import { LogInterceptor } from './core/log.interceptor';
@@ -95,7 +98,6 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
     WitnessModalComponent,
     EventsComponent,
     EventsFormComponent,
-    EventModalFormComponent,
     DialogSignupComponent,
     NewsletterModalComponent,
     NewsComponent,
@@ -112,6 +114,9 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
     NewsLinkComponent,
     QuestionComponent,
     UploadFormComponent,
+    DrainingComponent,
+    EventModalFormComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,
@@ -138,11 +143,6 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
     useValue: 'fr'
     },
     {
-      provide: MatDialogRef,
-      useValue: {}
-    },
-
-    {
     provide : HTTP_INTERCEPTORS,
     useClass: LogInterceptor,
     multi: true
@@ -159,10 +159,10 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
     NewsModalComponent,
-    EventModalFormComponent,
     EventDeleteModalComponent,
     NewsModalComponent,
-    NewsDeleteModalComponent
+    NewsDeleteModalComponent,
+    DrainingComponent
   ]
 })
 export class AppModule { }

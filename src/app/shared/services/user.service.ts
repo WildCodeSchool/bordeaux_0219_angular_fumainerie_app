@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { User } from 'src/app/shared/models/user';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,14 +11,13 @@ import { Home } from '../models/home';
 export class UserService {
 
   constructor(private http: HttpClient) {}
-  static URL = 'http://localhost:3000';
-  static URL_AUTH = 'http://localhost:3000/auth';
+  static URL = environment.url + '';
+  static URL_AUTH = environment.url + '/auth';
 
   // to delete data user for activate the authentification
   // tslint:disable-next-line: max-line-length
-
-  token: string;
   user: User;
+  token: string;
 
   public getMe() {
     return this.http.get(UserService.URL + '/user/me').pipe(

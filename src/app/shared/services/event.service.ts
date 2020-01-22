@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { UserService } from './user.service';
 import { Injectable } from '@angular/core';
 import { Event } from './../models/events';
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class  EventService {
-  static URL = 'http://localhost:3000/event';
+  static URL = environment.url + '/event';
 
   button = true;
   onEventForm = false;
