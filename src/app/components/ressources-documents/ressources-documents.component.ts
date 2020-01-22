@@ -18,6 +18,8 @@ export class RessourcesDocumentsComponent implements OnInit {
   dataSearch: Document[];
   searchWord: string;
   user: User;
+  name: string;
+  link = env + this.name;
   constructor(private serviceDocument: DocumentsService,
               private userService: UserService,
               private router: Router) { }
