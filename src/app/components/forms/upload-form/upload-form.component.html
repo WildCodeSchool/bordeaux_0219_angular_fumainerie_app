@@ -1,33 +1,25 @@
-<form [formGroup]="buildForm"
-      (ngSubmit)="onFormSubmit()"
-      method="post"
-      action="/file"
-      enctype="multipart/form-data"
-      class="container">
-
-  <div class="title2">
-    <h2>Poster un nouvel élément</h2>
-  </div>
-  <!-- bouton Import -->
-  <div>
-    <!-- Boutton1 import de fichier + erreur  -->
-    <input
-    style="display:none"
-    formControlName="import"
-    type="file" accept=".pdf"
-    (change)="onFileSelect($event)"
-    #file1>
-
-    <button
-    class='yellowButton'
-    type="button"
-    (click)="file1.click()"
-    [ngClass]="{ 'is-invalid': formSubmitted && f.importOne.errors }">
-    Veuillez sélectionner un fichier
-    </button>
-    <div *ngIf="fileName">
-      {{fileName}}
+<form [formGroup]="uploadForm" (ngSubmit)="onFormSubmit()"
+        method="post" action="/file" enctype="multipart/form-data">
+  <div class="example-container">
+    <div class="imgContainer">
+      <img src="../../../../../../assets/images/close.png" (click)="onClose()" />
     </div>
+
+    <mat-form-field>
+      <input matInput placeholder="Titre :" type="text" formControlName='title' />
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description :" formControlName='description'>
+      </textarea>
+    </mat-form-field>
+
+    <input style="display:none" formControlName="file" type="file" accept=".pdf"
+    (change)="onFileSelect($event)" #file>
+
+    <button class='yellowButton' type="button" (click)="file.click()"
+    [ngClass]="{ 'is-invalid': formSubmitted && f.import.errors }">Veuillez sélectionner un fichier</button>
+    <div *ngIf="fileName">{{fileName}}</div>
 
     <mat-error *ngIf="formSubmitted && f.importOne.errors">
       <span *ngIf="f.importOne.errors.required">
@@ -35,11 +27,10 @@
       </span>
     </mat-error>
 
+    <div class="container">
+      <button mat-flat-button type="button" (click)="onReset()">Effacer</button>
+      <button mat-flat-button type="submit" [disabled]="!uploadForm.valid">Envoyer</button>
+    </div>
   </div>
-  <!-- Validation et reset du formulaire  -->
-  <div>
-    <button type="submit">{{libelle}}</button>
-    <button (click)="onReset()">Reset</button>
-  </div>
-
 </form>
+

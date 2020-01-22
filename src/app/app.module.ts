@@ -59,6 +59,8 @@ import { NewsFormComponent } from './components/forms/news-form/news-form.compon
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
 import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
+import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -123,6 +125,7 @@ import { DocumentsComponent } from './Pages/dashboard/documents/documents.compon
     CarouselModule.forRoot(),
     HttpClientModule,
     MatDatepickerModule,
+    MatDialogModule,
     FormsModule,
     HttpClientModule,
     MatTabsModule,
@@ -133,6 +136,10 @@ import { DocumentsComponent } from './Pages/dashboard/documents/documents.compon
     {
     provide: LOCALE_ID,
     useValue: 'fr'
+    },
+    {
+      provide: MatDialogRef,
+      useValue: {}
     },
 
     {
