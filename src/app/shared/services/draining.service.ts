@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -23,8 +24,8 @@ export class DrainingService {
   updateDrainingUser(id: number): Observable<Draining> {
     return this.http.put<Draining>(DrainingService.URL + 'draining/status', {id});
   }
-  getDrainingAccepted(): Observable<any[]> {
-    return this.http.get<any[]>(DrainingService.URL + 'draining/accepted');
+  getDrainingAccepted(id: number): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining/accepted/' +  id);
   }
   savePerson(draining: Draining) {
     console.log(draining);

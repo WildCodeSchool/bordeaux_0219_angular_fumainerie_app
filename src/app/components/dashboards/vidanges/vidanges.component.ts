@@ -51,7 +51,7 @@ export class VidangesComponent implements OnInit {
 
   ngOnInit() {
    this.currentUser = this.userService.user;
-
+   console.log(this.currentUser);
   //  Producteur
    this.drainingRequestService.getSlot().subscribe( data => {
         this.slotData = data;
@@ -96,7 +96,7 @@ export class VidangesComponent implements OnInit {
       accepted: ['1'] });
     });
 
-   this.drainingService.getDrainingAccepted().subscribe( data => {
+   this.drainingService.getDrainingAccepted(this.currentUser.id).subscribe( data => {
      this.allDrainingAccepted = data;
   });
 }
