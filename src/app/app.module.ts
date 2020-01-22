@@ -1,5 +1,4 @@
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
-import { DrainingComponent } from './components/forms/draining/draining.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
