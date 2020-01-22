@@ -1,19 +1,22 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
 .footer{
-  background-color: #fde773;
-  height: 30%;
+  background-color: $primary60;
+  height: 15%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-top: 1px solid #fde773;
+
   .logo-footer{
     width: 20%;
     img{
-      width: 175px;
-      height: 175px;
+      width: 75px;
+      height: 75px;
       border-radius: 50%;
     }
   }
+
   .footer-navbar{
     width: 20%;
     list-style : none;
@@ -23,6 +26,7 @@
       color: black;
     }
   }
+
   .partners-container{
     display: flex;
     flex-direction: column;
@@ -33,16 +37,19 @@
       text-align: center;
       justify-content: space-evenly;
       img{
-        width: 75px;
         height: 75px;
         border-radius: 50%;
+        margin-left: 2px;
+        margin-right: 2px;
       }
     }
   }
+
   li{
     list-style: none;
   }
 }
+
 @media (max-width: 400px){
   .footer{
     flex-direction: column;
@@ -60,9 +67,11 @@
       flex-wrap: wrap;
 
       img{
-        width: 150px;
-        height: 150px;
+        max-width: 150px;
+        max-height: 150px;
         border-radius: 50%;
+        margin-left: 2px;
+        margin-right: 2px;
       }
     }
   }

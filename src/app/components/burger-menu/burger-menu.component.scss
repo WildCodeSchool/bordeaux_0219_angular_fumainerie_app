@@ -1,6 +1,4 @@
-$burgerWidth: 24px;
-$burgerBarHeight: 1px;
-$burgerBarColor: #333;
+@import './../../../assets/Css/fumainerie-theme.scss';
 
 .burger-menu {
   width: $burgerWidth;
@@ -15,7 +13,7 @@ $burgerBarColor: #333;
       width: $burgerWidth - 2 * $burgerBarHeight;
       left: 0px;
       top: 11px;
-      border: $burgerBarHeight solid $burgerBarColor;
+      border: $burgerBarHeight solid $secondary6;
       transition: border-color .2s ease-in .2s;
 
       &::before {
@@ -24,7 +22,7 @@ $burgerBarColor: #333;
         top: -6px;
         left: -$burgerBarHeight;
         width: $burgerWidth - 2 * $burgerBarHeight;
-        border: $burgerBarHeight solid $burgerBarColor;
+        border: $burgerBarHeight solid $secondary6;
         transition: top .2s ease-in .3s, transform ease-in .2s;
       }
 
@@ -34,7 +32,7 @@ $burgerBarColor: #333;
         top: 4px;
         left: -$burgerBarHeight;
         width: $burgerWidth - 2 * $burgerBarHeight;
-        border: $burgerBarHeight solid $burgerBarColor;
+        border: $burgerBarHeight solid $secondary6;
         transition: top .2s ease-in .3s, transform ease-in .2s;
       }
     }

@@ -11,7 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'fumainerie-angular';
   constructor(private witnessService: WitnessService) {}
-
-  obseTest = new BehaviorSubject(23);
-  ngOnInit() {  }
+  ngOnInit() {
+    }
 }
+

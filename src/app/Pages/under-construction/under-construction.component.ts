@@ -13,14 +13,17 @@ export class UnderConstructionComponent implements OnInit {
     this.mail = false;
     this.phone = false;
   }
+
   displayPhone() {
     this.phone = !this.phone;
     this.mail = false;
   }
+
   displayMail() {
     this.mail = !this.mail;
     this.phone = false;
   }
+
   constructor() { }
 
   ngOnInit() {

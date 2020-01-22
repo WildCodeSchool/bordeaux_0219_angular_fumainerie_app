@@ -7,13 +7,14 @@ import { Router } from '@angular/router';
   templateUrl: './dialog-signup.component.html',
   styleUrls: ['./dialog-signup.component.scss']
 })
-export class DialogSignupComponent implements OnInit {
 
+export class DialogSignupComponent implements OnInit {
   constructor(private router: Router,
               private dialogRef: MatDialogRef<DialogSignupComponent>) { }
 
   ngOnInit() {
   }
+
   onClose() {
     this.router.navigate(['/accueil']);
     this.dialogRef.close();
