@@ -21,8 +21,6 @@ export class RessourcesDocumentsComponent implements OnInit {
     this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
       this.dataSearch = data;
     });
-
-
   }
 
   search(word: string) {

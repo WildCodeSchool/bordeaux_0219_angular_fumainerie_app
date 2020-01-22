@@ -15,7 +15,7 @@ static URL = environment.url + '/document';
   constructor(private http: HttpClient) { }
 
 getDocumentsByWord(word: string): Observable<Document[]> {
-  return this.http.get<Document[]>(DocumentsService.URL + `recherche/${word}`);
+  return this.http.get<Document[]>(DocumentsService.URL + `/recherche/${word}`);
 }
 getAllDocuments(): Observable<Document[]> {
   return this.http.get<Document[]>(DocumentsService.URL);
