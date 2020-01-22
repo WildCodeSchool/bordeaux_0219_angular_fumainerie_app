@@ -19,11 +19,14 @@ export class UserService {
   user: User;
   token: string;
 
-
   public getMe() {
     return this.http.get(UserService.URL + '/user/me').pipe(
       tap((user: User) => {
+        console.log(user);
+
         this.user = user;
+        console.log(this.user);
+
       })
     );
   }

@@ -24,9 +24,9 @@ export class EventsComponent implements OnInit {
               private router: Router) { }
 
     ngOnInit() {
+      this.user = this.userService.user;
       this.eventService.getAllEvents().subscribe((event) => {
         this.events = event; }) ;
-      this.user = this.userService.user;
       }
 
       onEventsForm() {
