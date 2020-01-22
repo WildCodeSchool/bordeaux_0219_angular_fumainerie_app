@@ -1,24 +1,38 @@
+
 @import './../../../../assets/Css/fumainerie-theme.scss';
+
+.drainingRequest, .history, .draining_non_traité, .draining_accepted, .accepted{
+  border: 1px solid black;
+}
 
 .drainingRequestByUser, .detail{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.allDraining{
+.info_client, .detail_info, form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 5%;
+}
+.detail_info{
+  background-color: white;
+}
+.allDrainingForCurrentUser{
   width: 15vw;
   margin-left: 20px;
 }
 
-// .allDraining:hover{
-// background-color: white;
-// border-radius: 15px;
-// }
+.allDraining:hover{
+ background-color: white;
+ border-radius: 15px;
+ }
 
-// .allDraining:hover{
-// background-color: white;
-// border-radius: 15px;
-// }
+.allDraining:hover{
+ background-color: white;
+ border-radius: 15px;
+}
 
 .drainingEmergency {
   color: $secondary10;
@@ -37,6 +51,9 @@ button{
   transition : 0.3s;
   border-radius: 5px;
   border: none;
+}
+.radio-button{
+  margin-left: 30px;
 }
 
 .drainingRequest, .history {
