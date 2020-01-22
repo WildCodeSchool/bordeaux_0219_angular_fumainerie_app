@@ -1,4 +1,4 @@
-import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { DrainingComponent } from './components/forms/draining/draining.component';
 import { from } from 'rxjs';
@@ -111,8 +111,7 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsLinkComponent,
     QuestionComponent,
     DrainingComponent,
-    EventModalFormComponent,
-    UnderConstructionComponent
+    EventModalFormComponent
   ],
   imports: [
     BrowserModule,
