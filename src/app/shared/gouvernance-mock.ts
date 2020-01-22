@@ -1,5 +1,5 @@
 import { GouvernancePersonality } from '../shared/models/gouvernance-personality';
-const url = '../../../assets/images/Temp';
+const url = '../../../assets/images/temp-';
 
 export const gouvernanceMock: GouvernancePersonality[] =
   [{
