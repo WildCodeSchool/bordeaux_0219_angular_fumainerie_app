@@ -1,3 +1,6 @@
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
+import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
+import { DrainingComponent } from './components/forms/draining/draining.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
@@ -58,7 +61,6 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
-import { DrainingComponent } from './components/forms/draining/draining.component';
 
 
 
@@ -108,7 +110,9 @@ import { DrainingComponent } from './components/forms/draining/draining.componen
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
-    DrainingComponent
+    DrainingComponent,
+    EventModalFormComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,

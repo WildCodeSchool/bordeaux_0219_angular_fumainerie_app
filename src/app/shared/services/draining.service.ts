@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,7 +9,7 @@ import { DrainingRequest } from '../models/drainingRequest';
   providedIn: 'root'
 })
 export class DrainingService {
-  static URL = 'http://localhost:3000/';
+  static URL = environment.url + '/';
 
   constructor(private http: HttpClient) {}
 
