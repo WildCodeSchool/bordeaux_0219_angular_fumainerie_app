@@ -15,14 +15,17 @@ export class UserService {
 
   // to delete data user for activate the authentification
   // tslint:disable-next-line: max-line-length
-  user: User = {id: 8, function: 'admin', firstname: 'olivier', lastname: 'darb', birth_date: null, email: 'prout@hotmail.fr', password: 'null', account_status: 1};
+  user: User;
   token: string;
-
 
   public getMe() {
     return this.http.get(UserService.URL + '/user/me').pipe(
       tap((user: User) => {
+        console.log(user);
+
         this.user = user;
+        console.log(this.user);
+
       })
     );
   }

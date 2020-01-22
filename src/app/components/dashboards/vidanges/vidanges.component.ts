@@ -46,7 +46,7 @@ export class VidangesComponent implements OnInit {
   // Fin Producteur
 
   // Vidangeur
-  allDrainingRequestUnchecked: any[];
+  allDrainingRequestUnchecked: any[] = [];
   allDrainingAccepted: any[] = [];
 
   ngOnInit() {
@@ -96,7 +96,7 @@ export class VidangesComponent implements OnInit {
       accepted: ['1'] });
     });
 
-   this.drainingService.getDrainingAccepted().subscribe( data => {
+   this.drainingService.getDrainingAccepted(this.currentUser.id).subscribe( data => {
      console.log(data);
 
      this.allDrainingAccepted = data;

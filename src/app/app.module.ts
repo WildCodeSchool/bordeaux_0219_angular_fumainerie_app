@@ -58,6 +58,7 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
+import { DrainingComponent } from './components/forms/draining/draining.component';
 
 
 
@@ -107,6 +108,7 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
+    DrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -151,7 +153,8 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
     NewsModalComponent,
     EventDeleteModalComponent,
     NewsModalComponent,
-    NewsDeleteModalComponent
+    NewsDeleteModalComponent,
+    DrainingComponent
   ]
 })
 export class AppModule { }

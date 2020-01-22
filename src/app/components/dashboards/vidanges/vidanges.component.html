@@ -88,6 +88,7 @@
 
     <div class="draining_non_traité">
       <h2>Demande non traitées</h2>
+      <p *ngIf="allDrainingRequestUnchecked.length === 0">Pas demande pour le moment</p>
 
       <div *ngFor="let user of allDrainingRequestUnchecked">
 
@@ -137,7 +138,7 @@
           </div>
 
         </div>
-  
+
       </div>
 
     </div>

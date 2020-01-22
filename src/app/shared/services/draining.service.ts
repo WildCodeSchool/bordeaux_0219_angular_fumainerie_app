@@ -23,8 +23,8 @@ export class DrainingService {
   updateDrainingUser(id: number): Observable<Draining> {
     return this.http.put<Draining>(DrainingService.URL + 'draining/status', {id});
   }
-  getDrainingAccepted(): Observable<any[]> {
-    return this.http.get<any[]>(DrainingService.URL + 'draining/accepted');
+  getDrainingAccepted(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining/accepted/' + userId);
   }
   savePerson(draining: Draining) {
     console.log(draining);
