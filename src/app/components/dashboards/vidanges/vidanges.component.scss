@@ -3,6 +3,8 @@
 
 .drainingRequest, .history, .draining_non_traité, .draining_accepted, .accepted{
   border: 1px solid black;
+  box-shadow: $box-shadow;
+  margin: 5px;
 }
 
 .drainingRequestByUser, .detail{
