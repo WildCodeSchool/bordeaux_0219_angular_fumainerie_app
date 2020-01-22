@@ -14,14 +14,13 @@
     <h2 *ngIf="dataSearch?.length === 0">Il n'y a pas de résultat correspondant</h2>
 
     <div class="list_documents">
-      <ul *ngFor="let data of dataSearch">
+      <ul *ngFor="let data of dataSearch; let i = index">
         <div class="document">
           <h4>{{data.title}}</h4>
           <div class="contentDocument">
             <p>{{data.description}}</p>
-            <a (name)='data.link'
-               [href]="link"
-               target=_blank><mat-icon>cloud_download</mat-icon></a>
+            <a (click)='onIdFile(i)'
+               [href]="link" target=_blank><mat-icon>cloud_download</mat-icon></a>
           </div>
         </div>
       </ul>

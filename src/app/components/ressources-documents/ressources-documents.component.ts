@@ -1,9 +1,12 @@
+import { environment } from './../../../environments/environment';
 import { Router } from '@angular/router';
 import { User } from '../../shared/models/user';
 import { UserService } from '../../shared/services/user.service';
 import { DocumentsService } from '../../shared/services/documents.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Document } from '../../shared/models/document';
+import { stringify } from 'querystring';
+
 
 @Component({
   selector: 'app-ressources-documents',
@@ -14,29 +17,31 @@ import { Document } from '../../shared/models/document';
 export class RessourcesDocumentsComponent implements OnInit {
   // Input de l'affichage de la parallax à true par défaut
   @Input() isParallaxEnable = true;
-
   dataSearch: Document[];
   searchWord: string;
   user: User;
   name: string;
-  link = env + this.name;
-  constructor(private serviceDocument: DocumentsService,
-              private userService: UserService,
-              private router: Router) { }
+  link: string;
+constructor(private serviceDocument: DocumentsService,
+            private userService: UserService,
+            private router: Router) { }
 
-  ngOnInit() {
+ngOnInit() {
     this.user = this.userService.user;
     this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
       this.dataSearch = data;
     });
-
-
   }
 
-  search(word: string) {
+search(word: string) {
     this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {
       this.dataSearch = data;
     });
   }
+onIdFile(id) {
+  console.log(id + this.dataSearch[id].link);
+  this.name = this.dataSearch[id].link;
+  this.link = environment.url + '/uploads/' + this.name;
+}
 }
 
