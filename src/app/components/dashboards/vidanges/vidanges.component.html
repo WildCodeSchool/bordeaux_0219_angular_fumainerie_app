@@ -1,6 +1,6 @@
 <div class="container">
 
-<div *ngIf="currentUser.fonction === 'producteur'">
+<div *ngIf="currentUser.function === 'producteur'">
   <div *ngIf="drainingFormRequest && !isRequestAlreadyCreate" >
 
     <form [formGroup]="drainingFormRequest">
@@ -84,7 +84,7 @@
 
 </div>
 
-<div *ngIf="currentUser.fonction === 'vidangeur'">
+<div *ngIf="currentUser.function === 'vidangeur'">
 
   <div class="draining_non_traité">
     <h2>Demande non traitées</h2>

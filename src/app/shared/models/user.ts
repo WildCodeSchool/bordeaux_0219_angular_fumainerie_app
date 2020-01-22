@@ -10,14 +10,9 @@ export class User {
   public username?: string;
   public password?: string;
   public avatar?: string;
-<<<<<<< HEAD
-  public status?: number;
-  public fonction?: string;
-=======
   public email_status?: boolean;
   public account_status?: number;
   public function?: string;
->>>>>>> develop
 
   constructor(input: User) {
     Object.assign(this, input);
