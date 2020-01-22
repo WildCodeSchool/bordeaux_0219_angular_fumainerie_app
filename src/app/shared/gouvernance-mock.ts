@@ -67,26 +67,5 @@ export const gouvernanceMock: GouvernancePersonality[] =
     citation: ''
   },
 
-  // a compléter ci dessous par les membres supplémentaires le cas échéant
-  // {
-    //   id: 9,
-    //   name: 'Nom Prénom',
-    //   picture: url + '6.jpg',
-    //   details: 'citation,
-    // citation: 'Marcel Pagnol'
-  // },
-  // {
-  //   id: 10,
-  //   name: 'Nom Prénom',
-  //   picture: url + '6.jpg',
-  //   details: 'Role au sein de l\'association'
-  // },
-    // {
-    //   id: 11,
-    //   name: 'Nom Prénom',
-    //   picture: url + '6.jpg',
-    //   details: 'Role au sein de l\'association'
-    // },
-
   ];
 
