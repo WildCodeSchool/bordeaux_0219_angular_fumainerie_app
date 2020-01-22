@@ -18,7 +18,7 @@ getDocumentsByWord(word: string): Observable<Document[]> {
   return this.http.get<Document[]>(DocumentsService.URL + `/recherche/${word}`);
 }
 getAllDocuments(): Observable<Document[]> {
-  return this.http.get<Document[]>(DocumentsService.URL);
+  return this.http.get<Document[]>(DocumentsService.URL + '/accueil');
 }
 
 }
