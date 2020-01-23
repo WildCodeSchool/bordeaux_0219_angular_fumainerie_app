@@ -24,3 +24,19 @@
     }
   }
 }
+@media only screen and (max-device-width: 480px){
+  .body-projet{
+    .projet-container{
+      flex-direction: column;
+      width: 90%;
+      margin: auto;
+      img{
+        display: none;
+      }
+      p{
+        font-size: $font-size-responsive;
+        width: 100%;
+      }
+    }
+  }
+}

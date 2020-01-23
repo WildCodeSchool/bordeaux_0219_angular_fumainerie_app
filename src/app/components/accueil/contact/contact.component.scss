@@ -56,7 +56,15 @@ span{
 }
 
 @media (max-width: 400px){
+  .body-contact{
+    text-align: center;
+    h2{
+    font-size: $font-size-responsive-title;
+    margin: auto;
+  }
+}
   .forms-container{
+    font-size: $font-size-responsive;
     flex-direction: column;
     justify-content: space-evenly;
     .form-newsletter{

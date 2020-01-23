@@ -14,5 +14,30 @@
       box-shadow: $box-shadow;
       border-radius: $br;
     }
+    .fb-link{
+      display: none;
+    }
   }
+}
+@media only screen and (max-device-width: 480px){
+  .body-news{
+    height: 60vh;
+  }
+  .news-container{
+    flex-direction: column;
+    h2{
+      text-align: center;
+    }
+    iframe{
+      width: 90%;
+      margin: auto;
+    }
+    .fb-page{
+      display: none;
+    }
+    .fb-link{
+      display: initial;
+    }
+  }
+
 }

@@ -72,3 +72,22 @@ a{
   text-decoration: none;
   margin-left: 2vw;
 }
+
+@media only screen and (max-device-width: 480px) {
+  img{
+    width: 150px;
+    height: 100px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .definition{
+    display: none;
+  }
+  .rightSide{
+    display: none;
+    ul{
+      display: none;
+    }
+  }
+}
