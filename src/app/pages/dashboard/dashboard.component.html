@@ -1,0 +1,32 @@
+<div class="parallax">
+
+  <div class="menu-responsiv">
+    <app-burger-menu></app-burger-menu>
+  </div>
+
+  <div class="page-container">
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="dashboard-container">
+      <div class="navbar">
+
+        <mat-icon (click)="logOut()">power_settings_new</mat-icon>
+        <div class="navvbar">
+          <div class="account">
+            <h2>Bienvenue {{user.firstname}}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-div" *ngIf="accountStatus === 0 ">
+        <app-form-validation></app-form-validation>
+      </div>
+
+      <div class="interface-dashboard" *ngIf="accountStatus === 1">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

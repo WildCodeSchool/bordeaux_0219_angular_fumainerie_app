@@ -1,0 +1,55 @@
+@import './../../../../assets/css/fumainerie-theme.scss';
+
+.containerG{
+  display: flex;
+  flex-direction: column;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5vh;
+  width: 80%;
+  background-color: white;
+  box-shadow: $box-shadow;
+}
+
+.section{
+  display: flex;
+  padding: 16px;
+  border-radius: 3px;
+  margin: 20px;
+  box-shadow: none;
+  .texte{
+    width: 100%;
+  }
+}
+
+mat-tab-group{
+  max-height: 80vh;
+  width: 100%;
+}
+
+button{
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+  padding: 8px;
+}
+
+.moderateEvent{
+  display: flex;
+  flex-direction: row;
+}
+
+.yellowButton {
+ background-color: $primary60;
+ border-radius: $br;
+ box-shadow: $box-shadow;
+}
+
+@media (max-width: 600px){
+  mat-tab-group{
+    max-height: 40vh;
+  }
+}

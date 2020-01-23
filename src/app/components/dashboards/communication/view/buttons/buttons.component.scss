@@ -1,0 +1,16 @@
+@import './../../../../../../assets/css/fumainerie-theme.scss';
+
+.leftSide{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 40vh;
+}
+
+.yellowButton {
+  padding: 8px 0;
+  color: black;
+  background-color: $primary60;
+  border-radius: $br;
+  margin: 5px;
+}
