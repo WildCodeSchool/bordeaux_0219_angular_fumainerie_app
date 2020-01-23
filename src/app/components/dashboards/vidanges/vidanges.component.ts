@@ -62,14 +62,13 @@ export class VidangesComponent implements OnInit {
   });
 
    this.drainingRequestService.getAllDrainingRequestForCurrentUser(this.currentUser.id).subscribe( (data) => {
+     this.allDrainingRequestForCurrentUser = data;
      // tslint:disable-next-line: prefer-for-of
      for (let i = 0; i < data.length; i++) {
-       this.allDrainingRequestForCurrentUser = data;
-
        if ( data[i].emergency === 1) {
+         this.isEmergencyAlreadyCreate = true;
          this.emergencyForCurrentUser.push(data[i]);
          this.allDrainingRequestForCurrentUser.splice(i, 1);
-         this.isEmergencyAlreadyCreate = true;
 
      } else if ( data[i].accepted === 0 ) {
        this.isRequestAlreadyCreate = true;
@@ -140,7 +139,7 @@ sendEmergency() {
     drainingRequestEmergency.name = element.name;
     }
   });
-  // this.allDrainingRequestForCurrentUser.push(drainingRequestEmergency);
+  this.allDrainingRequestForCurrentUser.push(drainingRequestEmergency);
   this.emergency.push(drainingRequestEmergency);
   return this.drainingRequestService.postDrainingRequest(this.emergency).subscribe();
   }

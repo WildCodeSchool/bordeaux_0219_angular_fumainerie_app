@@ -37,15 +37,16 @@
   </div>
 
 
-  <h2 class="emergency" *ngIf="isEmergencyAlreadyCreate">Urgence prise en compte le {{emergencyForCurrentUser[0].session_date | date: 'fullDate':'fr' }}</h2>
-  
+
+
   <div class="drainingRequest">
       <h3>Demande en cours</h3>
-      <p *ngIf="allDrainingRequestForCurrentUser.length === 0">Pas de demande en cours.</p>
+      <p *ngIf="allDrainingRequestForCurrentUser.length === 0 || emergencyForCurrentUser.length !== 0">Pas de demande en cours.</p>
       <div class="allDrainingRequestForCurrentUser" *ngFor="let draining of allDrainingRequestForCurrentUser">
         <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
         <p>{{draining.name}}</p>
       </div>
+      <div class="emergency" *ngIf="isEmergencyAlreadyCreate">Urgence transmise le {{emergencyForCurrentUser[0].session_date | date: 'fullDate':'fr' }}</div>
     </div>
 
     <div class="history">
@@ -98,7 +99,7 @@
             <p>Addresse: {{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
             <p>Télephone: {{user[0].phone}}</p>
           </div>
-          
+
           <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
         </div>
 
@@ -115,7 +116,7 @@
             <button type="submit" [disabled]="accepteDrainingForm.pristine">Valider</button>
 
           </form>
-        
+
 
       </div>
     </div>
