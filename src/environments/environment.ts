@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://db-db.lafumainerie.com'
+  url: 'https://api.lafumainerie.com'
 };
 
 /*
