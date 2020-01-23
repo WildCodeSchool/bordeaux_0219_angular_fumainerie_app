@@ -1,4 +1,4 @@
-<div class="container-global">
+<div class="parallax">
 
   <div class="menu-responsiv">
     <app-burger-menu></app-burger-menu>
@@ -12,31 +12,21 @@
     <div class="dashboard-container">
       <div class="navbar">
 
-
+        <mat-icon (click)="logOut()">power_settings_new</mat-icon>
         <div class="navvbar">
-          <ul>
-            <li><a routerLink="/actualites">Les actualités</a></li>
-            <li><a routerLink="/ressources">Ressources documentaires</a></li>
-            <li><button (click)="changeStatus()">Statut</button></li>
-          </ul>
           <div class="account">
-            <p>Julie</p>
-            <p></p>
+            <h2>Bienvenue {{user.firstname}}</h2>
           </div>
         </div>
       </div>
 
-
-      <div class="modal-account" *ngIf="StatusAccountIsComplete != true">
-        <div>
-          Votre compte n'est pas à jour !
-        </div>
+      <div class="form-div" *ngIf="accountStatus === 0 ">
+        <app-form-validation></app-form-validation>
       </div>
-      <div class="interface-dashboard" *ngIf="StatusAccountIsComplete != false">
-        <!-- *ngIf="StatusAccountIsComplete != true" [ngClass]="StatusAccountIsComplete ? 'interface-dashboard' : 'hide-interface'" -->
+
+      <div class="interface-dashboard" *ngIf="accountStatus === 1">
         <router-outlet></router-outlet>
       </div>
-
     </div>
   </div>
 </div>

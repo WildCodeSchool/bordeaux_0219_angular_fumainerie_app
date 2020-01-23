@@ -1,0 +1,18 @@
+@import './../../../../assets/css/fumainerie-theme.scss';
+
+.body-news {
+  height: 85vh;
+  width: 100vw;
+
+  .news-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
+    iframe, .fb-page {
+      box-shadow: $box-shadow;
+      border-radius: $br;
+    }
+  }
+}

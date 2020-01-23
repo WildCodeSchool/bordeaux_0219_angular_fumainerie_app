@@ -1,27 +1,78 @@
-body{
-  height: 100%;
-}
-.box-essai{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
 
+@import './../../../../assets/css/fumainerie-theme.scss';
+
+.drainingRequest, .history, .draining_non_traité, .draining_accepted, .accepted{
+  border: 1px solid black;
+  box-shadow: $box-shadow;
+  margin: 5px;
 }
 
-.essai{
-  color: black;
-  height: auto;
-  width: 40%;
-  background-color: #ffff8a;
-  margin: 15px;
+.drainingRequestByUser, .detail{
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.info_client, .detail_info, form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 5%;
+}
+.detail_info{
+  background-color: white;
+}
+.allDrainingForCurrentUser{
+  width: 15vw;
+  margin-left: 20px;
+}
+
+.allDraining:hover{
+ background-color: white;
+ border-radius: 15px;
+ }
+
+.allDraining:hover{
+ background-color: white;
+ border-radius: 15px;
+}
+
+.drainingEmergency {
+  color: $secondary10;
+}
+
+.center {
+  justify-content: center;
   text-align: center;
-  align-items: center;
-  padding: 5px;
-  img{
-    width: 100%;
-    height: 100%;
-  }
+  margin: 1vh;
 }
+
+button{
+  background-color: $primary60;
+  font-weight: 600;
+  padding: 10px;
+  transition : 0.3s;
+  border-radius: 5px;
+  border: none;
+}
+.radio-button{
+  margin-left: 30px;
+}
+
+.drainingRequest, .history {
+  background-color: $primary100;
+  box-shadow: $box-shadow;
+  border-radius: $br;
+  padding: 1vh;
+  margin-bottom: 1vh;
+  border: none;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $secondary2 !important;
+ }
+
+.mat-radio-button {
+   margin-right: 1vh;
+   margin-left: 1vh;
+ }

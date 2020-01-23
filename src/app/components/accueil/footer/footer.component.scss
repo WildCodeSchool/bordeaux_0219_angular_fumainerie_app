@@ -1,68 +1,91 @@
+@import './../../../../assets/css/fumainerie-theme.scss';
+
 .footer{
-  background-color: #fde773;
-  height: 30%;
+  background-color: $primary60;
+  height: 15%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-top: 1px solid #fde773;
+
   .logo-footer{
-    width: 20%;
+    width: 10%;
     img{
-      width: 175px;
-      height: 175px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
+      box-shadow: $box-shadow;
+      margin-left: 15%;
     }
   }
+
   .footer-navbar{
-    width: 20%;
+    width: 40%;
     list-style : none;
-    margin: -10%;
     a{
       text-decoration: none;
       color: black;
     }
+    ul{
+      display:flex;
+      justify-content: space-around;
+      padding-left: 0;
+
+      .left-side, .right-side{
+        display: flex;
+        flex-direction: column;
+      }
+
+      li{
+        list-style: none;
+      }
+      li:last-child{
+        margin-top: 20px;
+      }
+
+    }
   }
+
   .partners-container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width:60%;
+
+    width:40%;
     .partners{
       display: flex;
       text-align: center;
       justify-content: space-evenly;
       img{
-        width: 75px;
         height: 75px;
         border-radius: 50%;
+        margin-left: 2px;
+        margin-right: 2px;
+        box-shadow: $box-shadow;
       }
     }
   }
-  li{
-    list-style: none;
-  }
-}
-@media (max-width: 400px){
-  .footer{
-    flex-direction: column;
-    height: 70%;
 
-    .logo-footer{
-      display: none;
-    }
-    .footer-navbar{
-      margin: 0;
-      width: 40%;
-      text-align: center;
-    }
-    .partners{
-      flex-wrap: wrap;
+  @media (max-width: 480px){
+    .footer{
+      flex-direction: column;
+      height: 70%;
 
-      img{
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
+      .logo-footer{
+        display: none;
+      }
+      .footer-navbar{
+        margin: 0;
+        width: 40%;
+        text-align: center;
+      }
+      .partners{
+        flex-wrap: wrap;
+
+        img{
+          max-width: 150px;
+          max-height: 150px;
+          border-radius: 50%;
+          margin-left: 2px;
+          margin-right: 2px;
+        }
       }
     }
   }

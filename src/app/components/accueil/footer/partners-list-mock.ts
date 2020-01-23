@@ -1,30 +1,21 @@
 import { Partner } from './../../../shared/models/partner';
 export let partnerList: Partner[] = [
     {
-      name: '',
-      img: 'https://i.ytimg.com/vi/vZIbpk-vwy0/maxresdefault.jpg',
-      link: ''
+      name: 'Leesu',
+      img: '../../../../assets/images/partnerLogo-1.jpg'
     },
     {
-      name: '',
-      img: 'https://i.ytimg.com/vi/vZIbpk-vwy0/maxresdefault.jpg',
-      link: ''
+      name: 'Un petit coin de paradis',
+      img: '../../../../assets/images/partnerLogo-2.png'
 
     },
     {
-      name: '',
-      img: 'https://i.ytimg.com/vi/vZIbpk-vwy0/maxresdefault.jpg',
-      link: ''
+      name: 'Toopi',
+      img: '../../../../assets/images/partnerLogo-3.jpg'
     },
     {
-      name: '',
-      img: 'https://i.ytimg.com/vi/vZIbpk-vwy0/maxresdefault.jpg',
-      link: ''
+      name: 'Wild Code shcool',
+      img: '../../../../assets/images/partnerLogo-4.jpg'
     },
-    {
-      name: '',
-      img: 'https://i.ytimg.com/vi/vZIbpk-vwy0/maxresdefault.jpg',
-      link: ''
-    }
   ];
 

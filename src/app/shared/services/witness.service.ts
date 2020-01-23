@@ -1,44 +1,34 @@
+import { environment } from './../../../environments/environment';
+import { UserService } from './user.service';
 import { Witness } from './../models/witness';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WitnessService {
-  static URL = 'http://localhost:3000/witness';
-  constructor(private http: HttpClient) { }
-  mobile = true;
-  visible = true;
-
-/*   visibled(): Observable<boolean> {
-    if (this.visible) {
-      return Observable.of(true);
-    } else {
-      return Observable.of(false);
-    }
-  } */
-
+  static URL = environment.url + '/witness';
+  constructor(private http: HttpClient,
+              private userService: UserService) { }
 
   getAllWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL + '/validations');
+    return this.http.get<Witness[]>(WitnessService.URL);
   }
   getValidedWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL);
+    return this.http.get<Witness[]>(WitnessService.URL + `/validations`);
   }
   createWitness(witness: Witness): Observable<any> {
     witness.status = false;
-    witness.user_id = 1;
-    console.log(witness);
+    witness.user_id = this.userService.user.id;
     return this.http.post(WitnessService.URL, witness);
   }
-  hideWitnessListOnMobile() {
-    console.log('visibleAvantFct =' + this.visible);
-    if (this.mobile) {
-      this.visible = !this.visible;
-     }
-    console.log('visibleApresFct =' + this.visible);
+  modifyWitness(witness: Witness): Observable<any> {
+    return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
   }
-
+  deleteWitness(id: number ): Observable<any> {
+    console.log('delete id: ' + id);
+    return this.http.delete<Witness>(WitnessService.URL + `/${id}`);
+  }
 }

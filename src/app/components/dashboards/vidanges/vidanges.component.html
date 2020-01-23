@@ -1,13 +1,148 @@
-<div class="box-essai">
-  <div class="essai">
-<img src="https://www.wesco.fr/media/catalog/product/cache/19/image/1800x/040ec09b1e35df139433887a97daa66f/5/3/53798_P_53798_PD@P2@XL.jpg"
-     alt="planning">
-  </div>
-  <div class="essai">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
-  </div>
-  <div class="essai">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
+<div class="container">
+
+  <div *ngIf="currentUser.function === 'producteur'">
+    <div *ngIf="drainingFormRequest && !isRequestAlreadyCreate" >
+
+      <form [formGroup]="drainingFormRequest">
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="session_date" [matDatepicker]="picker" placeholder="Choisissez une date">
+          <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-radio-group color="primary" class="example-radio-group" formControlName="slot_id">
+          <mat-radio-button class="example-radio-button" *ngFor="let slot of slotData" [value]="slot">
+            {{slot.name}}
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <button *ngIf="arrayDrainingRequest.length&lt;3" (click)="addRequest(drainingFormRequest.value)">Ajouter</button>
+        <button *ngIf="arrayDrainingRequest.length &gt;0" (click)="submit()">Valider</button>
+
+        <ul *ngIf="arrayDrainingRequest.length&gt;0">
+        <li>Demande n°1: {{arrayDrainingRequest[0].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[0].name}}</li>
+        <li *ngIf="arrayDrainingRequest.length&gt;1">Demande n°2:{{arrayDrainingRequest[1].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[1].name}}</li>
+        <li *ngIf="arrayDrainingRequest.length&gt;2">Demande n°3:{{arrayDrainingRequest[2].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[2].name}}</li>
+        </ul>
+
+
+      </form>
+
+    </div>
+      <button *ngIf="!isEmergencyAlreadyCreate" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
+
+
+  <div *ngIf="nextDrainingForProducteur" class="nextDraining">
+    <h3>Prochaine vidange prévu le {{nextDrainingForProducteur[0].session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDrainingForProducteur[0].name}}</h3>
   </div>
 
-</div>
+
+  <h2 class="emergency" *ngIf="isEmergencyAlreadyCreate">Urgence prise en compte le {{emergencyForCurrentUser[0].session_date | date: 'fullDate':'fr' }}</h2>
+  
+  <div class="drainingRequest">
+      <h3>Demande en cours</h3>
+      <p *ngIf="allDrainingRequestForCurrentUser.length === 0">Pas de demande en cours.</p>
+      <div class="allDrainingRequestForCurrentUser" *ngFor="let draining of allDrainingRequestForCurrentUser">
+        <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
+        <p>{{draining.name}}</p>
+      </div>
+    </div>
+
+    <div class="history">
+      <h3>Historique</h3>
+      <p *ngIf="allDrainingForCurrentUser.length===0">
+        Pas d'historique.
+      </p>
+
+      <div *ngIf="allDrainingForCurrentUser.length&gt;0 " >
+        <div *ngFor="let draining of allDrainingForCurrentUser">
+          <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.session_date | date: 'fullDate':'fr'}}</p>
+
+
+          <div class="detail" *ngIf="draining.show">
+            <div class="table">
+              <p>Commentaire</p>
+              <p>{{draining.comments}}</p>
+            </div>
+            <div class="table">
+              <p>Quantité sciure livrée</p>
+              <p>{{draining.sawdust_delivery}} kg</p>
+            </div>
+            <div class="table">
+              <p>Quantité sciure récupérée</p>
+              <p>{{draining.sawdust_weight}} kg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="currentUser.function === 'vidangeur'">
+
+    <div class="draining_non_traité">
+      <h2>Demande non traitées</h2>
+      <p *ngIf="allDrainingRequestUnchecked.length === 0">Pas demande pour le moment</p>
+
+      <div *ngFor="let user of allDrainingRequestUnchecked">
+
+        <div class="info_client">
+          <h3>Client: {{user[0].firstname}} {{user[0].lastname}}</h3>
+          <button *ngIf="!user[0].show" (click)="openDetailsCustomer(user[0])">Detail client</button>
+        </div>
+
+        <div class="detail_info" *ngIf="user[0].show">
+          <div>
+            <p>Addresse: {{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
+            <p>Télephone: {{user[0].phone}}</p>
+          </div>
+          
+          <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
+        </div>
+
+
+          <form [formGroup]="accepteDrainingForm" (ngSubmit)="acceptRequest(accepteDrainingForm.value)">
+          <div>
+              <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
+                <mat-radio-button class="radio-button" *ngFor="let request of user" [value]="request.id">
+                  {{request.session_date | date: 'fullDate':'fr' }} {{request.name}}
+                </mat-radio-button>
+              </mat-radio-group>
+          </div>
+
+            <button type="submit" [disabled]="accepteDrainingForm.pristine">Valider</button>
+
+          </form>
+        
+
+      </div>
+    </div>
+
+
+    <div class="draining_accepted">
+      <h2>Demande acceptées - Planning</h2>
+
+      <p *ngIf="allDrainingAccepted.length === 0">Pas demande pour le moment</p>
+
+      <div class="accepted" *ngFor="let draining of allDrainingAccepted">
+        <div (click)="openDialog(draining)" class="info_client">
+          <div class="vidange">
+            <p>Le {{draining.session_date}}</p>
+            <p>Créneau : {{draining.name}}</p>
+          </div>
+          <p>{{draining.firstname}} {{draining.lastname}}</p>
+          <div class="client">
+            <p>{{draining.phone}}</p>
+            <p>{{draining.address}}, {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  </div>

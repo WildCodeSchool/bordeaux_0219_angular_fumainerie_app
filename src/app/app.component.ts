@@ -1,5 +1,7 @@
+import { log } from 'util';
 import { WitnessService } from './shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +12,6 @@ export class AppComponent implements OnInit {
   title = 'fumainerie-angular';
   constructor(private witnessService: WitnessService) {}
   ngOnInit() {
-    if (window.screen.width < 600) {
-      this.witnessService.mobile = true;
     }
-  }
 }
+

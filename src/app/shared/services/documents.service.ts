@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { Document } from './../models/document';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -9,15 +10,15 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DocumentsService {
-static URL = 'http://localhost:3000/documents/';
+static URL = environment.url + '/document';
 
   constructor(private http: HttpClient) { }
 
 getDocumentsByWord(word: string): Observable<Document[]> {
-  return this.http.get<Document[]>(DocumentsService.URL + `recherche/${word}`);
+  return this.http.get<Document[]>(DocumentsService.URL + `/recherche/${word}`);
 }
 getAllDocuments(): Observable<Document[]> {
-  return this.http.get<Document[]>(DocumentsService.URL);
+  return this.http.get<Document[]>(DocumentsService.URL + '/accueil');
 }
 
 }

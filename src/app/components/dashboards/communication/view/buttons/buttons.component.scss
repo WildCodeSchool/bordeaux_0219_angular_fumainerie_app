@@ -1,10 +1,16 @@
+@import './../../../../../../assets/css/fumainerie-theme.scss';
+
 .leftSide{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  height: 40vh;
 }
-button{
-  background-color: #FDE773;
-  color:#272767;
-  margin-bottom: 25px;
+
+.yellowButton {
+  padding: 8px 0;
+  color: black;
+  background-color: $primary60;
+  border-radius: $br;
+  margin: 5px;
 }
