@@ -1,3 +1,4 @@
+import { UploadDeleteFileModalComponent } from './../modals/upload-delete-file-modal/upload-delete-file-modal.component';
 import { environment } from './../../../environments/environment';
 import { Router } from '@angular/router';
 import { User } from '../../shared/models/user';
@@ -5,8 +6,7 @@ import { UserService } from '../../shared/services/user.service';
 import { DocumentsService } from '../../shared/services/documents.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Document } from '../../shared/models/document';
-import { stringify } from 'querystring';
-
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-ressources-documents',
@@ -24,6 +24,7 @@ export class RessourcesDocumentsComponent implements OnInit {
   link: string;
 constructor(private serviceDocument: DocumentsService,
             private userService: UserService,
+            private dialog: MatDialog,
             private router: Router) { }
 
 ngOnInit() {
@@ -43,5 +44,17 @@ onIdFile(id) {
   this.name = this.dataSearch[id].link;
   this.link = environment.url + '/uploads/' + this.name;
 }
-}
+onAskDeleteFile(index: number, i: number) {
+  const dialogRef = this.dialog.open(UploadDeleteFileModalComponent, {
+    width: '50%' });
+  const instance = dialogRef.componentInstance;
+  instance.index = index;
 
+  dialogRef.afterClosed().subscribe(isDeleted => {
+      if (isDeleted) {
+        this.dataSearch.splice(i, 1);
+      }
+    });
+
+  }
+}

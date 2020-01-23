@@ -16,11 +16,11 @@
 
     <input style="display:none" formControlName="file" type="file" accept=".pdf"
     (change)="onFileSelect($event)" #file>
-
-    <button class='yellowButton' type="button" (click)="file.click()"
-    [ngClass]="{ 'is-invalid': formSubmitted && f.import.errors }">Veuillez sélectionner un fichier</button>
-    <div *ngIf="fileName">{{fileName}}</div>
-
+    <div class='up'>
+      <button type="button" (click)="file.click()"
+      [ngClass]="{ 'is-invalid': formSubmitted && f.import.errors }">Veuillez sélectionner un fichier</button>
+      <div class='fileName' *ngIf="fileName">{{fileName}}</div>
+    </div>
     <mat-error *ngIf="formSubmitted && f.importOne.errors">
       <span *ngIf="f.importOne.errors.required">
         Le fichier sous format PDF est requis

@@ -1,9 +1,11 @@
+import { MatDialog } from '@angular/material';
 import { User } from './../../../shared/models/user';
 import { DocumentsService } from './../../../shared/services/documents.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../../shared/services/user.service';
+import { UploadUploadFileModalComponent } from '../../modals/upload-upload-file-modal/upload-upload-file-modal.component';
 
 @Component({
   selector: 'app-upload-form',
@@ -27,7 +29,8 @@ export class UploadFormComponent implements OnInit {
     private documentsService: DocumentsService,
     private userService: UserService,
     private router: Router,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
     this.user = this.userService.user;
@@ -52,6 +55,13 @@ export class UploadFormComponent implements OnInit {
       let save$;
       save$ = this.documentsService.create(fd);
       save$.subscribe();
+      const dialogRef = this.dialog.open(UploadUploadFileModalComponent, {
+        width: '250px',
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
     }
     onReset() {
       this.uploadForm.markAsUntouched();

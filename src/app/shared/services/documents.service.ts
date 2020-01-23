@@ -20,9 +20,10 @@ getDocumentsByWord(word: string): Observable<Document[]> {
 getAllDocuments(): Observable<Document[]> {
   return this.http.get<Document[]>(DocumentsService.URL);
 }
-
-
-
+public deleteFile(id: number ): Observable<any> {
+  console.log('delete id: ' + id);
+  return this.http.delete<Document>(DocumentsService.URL + `/${id}`);
+}
 public getAll(): Observable<Document[]> {
   return this.http
   .get(DocumentsService.URL)

@@ -63,6 +63,8 @@ import { NewsModalComponent } from './components/modals/news-modal/news-modal.co
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
 import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
 import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { UploadUploadFileModalComponent } from './components/modals/upload-upload-file-modal/upload-upload-file-modal.component';
+import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
 
 
 
@@ -116,7 +118,9 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
     UploadFormComponent,
     DrainingComponent,
     EventModalFormComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    UploadUploadFileModalComponent,
+    UploadDeleteFileModalComponent
   ],
   imports: [
     BrowserModule,
@@ -151,10 +155,10 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 
   bootstrap: [AppComponent],
   entryComponents: [
+    DialogSignupComponent,
     QuestionModalComponent,
     QuestionDeleteModalComponent,
     WitnessModalComponent,
-    DialogSignupComponent,
     NewsletterModalComponent,
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
@@ -162,7 +166,10 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
     EventDeleteModalComponent,
     NewsModalComponent,
     NewsDeleteModalComponent,
-    DrainingComponent
+    DrainingComponent,
+    UploadDeleteFileModalComponent,
+    UploadUploadFileModalComponent,
+
   ]
 })
 export class AppModule { }

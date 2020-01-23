@@ -1,0 +1,13 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
+.yellowButton {
+  background-color: $primary60;
+  border-radius: $br;
+  width: 100%;
+  margin: 25px 0;
+  padding: 8px;
+ }
+.mat-button{
+  justify-content: center;
+  text-align: center;
+}
