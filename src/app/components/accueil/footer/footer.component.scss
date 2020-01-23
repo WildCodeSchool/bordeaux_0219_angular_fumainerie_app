@@ -1,4 +1,4 @@
-@import './../../../../assets/Css/fumainerie-theme.scss';
+@import './../../../../assets/css/fumainerie-theme.scss';
 
 .footer{
   background-color: $primary60;
@@ -42,6 +42,7 @@
       li:last-child{
         margin-top: 20px;
       }
+
     }
   }
 
@@ -62,7 +63,7 @@
     }
   }
 
-  @media (max-width: 400px){
+  @media (max-width: 480px){
     .footer{
       flex-direction: column;
       height: 70%;

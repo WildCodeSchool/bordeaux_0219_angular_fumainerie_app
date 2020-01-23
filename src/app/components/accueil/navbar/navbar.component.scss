@@ -1,4 +1,4 @@
-@import './../../../../assets/Css/fumainerie-theme.scss';
+@import './../../../../assets/css/fumainerie-theme.scss';
 
 .navvbar{
   display: flex;
@@ -71,25 +71,4 @@ a{
   position: relative;
   text-decoration: none;
   margin-left: 2vw;
-}
-
-.parallax {
-  /* The image used */
-  background-image: url("../../../../assets/image-en-construction.png");
-
-  /* Full height */
-  height: 100%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
 }

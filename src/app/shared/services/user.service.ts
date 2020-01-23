@@ -23,6 +23,7 @@ export class UserService {
     return this.http.get(UserService.URL + '/user/me').pipe(
       tap((user: User) => {
         this.user = user;
+
       })
     );
   }

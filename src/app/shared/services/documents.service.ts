@@ -15,10 +15,10 @@ static URL = environment.url + '/document';
   constructor(private http: HttpClient) { }
 
 getDocumentsByWord(word: string): Observable<Document[]> {
-  return this.http.get<Document[]>(DocumentsService.URL + `recherche/${word}`);
+  return this.http.get<Document[]>(DocumentsService.URL + `/recherche/${word}`);
 }
 getAllDocuments(): Observable<Document[]> {
-  return this.http.get<Document[]>(DocumentsService.URL);
+  return this.http.get<Document[]>(DocumentsService.URL + '/accueil');
 }
 public deleteFile(id: number ): Observable<any> {
   console.log('delete id: ' + id);

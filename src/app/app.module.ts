@@ -1,7 +1,6 @@
 import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
-import { DrainingComponent } from './components/forms/draining/draining.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
@@ -66,6 +65,7 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { UploadUploadFileModalComponent } from './components/modals/upload-upload-file-modal/upload-upload-file-modal.component';
 import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
 
+import { DrainingComponent} from './components/forms/draining/draining.component';
 
 
 
@@ -120,7 +120,8 @@ import { UploadDeleteFileModalComponent } from './components/modals/upload-delet
     EventModalFormComponent,
     UnderConstructionComponent,
     UploadUploadFileModalComponent,
-    UploadDeleteFileModalComponent
+    UploadDeleteFileModalComponent,
+    EventModalFormComponent
   ],
   imports: [
     BrowserModule,
