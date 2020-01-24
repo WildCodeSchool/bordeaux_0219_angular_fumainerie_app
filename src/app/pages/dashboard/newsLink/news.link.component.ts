@@ -25,10 +25,10 @@ export class NewsLinkComponent implements OnInit {
     button =  true;
 
     ngOnInit() {
+      this.user = this.userService.user;
       this.newsService.getAllNews().subscribe((news) => {
         this.news = news;
       });
-      this.user = this.userService.user;
     }
 
     onNewsForm() {
