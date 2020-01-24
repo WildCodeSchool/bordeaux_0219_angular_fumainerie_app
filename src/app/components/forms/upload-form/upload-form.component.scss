@@ -1,0 +1,42 @@
+@import './../../../../assets/Css/fumainerie-theme.scss';
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  padding: 50px 0 50px 0;
+  border-radius: 3px;
+  width: 80%;
+  margin: auto;
+}
+
+.example-container > * {
+  width: 80%;
+  margin: auto;
+}
+
+button {
+  color: black;
+  background-color: $primary60;
+  width:300px;
+  margin-left: 0;
+}
+
+.imgContainer {
+  margin-right: 50px;
+  margin-left: auto;
+}
+
+img {
+  float: right;
+  width: 18px;
+}
+.up{
+  display:flex;
+  flex-direction: row;
+  margin-bottom:25px;
+}
+.fileName{
+  margin-left: 25px;
+}
