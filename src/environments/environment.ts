@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  url: 'https://db-db.lafumainerie.com'
-};
+  url: 'http://localhost:3000'
 
+// 'https://db-db.lafumainerie.com'
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

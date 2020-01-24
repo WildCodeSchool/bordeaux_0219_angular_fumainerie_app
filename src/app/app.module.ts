@@ -1,8 +1,5 @@
-import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
-import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
-import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
 import { LogInterceptor } from './core/log.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientJsonpModule} from '@angular/common/http';
@@ -42,7 +39,6 @@ import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.compon
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
-import { WitnessModalComponent } from './components/modals/witness-modal/witness-modal.component';
 import { QuestionFormComponent } from './components/forms/question-form/question-form.component';
 import { WitnessFormComponent } from './components/forms/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
@@ -50,7 +46,6 @@ import { ButtonsComponent } from './components/dashboards/communication/view/but
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
 import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
-import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
@@ -58,8 +53,8 @@ import { QuestionComponent } from './components/dashboards/communication/view/qu
 import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
-import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 import { DrainingComponent} from './components/forms/draining/draining.component';
+import { GenericModalComponent } from './components/modals/generic-modal/generic-modal.component';
 
 
 
@@ -90,12 +85,9 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     WitnessFormComponent,
     ViewComponent,
     ButtonsComponent,
-    QuestionModalComponent,
-    WitnessModalComponent,
     EventsComponent,
     EventsFormComponent,
     DialogSignupComponent,
-    NewsletterModalComponent,
     NewsComponent,
     NewComponent,
     NewsDeleteModalComponent,
@@ -105,12 +97,11 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     FormValidationComponent,
     QuestionDeleteModalComponent,
     NewsDeleteModalComponent,
-    NewsModalComponent,
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
     DrainingComponent,
-    EventModalFormComponent
+    GenericModalComponent
   ],
   imports: [
     BrowserModule,
@@ -144,16 +135,12 @@ import { DrainingComponent} from './components/forms/draining/draining.component
 
   bootstrap: [AppComponent],
   entryComponents: [
-    QuestionModalComponent,
+   GenericModalComponent,
     QuestionDeleteModalComponent,
-    WitnessModalComponent,
     DialogSignupComponent,
-    NewsletterModalComponent,
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
-    NewsModalComponent,
     EventDeleteModalComponent,
-    NewsModalComponent,
     NewsDeleteModalComponent,
     DrainingComponent
   ]

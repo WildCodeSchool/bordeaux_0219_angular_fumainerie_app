@@ -1,4 +1,4 @@
-import { QuestionModalComponent } from '../../modals/question-modal/question-modal.component';
+import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { QuestionService } from '../../../shared/services/question.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -35,12 +35,16 @@ export class QuestionFormComponent implements OnInit {
         console.log('modale ouverte?');
         console.log(this.questionForm.value);
         this.questionService.createQuestion(this.questionForm.value).subscribe();
-        const dialogRef = this.dialog.open(QuestionModalComponent, {
+        const dialogRef = this.dialog.open(GenericModalComponent, {
           width: '250px',
+          data: { title: 'Merci!',
+          description: 'Nous vous répondrons par mail le plus rapidement possible.'}
+
         });
 
-        dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
+        dialogRef.afterClosed().subscribe(() => {
+            this.router.navigate(['dashboard/communication/avis']);
         });
       }
     }
+
