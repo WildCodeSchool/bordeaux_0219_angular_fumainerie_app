@@ -4,7 +4,7 @@ import { emailValidator } from '../../../shared/validators/email-validator';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog} from '@angular/material';
 import { HttpClient, HttpParams} from '@angular/common/http';
-import { stringify } from 'querystring';
+
 
 interface MailChimpResponse {
   result: string;

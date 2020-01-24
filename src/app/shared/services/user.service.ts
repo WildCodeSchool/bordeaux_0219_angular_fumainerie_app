@@ -36,11 +36,11 @@ export class UserService {
     ));
   }
 
-  postUpdateUserForm(user: User, id: number) {
+postUpdateUserForm(user: User, id: number) {
     return this.http.put(UserService.URL + `/user/${id}`, user);
   }
 
-  postHomeForm(home: Home, user: User) {
+postHomeForm(home: Home, user: User) {
     return this.http.post(UserService.URL + '/home/update', [home, user]);
   }
 
