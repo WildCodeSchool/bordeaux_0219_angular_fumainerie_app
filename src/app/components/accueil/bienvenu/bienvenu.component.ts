@@ -16,11 +16,11 @@ export class BienvenuComponent implements OnInit {
   constructor(private witnessService: WitnessService, private newsService: NewsService) { }
 
   ngOnInit() {
-    this.witnessService.getAllWitness().subscribe((witness) => {
+    this.witnessService.getValidedWitness().subscribe((witness) => {
       this.witness = witness;
     });
 
-    this.newsService.getAllNews().subscribe((news) => {
+    this.newsService.getValidedNews().subscribe((news) => {
       this.news = news;
     });
   }

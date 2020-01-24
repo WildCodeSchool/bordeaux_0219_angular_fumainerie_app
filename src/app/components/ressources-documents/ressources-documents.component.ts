@@ -19,19 +19,23 @@ export class RessourcesDocumentsComponent implements OnInit {
   @Input() isParallaxEnable = true;
   dataSearch: Document[];
   searchWord: string;
-  user: User;
+  user?: User;
   name: string;
   link: string;
 constructor(private serviceDocument: DocumentsService,
             private userService: UserService,
-            private dialog: MatDialog,
-            private router: Router) { }
+            private dialog: MatDialog) {
+
+             }
 
 ngOnInit() {
-    this.user = this.userService.user;
+  this.user = this.userService.user;
+  if (this.user) {
     this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
       this.dataSearch = data;
-    });
+  });
+
+    }
   }
 
 search(word: string) {

@@ -1,5 +1,4 @@
 import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
-import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
@@ -118,7 +117,6 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     UploadFormComponent,
     DrainingComponent,
     EventModalFormComponent,
-    UnderConstructionComponent,
     UploadUploadFileModalComponent,
     UploadDeleteFileModalComponent,
     EventModalFormComponent
