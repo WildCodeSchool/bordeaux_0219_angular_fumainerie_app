@@ -1,3 +1,5 @@
+import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
+import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
@@ -31,7 +33,6 @@ import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-for
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
-import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { registerLocaleData } from '@angular/common';
@@ -49,16 +50,21 @@ import { ViewComponent } from './components/dashboards/communication/view/view.c
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
-import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
-import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
+import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
 import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
+import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
+import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
+import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { UploadUploadFileModalComponent } from './components/modals/upload-upload-file-modal/upload-upload-file-modal.component';
+import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
+
 import { DrainingComponent} from './components/forms/draining/draining.component';
 
 
@@ -109,7 +115,12 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
+    UploadFormComponent,
     DrainingComponent,
+    EventModalFormComponent,
+    UnderConstructionComponent,
+    UploadUploadFileModalComponent,
+    UploadDeleteFileModalComponent,
     EventModalFormComponent
   ],
   imports: [
@@ -124,6 +135,7 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     CarouselModule.forRoot(),
     HttpClientModule,
     MatDatepickerModule,
+    MatDialogModule,
     FormsModule,
     HttpClientModule,
     MatTabsModule,
@@ -144,10 +156,10 @@ import { DrainingComponent} from './components/forms/draining/draining.component
 
   bootstrap: [AppComponent],
   entryComponents: [
+    DialogSignupComponent,
     QuestionModalComponent,
     QuestionDeleteModalComponent,
     WitnessModalComponent,
-    DialogSignupComponent,
     NewsletterModalComponent,
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
@@ -155,7 +167,10 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     EventDeleteModalComponent,
     NewsModalComponent,
     NewsDeleteModalComponent,
-    DrainingComponent
+    DrainingComponent,
+    UploadDeleteFileModalComponent,
+    UploadUploadFileModalComponent,
+
   ]
 })
 export class AppModule { }

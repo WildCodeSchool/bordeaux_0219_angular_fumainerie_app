@@ -1,5 +1,8 @@
-
-import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
+import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
+import { WitnessComponent } from './components/dashboards/communication/view/witness/witness.component';
+import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
+import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
+import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
@@ -11,7 +14,6 @@ import { WitnessFormComponent } from './components/forms/witness-form/witness-fo
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
-import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -31,6 +33,7 @@ const routes: Routes = [
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
     {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
+    {path: 'documents/uploader', component: UploadFormComponent, canActivate: [AuthGuard]},
     {path: 'communication', component: CommunicationComponent, canActivate: [AuthGuard], children: [
       {path: '', redirectTo: 'avis', pathMatch: 'full'},
       {path: 'avis', component: ViewComponent, canActivate: [AuthGuard], children: [
