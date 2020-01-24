@@ -1,5 +1,4 @@
 import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
-import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
 import { from } from 'rxjs';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
@@ -60,7 +59,7 @@ import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
-import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
+import { DocumentsComponent } from './pages/dashboard/documents/documents.component';
 import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { UploadUploadFileModalComponent } from './components/modals/upload-upload-file-modal/upload-upload-file-modal.component';
 import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
@@ -118,7 +117,6 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     UploadFormComponent,
     DrainingComponent,
     EventModalFormComponent,
-    UnderConstructionComponent,
     UploadUploadFileModalComponent,
     UploadDeleteFileModalComponent,
     EventModalFormComponent
