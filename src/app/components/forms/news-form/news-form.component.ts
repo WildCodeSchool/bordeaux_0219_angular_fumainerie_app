@@ -1,3 +1,4 @@
+import { news } from './../../modals/generic-modal/modalText';
 import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { NewsService } from './../../../shared/services/news.service';
 import { Component, OnInit } from '@angular/core';
@@ -39,8 +40,7 @@ export class NewsFormComponent implements OnInit {
       this.newsService.createNews(this.newsForm.value).subscribe();
       const dialogRef = this.dialog.open(GenericModalComponent , {
         width: '250px',
-        data: { title: 'Merci!',
-                description: 'Votre actualité a bien été rajoutée'}
+        data: news,
       });
 
       dialogRef.afterClosed().subscribe(() => {

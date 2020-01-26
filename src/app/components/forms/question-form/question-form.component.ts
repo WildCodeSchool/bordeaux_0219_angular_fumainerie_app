@@ -1,3 +1,4 @@
+import { question } from './../../modals/generic-modal/modalText';
 import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { QuestionService } from '../../../shared/services/question.service';
 import { Component, OnInit } from '@angular/core';
@@ -37,9 +38,7 @@ export class QuestionFormComponent implements OnInit {
         this.questionService.createQuestion(this.questionForm.value).subscribe();
         const dialogRef = this.dialog.open(GenericModalComponent, {
           width: '250px',
-          data: { title: 'Merci!',
-          description: 'Nous vous répondrons par mail le plus rapidement possible.'}
-
+          data: question,
         });
 
         dialogRef.afterClosed().subscribe(() => {

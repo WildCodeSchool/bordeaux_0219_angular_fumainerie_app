@@ -1,3 +1,4 @@
+import { witness } from './../../modals/generic-modal/modalText';
 import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { WitnessService } from '../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
@@ -41,8 +42,7 @@ export class WitnessFormComponent implements OnInit {
     this.witnessService.createWitness(this.witnessForm.value).subscribe();
     const dialogRef = this.dialog.open(GenericModalComponent, {
       width: '50%',
-      data: { title: 'Merci pour votre témoignage.',
-      description: 'Vous pourrez le retrouver rapidement en ligne.'}
+      data: witness,
     });
     dialogRef.afterClosed().subscribe(() => {
         this.router.navigate(['dashboard/communication/avis']);

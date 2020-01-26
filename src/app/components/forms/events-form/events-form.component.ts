@@ -1,3 +1,4 @@
+import { event } from './../../modals/generic-modal/modalText';
 import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -47,8 +48,7 @@ export class EventsFormComponent implements OnInit {
       this.eventService.createEvents(this.eventForm.value).subscribe();
       const dialogRef = this.dialog.open(GenericModalComponent , {
         width: '250px',
-        data: { title: 'Merci!',
-                description: 'Votre événement a bien été rajouté'}
+        data: event,
       });
 
       dialogRef.afterClosed().subscribe(() => {

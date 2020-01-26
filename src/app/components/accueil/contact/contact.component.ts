@@ -1,3 +1,4 @@
+import { contact } from './../../modals/generic-modal/modalText';
 import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { emailValidator } from '../../../shared/validators/email-validator';
@@ -58,8 +59,7 @@ export class ContactComponent implements OnInit {
         });
         const dialogRef = this.dialog.open(GenericModalComponent, {
           width: '50%',
-          data: { title: 'Merci pour votre inscription.',
-                  description: 'Vous êtes désormais abonné à la newsletter de la fumainerie.'}
+          data: contact
         });
         dialogRef.afterClosed().subscribe(() => {
             this.router.navigate(['/']);
