@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export class DrainingRequest {
   // tslint:disable-next-line: variable-name
   public session_date: string;
@@ -16,6 +18,8 @@ export class DrainingRequest {
   public emergency?: number;
   // tslint:disable-next-line: variable-name
   public draining_id: number;
+  public user?: User;
+
 
   constructor(input?: DrainingRequest) {
     if (input) {

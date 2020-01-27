@@ -10,16 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  user: User;
 
   constructor(private userService: UserService,
               private router: Router ) { }
 
-  user: User;
-  accountStatus: number;
 
   ngOnInit() {
     this.user = this.userService.user;
-    this.accountStatus = this.user.account_status;
   }
   logOut() {
     localStorage.removeItem('JWT-TOKEN');
