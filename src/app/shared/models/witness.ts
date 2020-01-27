@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export class Witness {
   public id: number;
   public note?: number;
@@ -7,6 +9,8 @@ export class Witness {
   public user_id?: number;
   public firstname?: string;
   public avatar?: string;
+  public user?: User;
+
 
   constructor(input: Witness) {
       Object.assign(this, input);
