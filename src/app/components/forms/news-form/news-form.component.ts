@@ -1,4 +1,5 @@
-import { NewsModalComponent } from './../../modals/news-modal/news-modal.component';
+import { news } from './../../modals/generic-modal/modalText';
+import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { NewsService } from './../../../shared/services/news.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -37,14 +38,13 @@ export class NewsFormComponent implements OnInit {
 
     onSubmitNewsForm() {
       this.newsService.createNews(this.newsForm.value).subscribe();
-      const dialogRef = this.dialog.open(NewsModalComponent , {
+      const dialogRef = this.dialog.open(GenericModalComponent , {
         width: '250px',
+        data: news,
       });
 
-      dialogRef.afterClosed().subscribe(result => {
-        if (result) {
+      dialogRef.afterClosed().subscribe(() => {
           this.router.navigate(['/dashboard/actualites']);
-        }
       });
     }
   }

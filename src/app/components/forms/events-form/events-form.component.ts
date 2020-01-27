@@ -1,4 +1,5 @@
-import { EventModalFormComponent } from '../../modals/event-modal-form/event-modal-form.component';
+import { event } from './../../modals/generic-modal/modalText';
+import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -45,14 +46,14 @@ export class EventsFormComponent implements OnInit {
       }
 
       this.eventService.createEvents(this.eventForm.value).subscribe();
-      const dialogRef = this.dialog.open(EventModalFormComponent , {
+      const dialogRef = this.dialog.open(GenericModalComponent , {
         width: '250px',
+        data: event,
       });
 
-      dialogRef.afterClosed().subscribe(result => {
-        if (result) {
+      dialogRef.afterClosed().subscribe(() => {
           this.router.navigate(['/dashboard/evenements']);
-        }
-      });
+        });
     }
   }
+

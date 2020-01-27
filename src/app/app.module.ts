@@ -1,15 +1,13 @@
-import { EventModalFormComponent } from './components/modals/event-modal-form/event-modal-form.component';
-import { from } from 'rxjs';
+import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
-import { QuestionModalComponent } from './components/modals/question-modal/question-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
 import { LogInterceptor } from './core/log.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientJsonpModule} from '@angular/common/http';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +29,6 @@ import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-for
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
-import { DocumentsComponent } from './components/dashboards/documents/documents.component';
 import { CommunicationComponent } from './pages/dashboard/communication/communication.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 import { registerLocaleData } from '@angular/common';
@@ -42,24 +39,27 @@ import { BienvenuComponent } from './components/accueil/bienvenu/bienvenu.compon
 import { MatTabsModule} from '@angular/material/tabs';
 import { WitnessComponent} from './components/dashboards/communication/view/witness/witness.component';
 import { EventsFormComponent } from './components/forms/events-form/events-form.component';
-import { WitnessModalComponent } from './components/modals/witness-modal/witness-modal.component';
 import { QuestionFormComponent } from './components/forms/question-form/question-form.component';
 import { WitnessFormComponent } from './components/forms/witness-form/witness-form.component';
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
-import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
-import { NewsletterModalComponent } from './components/modals/newsletter-modal/newsletter-modal.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
-import { FormValidationComponent } from './pages/dashboard/form-validation/form-validation.component';
+import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
 import { QuestionComponent } from './components/dashboards/communication/view/question/question.component';
 import { QuestionDeleteModalComponent } from './components/modals/question-delete-modal/question-delete-modal.component';
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
-import { NewsModalComponent } from './components/modals/news-modal/news-modal.component';
+import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
+import { DocumentsComponent } from './pages/dashboard/documents/documents.component';
+import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
+
 import { DrainingComponent} from './components/forms/draining/draining.component';
+import { GenericModalComponent } from './components/modals/generic-modal/generic-modal.component';
+import { ServerUrlPipe } from './core/server-url.pipe';
 
 
 
@@ -90,12 +90,9 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     WitnessFormComponent,
     ViewComponent,
     ButtonsComponent,
-    QuestionModalComponent,
-    WitnessModalComponent,
     EventsComponent,
     EventsFormComponent,
     DialogSignupComponent,
-    NewsletterModalComponent,
     NewsComponent,
     NewComponent,
     NewsDeleteModalComponent,
@@ -105,12 +102,14 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     FormValidationComponent,
     QuestionDeleteModalComponent,
     NewsDeleteModalComponent,
-    NewsModalComponent,
     NewsFormComponent,
     NewsLinkComponent,
     QuestionComponent,
+    UploadFormComponent,
     DrainingComponent,
-    EventModalFormComponent
+    GenericModalComponent,
+    UploadDeleteFileModalComponent,
+    ServerUrlPipe
   ],
   imports: [
     BrowserModule,
@@ -124,6 +123,7 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     CarouselModule.forRoot(),
     HttpClientModule,
     MatDatepickerModule,
+    MatDialogModule,
     FormsModule,
     HttpClientModule,
     MatTabsModule,
@@ -144,18 +144,18 @@ import { DrainingComponent} from './components/forms/draining/draining.component
 
   bootstrap: [AppComponent],
   entryComponents: [
-    QuestionModalComponent,
+   GenericModalComponent,
     QuestionDeleteModalComponent,
-    WitnessModalComponent,
     DialogSignupComponent,
-    NewsletterModalComponent,
+    QuestionDeleteModalComponent,
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,
-    NewsModalComponent,
     EventDeleteModalComponent,
-    NewsModalComponent,
     NewsDeleteModalComponent,
-    DrainingComponent
+    DrainingComponent,
+    UploadDeleteFileModalComponent,
+
+
   ]
 })
 export class AppModule { }

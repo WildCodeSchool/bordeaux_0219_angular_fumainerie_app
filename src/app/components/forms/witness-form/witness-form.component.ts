@@ -1,4 +1,5 @@
-import { WitnessModalComponent } from '../../modals/witness-modal/witness-modal.component';
+import { witness } from './../../modals/generic-modal/modalText';
+import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { WitnessService } from '../../../shared/services/witness.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -39,11 +40,14 @@ export class WitnessFormComponent implements OnInit {
     console.log('modale ouverte?');
     console.log(this.witnessForm.value);
     this.witnessService.createWitness(this.witnessForm.value).subscribe();
-    const dialogRef = this.dialog.open(WitnessModalComponent, {
-      width: '50%'
+    const dialogRef = this.dialog.open(GenericModalComponent, {
+      width: '250px',
+      data: witness,
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    dialogRef.afterClosed().subscribe(() => {
+        this.router.navigate(['dashboard/communication/avis']);
+    }
+    );
   }
 }
+

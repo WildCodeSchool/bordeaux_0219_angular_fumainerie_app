@@ -1,3 +1,4 @@
+import { User } from './user';
 import { Time } from '@angular/common';
 
 export class Draining {
@@ -18,6 +19,7 @@ export class Draining {
     public home_id?: number;
     // tslint:disable-next-line: variable-name
     public user_id?: number;
+    public user?: User;
     public createAt?: Date;
     public deleteAt?: string;
     public show = false;

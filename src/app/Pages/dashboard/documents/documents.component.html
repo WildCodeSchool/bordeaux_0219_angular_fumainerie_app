@@ -1,0 +1,8 @@
+
+<!-- désactivation de l'affichage de la parallax -->
+<div class='container'>
+<app-ressources-documents [isParallaxEnable]="false"></app-ressources-documents>
+<button mat-button class='yellowButton'
+        (click)='onUploadForm()'
+        *ngIf="user.function == 'admin'">Uploader un document</button>
+</div>
