@@ -16,7 +16,6 @@ export class DocumentsComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.user;
-    console.log(this.user.function);
   }
   onUploadForm() {
     this.router.navigate(['/dashboard/documents/uploader']);

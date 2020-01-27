@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   }
   logOut() {
     localStorage.removeItem('JWT-TOKEN');
+    this.userService.user = null;
     this.router.navigate(['/accueil']);
   }
 }

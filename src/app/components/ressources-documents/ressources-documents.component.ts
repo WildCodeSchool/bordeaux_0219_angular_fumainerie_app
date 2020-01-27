@@ -19,42 +19,43 @@ export class RessourcesDocumentsComponent implements OnInit {
   @Input() isParallaxEnable = true;
   dataSearch: Document[];
   searchWord: string;
-  user: User;
+  user?: User;
   name: string;
   link: string;
-constructor(private serviceDocument: DocumentsService,
-            private userService: UserService,
-            private dialog: MatDialog,
-            private router: Router) { }
+  constructor(private serviceDocument: DocumentsService,
+              private userService: UserService,
+              private dialog: MatDialog) {
 
-ngOnInit() {
-    this.user = this.userService.user;
-    this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
-      this.dataSearch = data;
-    });
-  }
+    }
 
-search(word: string) {
-    this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {
-      this.dataSearch = data;
-    });
-  }
-onIdFile(id) {
-  console.log(id + this.dataSearch[id].link);
-  this.name = this.dataSearch[id].link;
-  this.link = environment.url + '/uploads/' + this.name;
-}
-onAskDeleteFile(index: number, i: number) {
-  const dialogRef = this.dialog.open(UploadDeleteFileModalComponent, {
-    width: '50%' });
-  const instance = dialogRef.componentInstance;
-  instance.index = index;
+    ngOnInit() {
 
-  dialogRef.afterClosed().subscribe(isDeleted => {
-      if (isDeleted) {
-        this.dataSearch.splice(i, 1);
+      this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
+        this.dataSearch = data;
+      });
+    }
+
+    search(word: string) {
+      this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {
+        this.dataSearch = data;
+      });
+    }
+    onIdFile(id) {
+      console.log(id + this.dataSearch[id].link);
+      this.name = this.dataSearch[id].link;
+      this.link = environment.url + '/uploads/' + this.name;
+    }
+    onAskDeleteFile(index: number, i: number) {
+      const dialogRef = this.dialog.open(UploadDeleteFileModalComponent, {
+        width: '50%' });
+      const instance = dialogRef.componentInstance;
+      instance.index = index;
+
+      dialogRef.afterClosed().subscribe(isDeleted => {
+          if (isDeleted) {
+            this.dataSearch.splice(i, 1);
+          }
+        });
+
       }
-    });
-
-  }
-}
+    }
