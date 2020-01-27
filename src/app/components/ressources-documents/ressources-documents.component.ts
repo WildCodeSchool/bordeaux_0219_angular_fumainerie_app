@@ -28,8 +28,10 @@ constructor(private serviceDocument: DocumentsService,
             private router: Router) { }
 
 ngOnInit() {
+  if (this.userService.user !== undefined) {
     this.user = this.userService.user;
-    this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
+  }
+  this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
       this.dataSearch = data;
     });
   }

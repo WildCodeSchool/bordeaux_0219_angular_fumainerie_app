@@ -1,3 +1,4 @@
+import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { NewsLinkComponent } from './pages/dashboard/newsLink/news.link.component';
 import { WitnessDeleteModalComponent } from './components/modals/witness-delete-modal/witness-delete-modal.component';
 import { NewsComponent } from './components/accueil/news/news.component';
@@ -6,7 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientJsonpModule} from '@angu
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { CarouselModule } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -44,7 +45,6 @@ import { ViewComponent } from './components/dashboards/communication/view/view.c
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
 import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
-import { RessourcesDocumentsComponent } from './pages/ressources-documents/ressources-documents.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
