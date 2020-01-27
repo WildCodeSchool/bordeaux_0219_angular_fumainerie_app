@@ -26,7 +26,6 @@ export class ViewProducteurComponent implements OnInit {
   emergency: DrainingRequest[] = [];
   allDoneDrainingForProducteur: Draining[];
   nextDraining: Draining;
-  isEmergencyAlreadyCreate = false;
   isRequestAlreadyCreate = false;
 
   constructor(private drainingRequestService: DrainingRequestService,
