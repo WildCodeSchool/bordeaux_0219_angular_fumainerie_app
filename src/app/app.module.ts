@@ -65,8 +65,8 @@ import { UploadUploadFileModalComponent } from './components/modals/upload-uploa
 import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
 
 import { DrainingComponent} from './components/forms/draining/draining.component';
-import { ViewProducteurComponent } from './components/vidanges/view-producteur/view-producteur.component';
 import { ViewVidangeurComponent } from './components/dashboards/vidanges/view-vidangeur/view-vidangeur.component';
+import { ViewProducteurComponent } from './components/dashboards/vidanges/view-producteur/view-producteur.component';
 
 
 

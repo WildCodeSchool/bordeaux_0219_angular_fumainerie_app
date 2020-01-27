@@ -1,1 +1,64 @@
-<p>view-vidangeur works!</p>
+<div *ngIf="currentUser.function === 'vidangeur'">
+
+  <div class="draining_non_traité">
+    <h2>Demande non traitées</h2>
+    <p *ngIf="allDrainingRequestUnchecked.length === 0">Pas demande pour le moment</p>
+
+    <div *ngFor="let user of allDrainingRequestUnchecked">
+
+      <div class="info_client">
+        <h3>Client: {{user[0].firstname}} {{user[0].lastname}}</h3>
+        <button *ngIf="!user[0].show" (click)="openDetailsCustomer(user[0])">Detail client</button>
+      </div>
+
+      <div class="detail_info" *ngIf="user[0].show">
+        <div>
+          <p>Addresse: {{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
+          <p>Télephone: {{user[0].phone}}</p>
+        </div>
+
+        <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
+      </div>
+
+
+        <form [formGroup]="accepteDrainingForm" (ngSubmit)="acceptRequest(accepteDrainingForm.value)">
+        <div>
+            <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
+              <mat-radio-button class="radio-button" *ngFor="let request of user" [value]="request.id">
+                {{request.session_date | date: 'fullDate':'fr' }} {{request.name}}
+              </mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+          <button type="submit" [disabled]="accepteDrainingForm.pristine">Valider</button>
+
+        </form>
+
+
+    </div>
+  </div>
+
+
+  <div class="draining_accepted">
+    <h2>Demande acceptées - Planning</h2>
+
+    <p *ngIf="allDrainingAccepted.length === 0">Pas demande pour le moment</p>
+
+    <div class="accepted" *ngFor="let draining of allDrainingAccepted">
+      <div (click)="openDialog(draining)" class="info_client">
+        <div class="vidange">
+          <p>Le {{draining.session_date}}</p>
+          <p>Créneau : {{draining.name}}</p>
+        </div>
+        <p>{{draining.firstname}} {{draining.lastname}}</p>
+        <div class="client">
+          <p>{{draining.phone}}</p>
+          <p>{{draining.address}}, {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
