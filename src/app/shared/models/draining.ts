@@ -9,7 +9,7 @@ export class Draining {
     public comments?: string;
     public weight?: number;
     // tslint:disable-next-line: variable-name
-    public session_date?: Date;
+    public session_date?: string;
     // tslint:disable-next-line: variable-name
     public sawdust_delivery?: number;
     // tslint:disable-next-line: variable-name
@@ -20,6 +20,7 @@ export class Draining {
     public user_id?: number;
     public createAt?: Date;
     public deleteAt?: string;
+    public name?: string;
     public show = false;
     // tslint:disable-next-line: variable-name
     public slot_id: number;

@@ -3,7 +3,7 @@ import { DrainingRequestService } from '../../../../shared/services/drainingRequ
 import { UserService } from '../../../../shared/services/user.service';
 import { DrainingService } from '../../../../shared/services/draining.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, DateAdapter } from '@angular/material';
+import { DateAdapter } from '@angular/material';
 import { Slot } from '../../../../shared/models/slot';
 import { User } from '../../../../shared/models/user';
 import { DrainingRequest } from '../../../../shared/models/drainingRequest';
@@ -24,7 +24,7 @@ export class ViewProducteurComponent implements OnInit {
 // Temporary array for the draining request
 arrayDrainingRequest: DrainingRequest[] = [];
 
-allDrainingRequestForCurrentUser: DrainingRequest[] = [];
+allDrainingRequest: DrainingRequest[] = [];
 
 allDrainingForCurrentUser: Draining [] = [];
 
@@ -56,14 +56,14 @@ emergencyForCurrentUser: DrainingRequest[] = [];
       });
   });
 
-  this.drainingRequestService.getAllDrainingRequestForProducteur(this.currentUser.id).subscribe( (data) => {
+  this.drainingRequestService.getAllDrainingRequest(this.currentUser.id).subscribe( (data) => {
      // tslint:disable-next-line: prefer-for-of
      for (let i = 0; i < data.length; i++) {
-       this.allDrainingRequestForCurrentUser = data;
+       this.allDrainingRequest = data;
 
        if ( data[i].emergency === 1) {
         //  this.emergencyForCurrentUser.push(data[i]);
-         this.allDrainingRequestForCurrentUser.splice(i, 1);
+         this.allDrainingRequest.splice(i, 1);
          this.isEmergencyAlreadyCreate = true;
 
      } else if ( data[i].accepted === 0 ) {
@@ -77,12 +77,10 @@ emergencyForCurrentUser: DrainingRequest[] = [];
    });
 
   this.drainingService.getNextDrainingByUserId(this.currentUser.id).subscribe( data => {
-    console.log(data);
-
     this.nextDraining = data;
     console.log(this.nextDraining);
 
-    });
+  });
   }
 
   // Montre les détails de la vidange en clickant sur details
@@ -103,7 +101,7 @@ emergencyForCurrentUser: DrainingRequest[] = [];
 // Envoi un tableau de demande de vidange
   submit() {
     for (const drainingRequest of this.arrayDrainingRequest) {
-     this.allDrainingRequestForCurrentUser.push(drainingRequest);
+     this.allDrainingRequest.push(drainingRequest);
      }
     this.isRequestAlreadyCreate = true;
     return this.drainingRequestService.postDrainingRequest(this.arrayDrainingRequest).subscribe();

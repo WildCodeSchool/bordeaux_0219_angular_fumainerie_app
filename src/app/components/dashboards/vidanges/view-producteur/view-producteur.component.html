@@ -1,4 +1,4 @@
-<div *ngIf="drainingFormRequest && !isRequestAlreadyCreate" >
+<div *ngIf="drainingFormRequest && !isRequestAlreadyCreate " >
 
   <form [formGroup]="drainingFormRequest">
     <mat-form-field class="example-full-width">
@@ -26,11 +26,11 @@
   </form>
 
 </div>
-  <button *ngIf="!isEmergencyAlreadyCreate && currentDateString&gt;nextDraining[0].session_date" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
+  <button *ngIf="!isEmergencyAlreadyCreate && currentDateString&gt;nextDraining.session_date" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
 
 
 <div *ngIf="nextDraining" class="nextDraining">
-<h3>Prochaine vidange prévu le {{nextDraining[0].session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDraining[0].name}}</h3>
+<h3>Prochaine vidange prévu le {{nextDraining.session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDraining.name}}</h3>
 </div>
 
 
@@ -38,8 +38,8 @@
 
 <div class="drainingRequest">
   <h3>Demande en cours</h3>
-  <p *ngIf="allDrainingRequestForCurrentUser.length === 0">Pas de demande en cours.</p>
-  <div class="allDrainingRequestForCurrentUser" *ngFor="let draining of allDrainingRequestForCurrentUser">
+  <p *ngIf="allDrainingRequest.length === 0">Pas de demande en cours.</p>
+  <div class="allDrainingRequestForCurrentUser" *ngFor="let draining of allDrainingRequest">
     <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
     <p>{{draining.name}}</p>
   </div>
