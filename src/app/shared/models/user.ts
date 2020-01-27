@@ -14,6 +14,7 @@ export class User {
   public account_status?: number;
   public function?: string;
 
+
   constructor(input: User) {
     Object.assign(this, input);
   }

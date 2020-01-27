@@ -59,6 +59,7 @@ import { UploadDeleteFileModalComponent } from './components/modals/upload-delet
 
 import { DrainingComponent} from './components/forms/draining/draining.component';
 import { GenericModalComponent } from './components/modals/generic-modal/generic-modal.component';
+import { ServerUrlPipe } from './core/server-url.pipe';
 
 
 
@@ -108,6 +109,7 @@ import { GenericModalComponent } from './components/modals/generic-modal/generic
     DrainingComponent,
     GenericModalComponent,
     UploadDeleteFileModalComponent,
+    ServerUrlPipe
   ],
   imports: [
     BrowserModule,
