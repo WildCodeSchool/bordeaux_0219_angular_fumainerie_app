@@ -41,7 +41,7 @@ export class WitnessFormComponent implements OnInit {
     console.log(this.witnessForm.value);
     this.witnessService.createWitness(this.witnessForm.value).subscribe();
     const dialogRef = this.dialog.open(GenericModalComponent, {
-      width: '50%',
+      width: '250px',
       data: witness,
     });
     dialogRef.afterClosed().subscribe(() => {
