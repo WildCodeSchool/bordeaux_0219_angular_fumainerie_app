@@ -15,6 +15,7 @@ export class LogInterceptor implements HttpInterceptor {
     if (!token) {
       return next.handle(req);
     }
+    console.log(localStorage.getItem('JWT-TOKEN'));
     const headers = req.headers.set('Authorization', `Bearer ${token}`);
     const authReq = req.clone({headers});
     return next.handle(authReq);

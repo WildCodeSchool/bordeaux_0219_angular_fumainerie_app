@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  // url: 'https://db-db.lafumainerie.com'  // url prod
   url: 'http://localhost:3000'
 
 };
