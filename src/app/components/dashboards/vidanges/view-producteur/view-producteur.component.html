@@ -1,5 +1,7 @@
 <div *ngIf="drainingFormRequest && !isRequestAlreadyCreate " >
 
+  <h3 *ngIf="nextDraining?.session_date"> Vous pouvez programmer une vidange en avance.</h3>
+
   <form [formGroup]="drainingFormRequest">
     <mat-form-field class="example-full-width">
       <input matInput formControlName="session_date" [matDatepicker]="picker" placeholder="Choisissez une date">
@@ -22,19 +24,18 @@
     <li *ngIf="arrayDrainingRequest.length&gt;2">Demande n°3:{{arrayDrainingRequest[2].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[2].name}}</li>
     </ul>
 
-
   </form>
 
 </div>
-  <button *ngIf="!isEmergencyAlreadyCreate && currentDateString&gt;nextDraining.session_date" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
 
+  <button *ngIf="(currentDateString.localeCompare(nextDraining?.session_date)===1 ? false : true)  && emergency.length&lt;1" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
 
-<div *ngIf="nextDraining" class="nextDraining">
-<h3>Prochaine vidange prévu le {{nextDraining.session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDraining.name}}</h3>
+<div *ngIf="nextDraining?.session_date" class="nextDraining">
+  <h3>Prochaine vidange prévu le {{nextDraining.session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDraining.name}}</h3>
 </div>
 
 
-<h2 class="emergency" *ngIf="isEmergencyAlreadyCreate">Urgence prise en compte. Un vidangeur vas vous contactez rapidement.</h2>
+<h2 class="emergency" *ngIf="emergency.length&gt;0">Urgence prise en compte. Un vidangeur vas vous contactez rapidement.</h2>
 
 <div class="drainingRequest">
   <h3>Demande en cours</h3>
@@ -47,16 +48,14 @@
 
 <div class="history">
   <h3>Historique</h3>
-  <p *ngIf="allDrainingForCurrentUser.length===0">
-    Pas d'historique.
-  </p>
+  <p *ngIf="allDraining.length===0">Pas d'historique.</p>
 
-  <div *ngIf="allDrainingForCurrentUser.length&gt;0 " >
-    <div *ngFor="let draining of allDrainingForCurrentUser">
+  <div *ngIf="allDraining.length&gt;0 " >
+    <div *ngFor="let draining of allDraining">
       <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.session_date | date: 'fullDate':'fr'}}</p>
 
 
-      <div class="detail" *ngIf="draining.show">
+      <div class="detail" *ngIf="draining.show" (click)="!draining.show">
         <div class="table">
           <p>Commentaire</p>
           <p>{{draining.comments}}</p>

@@ -13,7 +13,7 @@ export class DrainingService {
 
   constructor(private http: HttpClient) {}
 
-  getDrainingForCurrentUser(id: number): Observable<Draining[]> {
+  getDraining(id: number): Observable<Draining[]> {
     return this.http.get<Draining[]>(DrainingService.URL + 'draining/user/' + id);
   }
 

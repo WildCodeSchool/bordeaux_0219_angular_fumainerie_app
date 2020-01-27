@@ -22,23 +22,15 @@ export class ViewProducteurComponent implements OnInit {
   accepteDrainingArray: any[] = [];
   currentDateString = new Date().toLocaleDateString().split('/').reverse().join('-');
 // Temporary array for the draining request
-arrayDrainingRequest: DrainingRequest[] = [];
-
-allDrainingRequest: DrainingRequest[] = [];
-
-allDrainingForCurrentUser: Draining [] = [];
-
-emergency: DrainingRequest [] = [];
-
-allDoneDrainingForProducteur: Draining[];
-
-nextDraining: Draining;
-
-isEmergencyAlreadyCreate = false;
-
-isRequestAlreadyCreate = false;
-
-emergencyForCurrentUser: DrainingRequest[] = [];
+  arrayDrainingRequest: DrainingRequest[] = [];
+  allDrainingRequest: DrainingRequest[] = [];
+  allDraining: Draining[] = [];
+  emergency: DrainingRequest[] = [];
+  allDoneDrainingForProducteur: Draining[];
+  nextDraining: Draining;
+  isEmergencyAlreadyCreate = false;
+  isRequestAlreadyCreate = false;
+// emergencyForCurrentUser: DrainingRequest[] = [];
 
 
   constructor(private drainingRequestService: DrainingRequestService,
@@ -62,9 +54,8 @@ emergencyForCurrentUser: DrainingRequest[] = [];
        this.allDrainingRequest = data;
 
        if ( data[i].emergency === 1) {
-        //  this.emergencyForCurrentUser.push(data[i]);
+         this.emergency.push(data[i]);
          this.allDrainingRequest.splice(i, 1);
-         this.isEmergencyAlreadyCreate = true;
 
      } else if ( data[i].accepted === 0 ) {
        this.isRequestAlreadyCreate = true;
@@ -72,14 +63,12 @@ emergencyForCurrentUser: DrainingRequest[] = [];
     }
   });
 
-  this.drainingService.getDrainingForCurrentUser(this.currentUser.id).subscribe( drainings => {
-    this.allDrainingForCurrentUser = drainings;
+  this.drainingService.getDraining(this.currentUser.id).subscribe( drainings => {
+    this.allDraining = drainings;
    });
 
   this.drainingService.getNextDrainingByUserId(this.currentUser.id).subscribe( data => {
     this.nextDraining = data;
-    console.log(this.nextDraining);
-
   });
   }
 
@@ -108,21 +97,24 @@ emergencyForCurrentUser: DrainingRequest[] = [];
   }
 
 // Envoi d'une demande urgente de vidange
-sendEmergency() {
+  sendEmergency() {
+// Creation d'une nouvelle demande de vidange.
+    const drainingRequestEmergency = new DrainingRequest();
+
+    drainingRequestEmergency.user_id = this.currentUser.id;
+    drainingRequestEmergency.session_date = this.currentDateString;
+    drainingRequestEmergency.emergency = 1;
+    drainingRequestEmergency.slot_id = 1;
+    this.slotData.forEach( element => {
+      if ( drainingRequestEmergency.slot_id === element.id) {
+      drainingRequestEmergency.name = element.name;
+      }
+    });
+    console.log(drainingRequestEmergency);
+    this.emergency.push(drainingRequestEmergency);
+    console.log(this.emergency);
 
 
-  // Creation d'une nouvelle demande de vidange.
-  const drainingRequestEmergency = new DrainingRequest();
-
-  drainingRequestEmergency.user_id = this.currentUser.id;
-  drainingRequestEmergency.session_date = this.currentDateString;
-  drainingRequestEmergency.emergency = 1;
-  this.slotData.forEach( element => {
-    if ( drainingRequestEmergency.slot_id === element.id) {
-    drainingRequestEmergency.name = element.name;
+    return this.drainingRequestService.postDrainingRequest(this.emergency).subscribe();
     }
-  });
-  this.emergency.push(drainingRequestEmergency);
-  return this.drainingRequestService.postDrainingRequest(this.emergency).subscribe();
-  }
 }
