@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DrainingRequestService } from '../../../../shared/services/drainingRequest.service';
-import { UserService } from '../../../../shared/services/user.service';
 import { DrainingService } from '../../../../shared/services/draining.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter } from '@angular/material';
@@ -21,7 +20,6 @@ export class ViewProducteurComponent implements OnInit {
   drainingFormRequest: FormGroup;
   accepteDrainingArray: any[] = [];
   currentDateString = new Date().toLocaleDateString().split('/').reverse().join('-');
-// Temporary array for the draining request
   arrayDrainingRequest: DrainingRequest[] = [];
   allDrainingRequest: DrainingRequest[] = [];
   allDraining: Draining[] = [];
@@ -30,15 +28,12 @@ export class ViewProducteurComponent implements OnInit {
   nextDraining: Draining;
   isEmergencyAlreadyCreate = false;
   isRequestAlreadyCreate = false;
-// emergencyForCurrentUser: DrainingRequest[] = [];
-
 
   constructor(private drainingRequestService: DrainingRequestService,
               private drainingService: DrainingService,
               private fb: FormBuilder, private dateAdapter: DateAdapter<any>) { this.dateAdapter.setLocale('fr'); }
 
   ngOnInit() {
-
   this.drainingRequestService.getSlot().subscribe( data => {
         this.slotData = data;
         this.drainingFormRequest = this.fb.group({
@@ -49,18 +44,15 @@ export class ViewProducteurComponent implements OnInit {
   });
 
   this.drainingRequestService.getAllDrainingRequest(this.currentUser.id).subscribe( (data) => {
-     // tslint:disable-next-line: prefer-for-of
-     for (let i = 0; i < data.length; i++) {
+     for (const [i, draining] of data.entries()) {
        this.allDrainingRequest = data;
 
-       if ( data[i].emergency === 1) {
-         this.emergency.push(data[i]);
+       if ( draining.emergency === 1) {
+         this.emergency.push(draining);
          this.allDrainingRequest.splice(i, 1);
 
-     } else if ( data[i].accepted === 0 ) {
-       this.isRequestAlreadyCreate = true;
-     }
-    }
+     } else if ( draining.accepted === 0 ) {
+       this.isRequestAlreadyCreate = true; }}
   });
 
   this.drainingService.getDraining(this.currentUser.id).subscribe( drainings => {
@@ -74,11 +66,10 @@ export class ViewProducteurComponent implements OnInit {
 
   // Montre les détails de la vidange en clickant sur details
   openDetailsDraining(drainingDetail: Draining) {
-    drainingDetail.show = !drainingDetail.show;
-    return drainingDetail;
+    return drainingDetail.show = !drainingDetail.show;
   }
 
-  // Create draining Request limit to 3.
+// Create draining Request limit to 3.
   addRequest(drainingRequest: any) {
     drainingRequest.session_date = drainingRequest.session_date.toLocaleDateString().split('/').reverse().join('-');
     drainingRequest.name = drainingRequest.slot_id.name;
@@ -107,14 +98,10 @@ export class ViewProducteurComponent implements OnInit {
     drainingRequestEmergency.slot_id = 1;
     this.slotData.forEach( element => {
       if ( drainingRequestEmergency.slot_id === element.id) {
-      drainingRequestEmergency.name = element.name;
-      }
+      drainingRequestEmergency.name = element.name; }
     });
-    console.log(drainingRequestEmergency);
+
     this.emergency.push(drainingRequestEmergency);
-    console.log(this.emergency);
-
-
     return this.drainingRequestService.postDrainingRequest(this.emergency).subscribe();
-    }
+}
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DrainingRequestService } from '../../../../shared/services/drainingRequest.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DrainingService } from '../../../../shared/services/draining.service';
-import { MatDialog, DateAdapter } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Slot } from '../../../../shared/models/slot';
 import { User } from '../../../../shared/models/user';
 import { DrainingComponent } from '../../../forms/draining/draining.component';
@@ -19,16 +19,12 @@ export class ViewVidangeurComponent implements OnInit {
   slotData: Slot[];
   accepteDrainingForm: FormGroup;
   accepteDrainingArray: any[] = [];
-
-    // Vidangeur
-    allDrainingRequestUnchecked: any[] = [];
-    allDrainingAccepted: any[] = [];
+  allDrainingRequestUnchecked: any[] = [];
+  allDrainingAccepted: any[] = [];
 
 
-  constructor(private drainingRequestService: DrainingRequestService,
-              private drainingService: DrainingService,
-              private fb: FormBuilder, private dateAdapter: DateAdapter<any>,
-              public dialog: MatDialog) {this.dateAdapter.setLocale('fr'); }
+  constructor(private drainingRequestService: DrainingRequestService, private drainingService: DrainingService,
+              private fb: FormBuilder, public dialog: MatDialog) {}
 
   ngOnInit() {
 
@@ -41,16 +37,13 @@ export class ViewVidangeurComponent implements OnInit {
    });
 
    this.drainingService.getDrainingAccepted(this.currentUser.id).subscribe( data => {this.allDrainingAccepted = data; });
-
   }
 
-openDetailsCustomer(home: Home) {
-  home.show = !home.show;
-  return home;
-}
+  openDetailsCustomer(home: Home) {
+    return home.show = !home.show;
+  }
 
-  async acceptRequest(accepted: any) {
-
+  acceptRequest(accepted: any) {
     for ( const [i, request] of this.allDrainingRequestUnchecked.entries()) {
       for (const draining of request) {
         if ( draining.id === accepted.draining_id) {
@@ -62,6 +55,7 @@ openDetailsCustomer(home: Home) {
         }
       }
     }
+
     const userId = accepted.user_id;
     this.drainingRequestService.updateDrainingRequest(accepted).subscribe();
     this.drainingService.updateDrainingUser(userId).subscribe( () => {
