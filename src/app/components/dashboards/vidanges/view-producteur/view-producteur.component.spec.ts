@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NewsModalComponent } from './news-modal.component';
-import { from } from 'rxjs';
 
-describe('NewsModalComponent', () => {
-  let component: NewsModalComponent;
-  let fixture: ComponentFixture<NewsModalComponent>;
+import { ViewProducteurComponent } from './view-producteur.component';
+
+describe('ViewProducteurComponent', () => {
+  let component: ViewProducteurComponent;
+  let fixture: ComponentFixture<ViewProducteurComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsModalComponent ]
+      declarations: [ ViewProducteurComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewsModalComponent);
+    fixture = TestBed.createComponent(ViewProducteurComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

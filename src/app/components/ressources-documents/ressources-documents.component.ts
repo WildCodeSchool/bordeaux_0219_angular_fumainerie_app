@@ -19,7 +19,7 @@ export class RessourcesDocumentsComponent implements OnInit {
   @Input() isParallaxEnable = true;
   dataSearch: Document[];
   searchWord: string;
-  user: User;
+  user?: User;
   name: string;
   link: string;
 constructor(private serviceDocument: DocumentsService,
@@ -28,8 +28,10 @@ constructor(private serviceDocument: DocumentsService,
             private router: Router) { }
 
 ngOnInit() {
+  if (this.userService.user !== undefined) {
     this.user = this.userService.user;
-    this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
+  }
+  this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
       this.dataSearch = data;
     });
   }
@@ -54,7 +56,6 @@ onAskDeleteFile(index: number, i: number) {
       if (isDeleted) {
         this.dataSearch.splice(i, 1);
       }
-    });
-
-  }
+  });
+}
 }
