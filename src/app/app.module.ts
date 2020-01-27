@@ -65,6 +65,7 @@ import { UploadUploadFileModalComponent } from './components/modals/upload-uploa
 import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
 
 import { DrainingComponent} from './components/forms/draining/draining.component';
+import { ServerUrlPipe } from './core/server-url.pipe';
 
 
 
@@ -119,7 +120,8 @@ import { DrainingComponent} from './components/forms/draining/draining.component
     EventModalFormComponent,
     UploadUploadFileModalComponent,
     UploadDeleteFileModalComponent,
-    EventModalFormComponent
+    EventModalFormComponent,
+    ServerUrlPipe
   ],
   imports: [
     BrowserModule,

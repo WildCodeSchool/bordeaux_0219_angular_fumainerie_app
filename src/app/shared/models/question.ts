@@ -1,3 +1,5 @@
+import { User } from './user';
+
 export class Question {
     public id!: number;
     public createAt!: string;
@@ -8,6 +10,8 @@ export class Question {
     public firstname!: string;
     public lastname!: string;
     public email!: string;
+    public user?: User;
+
 
 
     constructor(input?: Question) {
