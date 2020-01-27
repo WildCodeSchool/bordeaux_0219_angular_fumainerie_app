@@ -21,9 +21,8 @@
             <p>{{data.description}}</p>
             <div>
               <a (click)='onIdFile(i)'
-                [href]="link" target=_blank><mat-icon>cloud_download</mat-icon></a>
-              <mat-icon class='admin' *ngIf="user.function == 'admin'"
-                        (click)='onAskDeleteFile(data.id, i)'>delete</mat-icon>
+                [href]="data.link | serverUrl" target="_blank"><mat-icon>cloud_download</mat-icon></a>
+              <mat-icon class='admin' (click)='onAskDeleteFile(data.id, i)'>delete</mat-icon>
             </div>
           </div>
         </div>
