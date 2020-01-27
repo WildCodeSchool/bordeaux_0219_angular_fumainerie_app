@@ -1,4 +1,5 @@
 import { Time } from '@angular/common';
+import { User } from './user';
 export class Event {
 
   public id!: number;
@@ -13,6 +14,8 @@ export class Event {
   // tslint:disable-next-line: variable-name
   public user_id!: number;
   public username!: string;
+  public user?: User;
+
 
   constructor(input: Event) {
       Object.assign(this, input);
