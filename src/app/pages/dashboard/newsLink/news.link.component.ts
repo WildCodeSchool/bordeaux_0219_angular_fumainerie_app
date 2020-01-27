@@ -28,12 +28,13 @@ export class NewsLinkComponent implements OnInit {
       this.user = this.userService.user;
       if (this.user.function === 'admin') {
       this.newsService.getAllNews().subscribe((news) => {
-        this.news = news;
+         this.news = news;
+      });
+      } else if (this.user.function !== 'admin') {
+        this.newsService.getValidedNews().subscribe((news) => {
+           this.news = news;
       });
       }
-      this.newsService.getValidedNews().subscribe((news) => {
-        this.news = news;
-      });
     }
 
     onNewsForm() {
