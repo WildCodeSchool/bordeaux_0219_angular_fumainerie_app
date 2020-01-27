@@ -1,9 +1,11 @@
-import { NewsletterModalComponent } from './../../modals/newsletter-modal/newsletter-modal.component';
+import { contact } from './../../modals/generic-modal/modalText';
+import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { emailValidator } from '../../../shared/validators/email-validator';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog} from '@angular/material';
 import { HttpClient, HttpParams} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 interface MailChimpResponse {
@@ -22,6 +24,7 @@ export class ContactComponent implements OnInit {
   mailChimpEndpoint = 'https://zaclys.us4.list-manage.com/subscribe/post-json?u=a1a172a1f21c9caa69eba4268&id=bc3bb22ceb&';
   error = '';
   constructor(private http: HttpClient,
+              private router: Router,
               public dialog: MatDialog) { }
 
 
@@ -54,13 +57,14 @@ export class ContactComponent implements OnInit {
           console.error(error);
           this.error = 'Sorry, an error occurred.';
         });
-        const dialogRef = this.dialog.open(NewsletterModalComponent, {
-          width: '50%'
+        const dialogRef = this.dialog.open(GenericModalComponent, {
+          width: '50%',
+          data: contact
         });
-        dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
-          this.mailForm.reset();
-        });
+        dialogRef.afterClosed().subscribe(() => {
+            this.router.navigate(['/']);
+            this.mailForm.reset();
+          });
       }
     }
   }

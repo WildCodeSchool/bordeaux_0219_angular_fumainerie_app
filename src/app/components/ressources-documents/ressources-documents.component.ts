@@ -22,30 +22,53 @@ export class RessourcesDocumentsComponent implements OnInit {
   user?: User;
   name: string;
   link: string;
-  constructor(private serviceDocument: DocumentsService,
-              private userService: UserService,
-              private dialog: MatDialog) {
+constructor(private serviceDocument: DocumentsService,
+            private userService: UserService,
+            private dialog: MatDialog,
+            private router: Router) { }
 
-    }
+ngOnInit() {
+  if (this.userService.user !== undefined) {
+    this.user = this.userService.user;
+  }
+  this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
+      this.dataSearch = data;
+    });
+  }
 
-    ngOnInit() {
+search(word: string) {
+    this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {
+      this.dataSearch = data;
+    });
+  }
+onIdFile(id) {
+  console.log(id + this.dataSearch[id].link);
+  this.name = this.dataSearch[id].link;
+  this.link = environment.url + '/uploads/' + this.name;
+}
+onAskDeleteFile(index: number, i: number) {
+  const dialogRef = this.dialog.open(UploadDeleteFileModalComponent, {
+    width: '50%' });
+  const instance = dialogRef.componentInstance;
+  instance.index = index;
 
-      this.serviceDocument.getAllDocuments().subscribe((data: Document[]) => {
-        this.dataSearch = data;
-      });
-    }
+  dialogRef.afterClosed().subscribe(isDeleted => {
+      if (isDeleted) {
+        this.dataSearch.splice(i, 1);
+      }
+    });
 
-    search(word: string) {
+  search(word: string); {
       this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {
         this.dataSearch = data;
       });
     }
-    onIdFile(id) {
+  onIdFile(id); {
       console.log(id + this.dataSearch[id].link);
       this.name = this.dataSearch[id].link;
       this.link = environment.url + '/uploads/' + this.name;
     }
-    onAskDeleteFile(index: number, i: number) {
+  onAskDeleteFile(index: number, i: number); {
       const dialogRef = this.dialog.open(UploadDeleteFileModalComponent, {
         width: '50%' });
       const instance = dialogRef.componentInstance;
