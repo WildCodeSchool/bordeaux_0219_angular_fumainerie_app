@@ -17,8 +17,8 @@ export class DrainingService {
     return this.http.get<Draining[]>(DrainingService.URL + 'draining/user/' + id);
   }
 
-  getNextDrainingByUserId(id: number): Observable<DrainingRequest> {
-    return this.http.get<DrainingRequest>(DrainingService.URL + 'drainingRequest/user/' + id + '/next');
+  getNextDrainingByUserId(id: number): Observable<Draining> {
+    return this.http.get<Draining>(DrainingService.URL + 'draining/user/' + id + '/next');
   }
 
   updateDrainingUser(id: number): Observable<Draining> {

@@ -20,17 +20,26 @@ export class ViewProducteurComponent implements OnInit {
   slotData: Slot[];
   drainingFormRequest: FormGroup;
   accepteDrainingArray: any[] = [];
-  // Producteur
+  currentDateString = new Date().toLocaleDateString().split('/').reverse().join('-');
+// Temporary array for the draining request
 arrayDrainingRequest: DrainingRequest[] = [];
 
 allDrainingRequestForCurrentUser: DrainingRequest[] = [];
+
 allDrainingForCurrentUser: Draining [] = [];
+
 emergency: DrainingRequest [] = [];
+
 allDoneDrainingForProducteur: Draining[];
-nextDrainingForProducteur: DrainingRequest;
+
+nextDraining: Draining;
+
 isEmergencyAlreadyCreate = false;
+
 isRequestAlreadyCreate = false;
+
 emergencyForCurrentUser: DrainingRequest[] = [];
+
 
   constructor(private drainingRequestService: DrainingRequestService,
               private drainingService: DrainingService,
@@ -47,13 +56,13 @@ emergencyForCurrentUser: DrainingRequest[] = [];
       });
   });
 
-  this.drainingRequestService.getAllDrainingRequestForCurrentUser(this.currentUser.id).subscribe( (data) => {
+  this.drainingRequestService.getAllDrainingRequestForProducteur(this.currentUser.id).subscribe( (data) => {
      // tslint:disable-next-line: prefer-for-of
      for (let i = 0; i < data.length; i++) {
        this.allDrainingRequestForCurrentUser = data;
 
        if ( data[i].emergency === 1) {
-         this.emergencyForCurrentUser.push(data[i]);
+        //  this.emergencyForCurrentUser.push(data[i]);
          this.allDrainingRequestForCurrentUser.splice(i, 1);
          this.isEmergencyAlreadyCreate = true;
 
@@ -68,7 +77,11 @@ emergencyForCurrentUser: DrainingRequest[] = [];
    });
 
   this.drainingService.getNextDrainingByUserId(this.currentUser.id).subscribe( data => {
-     this.nextDrainingForProducteur = data;
+    console.log(data);
+
+    this.nextDraining = data;
+    console.log(this.nextDraining);
+
     });
   }
 
@@ -78,7 +91,7 @@ emergencyForCurrentUser: DrainingRequest[] = [];
     return drainingDetail;
   }
 
-  // Creation des demandes
+  // Create draining Request limit to 3.
   addRequest(drainingRequest: any) {
     drainingRequest.session_date = drainingRequest.session_date.toLocaleDateString().split('/').reverse().join('-');
     drainingRequest.name = drainingRequest.slot_id.name;
@@ -98,21 +111,19 @@ emergencyForCurrentUser: DrainingRequest[] = [];
 
 // Envoi d'une demande urgente de vidange
 sendEmergency() {
-  // Convertissement Date.
-  const currentDateString = new Date().toLocaleDateString().split('/').reverse().join('-');
-  // // Creation d'une nouvelle demande de vidange.
+
+
+  // Creation d'une nouvelle demande de vidange.
   const drainingRequestEmergency = new DrainingRequest();
 
   drainingRequestEmergency.user_id = this.currentUser.id;
-  drainingRequestEmergency.session_date = currentDateString;
-  drainingRequestEmergency.slot_id = 1;
+  drainingRequestEmergency.session_date = this.currentDateString;
   drainingRequestEmergency.emergency = 1;
   this.slotData.forEach( element => {
     if ( drainingRequestEmergency.slot_id === element.id) {
     drainingRequestEmergency.name = element.name;
     }
   });
-  // this.allDrainingRequestForCurrentUser.push(drainingRequestEmergency);
   this.emergency.push(drainingRequestEmergency);
   return this.drainingRequestService.postDrainingRequest(this.emergency).subscribe();
   }
