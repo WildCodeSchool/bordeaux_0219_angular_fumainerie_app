@@ -37,7 +37,7 @@ import { MatAutocompleteModule,
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     MatAutocompleteModule,

@@ -9,7 +9,7 @@
             <p>{{item.description}}</p>
             <div class='moderateEvent'>
               <small>--{{item.author}}--</small>
-              <mat-icon class='admin' *ngIf="user.function==='admin'"(click)='onAskDeleteEvent(item.id, i)'>delete</mat-icon>
+              <mat-icon class='admin' *ngIf="user.function == 'admin'"(click)='onAskDeleteEvent(item.id, i)'>delete</mat-icon>
             </div>
           </div>
         </div>

@@ -62,31 +62,30 @@
       }
     }
   }
+}
+    @media only screen and (max-device-width: 480px){
+      .footer{
+        flex-direction: column;
+        height: 70%;
 
-  @media (max-width: 480px){
-    .footer{
-      flex-direction: column;
-      height: 70%;
+        .logo-footer{
+          display: none;
+        }
+        .footer-navbar{
+          margin: 0;
+          width: 40%;
+          text-align: center;
+        }
+        .partners{
+          flex-wrap: wrap;
 
-      .logo-footer{
-        display: none;
-      }
-      .footer-navbar{
-        margin: 0;
-        width: 40%;
-        text-align: center;
-      }
-      .partners{
-        flex-wrap: wrap;
-
-        img{
-          max-width: 150px;
-          max-height: 150px;
-          border-radius: 50%;
-          margin-left: 2px;
-          margin-right: 2px;
+          img{
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 50%;
+            margin-left: 2px;
+            margin-right: 2px;
+          }
         }
       }
     }
-  }
-}
