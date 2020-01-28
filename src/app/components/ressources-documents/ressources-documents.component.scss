@@ -32,7 +32,6 @@ mat-label{
 
 .list_documents{
   height: 50vh;
-  // a passer le background color en blanc sur le coté dashboard
   background-color: $primary100;
   padding: 2vh;
   overflow: scroll;
@@ -40,12 +39,15 @@ mat-label{
   border-radius: $br;
 }
 
-h2{
+.title {
+  margin-left: 0vw;
   margin-bottom: 3vh;
 }
 
-.title {
-  margin-left: 0vw;
+.result{
+  margin-top: 0vh;
+  text-align: center;
+  margin-left: 0px;
 }
 
 // parallax begin
