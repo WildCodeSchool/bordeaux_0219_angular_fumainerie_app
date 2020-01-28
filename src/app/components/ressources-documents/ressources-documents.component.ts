@@ -17,6 +17,7 @@ import { MatDialog } from '@angular/material';
 export class RessourcesDocumentsComponent implements OnInit {
   // Input de l'affichage de la parallax à true par défaut
   @Input() isParallaxEnable = true;
+  @Input() checked: boolean;
   dataSearch: Document[];
   searchWord: string;
   user?: User;
