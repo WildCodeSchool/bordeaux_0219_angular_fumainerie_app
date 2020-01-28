@@ -77,20 +77,18 @@ a{
 }
 
 @media only screen and (max-device-width: 480px) {
-
+  .navvbar{
+    height: 2vh;;
+  }
   .menu-responsive{
     display: block;
     position: relative;
-    top: -5px;
-    right: 5px;
+    top: 0;
+    right: 0;
   }
 
   img{
-    width: 150px;
-    height: 100px;
-    position: relative;
-    top: 0;
-    left: 0;
+    display: none;
   }
   .definition{
     display: none;
