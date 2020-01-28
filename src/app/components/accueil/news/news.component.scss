@@ -23,10 +23,10 @@
 }
 @media only screen and (max-device-width: 480px){
   .body-news{
-    height: 75vh;
+    height: 70vh;
     padding-top: 10px;
+    text-align: center;
     h2{
-      text-align: center;
       margin: auto;
       font-size: $font-size-responsive-title;
     }
@@ -34,7 +34,6 @@
   .news-container{
     flex-direction: column;
     h4{
-      text-align: center;
       font-size: $font-size-responsive-h4;
     }
     iframe{
@@ -45,10 +44,9 @@
     .fb-page{
      display: none;
     }
-    .fb-link{
-      display: inline;
-    }
-
   }
+      .fb-link{
 
+        margin-top: 10%;
+      }
 }

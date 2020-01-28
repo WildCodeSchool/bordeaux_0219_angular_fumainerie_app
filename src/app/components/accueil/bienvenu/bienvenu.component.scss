@@ -100,7 +100,13 @@ mat-tab-group{
     font-size: $font-size-responsive;
     width: 80vw;
   }
-  .rightSide{
+  .mat-tab-group{
+    height: 0;
+  }
+  .mat-tab-group{
     display: none;
+  }
+  .parallax{
+    height: 28vh;
   }
 }

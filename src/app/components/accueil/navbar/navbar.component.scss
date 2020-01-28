@@ -1,5 +1,8 @@
 @import './../../../../assets/css/fumainerie-theme.scss';
 
+.menu-responsive{
+  display:none;
+}
 .navvbar{
   display: flex;
   flex-direction: row;
@@ -74,6 +77,14 @@ a{
 }
 
 @media only screen and (max-device-width: 480px) {
+
+  .menu-responsive{
+    display: block;
+    position: relative;
+    top: -5px;
+    right: 5px;
+  }
+
   img{
     width: 150px;
     height: 100px;
