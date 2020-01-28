@@ -10,9 +10,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DocumentsService {
-static URL = environment.url + '/document';
 
   constructor(private http: HttpClient) { }
+static URL = environment.url + '/document';
+
+
+update;
 
 getDocumentsByWord(word: string): Observable<Document[]> {
   return this.http.get<Document[]>(DocumentsService.URL + `/recherche/${word}`);
@@ -20,10 +23,16 @@ getDocumentsByWord(word: string): Observable<Document[]> {
 getAllDocuments(): Observable<Document[]> {
   return this.http.get<Document[]>(DocumentsService.URL + '/accueil');
 }
+
+getValidedDocuments(): Observable<Document[]> {
+  return this.http.get<Document[]>(DocumentsService.URL + `/validations`);
+}
+
 public deleteFile(id: number ): Observable<any> {
   console.log('delete id: ' + id);
   return this.http.delete<Document>(DocumentsService.URL + `/${id}`);
 }
+
 public getAll(): Observable<Document[]> {
   return this.http
   .get(DocumentsService.URL)
@@ -45,10 +54,8 @@ public create(fd: FormData): Observable<any> {
   .post(DocumentsService.URL + '/file' , fd);
 }
 
-
-public update(id: number, fd: FormData): Observable<any> {
-  return this.http
-  .put(DocumentsService.URL + '/fileupload/' + id, fd);
+modifyDocument(document: Document): Observable<any> {
+  return this.http.put(DocumentsService.URL + `/${document.id}`, document);
 }
 
 public delete(id: number): Observable<any> {

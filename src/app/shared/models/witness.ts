@@ -7,8 +7,6 @@ export class Witness {
   public status?: any;
   public description?: string;
   public user_id?: number;
-  public firstname?: string;
-  public avatar?: string;
   public user?: User;
 
 
