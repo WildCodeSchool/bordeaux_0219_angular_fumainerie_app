@@ -1,7 +1,7 @@
 @import './../../../../assets/css/fumainerie-theme.scss';
 
 .body-contact {
-  height: 30vh;
+  height: 32vh;
 }
 
 span{
@@ -55,12 +55,13 @@ span{
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 480px){
   .body-contact{
     text-align: center;
     h2{
     font-size: $font-size-responsive-title;
     margin: auto;
+    margin-top: 2vh;
   }
 }
   .forms-container{

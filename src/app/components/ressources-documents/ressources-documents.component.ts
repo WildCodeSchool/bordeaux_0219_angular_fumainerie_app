@@ -57,28 +57,5 @@ onAskDeleteFile(index: number, i: number) {
         this.dataSearch.splice(i, 1);
       }
     });
-
-  search(word: string); {
-      this.serviceDocument.getDocumentsByWord(word).subscribe( (data: Document[]) => {
-        this.dataSearch = data;
-      });
-    }
-  onIdFile(id); {
-      console.log(id + this.dataSearch[id].link);
-      this.name = this.dataSearch[id].link;
-      this.link = environment.url + '/uploads/' + this.name;
-    }
-  onAskDeleteFile(index: number, i: number); {
-      const dialogRef = this.dialog.open(UploadDeleteFileModalComponent, {
-        width: '50%' });
-      const instance = dialogRef.componentInstance;
-      instance.index = index;
-
-      dialogRef.afterClosed().subscribe(isDeleted => {
-          if (isDeleted) {
-            this.dataSearch.splice(i, 1);
-          }
-        });
-
-      }
-    }
+  }
+}

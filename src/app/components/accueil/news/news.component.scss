@@ -1,8 +1,8 @@
 @import './../../../../assets/css/fumainerie-theme.scss';
 
 .body-news {
-  // height: 85vh;
-  // width: 100vw;
+  height: 85vh;
+  width: 100vw;
 
   .news-container {
     display: flex;
@@ -18,27 +18,37 @@
     .fb-link{
       display: none;
     }
+
   }
 }
 @media only screen and (max-device-width: 480px){
   .body-news{
-    height: 60vh;
+    height: 75vh;
+    padding-top: 10px;
+    h2{
+      text-align: center;
+      margin: auto;
+      font-size: $font-size-responsive-title;
+    }
   }
   .news-container{
     flex-direction: column;
-    h2{
+    h4{
       text-align: center;
+      font-size: $font-size-responsive-h4;
     }
     iframe{
       width: 90%;
       margin: auto;
+      margin-top: 10px;
     }
     .fb-page{
-      display: none;
+     display: none;
     }
     .fb-link{
-      display: initial;
+      display: inline;
     }
+
   }
 
 }

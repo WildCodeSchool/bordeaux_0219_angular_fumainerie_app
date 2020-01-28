@@ -1,7 +1,7 @@
-import { UserService } from './../../../shared/services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../shared/models/user';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/services/user.service';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-documents',

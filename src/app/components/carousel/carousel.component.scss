@@ -75,8 +75,13 @@ p {
 }
 
 /*for mobile devices*/
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 480px) {
+  .parallax{
+    height: 115vh;
+  }
   h2{
+    text-align: center;
+    margin-left: 0;
     font-size: $font-size-responsive-title;
   }
   p{

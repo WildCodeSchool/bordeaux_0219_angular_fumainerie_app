@@ -4,6 +4,7 @@
   height: 68vh;
   width: 100vw;
 
+
   .projet-container{
     display: flex;
     align-items: center;
@@ -26,6 +27,14 @@
 }
 @media only screen and (max-device-width: 480px){
   .body-projet{
+    height: 75vh;
+    padding-top: 10px;
+    h2{
+      text-align: center;
+      margin-left: 0;
+      font-size: $font-size-responsive-title;
+
+    }
     .projet-container{
       flex-direction: column;
       width: 90%;
