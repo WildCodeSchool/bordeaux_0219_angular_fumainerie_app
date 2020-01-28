@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {  Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { emailValidator } from 'src/app/shared/validators/email-validator';
-import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-in-form',
