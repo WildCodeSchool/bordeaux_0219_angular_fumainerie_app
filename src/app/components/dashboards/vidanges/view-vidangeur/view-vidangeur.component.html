@@ -1,8 +1,8 @@
-<div class="draining_non_traité">
+<div class="draining_non_traitee">
   <h2>Demande non traitées</h2>
   <p *ngIf="allDrainingRequestUnchecked.length === 0">Pas de demande pour le moment</p>
 
-  <div *ngFor="let user of allDrainingRequestUnchecked">
+  <div class="ongoing" *ngFor="let user of allDrainingRequestUnchecked">
 
     <div class="info_client">
       <h3>Client: {{user[0].firstname}} {{user[0].lastname}}</h3>
@@ -19,24 +19,25 @@
     </div>
 
     <form [formGroup]="accepteDrainingForm" (ngSubmit)="acceptRequest(accepteDrainingForm.value)">
-    <div>
+      <div>
         <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
           <mat-radio-button class="radio-button" *ngFor="let request of user" [value]="request.id">
             {{request.session_date | date: 'fullDate':'fr' }} {{request.name}}
           </mat-radio-button>
         </mat-radio-group>
-    </div>
-
+      </div>
+      <div class="valide">
       <button type="submit" [disabled]="accepteDrainingForm.pristine">Valider</button>
-
+    </div>
     </form>
   </div>
 </div>
 
 <div class="draining_accepted">
   <h2>Demande acceptées - Planning</h2>
-
-  <p *ngIf="allDrainingAccepted.length === 0">Pas demande pour le moment</p>
+  <div class="accepted" >
+    <p *ngIf="allDrainingAccepted.length === 0">Pas demande pour le moment</p>
+  </div>
 
   <div class="accepted" *ngFor="let draining of allDrainingAccepted">
     <div (click)="openDialog(draining)" class="info_client">
