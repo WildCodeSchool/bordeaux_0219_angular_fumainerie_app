@@ -21,7 +21,7 @@ export class DrainingRequestService {
   getSlot(): Observable<any> {
     return this.http.get(DrainingRequestService.URL + '/slot');
   }
-  getAllDrainingRequestForCurrentUser(id: number): Observable<DrainingRequest[]> {
+  getAllDrainingRequest(id: number): Observable<DrainingRequest[]> {
     return this.http.get<DrainingRequest[]>(DrainingRequestService.URL + `/drainingRequest/user/${id}`)
     .pipe(map((drainingRequests) => drainingRequests.map(dR => new DrainingRequest(dR))));
   }

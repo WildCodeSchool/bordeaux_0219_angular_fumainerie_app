@@ -58,6 +58,8 @@ import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
 
 import { DrainingComponent} from './components/forms/draining/draining.component';
+import { ViewVidangeurComponent } from './components/dashboards/vidanges/view-vidangeur/view-vidangeur.component';
+import { ViewProducteurComponent } from './components/dashboards/vidanges/view-producteur/view-producteur.component';
 import { GenericModalComponent } from './components/modals/generic-modal/generic-modal.component';
 import { ServerUrlPipe } from './core/server-url.pipe';
 
@@ -109,6 +111,8 @@ import { ServerUrlPipe } from './core/server-url.pipe';
     DrainingComponent,
     GenericModalComponent,
     UploadDeleteFileModalComponent,
+    ViewProducteurComponent,
+    ViewVidangeurComponent,
     ServerUrlPipe
   ],
   imports: [
