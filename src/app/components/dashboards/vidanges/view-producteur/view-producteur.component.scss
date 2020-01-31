@@ -1,20 +1,23 @@
 @import './../../../../../assets/css/fumainerie-theme.scss';
 
-.drainingRequest, .history, .draining_accepted, .accepted, .draining_non_traité{
-  box-shadow: $box-shadow;
-  background-color: white;
-  margin: 5px;
-  padding: 2vh;
-}
+// .drainingRequest, .history, .draining_accepted, .accepted, .draining_non_traité{
+//   box-shadow: $box-shadow;
+//   background-color: white;
+//   margin: 5px;
+//   padding: 2vh;
+// }
 
-.draining_non_traité {
- padding: 0vh;
-}
-
-.drainingRequestByUser, .detail{
+// .drainingRequestByUser, .detail{
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+// }
+.allDrainingRequestForCurrentUser{
+  width: 70%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 15%;
 }
 
 // .info_client, .detail_info, form{
@@ -27,10 +30,10 @@
 //   background-color: white;
 // }
 
-.allDrainingForCurrentUser{
-  width: 15vw;
-  // margin-left: 20px;
-}
+// .allDrainingForCurrentUser{
+//   width: 15vw;
+//   // margin-left: 20px;
+// }
 
 // .allDraining:hover{
 //  background-color: white;
@@ -44,6 +47,7 @@
 
 .drainingEmergency {
   color: $secondary10;
+  background-color: $secondary8;
 }
 
 // .center {
@@ -64,19 +68,44 @@ button{
 // .radio-button{
 //   margin-left: 30px;
 // }
+.miseEnForme{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  .childMiseenForme{
+    width: 50%;
+    h3{
+      padding: 3%;
+    }
+  }
+  .emergency {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: $primary100;
+    box-shadow: $box-shadow;
+    border-radius: $br;
+    margin-top: 20px;
+    width: 40%;
+    .strong{
+      font-size: 3vw;
+    }
+  }
+}
 
 .drainingRequest, .history {
-  background-color: $primary100;
+  background-color: white;
   box-shadow: $box-shadow;
   border-radius: $br;
-  // padding: 1vh;
   margin-bottom: 1vh;
   border: none;
 }
-
-h2 {
-  margin-left: 0vh;
+.nextDraining{
+  text-align: center;
 }
+
 
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
