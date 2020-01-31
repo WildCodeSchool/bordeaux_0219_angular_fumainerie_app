@@ -7,6 +7,7 @@ export class Document {
   public createAt: string;
   public link: string;
   public user?: User;
+  public status: boolean;
 
 
   constructor(input?: Document) {

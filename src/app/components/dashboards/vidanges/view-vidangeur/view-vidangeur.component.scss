@@ -1,89 +1,36 @@
 @import './../../../../../assets/css/fumainerie-theme.scss';
 
-.drainingRequest, .history, .draining_accepted, .accepted, .draining_non_traité{
-  box-shadow: $box-shadow;
-  background-color: white;
-  margin: 5px;
-  padding: 2vh;
-}
 
-.draining_non_traité {
- padding: 0vh;
-}
-
-.drainingRequestByUser, .detail{
+.draining-non-traitee {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
-
-// .info_client, .detail_info, form{
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   margin: 0px 5%;
-// }
-// .detail_info{
-//   background-color: white;
-// }
-
-.allDrainingForCurrentUser{
-  width: 15vw;
-  // margin-left: 20px;
-}
-
-// .allDraining:hover{
-//  background-color: white;
-//  border-radius: 15px;
-//  }
-
-// .allDraining:hover{
-//  background-color: white;
-//  border-radius: 15px;
-// }
-
-.drainingEmergency {
-  color: $secondary10;
-}
-
-// .center {
-//   justify-content: center;
-//   text-align: center;
-//   margin: 1vh;
-// }
-
-button{
-  background-color: $primary60;
-  font-weight: 600;
-  padding: 10px;
-  transition : 0.3s;
-  border-radius: 5px;
-  border: none;
-}
-
-// .radio-button{
-//   margin-left: 30px;
-// }
-
-.drainingRequest, .history {
-  background-color: $primary100;
+.ongoing, .accepted {
+  background-color: white;
   box-shadow: $box-shadow;
-  border-radius: $br;
-  // padding: 1vh;
-  margin-bottom: 1vh;
-  border: none;
+  width: 80%;
+  margin-left: 10%;
+  padding: 3vh;
 }
 
-h2 {
-  margin-left: 0vh;
+.info_client {
+  display: flex;
+  justify-content: space-between;
+
 }
 
-::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
-  color: $secondary2 !important;
- }
+button {
+  padding: 8px;
+  background-color: $primary100;
+  border-radius: 3px;
+  margin: 5px 0px;
+}
 
-.mat-radio-button {
-   margin-right: 1vh;
-   margin-left: 1vh;
- }
+mat-radio-group{
+ display: flex;
+ flex-direction: column;
+}
+
+.valide {
+  display: flex;
+  justify-content: center;
+}
