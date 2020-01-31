@@ -1,7 +1,19 @@
+@import './../../../../assets/css/fumainerie-theme.scss';
+
+.body {
+  display: flex;
+  justify-content: center;
+}
+
 .form-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  box-shadow: $box-shadow;
+  border-radius: $br;
+  justify-content: center;
+  width: 60vh;
   .body-form{
     display: flex;
     justify-content: space-between;
