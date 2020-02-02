@@ -26,7 +26,7 @@ export class WitnessService {
     return this.http.post(WitnessService.URL , witness);
   }
   modifyWitness(witness: Witness): Observable<any> {
-    return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
+    return this.http.put(WitnessService.URL + `/${witness.id}`, {status: witness.status});
   }
   deleteWitness(id: number ): Observable<any> {
     console.log('delete id: ' + id);
