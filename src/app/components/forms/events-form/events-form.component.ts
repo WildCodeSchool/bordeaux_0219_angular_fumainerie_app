@@ -47,7 +47,7 @@ export class EventsFormComponent implements OnInit {
 
       this.eventService.createEvents(this.eventForm.value).subscribe();
       const dialogRef = this.dialog.open(GenericModalComponent , {
-        width: '250px',
+        width: '50%',
         data: event,
       });
 
