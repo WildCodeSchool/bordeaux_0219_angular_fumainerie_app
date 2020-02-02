@@ -1,6 +1,6 @@
-import { DialogSignupComponent } from './dialog-signup/dialog-signup.component';
-import { emailValidator } from '../../../../../src/app/shared/validators/email-validator';
-import { SignupService } from './../../../shared/services/signup.service';
+import { DialogSignupComponent } from './../sign-up-form/dialog-signup/dialog-signup.component';
+import { emailValidator } from '../../../shared/validators/email-validator';
+import { SignupService } from '../../../shared/services/signup.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';

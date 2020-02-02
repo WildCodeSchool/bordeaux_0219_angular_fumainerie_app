@@ -3,7 +3,9 @@
 h2 {
   padding-top: 2vh;
 }
-
+.intro{
+  max-height: 20vh;
+  overflow: auto;}
 p {
   width: 80%;
   margin-left: 10%;
@@ -15,9 +17,11 @@ p {
 }
 
 .carousel-item{
-
   width: 100%;
   position: relative;
+}
+.carousel{
+  margin: auto;
 }
 
 .mat-parent {
@@ -25,6 +29,7 @@ p {
   width: 80%;
   margin-left: 10%;
   margin-bottom:500px;
+  height: 60vh;
 }
 
 .mat-parent-small {
@@ -58,9 +63,9 @@ p {
   .mat-parent-small{
     display: block;
   }
-
   .mat-parent{
     display: none;
+    margin: auto;
   }
 
   .mat-parent-small {
@@ -70,6 +75,13 @@ p {
     height: 660px;
     padding-bottom: 10%;
     text-align: center;
+  }
+  .mat-card{
+    margin-top:10px;
+    margin-right:auto;
+    margin-left:auto;
+    width: 100%;
+    max-height: 10px;
   }
 }
 

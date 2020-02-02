@@ -26,7 +26,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SignInFormComponent } from './components/auth/sign-in-form/sign-in-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { SignUpFormComponent } from './components/forms/sign-up-form/sign-up-form.component';
+import { SignUpFormComponent } from './components/auth/sign-up-form/sign-up-form.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/dashboards/sidebar/sidebar.component';
 import { VidangesComponent } from './components/dashboards/vidanges/vidanges.component';
@@ -44,7 +44,7 @@ import { WitnessFormComponent } from './components/forms/witness-form/witness-fo
 import { ViewComponent } from './components/dashboards/communication/view/view.component';
 import { ButtonsComponent } from './components/dashboards/communication/view/buttons/buttons.component';
 import { EventsComponent } from './pages/dashboard/events/events.component';
-import { DialogSignupComponent } from './components/forms/sign-up-form/dialog-signup/dialog-signup.component';
+import { DialogSignupComponent } from './components/auth/sign-up-form/dialog-signup/dialog-signup.component';
 import { NewComponent } from './components/dashboards/communication/view/new/new.component';
 import { EventDeleteModalComponent } from './components/modals/event-delete-modal/event-delete-modal.component';
 import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
@@ -148,8 +148,8 @@ import { ServerUrlPipe } from './core/server-url.pipe';
   bootstrap: [AppComponent],
   entryComponents: [
    GenericModalComponent,
+   DialogSignupComponent,
     QuestionDeleteModalComponent,
-    DialogSignupComponent,
     QuestionDeleteModalComponent,
     WitnessDeleteModalComponent,
     NewsDeleteModalComponent,

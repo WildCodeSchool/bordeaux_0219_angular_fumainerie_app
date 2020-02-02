@@ -1,11 +1,12 @@
+import { GenericModalComponent } from './../../modals/generic-modal/generic-modal.component';
+import { document } from './../../modals/generic-modal/modalText';
 import { MatDialog } from '@angular/material';
 import { User } from './../../../shared/models/user';
 import { DocumentsService } from './../../../shared/services/documents.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit, Input, Inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from '../../../shared/services/user.service';
-import { UploadUploadFileModalComponent } from '../../modals/upload-upload-file-modal/upload-upload-file-modal.component';
 
 @Component({
   selector: 'app-upload-form',
@@ -18,7 +19,6 @@ export class UploadFormComponent implements OnInit {
   formSubmitted = false;
   user: User;
 
-  // Création du FormGroup
   uploadForm = this.fb.group({
     title: [''],
     description: [''],
@@ -55,14 +55,14 @@ export class UploadFormComponent implements OnInit {
       let save$;
       save$ = this.documentsService.create(fd);
       save$.subscribe();
-      const dialogRef = this.dialog.open(UploadUploadFileModalComponent, {
-        width: '250px',
+      const dialogRef = this.dialog.open(GenericModalComponent, {
+        width: '50%',
+        data: document
       });
-
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
       });
-    }
+  }
     onReset() {
       this.uploadForm.markAsUntouched();
       this.uploadForm.reset();

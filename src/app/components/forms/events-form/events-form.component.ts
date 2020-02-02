@@ -45,15 +45,18 @@ export class EventsFormComponent implements OnInit {
         this.eventForm.value.author = 'La Collégiale';
       }
 
-      this.eventService.createEvents(this.eventForm.value).subscribe();
-      const dialogRef = this.dialog.open(GenericModalComponent , {
-        width: '50%',
-        data: event,
-      });
-
-      dialogRef.afterClosed().subscribe(() => {
+      this.eventService.createEvents(this.eventForm.value).subscribe(() => {
+        const dialogRef = this.dialog.open(GenericModalComponent , {
+          data: event,
+          width: '50%',
+        });
+        dialogRef.afterClosed().subscribe(() => {
           this.router.navigate(['/dashboard/evenements']);
         });
+    });
+
     }
+
+
   }
 
