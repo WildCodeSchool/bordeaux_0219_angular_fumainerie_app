@@ -12,13 +12,6 @@ export const news: ModalFormat = {
   title: 'Merci!',
   description: 'Votre actualité a bien été rajoutée.',
 };
-
-
-
-export const document: ModalFormat = {
-  title: 'Merci.',
-  description: 'Votre document est en ligne.',
-};
 export const question: ModalFormat = {
   title: 'Merci!',
   description: 'Nous vous répondrons par mail le plus rapidement possible.',
@@ -26,5 +19,8 @@ export const question: ModalFormat = {
 export const witness: ModalFormat = {
   title: 'Merci pour votre témoignage.',
   description: 'Vous pourrez le retrouver rapidement en ligne.',
-
+};
+export const document: ModalFormat = {
+  title: 'Merci.',
+  description: 'Votre document est en ligne.',
 };
