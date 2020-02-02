@@ -37,7 +37,6 @@ export class WitnessFormComponent implements OnInit {
   }
 
   onSubmitWitnessForm() {
-    console.log('modale ouverte?');
     console.log(this.witnessForm.value);
     this.witnessService.createWitness(this.witnessForm.value).subscribe();
     const dialogRef = this.dialog.open(GenericModalComponent, {
