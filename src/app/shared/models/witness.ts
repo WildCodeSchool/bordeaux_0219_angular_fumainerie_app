@@ -8,6 +8,7 @@ export class Witness {
   public description?: string;
   public user_id?: number;
   public user?: User;
+  public firstname?: string;
 
 
   constructor(input: Witness) {
