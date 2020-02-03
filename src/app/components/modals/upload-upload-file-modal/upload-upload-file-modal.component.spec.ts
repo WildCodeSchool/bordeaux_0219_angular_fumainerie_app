@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UploadUploadFileModalComponent } from './upload-upload-file-modal.component';
 
 describe('UploadUploadFileModalComponent', () => {

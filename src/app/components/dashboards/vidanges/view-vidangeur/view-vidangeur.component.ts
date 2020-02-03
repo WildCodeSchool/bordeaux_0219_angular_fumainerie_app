@@ -5,7 +5,7 @@ import { DrainingService } from '../../../../shared/services/draining.service';
 import { MatDialog } from '@angular/material';
 import { Slot } from '../../../../shared/models/slot';
 import { User } from '../../../../shared/models/user';
-import { DrainingComponent } from '../../../forms/draining/draining.component';
+import { DrainingFormComponent } from '../../../forms/draining-form/draining-form.component';
 import { Home } from '../../../../shared/models/home';
 
 @Component({
@@ -66,7 +66,7 @@ export class ViewVidangeurComponent implements OnInit {
 
   openDialog(draining: any): void {
 
-    const dialogRef = this.dialog.open(DrainingComponent, {
+    const dialogRef = this.dialog.open(DrainingFormComponent, {
       width: '50%',
       height: '70%',
       disableClose: true,

@@ -17,15 +17,16 @@ export class WitnessService {
     return this.http.get<Witness[]>(WitnessService.URL);
   }
   getValidedWitness(): Observable<Witness[]> {
-    return this.http.get<Witness[]>(WitnessService.URL + `/validations`);
+    return this.http.get<Witness[]>(WitnessService.URL + `/validated`);
   }
   createWitness(witness: Witness): Observable<any> {
     witness.status = false;
     witness.user_id = this.userService.user.id;
-    return this.http.post(WitnessService.URL, witness);
+    console.log(witness);
+    return this.http.post(WitnessService.URL , witness);
   }
   modifyWitness(witness: Witness): Observable<any> {
-    return this.http.put(WitnessService.URL + `/${witness.id}`, witness);
+    return this.http.put(WitnessService.URL + `/${witness.id}`, {status: witness.status});
   }
   deleteWitness(id: number ): Observable<any> {
     console.log('delete id: ' + id);
