@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WitnessFormComponent } from './witness-form.component';
 
 describe('WitnessFormComponent', () => {

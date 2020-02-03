@@ -16,7 +16,6 @@ export class AuthGuard implements CanActivate {
     canActivate(
       next: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-        // check si user déja récupéré, sinon > connecter
         if (this.service.user) {
           return true;
         }

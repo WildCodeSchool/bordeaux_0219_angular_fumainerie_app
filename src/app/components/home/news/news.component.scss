@@ -1,0 +1,22 @@
+@import './../../../../assets/css/fumainerie-theme.scss';
+
+.body-news {
+  height: 80vh;
+
+  .news-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
+    iframe, .fb-page {
+      box-shadow: $box-shadow;
+      border-radius: $br;
+      margin: 0px 10px;
+    }
+    .fb-page {
+      max-height: 70vh;
+      overflow: auto;
+    }
+  }
+}

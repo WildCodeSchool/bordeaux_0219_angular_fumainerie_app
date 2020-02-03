@@ -1,6 +1,6 @@
 import { DocumentsComponent } from './pages/dashboard/documents/documents.component';
 import { WitnessComponent } from './components/dashboards/communication/view/witness/witness.component';
-import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
+import { DocumentsSearchComponent } from './components/home/documents-search/documents-search.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
 import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
