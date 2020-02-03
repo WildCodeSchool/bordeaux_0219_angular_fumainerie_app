@@ -14,7 +14,7 @@ p {
 
 .fauxCaroussel{
   width: 45vw;
-  height: 52vh;
+  max-height: 45vh;
   background-color: white;
   padding: 1vh;
 }
@@ -32,7 +32,7 @@ p {
 
 h1{
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .leftSide{
@@ -49,7 +49,7 @@ h1{
 
 .intro{
   width: 40vw;
-  max-height: 20vh;
+  max-height: 35vh;
   overflow: auto;
 }
 
