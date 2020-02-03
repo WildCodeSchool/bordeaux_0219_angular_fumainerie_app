@@ -75,5 +75,9 @@ mat-label{
   .parallax {
     background-attachment: scroll;
   }
+  h2{
+    font-size: $font-size-responsive-title;
+    text-align: center;
+  }
 }
 // parallax end

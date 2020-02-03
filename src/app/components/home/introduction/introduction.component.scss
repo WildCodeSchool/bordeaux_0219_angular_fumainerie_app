@@ -78,3 +78,28 @@ mat-tab-group{
   }
 }
 // parallax end
+@media only screen and (max-device-width: 480px) {
+  .container{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  h1{
+    font-size: $font-size-responsive-title;
+  }
+  .mat-card{
+    width: 90vw;
+  }
+  p{
+    font-size: $font-size-responsive;
+    width: 80vw;
+  }
+  .mat-tab-group{
+    height: 0;
+  }
+  .mat-tab-group{
+    display: none;
+  }
+  .parallax{
+    height: 28vh;
+  }
+}
