@@ -35,17 +35,16 @@ export class UploadFormComponent implements OnInit {
   ngOnInit() {
     this.user = this.userService.user;
   }
-// Getter
+
   get f() {
     return this.uploadForm.controls;
   }
-// Selection des fichiers à uploaddata
+
     onFileSelect(event) {
     this.selectedFile = event.target.files as File;
     this.fileName = event.target.files[0].name;
   }
 
-  // Soumission et Modification du Formulaire
     onFormSubmit() {
       const fd = new FormData();
       fd.append('title', this.uploadForm.get('title').value);
@@ -60,15 +59,15 @@ export class UploadFormComponent implements OnInit {
             this.router.navigate(['/dashboard/documents']);
         });
       });
+    }
 
+  onReset() {
+        this.uploadForm.markAsUntouched();
+        this.uploadForm.reset();
       }
 
-onReset() {
-      this.uploadForm.markAsUntouched();
-      this.uploadForm.reset();
-    }
-onClose() {
-      this.router.navigate(['dashboard/documents']);
-    }
+  onClose() {
+        this.router.navigate(['dashboard/documents']);
+      }
 }
 

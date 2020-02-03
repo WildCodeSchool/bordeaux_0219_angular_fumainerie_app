@@ -1,19 +1,21 @@
-import { DrainingService } from './../../../shared/services/draining.service';
+import { DrainingService } from '../../../shared/services/draining.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { Draining } from '../../../shared/models/draining';
 
 @Component({
   selector: 'app-draining',
-  templateUrl: './draining.component.html',
-  styleUrls: ['./draining.component.scss']
+  templateUrl: './draining-form.component.html',
+  styleUrls: ['./draining-form.component.scss']
 })
-export class DrainingComponent implements OnInit {
+export class DrainingFormComponent implements OnInit {
   drainingForm: FormGroup;
 
   // tslint:disable-next-line: max-line-length
-  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<DrainingComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private drainingService: DrainingService) { }
+  constructor(private fb: FormBuilder,
+              public dialogRef: MatDialogRef<DrainingFormComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any,
+              private drainingService: DrainingService) { }
 
   ngOnInit() {
     console.log(this.data);

@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { DrainingComponent } from './draining.component';
+import { DrainingFormComponent } from './draining-form.component';
 
 describe('DrainingComponent', () => {
-  let component: DrainingComponent;
-  let fixture: ComponentFixture<DrainingComponent>;
+  let component: DrainingFormComponent;
+  let fixture: ComponentFixture<DrainingFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DrainingComponent ]
+      declarations: [ DrainingFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DrainingComponent);
+    fixture = TestBed.createComponent(DrainingFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

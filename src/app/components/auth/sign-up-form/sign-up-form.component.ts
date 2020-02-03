@@ -30,7 +30,7 @@ export class SignUpFormComponent implements OnInit {
       });
     }
 
-    onSignUp() {  // Pas encore de gestion d'erreur en cas d'email déjà existant (dialog s'ouvre dans tous les cas)
+    onSignUp() {
     this.signupService.postNewUser(this.signUpForm.value).subscribe();
     this.dialog.open(DialogSignupComponent, {width: '250px'});
   }

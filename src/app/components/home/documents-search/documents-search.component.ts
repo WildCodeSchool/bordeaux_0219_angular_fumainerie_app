@@ -16,7 +16,7 @@ import { FormControl } from '@angular/forms';
 })
 
 export class DocumentsSearchComponent implements OnInit {
-  // Input de l'affichage de la parallax à true par défaut
+  // Input paralax view: true by default
   @Input() isParallaxEnable = true;
   @Input() checked: boolean;
   dataSearch: Document[];
@@ -72,6 +72,4 @@ onAskDeleteFile(index: number, i: number) {
     this.dataSearch[index].status = toggle.checked;
     this.serviceDocument.modifyDocument(this.dataSearch[index]).subscribe();
   }
-
-
 }

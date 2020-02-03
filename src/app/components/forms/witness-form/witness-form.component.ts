@@ -6,7 +6,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog} from '@angular/material';
 
-
 @Component({
   selector: 'app-witness-form',
   templateUrl: './witness-form.component.html',
