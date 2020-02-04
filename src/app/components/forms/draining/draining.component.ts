@@ -37,8 +37,8 @@ export class DrainingComponent implements OnInit {
   async onFormSubmit() {
     delete this.drainingForm.value.name;
 
-    return this.drainingService.saveDrainingDone(this.drainingForm.value).subscribe(() => {
-    this.dialogRef.close();
+    return this.drainingService.saveDrainingDone(this.drainingForm.value).subscribe((element) => {
+      this.dialogRef.close();
     });
 
   }

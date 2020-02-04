@@ -1,9 +1,10 @@
-<div *ngIf="drainingFormRequest "  class="formulaire">
+<button *ngIf="(currentDateString.localeCompare(nextDraining?.session_date)===1 ? false : true)  && emergency.length&lt;1" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
+<div *ngIf="drainingFormRequest && emergency.length&lt;1 && !isRequestAlreadyCreate "  class="formulaire">
   <h3 *ngIf="nextDraining?.session_date"> Vous pouvez programmer une vidange en avance.</h3>
 
   <div class="request">
 
-    <form [formGroup]="drainingFormRequest" *ngIf="emergency.length&lt;1 && !isRequestAlreadyCreate">
+    <form [formGroup]="drainingFormRequest">
       <mat-form-field class="example-full-width">
         <input matInput formControlName="session_date" [matDatepicker]="picker" placeholder="Choisissez une date">
         <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -28,10 +29,8 @@
 
         <button *ngIf="arrayDrainingRequest.length &gt;0" (click)="submit()">Valider</button>
       </div>
-
     </form>
 
-   <button *ngIf="(nextDraining?.session_date?.localeCompare(currentDateString)===1 ? false : true)  && emergency.length&lt;1" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
 
   </div>
 </div>
