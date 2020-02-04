@@ -16,7 +16,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 4 Run `ng build --prod` and commit the changes with the default value.
 
-5 Run `git reset --hard` before push your local master branch.
+5 Run `git reset --hard HEAD` before push your local master branch.
 
 6 Run `caprover deploy --default` and input your caprover password when your IDE ask it.
 
