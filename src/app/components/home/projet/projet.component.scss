@@ -15,7 +15,6 @@
 
     p{
       background-color: $primary100;
-      width: 45vw;
       padding: 2vh;
       text-align: justify;
       max-height: 60vh;
@@ -27,7 +26,7 @@
     }
   }
 }
-@media only screen and (max-device-width: 480px){
+@media (max-device-width: 480px){
   .body-projet{
     height: 75vh;
     padding-top: 10px;
@@ -51,3 +50,15 @@
     }
   }
 }
+@media (max-device-width: 1200px){
+  .projet-container{
+    width: 100%;
+  img{
+    display: none;
+  }
+  p{
+    width: 90%;
+  }
+}
+}
+

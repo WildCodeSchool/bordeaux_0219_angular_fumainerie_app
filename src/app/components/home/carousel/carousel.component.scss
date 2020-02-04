@@ -4,8 +4,8 @@ h2 {
   padding-top: 2vh;
 }
 .intro{
-  max-height: 20vh;
-  overflow: auto;}
+  height: auto;
+}
 p {
   width: 80%;
   margin-left: 10%;
@@ -41,7 +41,8 @@ p {
   background-image: url("../../../../assets/images/parallax-6.jpg");
 
   /* Full height */
-  height: 99vh;
+  height: auto;
+  padding-bottom: 20px ;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -51,7 +52,7 @@ p {
 }
 
 /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
-@media only screen and (max-device-width: 1366px) {
+@media  (max-device-width: 1366px) {
   .parallax {
     background-attachment: scroll;
 
@@ -60,7 +61,7 @@ p {
 // parallax end
 
 /* for ipad and other lage tabs */
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .mat-parent-small{
     display: block;
   }
@@ -87,26 +88,9 @@ p {
 }
 
 /*for mobile devices*/
-@media only screen and (max-width: 480px) {
-  .parallax{
-    height: 115vh;
-  }
-  h2{
-    text-align: center;
-    margin-left: 0;
-    font-size: $font-size-responsive-title;
-  }
-  p{
-    font-size: $font-size-responsive;
-  }
-  .mat-parent-small {
-    width: 80%;
-    height: 440px;
-    margin: auto;
-  }
-
-  .carousel-item{
-    height: 385px;
-    width: 100%;
-  }
+@media (max-width:991px) {
+ .carousel-container{
+   display: none;
+ }
 }
+

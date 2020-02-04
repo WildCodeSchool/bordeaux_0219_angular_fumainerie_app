@@ -21,7 +21,7 @@
 
   }
 }
-@media only screen and (max-device-width: 480px){
+@media  (max-device-width: 768px){
   .body-news{
     height: 70vh;
     padding-top: 10px;
@@ -49,4 +49,18 @@
 
         margin-top: 10%;
       }
+}
+@media  (min-device-width: 769px) and (max-device-width: 1200px){
+  .news-container{
+
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.body-news{
+  height: auto;
+  .fb-page{
+    margin: auto;
+  }
+}
+
 }

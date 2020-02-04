@@ -80,7 +80,7 @@ a{
   margin-left: 2vw;
 }
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 800px) {
   .navvbar{
     height: 2vh;
   }
@@ -99,8 +99,26 @@ a{
   }
   .rightSide{
     display: none;
+    blockquote{
+      display: none;
+    }
     ul{
       display: none;
     }
+  }
+}
+@media only screen and (min-device-width: 800px) and (max-device-width: 1024px) {
+
+  .navvbar{
+  height: 6vh;
+  font-size: 15px;
+  align-items: center;
+}
+  img{
+   display: none;
+
+  }
+  blockquote{
+    display: none;
   }
 }
