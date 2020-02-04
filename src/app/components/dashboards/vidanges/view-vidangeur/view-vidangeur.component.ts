@@ -21,6 +21,7 @@ export class ViewVidangeurComponent implements OnInit {
   accepteDrainingArray: any[] = [];
   allDrainingRequestUnchecked: any[] = [];
   allDrainingAccepted: any[] = [];
+  allDrainingDone: any[] = [];
 
 
   constructor(private drainingRequestService: DrainingRequestService, private drainingService: DrainingService,
@@ -37,6 +38,11 @@ export class ViewVidangeurComponent implements OnInit {
    });
 
    this.drainingService.getDrainingAccepted(this.currentUser.id).subscribe( data => {this.allDrainingAccepted = data; });
+
+   this.drainingService.getAllDraining(this.currentUser.id).subscribe( data => {
+     console.log(data);
+
+     this.allDrainingDone = data; });
   }
 
   openDetailsCustomer(home: Home) {
