@@ -25,7 +25,7 @@ export class QuestionService {
     return this.http.post(QuestionService.URL, question);
   }
   public modifyQuestion(question: Question): Observable<any> {
-    return this.http.put(QuestionService.URL + `/${question.id}`, {traited: question.traited});
+    return this.http.put(QuestionService.URL + `/${question.id}`, question);
   }
 
   public deleteQuestion(id: number ): Observable<any> {

@@ -4,12 +4,11 @@
       <div class='allUsers'>
         <div class="texte" >
           <h3> {{item.title}}</h3>
-          <h4 *ngIf="user.function ==='admin'">{{item.user.firstname}} --- {{item.note}}/10 </h4>
-          <h4 *ngIf="user.function !=='admin'">{{item.firstname}} --- {{item.note}}/10 </h4>
+          <h4>{{item.user.firstname}} --- {{item.note}}/10 </h4>
           <p>{{(item.description)}}</p>
         </div>
       </div>
-      <div class='admin' *ngIf="user.function ==='admin'" >
+      <div class='admin' *ngIf="user.function==='admin'" >
         <div class="mat-app-background basic-container">
           <mat-slide-toggle [checked]="(item.status)?true:false" (change)="onChange($event, i)">Valider</mat-slide-toggle>
         </div>

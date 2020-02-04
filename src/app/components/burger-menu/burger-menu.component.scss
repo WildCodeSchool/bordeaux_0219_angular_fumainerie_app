@@ -1,163 +1,57 @@
-/*
- * Made by Erik Terwan
- * 24th of November 2015
- * MIT License
- *
- *
- * If you are thinking of using this in
- * production code, beware of the browser
- * prefixes.
- */
+@import './../../../assets/css/fumainerie-theme.scss';
 
- body
- {
-   margin: 0;
-   padding: 0;
+.burger-menu {
+  width: $burgerWidth;
+  height: $burgerWidth;
+  cursor: pointer;
 
-   /* make it look decent enough */
-   background: #232323;
-   color: #cdcdcd;
-   font-family: "Avenir Next", "Avenir", sans-serif;
- }
+  .burger-container {
+    position: relative;
 
- #menuToggle
- {
-   display: block;
-   position: relative;
-   top: 10px;
-   left: 10px;
+    .burger-inner {
+      position: absolute;
+      width: $burgerWidth - 2 * $burgerBarHeight;
+      left: 0px;
+      top: 11px;
+      border: $burgerBarHeight solid $secondary6;
+      transition: border-color .2s ease-in .2s;
 
-   z-index: 1;
+      &::before {
+        position: absolute;
+        content: '';
+        top: -6px;
+        left: -$burgerBarHeight;
+        width: $burgerWidth - 2 * $burgerBarHeight;
+        border: $burgerBarHeight solid $secondary6;
+        transition: top .2s ease-in .3s, transform ease-in .2s;
+      }
 
-   -webkit-user-select: none;
-   user-select: none;
- }
+      &::after {
+        position: absolute;
+        content: '';
+        top: 4px;
+        left: -$burgerBarHeight;
+        width: $burgerWidth - 2 * $burgerBarHeight;
+        border: $burgerBarHeight solid $secondary6;
+        transition: top .2s ease-in .3s, transform ease-in .2s;
+      }
+    }
+  }
 
- #menuToggle a
- {
-   text-decoration: none;
-   color: #232323;
+  &.active .burger-container .burger-inner {
+    border-color: transparent;
+    transition: border-color ease-in .1s;
+  }
 
-   transition: color 0.3s ease;
- }
+  &.active .burger-container .burger-inner::before {
+    top: -$burgerBarHeight;
+    transform: rotate(-45deg);
+    transition: top ease-out .2s, transform .2s ease-out .3s;
+  }
 
- #menuToggle a:hover
- {
-   color: tomato;
- }
-
-
- #menuToggle input
- {
-   display: block;
-   width: 40px;
-   height: 32px;
-   position: absolute;
-   top: -7px;
-   left: -5px;
-
-   cursor: pointer;
-
-   opacity: 0; /* hide this */
-   z-index: 2; /* and place it over the hamburger */
-
-   -webkit-touch-callout: none;
- }
-
- /*
-  * Just a quick hamburger
-  */
- #menuToggle span
- {
-   display: block;
-   width: 33px;
-   height: 4px;
-   margin-bottom: 5px;
-   position: relative;
-
-   background: #cdcdcd;
-   border-radius: 3px;
-
-   z-index: 1;
-
-   transform-origin: 4px 0px;
-
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               opacity 0.55s ease;
- }
-
- #menuToggle span:first-child
- {
-   transform-origin: 0% 0%;
- }
-
- #menuToggle span:nth-last-child(2)
- {
-   transform-origin: 0% 100%;
- }
-
- /*
-  * Transform all the slices of hamburger
-  * into a crossmark.
-  */
- #menuToggle input:checked ~ span
- {
-   opacity: 1;
-   transform: rotate(45deg) translate(-2px, -1px);
-   background: #232323;
- }
-
- /*
-  * But let's hide the middle one.
-  */
- #menuToggle input:checked ~ span:nth-last-child(3)
- {
-   opacity: 0;
-   transform: rotate(0deg) scale(0.2, 0.2);
- }
-
- /*
-  * Ohyeah and the last one should go the other direction
-  */
- #menuToggle input:checked ~ span:nth-last-child(2)
- {
-   transform: rotate(-45deg) translate(0, -1px);
- }
-
- /*
-  * Make this absolute positioned
-  * at the top left of the screen
-  */
- #menu
- {
-   position: absolute;
-   width: 110vw;
-   margin: -100px 0 0 -50px;
-   padding: 50px;
-   padding-top: 125px;
-
-   background: #ffd745;
-   list-style-type: none;
-   -webkit-font-smoothing: antialiased;
-   /* to stop flickering of text in safari */
-
-   transform-origin: 0% 0%;
-   transform: translate(-100%, 0);
-
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
- }
-
- #menu li
- {
-   padding: 10px 0;
-   font-size: 22px;
- }
-
- /*
-  * And let's slide it in from the left
-  */
- #menuToggle input:checked ~ ul
- {
-   transform: none;
- }
+  &.active .burger-container .burger-inner::after {
+    top: -$burgerBarHeight;
+    transform: rotate(45deg);
+    transition: top ease-out .2s, transform .2s ease-out .3s;
+  }
+}

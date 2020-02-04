@@ -76,6 +76,7 @@ ul{
     list-style-type: none;
     margin-left: 2vw;
   }
+
 }
 
 .parallax {
@@ -84,7 +85,9 @@ ul{
 }
 
 @media (max-width: 600px){
-
+  .menu-responsiv{
+    display: block;
+  }
 
   .navbar{
     display: none;

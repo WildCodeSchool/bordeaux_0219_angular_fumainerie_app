@@ -31,6 +31,7 @@ $fumainerie-angular-theme: mat-light-theme($fumainerie-angular-primary, $fumaine
 
 html, body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {

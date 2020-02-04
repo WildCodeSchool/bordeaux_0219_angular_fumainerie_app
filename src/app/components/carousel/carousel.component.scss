@@ -1,0 +1,87 @@
+@import './../../../assets/css/fumainerie-theme.scss';
+
+h2 {
+  padding-top: 2vh;
+}
+
+p {
+  width: 80%;
+  margin-left: 10%;
+  background-color: white;
+  padding: 2vh;
+  box-shadow: $box-shadow;
+  border-radius: $br;
+  text-align: justify;
+}
+
+.carousel-item{
+  max-height: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.mat-parent {
+  margin-top: 3%;
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom:500px;
+}
+
+.mat-parent-small {
+  display: none;
+}
+
+// parallax begin
+.parallax {
+  background-image: url("../../../assets/images/parallax-6.jpg");
+
+  /* Full height */
+  height: 99vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+// parallax end
+
+/* for ipad and other lage tabs */
+@media only screen and (max-width: 768px) {
+  .mat-parent-small{
+    display: block;
+  }
+
+  .mat-parent{
+    display: none;
+  }
+
+  .mat-parent-small {
+    margin-top: 19%;
+    width: 96%;
+    position: relative;
+    height: 660px;
+    padding-bottom: 10%;
+    text-align: center;
+  }
+}
+
+/*for mobile devices*/
+@media only screen and (max-width: 500px) {
+  .mat-parent-small {
+    width: 80%;
+    height: 440px;
+  }
+
+  .carousel-item{
+    height: 385px;
+    width: 100%;
+  }
+}

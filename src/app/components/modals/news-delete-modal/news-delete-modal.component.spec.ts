@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { NewsDeleteModalComponent } from './news-delete-modal.component';
 
 describe('NewsDeleteModalComponent', () => {

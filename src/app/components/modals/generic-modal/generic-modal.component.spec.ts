@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { GenericModalComponent } from './generic-modal.component';
 
 describe('GenericModalComponent', () => {

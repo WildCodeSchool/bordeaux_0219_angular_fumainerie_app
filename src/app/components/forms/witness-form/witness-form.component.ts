@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog} from '@angular/material';
 
+
 @Component({
   selector: 'app-witness-form',
   templateUrl: './witness-form.component.html',
@@ -36,10 +37,11 @@ export class WitnessFormComponent implements OnInit {
   }
 
   onSubmitWitnessForm() {
+    console.log('modale ouverte?');
     console.log(this.witnessForm.value);
     this.witnessService.createWitness(this.witnessForm.value).subscribe();
     const dialogRef = this.dialog.open(GenericModalComponent, {
-      width: '50%',
+      width: '250px',
       data: witness,
     });
     dialogRef.afterClosed().subscribe(() => {

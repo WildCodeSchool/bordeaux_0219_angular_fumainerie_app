@@ -1,0 +1,80 @@
+@import './../../../assets/css/fumainerie-theme.scss';
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  mat-form-field{
+    width: 100%;
+  }
+}
+
+.document{
+  border-bottom: 1px solid black;
+  width: 90%;
+  margin: auto
+}
+
+ul{
+  padding-inline-start: 0px;
+  margin: 0px;
+}
+
+mat-label{
+  font-size: 1.5em;
+}
+
+.contentDocument{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list_documents{
+  height: 40vh;
+  // a passer le background color en blanc sur le coté dashboard
+  background-color: $primary100;
+  padding: 2vh;
+  overflow: scroll;
+  box-shadow: $box-shadow;
+  border-radius: $br;
+}
+.connected{
+  background-color: white;
+}
+
+.title {
+  margin-left: 0vw;
+  margin-bottom: 3vh;
+}
+
+.result{
+  margin-top: 0vh;
+  text-align: center;
+  margin-left: 0px;
+}
+
+// parallax begin
+
+.parallax {
+  /* The image used */
+  background-image: url("../../../assets/images/parallax-5.jpg");
+
+  /* Full height */
+  height: 77vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+// parallax end

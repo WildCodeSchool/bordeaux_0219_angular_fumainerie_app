@@ -63,12 +63,12 @@ export class ViewProducteurComponent implements OnInit {
   });
   }
 
-  // Show draining's details
+  // Montre les détails de la vidange en clickant sur details
   openDetailsDraining(drainingDetail: Draining) {
     return drainingDetail.show = !drainingDetail.show;
   }
 
-  // Create draining request limit to 3.
+// Create draining Request limit to 3.
   addRequest(drainingRequest: any) {
     drainingRequest.session_date = drainingRequest.session_date.toLocaleDateString().split('/').reverse().join('-');
     drainingRequest.name = drainingRequest.slot_id.name;
@@ -77,7 +77,7 @@ export class ViewProducteurComponent implements OnInit {
     return this.arrayDrainingRequest.push(drainingRequest);
   }
 
-  // Push draining's array
+// Envoi un tableau de demande de vidange
   submit() {
     for (const drainingRequest of this.arrayDrainingRequest) {
      this.allDrainingRequest.push(drainingRequest);
@@ -86,9 +86,9 @@ export class ViewProducteurComponent implements OnInit {
     return this.drainingRequestService.postDrainingRequest(this.arrayDrainingRequest).subscribe();
   }
 
-  // push emergency draining's request
+// Envoi d'une demande urgente de vidange
   sendEmergency() {
-  // create new draining request
+// Creation d'une nouvelle demande de vidange.
     const drainingRequestEmergency = new DrainingRequest();
 
     drainingRequestEmergency.user_id = this.currentUser.id;
