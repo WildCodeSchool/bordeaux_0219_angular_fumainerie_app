@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { CommunicationComponent } from './communication.component';
 
 describe('CommuniactionComponent', () => {

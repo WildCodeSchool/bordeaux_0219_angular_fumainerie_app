@@ -37,7 +37,7 @@ export class QuestionFormComponent implements OnInit {
         console.log(this.questionForm.value);
         this.questionService.createQuestion(this.questionForm.value).subscribe();
         const dialogRef = this.dialog.open(GenericModalComponent, {
-          width: '50%',
+          width: '250px',
           data: question,
         });
 

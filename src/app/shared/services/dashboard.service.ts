@@ -6,7 +6,7 @@ import { Injectable, OnInit } from '@angular/core';
 })
 export class DashboardService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }  // insérer service HTTP
 
 
 
