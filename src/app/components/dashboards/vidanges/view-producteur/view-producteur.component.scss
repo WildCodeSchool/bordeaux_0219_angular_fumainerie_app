@@ -40,7 +40,8 @@
 .detail{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 15%;
 }
 .allDrainingForCurrentUser{
   width: 15vw;
@@ -73,6 +74,7 @@ button{
   background-color: $primary60;
   margin-top: 1vh;
 }
+
 
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/

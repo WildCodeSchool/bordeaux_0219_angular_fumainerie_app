@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { UserService } from '../../../shared/services/user.service';
-import { Home } from 'src/app/shared/models/home';
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,8 +1,5 @@
 <div class="container">
-  <!-- <div [ngStyle]="{'background-color': connected?'white':'$primary100'}"></div> -->
-  <!-- a la plce de connected mettre le status == admin pour box-shadow left side activé et désactivé par défaut pour les prod et vidange -->
-  <!-- <div class="leftSide" [ngStyle]="{'box-shadow': !== admin ? '':'box-shadow'}"> -->
-  <div class="leftSide" [ngStyle]="{'box-shadow': connected?'white':'$primary100'}">
+  <div class="leftSide">
     <app-view *ngIf="user.function !== 'admin'"></app-view>
     <app-question *ngIf="user.function == 'admin'"></app-question>
   </div>

@@ -26,7 +26,7 @@ export class DrainingRequestService {
     .pipe(map((drainingRequests) => drainingRequests.map(dR => new DrainingRequest(dR))));
   }
 
-  // Vidangeur
+  // Emptier
 
   getAllDrainingRequestUnchecked(): Observable<DrainingRequest[]> {
     return this.http.get<DrainingRequest[]>(DrainingRequestService.URL + '/drainingRequest/unchecked');
