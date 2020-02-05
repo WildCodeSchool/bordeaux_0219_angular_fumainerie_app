@@ -24,7 +24,7 @@
 .draining-non-traitee {
   display: flex;
 }
-.ongoing, .accepted {
+.ongoing, .accepted, .vidangeurDone{
   background-color: white;
   box-shadow: $box-shadow;
   width: 80%;
@@ -50,7 +50,6 @@
 .info_client {
   display: flex;
   justify-content: space-between;
-
 }
 
 button {
@@ -68,4 +67,18 @@ mat-radio-group{
 .valide {
   display: flex;
   justify-content: center;
+}
+.vidangeurDone{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  span{
+    text-decoration: underline;
+  }
+  .details_info{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 0 1vw 0 1vw;
+  }
 }

@@ -18,6 +18,10 @@ export class DrainingService {
     return this.http.get<Draining[]>(DrainingService.URL + 'draining/user/' + id);
   }
 
+  getDrainingsForAdmin(): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining');
+  }
+
   getNextDrainingByUserId(id: number): Observable<Draining> {
     return this.http.get<Draining>(DrainingService.URL + 'draining/user/' + id + '/next')
     .pipe(map((request) => new Draining(request[0])));

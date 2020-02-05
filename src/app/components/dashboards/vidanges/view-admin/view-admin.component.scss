@@ -1,0 +1,28 @@
+@import './../../../../../assets/css/fumainerie-theme.scss';
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  .drainingsUndone, .drainingsDone{
+    background-color: white;
+    box-shadow: $box-shadow;
+    width: 80%;
+    margin-left: 10%;
+    padding: 3vh;
+    .client{
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  .One{
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-around;
+    .detail_vidange{
+      span{
+        text-decoration: underline;
+      }
+    }
+  }
+}
