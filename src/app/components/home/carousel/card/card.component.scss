@@ -11,6 +11,8 @@ img #imgCard{
   box-shadow: $box-shadow;
   border-radius: $br;
   min-width: 226px;
+  max-width: 300px;
+  min-height: 500px;
   p {
     opacity: 0%;
     padding-bottom: 0px;
