@@ -1,3 +1,8 @@
+<div class="lexique">
+  <p>Demande non traitées:</p>
+  <div class="couleur"></div>
+</div>
+
 <div class="container">
 
   <div class="draining">
@@ -5,9 +10,9 @@
 
     <div class="drainingsUndone" *ngFor="let draining of drainingsUndone">
 
-      <div class="client">
+      <div class="client" [ngStyle]="{'background-color':draining.status === 0 ? 'rebeccapurple' : 'white', 'color':draining.status === 0 ? 'white' : 'black' }">
         <p>{{draining?.user.firstname}} {{draining?.user.lastname}}</p>
-        <p>Le {{draining.session_date | date:'shortDate'}}</p>
+        <p *ngIf="draining.status === 1">Le {{draining?.session_date | date:'shortDate'}}</p>
       </div>
 
     </div>
@@ -37,7 +42,7 @@
         </div>
 
       </div>
-      
+
     </div>
   </div>
 

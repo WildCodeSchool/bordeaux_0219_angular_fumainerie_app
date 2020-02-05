@@ -30,6 +30,10 @@
   width: 80%;
   margin-left: 10%;
   padding: 3vh;
+  overflow: scroll;
+}
+.accepted{
+  border-bottom: 1px solid black;
 }
 .accepted:hover{
   background-color: $primary100;
@@ -50,6 +54,7 @@
 .info_client {
   display: flex;
   justify-content: space-between;
+
 }
 
 button {
@@ -72,7 +77,6 @@ mat-radio-group{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid black;
   span{
     text-decoration: underline;
   }
@@ -81,4 +85,7 @@ mat-radio-group{
     border-left: 1px solid black;
     padding: 0 1vw 0 1vw;
   }
+}
+.history{
+  margin-bottom: 2vh;
 }

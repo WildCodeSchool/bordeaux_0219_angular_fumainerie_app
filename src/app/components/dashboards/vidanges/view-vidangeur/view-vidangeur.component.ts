@@ -68,6 +68,7 @@ export class ViewVidangeurComponent implements OnInit {
       this.allDrainingAccepted.push(accepted);
     });
     this.allDrainingRequestUnchecked.filter( userDraining => {userDraining.filter((draining) => draining.status === 0); });
+    window.location.reload();
   }
 
   openDialog(draining: any): void {
@@ -79,7 +80,9 @@ export class ViewVidangeurComponent implements OnInit {
       data: draining
     });
 
-    dialogRef.afterClosed();
+    dialogRef.afterClosed().subscribe( () => {
+      window.location.reload();
+    });
   }
 
 }

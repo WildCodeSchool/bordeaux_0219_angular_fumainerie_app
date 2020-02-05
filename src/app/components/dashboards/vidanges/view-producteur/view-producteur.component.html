@@ -55,20 +55,20 @@
   <p *ngIf="allDraining.length===0">Pas d'historique.</p>
 
   <div *ngIf="allDraining.length&gt;0 " >
-    <div *ngFor="let draining of allDraining">
+    <div *ngFor="let draining of allDraining" class="clickDetail">
       <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.session_date | date: 'fullDate':'fr'}}</p>
 
       <div class="detail" *ngIf="draining.show" (click)="!draining.show">
         <div class="table">
-          <p>Commentaire</p>
+          <p><span>Commentaire</span></p>
           <p>{{draining.comments}}</p>
         </div>
         <div class="table">
-          <p>Quantité sciure livrée</p>
-          <p>{{draining.sawdust_delivery}} kg</p>
+          <p><span>Poids vidange</span></p>
+          <p>{{draining.weight}} kg</p>
         </div>
         <div class="table">
-          <p>Quantité sciure récupérée</p>
+          <p><span>Quantité sciure récupérée</span></p>
           <p>{{draining.sawdust_weight}} kg</p>
         </div>
       </div>

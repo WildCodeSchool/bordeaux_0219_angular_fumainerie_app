@@ -30,6 +30,16 @@
     }
   }
 }
+.clickDetail{
+  width: 80vw;
+  span{
+    text-decoration: underline;
+  }
+}
+.clickDetail :hover{
+  background-color: $primary100;
+}
+
 
 .drainingRequest, .history, .formulaire{
   box-shadow: $box-shadow;

@@ -1,7 +1,6 @@
 // import scss variable
 @import './../../../assets/css/fumainerie-theme.scss';
 
-
 .menu-responsiv{
   display: none;
 }
@@ -25,7 +24,6 @@ h2 {
   flex-direction: column;
   height: auto;
   width: 100%;
-
   .interface-dashboard{
     height: 90vh;
     width: 100%;
@@ -76,7 +74,6 @@ ul{
     list-style-type: none;
     margin-left: 2vw;
   }
-
 }
 
 .parallax {
