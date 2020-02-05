@@ -21,6 +21,6 @@ export const witness: ModalFormat = {
   description: 'Vous pourrez le retrouver rapidement en ligne.',
 };
 export const document: ModalFormat = {
-  title: 'Merci.',
+  title: 'Pièce envoyée.',
   description: 'Votre document est en ligne.',
 };
