@@ -2,6 +2,7 @@
 
 .body-contact {
   height: 32vh;
+  margin: 20px;
 }
 
 span{
@@ -50,7 +51,6 @@ span{
     align-items: center;
     button{
       background-color: $primary60;
-      width: 20%;
       align-self: center;
     }
   }
@@ -79,5 +79,23 @@ span{
       }
     }
   }
+}
+@media (min-width: 481px) and (max-width: 800px){
+  .body-contact{
+    text-align: center;
+    height: auto;
+  }
+  .forms-container{
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .form-contact{
+    margin: 10px;
+  }
+  .form-newsletter{
+    margin: 10px;
+  }
+
+
 }
 
