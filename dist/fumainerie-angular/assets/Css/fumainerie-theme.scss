@@ -57,21 +57,13 @@ $br: 0px;
 $burgerBarHeight: 1px;
 $burgerWidth: 24px;
 
-.validate-button {
-  background-color: $primary60;
-}
-.delete-button {
-  background-color: $primary10;
-}
 
-// a tester *****
-// $parallax-scrolling: (
-//     background-attachment: fixed,
-//     background-position: center,
-//     background-repeat: no-repeat,
-//     background-size: cover,
-// )
-// *****
+// font-size  p responsiv
+$font-size-responsive: 10px;
+$font-size-responsive-title: 20px;
+$font-size-responsive-h4: 15px;
+
+
 
 // try to use scss
 // @if ($box-shadow == $box-shadow) {
