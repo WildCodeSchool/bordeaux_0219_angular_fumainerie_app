@@ -14,9 +14,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 3 On your local master branch within your IDE run `git pull origin master`.
 
-4 Run `ng build --prod` and commit the changes with the default value.
+4 Run `ng build --prod` and commit the changes (but do not push) with the default value.
 
-5 Run `caprover deploy --default` and input your caprover password when your IDE ask it.
+
+5 Run `git reset --hard` to neutralise the dist folder modifications previously committed.
+
+
+6 Run `caprover deploy --default` and input your caprover password when your IDE ask it.
 
 ## Code scaffolding
 

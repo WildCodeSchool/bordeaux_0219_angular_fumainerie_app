@@ -10,7 +10,7 @@
 </div>
 
 <div class="address">
-  <h3>{{data.session_date}}</h3>
+  <h3>{{data.session_date | date:'shortDate'}}</h3>
   <mat-slide-toggle formControlName="done_draining" value="false">
     <span *ngIf="done_draining.value === false || done_draining.value === 0"> Non Effectué</span>
     <span *ngIf="done_draining.value === true">Effectué</span>
