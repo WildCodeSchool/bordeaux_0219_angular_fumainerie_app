@@ -7,29 +7,24 @@ h2 {
   height: auto;
 }
 p {
-  width: 80%;
-  margin-left: 10%;
+  width: 90%;
+  margin: auto;
   background-color: white;
   padding: 2vh;
   box-shadow: $box-shadow;
   border-radius: $br;
   text-align: justify;
+  margin-bottom: 20px;
 }
 
 .carousel-item{
-  width: 100%;
+  width: 90%;
   position: relative;
 }
-.carousel{
-  margin: auto;
-}
-
 .mat-parent {
-  margin-top: 3%;
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom:500px;
+  margin: auto;
   height: 60vh;
+  width: 90%;
 }
 
 .mat-parent-small {
