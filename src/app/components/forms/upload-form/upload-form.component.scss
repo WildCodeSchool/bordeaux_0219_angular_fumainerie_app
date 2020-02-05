@@ -1,4 +1,4 @@
-@import './../../../../assets/Css/fumainerie-theme.scss';
+@import './../../../../assets/css/fumainerie-theme.scss';
 
 .example-container {
   display: flex;
@@ -6,7 +6,7 @@
   text-align: center;
   background-color: white;
   padding: 50px 0 50px 0;
-  border-radius: 3px;
+  box-shadow: $box-shadow;
   width: 80%;
   margin: auto;
 }
@@ -19,8 +19,14 @@
 button {
   color: black;
   background-color: $primary60;
-  width:300px;
   margin-left: 0;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.container > button {
+  padding: 0px;
 }
 
 .imgContainer {
@@ -32,11 +38,13 @@ img {
   float: right;
   width: 18px;
 }
+
 .up{
   display:flex;
   flex-direction: row;
-  margin-bottom:25px;
+  justify-content: center;
 }
+
 .fileName{
   margin-left: 25px;
 }

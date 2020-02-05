@@ -6,6 +6,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Production process
+
+1 Make a pull request from develop branch to master branch on Github.
+
+2 Merge the pull request on Github.
+
+3 On your local master branch within your IDE run `git pull origin master`.
+
+4 Run `ng build --prod` and commit the changes (but do not push) with the default value.
+
+
+5 Run `git reset --hard` to neutralise the dist folder modifications previously committed.
+
+
+6 Run `caprover deploy --default` and input your caprover password when your IDE ask it.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

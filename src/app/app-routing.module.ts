@@ -1,4 +1,4 @@
-import { DocumentsComponent } from './Pages/dashboard/documents/documents.component';
+import { DocumentsComponent } from './pages/dashboard/documents/documents.component';
 import { WitnessComponent } from './components/dashboards/communication/view/witness/witness.component';
 import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';

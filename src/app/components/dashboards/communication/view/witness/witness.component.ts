@@ -13,8 +13,8 @@ import { User } from '../../../../../shared/models/user';
   styleUrls: ['./witness.component.scss']
 })
 export class WitnessComponent implements OnInit {
-  witness: Witness[];
   @Input() checked: boolean;
+  witness: Witness[];
   status = new FormControl();
   user: User;
 

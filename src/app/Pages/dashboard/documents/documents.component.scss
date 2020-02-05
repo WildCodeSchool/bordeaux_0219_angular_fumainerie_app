@@ -1,4 +1,4 @@
-@import './../../../../assets/Css/fumainerie-theme.scss';
+@import './../../../../assets/css/fumainerie-theme.scss';
 
 .yellowButton {
   background-color: $primary60;
@@ -6,6 +6,7 @@
   width: 100%;
   margin: 25px 0;
   padding: 8px;
+  margin-left: 15px;
  }
 .mat-button{
   justify-content: center;

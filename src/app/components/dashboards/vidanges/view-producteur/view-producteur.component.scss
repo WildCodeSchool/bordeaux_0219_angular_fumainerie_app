@@ -1,0 +1,85 @@
+@import './../../../../../assets/css/fumainerie-theme.scss';
+
+.formulaire{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .request{
+    display: flex;
+    justify-content: space-around;
+    width: 85vw;
+    form{
+      width: 60vw;
+      .radio{
+        padding:0 1vw 0 1vw;
+      }
+      .demande{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.2vw;
+        border: 1px solid black;
+        width: 60vw;
+        padding: 2vh;
+        span{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.drainingRequest, .history, .formulaire{
+  box-shadow: $box-shadow;
+  background-color: white;
+  margin: 5px;
+  padding: 2vh;
+}
+.detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.allDrainingForCurrentUser{
+  width: 15vw;
+}
+.drainingEmergency {
+  color: $secondary10;
+  height: 10vh;
+  width: 10vw;
+  margin-left: 37vw;
+}
+
+button{
+  background-color: $primary60;
+  font-weight: 600;
+  padding: 10px;
+  transition : 0.3s;
+  border-radius: 5px;
+  border: none;
+}
+.emergency, .nextDraining{
+  text-align: center;
+  padding: 2vh 0 2vh 0;
+  color: black;
+  margin: 5px;
+  background-color: $primary60;
+}
+.allDrainingRequest{
+  display: flex;
+  justify-content: space-around;
+  background-color: $primary60;
+  margin-top: 1vh;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $secondary2 !important;
+ }
+
+.mat-radio-button {
+   margin-right: 1vh;
+   margin-left: 1vh;
+ }

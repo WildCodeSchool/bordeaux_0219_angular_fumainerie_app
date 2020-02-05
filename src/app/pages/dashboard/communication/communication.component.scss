@@ -12,10 +12,13 @@
   width: 45%;
   display: flex;
   flex-direction: column;
-  background-color: white;
-  box-shadow: $box-shadow;
 }
 
+.rightSide {
+  background-color: white;
+  box-shadow: $box-shadow;
+
+}
 .invisible{
   display: none;
 }

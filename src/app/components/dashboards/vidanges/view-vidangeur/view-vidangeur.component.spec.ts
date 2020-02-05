@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WitnessModalComponent } from './witness-modal.component';
+import { ViewVidangeurComponent } from './view-vidangeur.component';
 
-describe('WitnessModalComponent', () => {
-  let component: WitnessModalComponent;
-  let fixture: ComponentFixture<WitnessModalComponent>;
+describe('ViewVidangeurComponent', () => {
+  let component: ViewVidangeurComponent;
+  let fixture: ComponentFixture<ViewVidangeurComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WitnessModalComponent ]
+      declarations: [ ViewVidangeurComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WitnessModalComponent);
+    fixture = TestBed.createComponent(ViewVidangeurComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

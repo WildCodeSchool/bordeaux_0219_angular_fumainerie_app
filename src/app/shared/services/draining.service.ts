@@ -1,9 +1,10 @@
+import { DrainingRequestService } from './drainingRequest.service';
 import { environment } from './../../../environments/environment';
 import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DrainingRequest } from '../models/drainingRequest';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,13 @@ export class DrainingService {
 
   constructor(private http: HttpClient) {}
 
-  getDrainingForCurrentUser(id: number): Observable<Draining[]> {
+  getDraining(id: number): Observable<Draining[]> {
     return this.http.get<Draining[]>(DrainingService.URL + 'draining/user/' + id);
   }
 
-  getNextDrainingByUserId(id: number): Observable<DrainingRequest> {
-    return this.http.get<DrainingRequest>(DrainingService.URL + 'drainingRequest/user/' + id + '/next');
+  getNextDrainingByUserId(id: number): Observable<Draining> {
+    return this.http.get<Draining>(DrainingService.URL + 'draining/user/' + id + '/next')
+    .pipe(map((request) => new Draining(request[0])));
   }
 
   updateDrainingUser(id: number): Observable<Draining> {
@@ -28,10 +30,11 @@ export class DrainingService {
   getDrainingAccepted(userId: number): Observable<any[]> {
     return this.http.get<any[]>(DrainingService.URL + 'draining/accepted/' + userId);
   }
+  getAllDraining(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining/done/' + userId);
+  }
   saveDrainingDone(draining: Draining): Observable<Draining> {
     const id = draining.id;
-    console.log(draining);
-
     return this.http.put<Draining>(DrainingService.URL + 'draining/' + id, draining);
  }
 }

@@ -1,0 +1,76 @@
+<div class="lexique">
+  <p>Demande urgente:</p>
+  <div class="couleur"></div>
+</div>
+
+<div class="draining_non_traitee">
+  <h2>Demande non traitées</h2>
+  <p class="notif" *ngIf="allDrainingRequestUnchecked.length === 0" >Pas de demandes pour le moment</p>
+
+  <div class="ongoing" *ngFor="let user of allDrainingRequestUnchecked">
+
+    <div class="info_client">
+      <h3>Client: {{user[0].firstname}} {{user[0].lastname}}</h3>
+      <button *ngIf="!user[0].show" (click)="openDetailsCustomer(user[0])">Details client</button>
+    </div>
+
+    <div class="detail_info" *ngIf="user[0].show">
+      <div>
+
+        <p><span>Addresse:</span> {{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
+        <p><span>Télephone:</span> {{user[0].phone}}</p>
+      </div>
+      <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
+
+    </div>
+
+    <form [formGroup]="accepteDrainingForm" (ngSubmit)="acceptRequest(accepteDrainingForm.value)">
+      <div>
+        <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
+          <mat-radio-button class="radio-button" *ngFor="let request of user" [value]="request.id"[ngStyle]="{'background-color':request.emergency === 1 ? 'rebeccapurple' : 'white', 'color':request.emergency === 1 ? 'white' : 'black' }">
+            {{request.session_date | date: 'fullDate':'fr' }} -- {{request.name}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="valide">
+      <button type="submit" [disabled]="accepteDrainingForm.pristine">Valider</button>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="draining_accepted">
+  <h2>Demande acceptées - Planning</h2>
+  <div class="accepted" *ngIf="allDrainingAccepted.length === 0">
+    <p >Pas demande pour le moment</p>
+  </div>
+
+  <div class="accepted" *ngFor="let draining of allDrainingAccepted">
+    <div (click)="openDialog(draining)" class="info_client">
+      <div class="vidange">
+        <p>Le {{draining.session_date | date:'shortDate'}}</p>
+        <p>Créneau : {{draining.name}}</p>
+      </div>
+      <p>{{draining.firstname}} {{draining.lastname}}</p>
+      <div class="client">
+        <p>{{draining.phone}}</p>
+        <p>{{draining.address}}, {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="history">
+  <h2>Historique</h2>
+
+  <div *ngFor="let draining of allDrainingDone">
+    <div class="client">
+     <p>{{draining.firstname}} {{draining.lastname}}</p>
+      <p>{{draining.session_date | date:'shortDate'}}</p>
+
+    </div>
+  </div>
+
+</div>
+
