@@ -31,7 +31,8 @@ p{
   overflow: auto;
 }
 img{
-  width: 55%;
+  width: 45%;
+  max-height: 350px;
 }
 @media (max-device-width: 480px){
   .body-projet{
