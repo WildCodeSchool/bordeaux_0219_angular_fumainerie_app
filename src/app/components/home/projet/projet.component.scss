@@ -1,0 +1,64 @@
+@import './../../../../assets/css/fumainerie-theme.scss';
+
+.body-projet{
+  height: 68vh;
+  width: 100vw;
+
+
+  .projet-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    p, img {
+      box-shadow: $box-shadow;
+    }
+
+    p{
+      background-color: $primary100;
+      padding: 2vh;
+      text-align: justify;
+      max-height: 60vh;
+      overflow: auto;
+    }
+
+    img{
+      width: 40vw;
+    }
+  }
+}
+@media (max-device-width: 480px){
+  .body-projet{
+    height: 75vh;
+    padding-top: 10px;
+    h2{
+      text-align: center;
+      margin-left: 0;
+      font-size: $font-size-responsive-title;
+
+    }
+    .projet-container{
+      flex-direction: column;
+      width: 90%;
+      margin: auto;
+      img{
+        display: none;
+      }
+      p{
+        font-size: $font-size-responsive;
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-device-width: 1200px){
+  .projet-container{
+    width: 100%;
+  img{
+    display: none;
+  }
+  p{
+    width: 90%;
+  }
+}
+}
+

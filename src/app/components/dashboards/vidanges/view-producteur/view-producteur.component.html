@@ -36,7 +36,7 @@
 </div>
 
 <div *ngIf="nextDraining?.session_date" class="nextDraining">
-  <h3>Prochaine vidange prévu le {{nextDraining.session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDraining.name}}</h3>
+  <h3>Prochaine vidange prévue le {{nextDraining.session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDraining.name}}</h3>
 </div>
 
 <h2 class="emergency" *ngIf="emergency.length&gt;0">Urgence prise en compte. <br> Un vidangeur vas vous contactez rapidement.</h2>
@@ -48,11 +48,7 @@
     <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
     <p>{{draining.name}}</p>
   </div>
-</div>
 
-<div class="history">
-  <h3>Historique</h3>
-  <p *ngIf="allDraining.length===0">Pas d'historique.</p>
 
   <div *ngIf="allDraining.length&gt;0 " >
     <div *ngFor="let draining of allDraining" class="clickDetail">
@@ -72,7 +68,7 @@
           <p>{{draining.sawdust_weight}} kg</p>
         </div>
       </div>
-    </div>
-  </div>
 
+    </div>
+</div>
 </div>
