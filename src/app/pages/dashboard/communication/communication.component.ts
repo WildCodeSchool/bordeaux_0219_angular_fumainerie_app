@@ -8,12 +8,10 @@ import { UserService } from '../../../shared/services/user.service';
   styleUrls: ['./communication.component.scss']
 })
 export class CommunicationComponent implements OnInit {
-  // @Input() admin: boolean;
   user: User;
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    // this.admin = true;
     this.user = this.userService.user;
   }
 }
