@@ -1,0 +1,12 @@
+:host{
+  height: 100%;
+}
+@media only screen and (max-device-width: 480px) {
+
+  .menu-responsive{
+    display: block;
+    position: relative;
+    top: -5px;
+    right: 5px;
+  }
+}
