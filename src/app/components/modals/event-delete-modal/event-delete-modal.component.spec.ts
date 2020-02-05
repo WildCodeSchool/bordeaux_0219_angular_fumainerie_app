@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { EventDeleteModalComponent } from './event-delete-modal.component';
 
 describe('EventDeleteModalComponent', () => {

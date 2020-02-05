@@ -9,7 +9,6 @@ export class News {
   public status!: boolean;
   public description!: string;
   public link!: string;
-  // tslint:disable-next-line: variable-name
   public user_id!: number;
 
   constructor(input: News) {

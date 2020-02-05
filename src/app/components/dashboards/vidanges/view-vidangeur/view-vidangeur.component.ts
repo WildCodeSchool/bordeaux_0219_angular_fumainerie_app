@@ -5,7 +5,7 @@ import { DrainingService } from '../../../../shared/services/draining.service';
 import { MatDialog } from '@angular/material';
 import { Slot } from '../../../../shared/models/slot';
 import { User } from '../../../../shared/models/user';
-import { DrainingComponent } from '../../../forms/draining/draining.component';
+import { DrainingFormComponent } from '../../../forms/draining-form/draining-form.component';
 import { Home } from '../../../../shared/models/home';
 
 @Component({
@@ -21,6 +21,7 @@ export class ViewVidangeurComponent implements OnInit {
   accepteDrainingArray: any[] = [];
   allDrainingRequestUnchecked: any[] = [];
   allDrainingAccepted: any[] = [];
+  allDrainingDone: any[] = [];
 
 
   constructor(private drainingRequestService: DrainingRequestService, private drainingService: DrainingService,
@@ -37,6 +38,11 @@ export class ViewVidangeurComponent implements OnInit {
    });
 
    this.drainingService.getDrainingAccepted(this.currentUser.id).subscribe( data => {this.allDrainingAccepted = data; });
+
+   this.drainingService.getAllDraining(this.currentUser.id).subscribe( data => {
+     console.log(data);
+
+     this.allDrainingDone = data; });
   }
 
   openDetailsCustomer(home: Home) {
@@ -62,18 +68,21 @@ export class ViewVidangeurComponent implements OnInit {
       this.allDrainingAccepted.push(accepted);
     });
     this.allDrainingRequestUnchecked.filter( userDraining => {userDraining.filter((draining) => draining.status === 0); });
+    window.location.reload();
   }
 
   openDialog(draining: any): void {
 
-    const dialogRef = this.dialog.open(DrainingComponent, {
+    const dialogRef = this.dialog.open(DrainingFormComponent, {
       width: '50%',
       height: '70%',
       disableClose: true,
       data: draining
     });
 
-    dialogRef.afterClosed();
+    dialogRef.afterClosed().subscribe( () => {
+      window.location.reload();
+    });
   }
 
 }

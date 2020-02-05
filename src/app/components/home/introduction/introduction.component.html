@@ -1,0 +1,40 @@
+<div class="parallax">
+  <div class="contain">
+    <div class="leftSide">
+      <mat-card>
+        <h1>Bienvenue à La Fumainerie</h1>
+        <div class="intro">
+          <p>
+            La Fumainerie, association loi 1901 créée par un collectif de citoyens bordelais, a pour ambition d’appuyer le développement d’un système d’assainissement plus
+            écologique par la promotion, la construction et l’expérimentation d’un réseau de collecte et de valorisation des « déchets » de toilettes sèches chez les
+            particuliers en ville."
+          </p>
+        </div>
+      </mat-card>
+    </div>
+
+    <div class="rightSide"  color="primary" >
+      <mat-tab-group  color="primary" dynamicHeight="true" mat-stretch-tabs style="height: calc(100% - 64px); min-height: calc(100% - 64px);"
+      class="fauxCaroussel mat-elevation-z4">
+
+      <mat-tab   label="Les dernières actus">
+        <div class="section mat-elevation-z4" *ngFor="let item of news">
+          <div class="texte">
+            <h4>{{item.title}}</h4>
+            <a href="{{item.link}}" target="_blank"><p>{{item.description}}</p></a>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Témoignages">
+        <div class="section mat-elevation-z4" *ngFor="let item of witness">
+          <div class="texte">
+            <h4>{{item.firstname}} </h4>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

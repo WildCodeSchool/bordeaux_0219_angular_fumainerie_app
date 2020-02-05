@@ -1,15 +1,54 @@
 @import './../../../../../assets/css/fumainerie-theme.scss';
 
-
+.lexique{
+  width: 20vw;
+  height: 4vh;
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 10%;
+  p{
+    padding-top: 2px;
+    font-size: 1vw;
+  }
+  .couleur{
+    width: 3vw;
+    height: 2vh;
+    background-color: rebeccapurple;
+  }
+}
+.notif{
+  text-align: center;
+}
 .draining-non-traitee {
   display: flex;
 }
-.ongoing, .accepted {
+.ongoing, .accepted, .vidangeurDone{
   background-color: white;
   box-shadow: $box-shadow;
   width: 80%;
   margin-left: 10%;
   padding: 3vh;
+  overflow: scroll;
+}
+.accepted{
+  border-bottom: 1px solid black;
+}
+.accepted:hover{
+  background-color: $primary100;
+}
+.detail_info{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+  border: 1px solid black;
+  span{
+    text-decoration: underline;
+  }
 }
 
 .info_client {
@@ -33,4 +72,20 @@ mat-radio-group{
 .valide {
   display: flex;
   justify-content: center;
+}
+.vidangeurDone{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  span{
+    text-decoration: underline;
+  }
+  .details_info{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 0 1vw 0 1vw;
+  }
+}
+.history{
+  margin-bottom: 2vh;
 }

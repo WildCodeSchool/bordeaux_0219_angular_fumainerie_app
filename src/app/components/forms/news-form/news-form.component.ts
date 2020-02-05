@@ -37,14 +37,14 @@ export class NewsFormComponent implements OnInit {
     }
 
     onSubmitNewsForm() {
-      this.newsService.createNews(this.newsForm.value).subscribe();
-      const dialogRef = this.dialog.open(GenericModalComponent , {
-        width: '250px',
-        data: news,
-      });
-
-      dialogRef.afterClosed().subscribe(() => {
-          this.router.navigate(['/dashboard/actualites']);
+      this.newsService.createNews(this.newsForm.value).subscribe(() => {
+        const dialogRef = this.dialog.open(GenericModalComponent , {
+          width: '50%',
+          data: news,
+        });
+        dialogRef.afterClosed().subscribe(() => {
+            this.router.navigate(['/dashboard/actualites']);
+        });
       });
     }
   }

@@ -1,3 +1,4 @@
+import { DrainingRequestService } from './drainingRequest.service';
 import { environment } from './../../../environments/environment';
 import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
@@ -17,6 +18,10 @@ export class DrainingService {
     return this.http.get<Draining[]>(DrainingService.URL + 'draining/user/' + id);
   }
 
+  getDrainingsForAdmin(): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining');
+  }
+
   getNextDrainingByUserId(id: number): Observable<Draining> {
     return this.http.get<Draining>(DrainingService.URL + 'draining/user/' + id + '/next')
     .pipe(map((request) => new Draining(request[0])));
@@ -28,6 +33,9 @@ export class DrainingService {
 
   getDrainingAccepted(userId: number): Observable<any[]> {
     return this.http.get<any[]>(DrainingService.URL + 'draining/accepted/' + userId);
+  }
+  getAllDraining(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining/done/' + userId);
   }
   saveDrainingDone(draining: Draining): Observable<Draining> {
     const id = draining.id;
