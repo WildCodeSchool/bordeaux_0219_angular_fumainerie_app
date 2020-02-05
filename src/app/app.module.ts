@@ -53,7 +53,6 @@ import { QuestionDeleteModalComponent } from './components/modals/question-delet
 import { NewsDeleteModalComponent } from './components/modals/news-delete-modal/news-delete-modal.component';
 import { NewsFormComponent } from './components/forms/news-form/news-form.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
-import { DocumentsComponent } from './pages/dashboard/documents/documents.component';
 import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { UploadDeleteFileModalComponent } from './components/modals/upload-delete-file-modal/upload-delete-file-modal.component';
 
@@ -62,6 +61,7 @@ import { ViewVidangeurComponent } from './components/dashboards/vidanges/view-vi
 import { ViewProducteurComponent } from './components/dashboards/vidanges/view-producteur/view-producteur.component';
 import { GenericModalComponent } from './components/modals/generic-modal/generic-modal.component';
 import { ServerUrlPipe } from './core/server-url.pipe';
+import { PartenairesComponent } from './components/accueil/partenaires/partenaires.component';
 
 
 
@@ -82,7 +82,6 @@ import { ServerUrlPipe } from './core/server-url.pipe';
     DashboardComponent,
     SidebarComponent,
     VidangesComponent,
-    DocumentsComponent,
     CommunicationComponent,
     BurgerMenuComponent,
     ProjetComponent,
@@ -113,7 +112,8 @@ import { ServerUrlPipe } from './core/server-url.pipe';
     UploadDeleteFileModalComponent,
     ViewProducteurComponent,
     ViewVidangeurComponent,
-    ServerUrlPipe
+    ServerUrlPipe,
+    PartenairesComponent
   ],
   imports: [
     BrowserModule,

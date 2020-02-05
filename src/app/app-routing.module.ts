@@ -1,4 +1,3 @@
-import { DocumentsComponent } from './pages/dashboard/documents/documents.component';
 import { WitnessComponent } from './components/dashboards/communication/view/witness/witness.component';
 import { RessourcesDocumentsComponent } from './components/ressources-documents/ressources-documents.component';
 import { UploadFormComponent } from './components/forms/upload-form/upload-form.component';
@@ -32,7 +31,6 @@ const routes: Routes = [
   {path: 'dashboard', component : DashboardComponent, canActivate: [AuthGuard], children: [
     {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
     {path: 'vidanges', component : VidangesComponent, canActivate: [AuthGuard]},
-    {path: 'documents', component : DocumentsComponent, canActivate: [AuthGuard]},
     {path: 'documents/uploader', component: UploadFormComponent, canActivate: [AuthGuard]},
     {path: 'communication', component: CommunicationComponent, canActivate: [AuthGuard], children: [
       {path: '', redirectTo: 'avis', pathMatch: 'full'},
