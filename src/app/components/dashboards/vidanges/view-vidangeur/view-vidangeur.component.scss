@@ -1,6 +1,26 @@
 @import './../../../../../assets/css/fumainerie-theme.scss';
 
-
+.lexique{
+  width: 20vw;
+  height: 4vh;
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 10%;
+  p{
+    padding-top: 2px;
+    font-size: 1vw;
+  }
+  .couleur{
+    width: 3vw;
+    height: 2vh;
+    background-color: rebeccapurple;
+  }
+}
+.notif{
+  text-align: center;
+}
 .draining-non-traitee {
   display: flex;
 }
@@ -10,6 +30,21 @@
   width: 80%;
   margin-left: 10%;
   padding: 3vh;
+}
+.accepted:hover{
+  background-color: $primary100;
+}
+.detail_info{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+  border: 1px solid black;
+  span{
+    text-decoration: underline;
+  }
 }
 
 .info_client {

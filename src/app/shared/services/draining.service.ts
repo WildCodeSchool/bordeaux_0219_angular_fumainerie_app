@@ -1,3 +1,4 @@
+import { DrainingRequestService } from './drainingRequest.service';
 import { environment } from './../../../environments/environment';
 import { Draining } from './../models/draining';
 import { HttpClient } from '@angular/common/http';
@@ -28,6 +29,9 @@ export class DrainingService {
 
   getDrainingAccepted(userId: number): Observable<any[]> {
     return this.http.get<any[]>(DrainingService.URL + 'draining/accepted/' + userId);
+  }
+  getAllDraining(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(DrainingService.URL + 'draining/done/' + userId);
   }
   saveDrainingDone(draining: Draining): Observable<Draining> {
     const id = draining.id;

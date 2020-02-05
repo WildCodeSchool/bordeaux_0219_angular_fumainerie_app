@@ -1,43 +1,50 @@
-<div *ngIf="drainingFormRequest && !isRequestAlreadyCreate " >
+<button *ngIf="(currentDateString.localeCompare(nextDraining?.session_date)===1 ? false : true)  && emergency.length&lt;1" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
+<div *ngIf="drainingFormRequest && emergency.length&lt;1 && !isRequestAlreadyCreate "  class="formulaire">
   <h3 *ngIf="nextDraining?.session_date"> Vous pouvez programmer une vidange en avance.</h3>
 
-  <form [formGroup]="drainingFormRequest">
-    <mat-form-field class="example-full-width">
-      <input matInput formControlName="session_date" [matDatepicker]="picker" placeholder="Choisissez une date">
-      <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker touchUi #picker></mat-datepicker>
-    </mat-form-field>
+  <div class="request">
 
-    <mat-radio-group color="primary" class="example-radio-group" formControlName="slot_id">
-      <mat-radio-button class="example-radio-button" *ngFor="let slot of slotData" [value]="slot">
-        {{slot.name}}
-      </mat-radio-button>
-    </mat-radio-group>
+    <form [formGroup]="drainingFormRequest">
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="session_date" [matDatepicker]="picker" placeholder="Choisissez une date">
+        <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
 
-    <button *ngIf="arrayDrainingRequest.length&lt;3" (click)="addRequest(drainingFormRequest.value)">Ajouter</button>
-    <button *ngIf="arrayDrainingRequest.length &gt;0" (click)="submit()">Valider</button>
+      <mat-radio-group color="primary" class="example-radio-group" formControlName="slot_id">
+        <mat-radio-button class="example-radio-button radio" *ngFor="let slot of slotData" [value]="slot">
+          {{slot.name}}
+        </mat-radio-button>
+      </mat-radio-group>
 
-    <ul *ngIf="arrayDrainingRequest.length&gt;0">
-    <li>Demande n°1: {{arrayDrainingRequest[0].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[0].name}}</li>
-    <li *ngIf="arrayDrainingRequest.length&gt;1">Demande n°2:{{arrayDrainingRequest[1].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[1].name}}</li>
-    <li *ngIf="arrayDrainingRequest.length&gt;2">Demande n°3:{{arrayDrainingRequest[2].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[2].name}}</li>
-    </ul>
+      <button *ngIf="arrayDrainingRequest.length&lt;3" (click)="addRequest(drainingFormRequest.value)">Ajouter</button>
 
-  </form>
+      <div class="demande" *ngIf="arrayDrainingRequest.length&gt;0">
+
+        <ul *ngIf="arrayDrainingRequest.length&gt;0">
+          <li><span>Demande n°1:</span> Le {{arrayDrainingRequest[0].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[0].name}}</li>
+          <li *ngIf="arrayDrainingRequest.length&gt;1"> <span>Demande n°2:</span> Le {{arrayDrainingRequest[1].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[1].name}}</li>
+          <li *ngIf="arrayDrainingRequest.length&gt;2"><span>Demande n°3:</span> Le {{arrayDrainingRequest[2].session_date | date: 'fullDate':'fr'}} {{arrayDrainingRequest[2].name}}</li>
+        </ul>
+
+        <button *ngIf="arrayDrainingRequest.length &gt;0" (click)="submit()">Valider</button>
+      </div>
+    </form>
+
+
+  </div>
 </div>
-
-<button *ngIf="(currentDateString.localeCompare(nextDraining?.session_date)===1 ? false : true)  && emergency.length&lt;1" (click)="sendEmergency()" class="drainingEmergency">URGENCE VIDANGE</button>
 
 <div *ngIf="nextDraining?.session_date" class="nextDraining">
   <h3>Prochaine vidange prévu le {{nextDraining.session_date | date: 'fullDate':'fr'}} durant le creneau {{nextDraining.name}}</h3>
 </div>
 
-<h2 class="emergency" *ngIf="emergency.length&gt;0">Urgence prise en compte. Un vidangeur vas vous contactez rapidement.</h2>
+<h2 class="emergency" *ngIf="emergency.length&gt;0">Urgence prise en compte. <br> Un vidangeur vas vous contactez rapidement.</h2>
 
 <div class="drainingRequest">
   <h3>Demande en cours</h3>
   <p *ngIf="allDrainingRequest.length === 0">Pas de demande en cours.</p>
-  <div class="allDrainingRequestForCurrentUser" *ngFor="let draining of allDrainingRequest">
+  <div class="allDrainingRequest" *ngFor="let draining of allDrainingRequest">
     <p>{{draining.session_date | date: 'fullDate':'fr'}}</p>
     <p>{{draining.name}}</p>
   </div>

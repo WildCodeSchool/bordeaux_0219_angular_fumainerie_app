@@ -15,5 +15,4 @@ export class VidangesComponent implements OnInit {
   ngOnInit() {
     this.user = this.userService.user;
   }
-
 }
