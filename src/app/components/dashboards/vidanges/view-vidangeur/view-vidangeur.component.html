@@ -64,13 +64,28 @@
 <div class="history">
   <h2>Historique</h2>
 
-  <div *ngFor="let draining of allDrainingDone">
+  <div *ngFor="let draining of allDrainingDone" class="vidangeurDone">
     <div class="client">
-     <p>{{draining.firstname}} {{draining.lastname}}</p>
-      <p>{{draining.session_date | date:'shortDate'}}</p>
+      <p>{{draining.firstname}} {{draining.lastname}}</p>
+      <p>Le {{draining.session_date | date:'shortDate'}}</p>
+    </div>
+
+    <div class="details_info">
+      <div>
+        <p><span>Addresse:</span> {{draining.address}} {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
+        <p><span>Télephone:</span> {{draining.phone}}</p>
+      </div>
+    </div>
+
+    <div class="detail_vidange">
+      <div>
+        <p><span>Arrivée:</span> {{draining.site_arrival_time}} / <span>Depart:</span> {{draining.site_leave_time}}</p>
+        <p><span>Commentaire:</span> {{draining.comments}}</p>
+        <p><span>Poids vidange:</span> {{draining.weight}} kg</p>
+        <p><span>Sciure livrée:</span> {{draining.sawdust_weight}} kg</p>
+      </div>
 
     </div>
   </div>
 
 </div>
-

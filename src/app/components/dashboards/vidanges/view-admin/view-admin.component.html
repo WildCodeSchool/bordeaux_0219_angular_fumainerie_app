@@ -1,0 +1,49 @@
+<div class="lexique">
+  <p>Demande non traitées:</p>
+  <div class="couleur"></div>
+</div>
+
+<div class="container">
+
+  <div class="draining">
+    <h2>Demandes de vidanges</h2>
+
+    <div class="drainingsUndone" *ngFor="let draining of drainingsUndone">
+
+      <div class="client" [ngStyle]="{'background-color':draining.status === 0 ? 'rebeccapurple' : 'white', 'color':draining.status === 0 ? 'white' : 'black' }">
+        <p>{{draining?.user.firstname}} {{draining?.user.lastname}}</p>
+        <p *ngIf="draining.status === 1">Le {{draining?.session_date | date:'shortDate'}}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="draining">
+    <h2>Vidanges effectuées</h2>
+
+    <div class="drainingsDone" *ngFor="let draining of drainingsdone">
+
+      <div class="One">
+
+        <div>
+          <p>{{draining?.user.firstname}} {{draining?.user.lastname}}</p>
+          <p>Le {{draining?.session_date | date:'shortDate'}}</p>
+        </div>
+
+        <div class="detail_vidange">
+
+          <div>
+            <p><span>Arrivée:</span> {{draining.site_arrival_time}} / <span>Depart:</span> {{draining.site_leave_time}}</p>
+            <p><span>Commentaire:</span> {{draining.comments}}</p>
+            <p><span>Poids vidange:</span> {{draining.weight}} kg</p>
+            <p><span>Sciure livrée:</span> {{draining.sawdust_weight}} kg</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

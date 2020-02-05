@@ -61,6 +61,7 @@ import { ViewVidangeurComponent } from './components/dashboards/vidanges/view-vi
 import { ViewProducteurComponent } from './components/dashboards/vidanges/view-producteur/view-producteur.component';
 import { GenericModalComponent } from './components/modals/generic-modal/generic-modal.component';
 import { ServerUrlPipe } from './core/server-url.pipe';
+import { ViewAdminComponent } from './components/dashboards/vidanges/view-admin/view-admin.component';
 
 
 
@@ -112,6 +113,7 @@ import { ServerUrlPipe } from './core/server-url.pipe';
     ViewProducteurComponent,
     ViewVidangeurComponent,
     ServerUrlPipe,
+    ViewAdminComponent,
     DocumentsSearchComponent
   ],
   imports: [
