@@ -55,6 +55,7 @@
     <p *ngIf="allDraining.length===0">Pas d'historique.</p>
 
    <div *ngIf="allDraining.length&gt;0 ">
+
     <div *ngFor="let draining of allDraining" class="clickDetail">
       <p class="allDrainingForCurrentUser" (click)="openDetailsDraining(draining)">{{draining.session_date | date: 'fullDate':'fr'}}</p>
 
@@ -74,5 +75,4 @@
       </div>
 
     </div>
-</div>
-</div>
+  </div>
