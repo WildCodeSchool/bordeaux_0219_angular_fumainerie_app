@@ -1,6 +1,6 @@
 @import './../../../../assets/css/fumainerie-theme.scss';
   .body-news {
-    height: 85vh;
+    height: 75vh;
     width: 100vw;
   }
   .news-container {
@@ -15,7 +15,7 @@
     box-shadow: $box-shadow;
     border-radius: $br;
     margin: 0px 10px;
-    max-height: 40vh;
+    max-height: 100%;
   }
   .fb-link{
     display: none;
