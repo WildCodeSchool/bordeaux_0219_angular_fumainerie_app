@@ -32,7 +32,7 @@ export class SignUpFormComponent implements OnInit {
 
     onSignUp() {
     this.signupService.postNewUser(this.signUpForm.value).subscribe();
-    this.dialog.open(DialogSignupComponent, {width: '250px'});
+    this.dialog.open(DialogSignupComponent, {width: '50%'});
   }
 
   goToSignIn() {
