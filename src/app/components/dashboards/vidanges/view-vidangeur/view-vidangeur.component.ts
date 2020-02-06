@@ -31,6 +31,7 @@ export class ViewVidangeurComponent implements OnInit {
 
    this.drainingRequestService.getAllDrainingRequestUnchecked().subscribe( data => {
     this.allDrainingRequestUnchecked = data;
+    console.log(data);
 
     this.accepteDrainingForm = this.fb.group({
      draining_id: ['', Validators.required],

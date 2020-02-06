@@ -5,7 +5,7 @@
 
 <div class="draining_non_traitee">
   <h2>Demande non traitées</h2>
-  <p class="notif" *ngIf="allDrainingRequestUnchecked.length === 0" >Pas de demandes pour le moment</p>
+  <p class="notif" *ngIf="allDrainingRequestUnchecked.length === 0" >Pas de demande pour le moment</p>
 
   <div class="ongoing" *ngFor="let user of allDrainingRequestUnchecked">
 
@@ -17,7 +17,7 @@
     <div class="detail_info" *ngIf="user[0].show">
       <div>
 
-        <p><span>Addresse:</span> {{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
+        <p><span>Adresse:</span> {{user[0].address}} {{user[0].address_plus}} {{user[0].zip}} {{user[0].city}}</p>
         <p><span>Télephone:</span> {{user[0].phone}}</p>
       </div>
       <mat-icon class="material-icons" (click)="openDetailsCustomer(user[0])">close</mat-icon>
@@ -40,9 +40,9 @@
 </div>
 
 <div class="draining_accepted">
-  <h2>Demande acceptées - Planning</h2>
+  <h2>Demande acceptée - Planning</h2>
   <div class="accepted" *ngIf="allDrainingAccepted.length === 0">
-    <p >Pas demande pour le moment</p>
+    <p >Pas de demande pour le moment</p>
   </div>
 
   <div class="accepted" *ngFor="let draining of allDrainingAccepted">
@@ -72,14 +72,14 @@
 
     <div class="details_info">
       <div>
-        <p><span>Addresse:</span> {{draining.address}} {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
+        <p><span>Adresse:</span> {{draining.address}} {{draining.address_plus}} {{draining.zip}} {{draining.city}}</p>
         <p><span>Télephone:</span> {{draining.phone}}</p>
       </div>
     </div>
 
     <div class="detail_vidange">
       <div>
-        <p><span>Arrivée:</span> {{draining.site_arrival_time}} / <span>Depart:</span> {{draining.site_leave_time}}</p>
+        <p><span>Arrivée:</span> {{draining.site_arrival_time}} / <span>Départ:</span> {{draining.site_leave_time}}</p>
         <p><span>Commentaire:</span> {{draining.comments}}</p>
         <p><span>Poids vidange:</span> {{draining.weight}} kg</p>
         <p><span>Sciure livrée:</span> {{draining.sawdust_weight}} kg</p>
