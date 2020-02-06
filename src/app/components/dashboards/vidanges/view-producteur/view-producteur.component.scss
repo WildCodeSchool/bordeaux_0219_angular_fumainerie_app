@@ -30,6 +30,11 @@
     }
   }
 }
+.history{
+  h2{
+    margin-left: 0;
+  }
+}
 .clickDetail{
   width: 80vw;
   span{
@@ -39,8 +44,6 @@
 .clickDetail :hover{
   background-color: $primary100;
 }
-
-
 .drainingRequest, .history, .formulaire{
   box-shadow: $box-shadow;
   background-color: white;
@@ -62,7 +65,6 @@
   width: 10vw;
   margin-left: 37vw;
 }
-
 button{
   background-color: $primary60;
   font-weight: 600;
@@ -84,8 +86,6 @@ button{
   background-color: $primary60;
   margin-top: 1vh;
 }
-
-
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: $secondary2 !important;
