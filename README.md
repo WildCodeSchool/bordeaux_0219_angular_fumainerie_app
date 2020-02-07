@@ -17,7 +17,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 4 Run `ng build --prod` and commit the changes (but do not push) with the default value.
 
 
-5 Run `git reset --hard` to neutralise the dist folder modifications previously committed.
+5 Run `git reset --hard HEAD^` to neutralise the dist folder modifications previously committed.
 
 
 6 Run `caprover deploy --default` and input your caprover password when your IDE ask it.
