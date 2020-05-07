@@ -94,7 +94,7 @@ export class ViewProducteurComponent implements OnInit {
     drainingRequestEmergency.user_id = this.currentUser.id;
     drainingRequestEmergency.session_date = this.currentDateString;
     drainingRequestEmergency.emergency = 1;
-    drainingRequestEmergency.slot_id = 1;
+    drainingRequestEmergency.slot_id = this.slotData[0].id;
     this.slotData.forEach( element => {
       if ( drainingRequestEmergency.slot_id === element.id) {
       drainingRequestEmergency.name = element.name; }

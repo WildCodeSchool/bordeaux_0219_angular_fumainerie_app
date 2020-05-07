@@ -28,7 +28,7 @@
       <div>
         <mat-radio-group color="primary" class="example-radio-group" formControlName="draining_id">
           <mat-radio-button class="radio-button" *ngFor="let request of user" [value]="request.id"[ngStyle]="{'background-color':request.emergency === 1 ? 'rebeccapurple' : 'white', 'color':request.emergency === 1 ? 'white' : 'black' }">
-            {{request.session_date | date: 'fullDate':'fr' }} -- {{request.name}}
+            {{request.session_date | date: 'fullDate':'fr' }}
           </mat-radio-button>
         </mat-radio-group>
       </div>
